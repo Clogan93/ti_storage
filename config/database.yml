@@ -18,3 +18,9 @@ production:
   database: ti_storage_production
   username: ti_storage
   password: <%= ENV['DATABASE_PASSWORD'] %>
+
+ci:
+  <<: *default
+  database: circle_ruby_test
+  host: localhost
+  username: ubuntu

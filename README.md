@@ -1,24 +1,3 @@
-# README
+# TI Storage
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+[![CircleCI](https://circleci.com/gh/omarvelous/ti_storage.svg?style=svg&circle-token=8b43ef65646ca1b47d919826a934f3a8e1d59648)](https://circleci.com/gh/omarvelous/ti_storage)

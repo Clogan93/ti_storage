@@ -1,0 +1,35 @@
+machine:
+  services:
+    - docker
+
+dependencies:
+  cache_directories:
+    - ~/bundle
+    - ~/docker
+  override:
+    - docker info
+    - if [[ -e ~/docker/image.tar ]]; then docker load -i ~/docker/image.tar; fi
+    - docker build -t markeymymarket/ti_storage .
+    - mkdir -p ~/docker; docker save markeymymarket/ti_storage > ~/docker/image.tar
+
+database:
+  override:
+    - |
+        docker run \
+        --net=host \
+        --env RAILS_ENV=ci \
+        --env POSTGRES_HOST=localhost \
+        markeymymarket/ti_storage \
+        bundle exec rake db:create db:migrate --trace
+
+test:
+  pre:
+    - docker run markeymymarket/ti_storage bundle exec rubocop
+  override:
+    - |
+        docker run \
+        --net=host \
+        --env RAILS_ENV=ci \
+        --env POSTGRES_HOST=localhost \
+        markeymymarket/ti_storage \
+        bundle exec rspec

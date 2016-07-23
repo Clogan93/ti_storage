@@ -3,6 +3,7 @@
   services:
     app:
       build: .
+      image: marketmymarket/ti_storage
       command: bundle exec puma -p 3000
       environment:
         BUNDLE_JOBS: 8

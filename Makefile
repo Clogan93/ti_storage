@@ -10,6 +10,15 @@ lint:
 rspec:
 	docker-compose run app bundle exec rspec
 
+setup: bundle
+	docker-compose run app bundle exec rails db:create
+	make migrate
+
+migrate:
+	docker-compose run app bundle exec rails db:migrate
+
+ci: bundle lint rspec
+
 run:
 	docker-compose up
 
