@@ -13,3 +13,7 @@
 # SimpleCov
 /coverage/*
 !/coverage/.keep
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.yml

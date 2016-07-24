@@ -1,0 +1,10 @@
+branch-defaults:
+  staging:
+    environment: staging
+global:
+  application_name: ti_storage
+  default_ec2_keyname: aws-eb
+  default_platform: Ruby 2.3 (Puma)
+  default_region: us-east-1
+  profile: eb-cli
+  sc: git
