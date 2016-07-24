@@ -5,3 +5,7 @@
 # Slack
 
 Find us on [our nexa slack channel](http://nexahq.slack.com/ "nexahq")
+
+# Continuous Integration wit CircleCI
+
+We use [CircleCI](http://circleci.com/ "CircleCI") for our continuous integration. Every new PR is automatically built, and ran in CI.
