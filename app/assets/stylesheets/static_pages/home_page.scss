@@ -1,0 +1,66 @@
+#home_page{
+  section.find_storage{
+    background: image-url("static_pages/home_page/find_storage_bg.svg");
+    background-size: cover;
+
+    position: relative; // for .reserve_now
+    height: 502px;
+    padding-top: 160px;
+    padding-bottom: 40px;
+
+    color: white;
+    text-align: center;
+
+    h6{
+      padding-bottom: 30px;
+
+      font-family: Bebas; //TODO: add this font
+      font-size: 62px;
+      font-weight: normal;
+      text-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+      text-transform: uppercase;
+    }
+
+    .find_storage_rectangle{
+      width: 601px; height: 124px;
+      margin: 30px auto;
+      padding: 0 50px;
+
+      border-radius: 6px;
+      background-image: linear-gradient(to bottom, #1e4fac, #0d2773);
+      border: solid 4px #4a90e2;
+      h4{
+        font-size: 28px;
+        font-weight: bold;
+        padding-top: 10px; padding-bottom: 10px;
+      }
+      form{
+        input{
+          border-radius: 4px;
+          height: 45px; width: 100%;
+          font-size: 22px;
+        }
+
+        .search.button{
+          font-size: 20px;
+          background: linear-gradient(to bottom, #1f6aff 48%, #174ce1 52%);
+
+          padding-right: 33px; padding-left: 33px; 
+        }
+      }
+    }
+
+    .reserve_now{
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+
+      opacity: 0.82;
+      background-color: #4268d8;
+
+      font-size: 20px;
+      font-weight: bold;
+      padding: 10px 0;
+    }
+  }
+}
