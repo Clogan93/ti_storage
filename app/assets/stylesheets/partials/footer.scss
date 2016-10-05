@@ -1,0 +1,65 @@
+footer{
+  background: $cobalt_color;
+  color: white;
+  font-size: 14px;
+
+  padding: 30px 60px 10px 60px;
+
+  a{ color: white; }
+
+  h5{
+    font-size: 22px;
+    font-weight: bold;
+  }
+
+  .navigation{
+    font-weight: bold;
+    text-align: center;
+    nav{
+      display: inline-block;
+      text-align: left;
+      a{
+        display: block;
+        margin-bottom: 6px;
+        &:hover{ 
+          color: white;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .contact_us{
+    .email_us{
+      margin-bottom: 10px;
+      a{
+        color: #73b6ff;
+        text-decoration: underline;
+      }
+    }
+    .call_us, .email_us{
+      .col-xs-5{ font-weight: bold; }
+    }
+    .social_icons{
+      margin-top: 20px;
+    }
+  }
+
+  .live_chat{
+    width: 109px;
+    height: 45px;
+  }
+
+  .footnote{
+    margin-top: 20px;
+    font-family: MyriadPro;
+    font-size: 10px;
+    font-weight: normal;
+    line-height: 1.5;
+    text-align: center;
+    .part_2{
+      margin-top: 20px;
+    }
+  }
+
+}
