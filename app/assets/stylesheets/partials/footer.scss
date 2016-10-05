@@ -1,9 +1,9 @@
 footer{
+  padding: 30px 60px 10px 60px;
+
   background: $cobalt_color;
   color: white;
   font-size: 14px;
-
-  padding: 30px 60px 10px 60px;
 
   a{ color: white; }
 
@@ -38,7 +38,9 @@ footer{
       }
     }
     .call_us, .email_us{
-      .col-xs-5{ font-weight: bold; }
+      .col-xs-4{ 
+        font-weight: bold; 
+      }
     }
     .social_icons{
       margin-top: 20px;
@@ -46,8 +48,11 @@ footer{
   }
 
   .live_chat{
-    width: 109px;
-    height: 45px;
+    text-align: right;
+    .button{
+      font-size: 16px;
+      background: linear-gradient(to bottom, #1f6aff 48%, #174ce1 52%);
+    }
   }
 
   .footnote{
@@ -61,5 +66,4 @@ footer{
       margin-top: 20px;
     }
   }
-
 }

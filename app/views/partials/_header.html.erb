@@ -1,3 +1,27 @@
 <header>
-  <%= image_tag 'static_pages/home/logo-header.svg' %>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-4 logo">
+        <%= image_tag 'partials/header/logo-header.svg' %>
+      </div>
+      <div class="col-xs-8">
+        <nav>
+          <div class="links">
+            <%= link_to 'Locations' %>
+            <%= link_to 'Storage Solutions' %>
+            <%= link_to 'Why Store With Us' %>
+          </div>
+
+          <div class="live_chat">
+            <%= image_tag 'partials/live-chat-icn_red.svg' %>
+            <span>Live Chat</span>
+          </div>
+
+          <div class="my_account button">
+            My Account
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
 </header>

@@ -1,0 +1,35 @@
+header{
+  padding: 10px 60px;
+  font-size: 17px;
+  font-weight: bold;
+  a{ color: $cobalt_color; }
+
+  .logo img{
+    width: 184px;
+    height: 101px;
+  }
+
+  nav{
+    text-align: right;
+    padding-top: 30px;
+    .links{
+      display: inline-block;
+      a{
+        padding-right: 30px;
+      }
+    }
+    .live_chat, .my_account{ display: inline-block; }
+    .live_chat{
+      margin-right: 20px;
+      color: $orange-red_color;
+      span{
+        display: inline-block;
+        border-bottom: solid 2px $orange-red_color;
+      }
+    }
+    .my_account{
+      font-size: 17px;
+      background: linear-gradient(to bottom, $orange-red_color, #d70000);
+    }
+  }
+}
