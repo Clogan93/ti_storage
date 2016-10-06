@@ -22,6 +22,7 @@ header{
     .live_chat{
       margin-right: 20px;
       color: $orange-red_color;
+      cursor: pointer;
       span{
         display: inline-block;
         border-bottom: solid 2px $orange-red_color;

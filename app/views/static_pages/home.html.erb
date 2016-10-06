@@ -24,6 +24,99 @@
   </section>
 
   <section class="recommended_locations">
+    <div class="container-fluid">
+      <h4>Recommended Locations for You</h4>
+
+      <div class="row">
+        <div class="col-xs-6">
+          <div class="location_preview first">
+
+            <div class="row city">
+              <div class="col-xs-12">
+                Brooklyn
+              </div>
+            </div>
+
+            <div class="row info">
+              <div class="col-xs-6 photo">
+                <%= image_tag 'http://placehold.it/182x136' %>
+              </div>
+              <div class="col-xs-6 details">
+                <div class="miles_away">
+                  <%= image_tag 'common_elements/location_pin.svg' %>
+                  <span class="how_many">3 Miles Away</span>
+                </div>
+
+                <div class="address">
+                  183 Lorraine Street<br>
+                  Brooklyn, NY 11231<br>
+                  <b class="telephone">718-509-6524</b>
+                </div>
+
+                <div class="rating">
+                  <span class="number">4.9</span>
+                  <span class="stars">
+                    <!-- temporary, since I don't yet know how that will be implemented -->
+                    <% 5.times do %>
+                      <%= image_tag 'common_elements/star.svg' %>
+                    <% end %>
+                  </span>
+                  <span class="amount_of_reviews">(6)</span>
+                </div>
+
+                <div class="show_all_units">
+                  <%= link_to 'Show All Available Units' %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-6">
+          <div class="location_preview last">
+
+            <div class="row city">
+              <div class="col-xs-12">
+                Brooklyn
+              </div>
+            </div>
+
+            <div class="row info">
+              <div class="col-xs-6 photo">
+                <%= image_tag 'http://placehold.it/182x136' %>
+              </div>
+              <div class="col-xs-6 details">
+                <div class="miles_away">
+                  <%= image_tag 'common_elements/location_pin.svg' %>
+                  <span class="how_many">3 Miles Away</span>
+                </div>
+
+                <div class="address">
+                  183 Lorraine Street<br>
+                  Brooklyn, NY 11231<br>
+                  <b class="telephone">718-509-6524</b>
+                </div>
+
+                <div class="rating">
+                  <span class="number">4.9</span>
+                  <span class="stars">
+                    <!-- temporary, since I don't yet know how that will be implemented -->
+                    <% 5.times do %>
+                      <%= image_tag 'common_elements/star.svg' %>
+                    <% end %>
+                  </span>
+                  <span class="amount_of_reviews">(6)</span>
+                </div>
+
+                <div class="show_all_units">
+                  <%= link_to 'Show All Available Units' %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
   
 </section>
