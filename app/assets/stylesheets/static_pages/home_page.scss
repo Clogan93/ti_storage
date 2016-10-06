@@ -1,4 +1,13 @@
 #home_page{
+  section{
+    padding: 40px 0;
+    h4.heading{
+      margin-bottom: 40px;
+      text-align: center;
+      font-size: 30px;
+    }
+  }
+
   section.find_storage{
     background: image-url("static_pages/home_page/find_storage_bg.svg");
     background-size: cover;
@@ -6,11 +15,9 @@
     position: relative; // for .reserve_now
     height: 502px;
     padding-top: 160px;
-    padding-bottom: 40px;
 
     color: white;
     text-align: center;
-
     h6{
       padding-bottom: 30px;
 
@@ -66,10 +73,7 @@
 
   section.recommended_locations{
     h4{
-      font-size: 30px;
       color: #ff0500;
-      text-align: center;
-      margin: 40px 0;
     }
     .location_preview{
       &.first{
@@ -78,6 +82,60 @@
       &.last{
         float: left;
       }
+    }
+  }
+
+  section.ti_storage_benefits{
+    border-top: solid #ff0500 3px;
+    border-bottom: solid #ff0500 3px;
+    background-color: #f6f8fa;
+
+    text-align: center;
+    h4{
+      color: #0d2770;
+    }
+    .benefit{
+      .name{
+        color: $cobalt_color;
+        font-size: 16px;
+        font-weight: bold;
+      }
+    }
+  }
+
+  section.blog_articles{
+    text-align: center;
+    h4{ 
+      color: $cobalt_color;
+    }
+    .article{
+      img{
+        max-width: 343px;
+        max-height: 260px;
+      }
+    }
+    .button.read_more{
+      margin-top: 40px;
+
+      font-size: 16px;
+      font-weight: bold;
+      color: $cobalt_color;
+
+      border: solid 1px $cobalt_color;
+      min-width: 188px;
+    }
+  }
+
+  section.ti_family_of_businesses{
+    text-align: center;
+    background-color: #ebebeb;
+    h4{ 
+      color: $cobalt_color;
+    }
+
+    img{
+      max-width: 282px;
+      max-height: 282px;
     }
   }
 }

@@ -25,7 +25,7 @@
 
   <section class="recommended_locations">
     <div class="container-fluid">
-      <h4>Recommended Locations for You</h4>
+      <h4 class="heading">Recommended Locations for You</h4>
 
       <div class="row">
         <div class="col-xs-6">
@@ -115,6 +115,66 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ti_storage_benefits">
+    <div class="container-fluid">
+      <h4 class="heading">Treasure Island Storage Benefits</h4>
+      <div class="row">
+        <div class="col-xs-2 offset-xs-1 benefit">
+          <%= image_tag 'http://placehold.it/103x103' %>
+          <div class="name">Climate Control</div>
+        </div>
+
+        <div class="col-xs-2 benefit">
+          <%= image_tag 'http://placehold.it/103x103' %>
+          <div class="name">Free Moving  Services</div>
+        </div>
+
+        <div class="col-xs-2 benefit">
+          <%= image_tag 'http://placehold.it/103x103' %>
+          <div class="name">Express Check-in</div>
+        </div>
+
+        <div class="col-xs-2 benefit">
+          <%= image_tag 'http://placehold.it/103x103' %>
+          <div class="name">Variety of unit sizes</div>
+        </div>
+
+        <div class="col-xs-2 benefit">
+          <%= image_tag 'http://placehold.it/103x103' %>
+          <div class="name">Promotions &  Specials</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="blog_articles">
+    <div class="container-fluid">
+      <div class="row">
+        <% 3.times do %>
+          <div class="col-xs-4 article">
+            <h4 class="heading">This is an Article Or Post</h4>
+            <%= image_tag 'http://placehold.it/343x260' %>
+          </div>
+        <% end %>
+      </div>
+
+      <%= link_to 'Read More', '', class: 'button read_more' %>
+    </div>
+  </section>
+
+  <section class="ti_family_of_businesses">
+    <div class="container-fluid">
+      <h4 class="heading">Treasure Island TI Family of Businesses</h4>
+      <div class="row">
+        <% 3.times do %>
+          <div class="col-xs-4">
+            <%= image_tag 'http://placehold.it/282x282' %>
+          </div>
+        <% end %>
       </div>
     </div>
   </section>
