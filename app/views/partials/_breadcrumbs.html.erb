@@ -1,0 +1,13 @@
+<nav id="breadcrumbs">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12">
+        <%= link_to 'Home' %>/
+        <% links[0..-2].each do |link| %>
+          <%= link %>/
+        <% end %>
+        <%= links[-1] %>
+      </div>
+    </div>
+  </div>
+</nav>

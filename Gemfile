@@ -6,7 +6,9 @@ gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
 
 gem 'sass-rails', '~> 5.0'
+gem 'rails-assets-tether' # bootstrap Tooltips and popovers depend on tether for positioning
 gem 'bootstrap', '~> 4.0.0.alpha4'
+gem 'jquery-rails'
 
 gem 'uglifier', '>= 1.3.0'
 

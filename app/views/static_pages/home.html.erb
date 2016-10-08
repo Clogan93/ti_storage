@@ -8,10 +8,10 @@
         <form class="form-inline">
           <div class="row">
             <div class="col-xs-8">
-              <input type="text" name="" placeholder="City, Zip Code" class="form-control">
+              <input type="text" placeholder="City, Zip Code" class="form-control find_storage_input">
             </div>
             <div class="col-xs-4">
-              <a class="button search">Search</a>
+              <a class="button blue search">Search</a>
             </div>
           </div>
         </form>
@@ -53,7 +53,7 @@
                   <b class="telephone">718-509-6524</b>
                 </div>
 
-                <div class="rating">
+                <div class="location_rating">
                   <span class="number">4.9</span>
                   <span class="stars">
                     <!-- temporary, since I don't yet know how that will be implemented -->
@@ -97,10 +97,9 @@
                   <b class="telephone">718-509-6524</b>
                 </div>
 
-                <div class="rating">
+                <div class="location_rating">
                   <span class="number">4.9</span>
                   <span class="stars">
-                    <!-- temporary, since I don't yet know how that will be implemented -->
                     <% 5.times do %>
                       <%= image_tag 'common_elements/star.svg' %>
                     <% end %>

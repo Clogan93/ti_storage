@@ -18,6 +18,8 @@
 
     color: white;
     text-align: center;
+
+    border-bottom: solid #ff0500 3px;
     h6{
       padding-bottom: 30px;
 
@@ -42,16 +44,8 @@
         padding-top: 10px; padding-bottom: 10px;
       }
       form{
-        input{
-          border-radius: 4px;
-          height: 45px; width: 100%;
-          font-size: 22px;
-        }
-
         .search.button{
           font-size: 20px;
-          background: linear-gradient(to bottom, #1f6aff 48%, #174ce1 52%);
-
           padding-right: 33px; padding-left: 33px; 
         }
       }
@@ -72,6 +66,7 @@
   }
 
   section.recommended_locations{
+    border-bottom: solid #ff0500 3px;
     h4{
       color: #ff0500;
     }
@@ -86,7 +81,6 @@
   }
 
   section.ti_storage_benefits{
-    border-top: solid #ff0500 3px;
     border-bottom: solid #ff0500 3px;
     background-color: #f6f8fa;
 

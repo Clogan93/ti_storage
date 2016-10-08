@@ -1,0 +1,116 @@
+<%= render partial: 'partials/breadcrumbs', locals: { links: [link_to('Locations'), 'Ozone Park, NY Self Storage - 123 Address Street'] } %>
+
+<section id="locations_show_page">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1 class="standard_page_heading">Reserve Your Space Today!</h1>
+      </div>
+    </div>
+
+    <section class="search_field_and_sale_ad">
+      <div class="row">
+        <div class="col-xs-6 search_field">
+          <div class="showing_results_near">
+            Showing Results Near:
+          </div>
+
+          <form class="form-inline">
+            <input type="text" name="" placeholder="City, Zip Code" class="form-control find_storage_input">
+            <div class="button search">Search</div>
+          </form>
+        </div>
+
+        <div class="col-xs-6 sale_ad">
+          <%= image_tag 'locations/show/labor-sale.svg' %>
+        </div>
+      </div>
+    </section>
+
+    <section class="location_view">
+      <div class="row">
+        <div class="col-xs-4 main_photo">
+          <%= image_tag 'http://placehold.it/342x254' %>
+        </div>
+
+        <div class="col-xs-4 info">
+          <div class="row">
+            <div class="col-xs-6">
+              <div class="address">
+                <h6>Location</h6>
+                <p>78-02 Liberty Avenue Ozone Park, NY 11417</p>
+              </div>
+
+              <div class="location_rating">
+                <span class="number">4.9</span>
+                <span class="stars">
+                  <% 5.times do %>
+                    <%= image_tag 'common_elements/star.svg' %>
+                  <% end %>
+                </span>
+                <span class="amount_of_reviews">(6)</span>
+
+                <br>
+                <%= link_to 'Read Reviews', '', class: 'read_reviews' %>
+              </div>
+
+              <div class="get_directions">GET DIRECTIONS</div>
+            </div>
+
+            <div class="col-xs-6">
+              <div class="office_hours">
+                <h6>Office hours</h6>
+                <p>Mon-Sun 8:00am-7:00pm</p>
+              </div>
+
+              <div class="access_hours">
+                <h6>Access hours</h6>
+                <p>Mon-Sun 8:00am-7:00pm</p>
+              </div>
+
+              <div class="phone_number">
+                <h6>Phone number</h6>
+                <p>718-509-6524</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="row additional_photos">
+            <div class="col-xs-12">
+              <% 3.times do %>
+                <%= image_tag 'http://placehold.it/82x52' %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-4 map">
+          <%= image_tag 'http://placehold.it/263x256' %>
+        </div>
+      </div>
+    </section>
+
+    <section class="extensive_information">
+      <ul class="tab_navigation">
+        <li class="nav-item"><a href="#storage_units" data-toggle="tab" class="active">Storage Units</a></li>
+        <li class="nav-item"><a href="#features"      data-toggle="tab">Features</a></li>
+        <li class="nav-item"><a href="#directions"    data-toggle="tab">Directions</a></li>
+        <li class="nav-item"><a href="#videos"        data-toggle="tab">Videos</a></li>
+        <li class="nav-item"><a href="#reviews"       data-toggle="tab">Reviews</a></li>
+        <li class="nav-item"><a href="#holders"       data-toggle="tab">Holders</a></li>
+      </ul>
+
+      <div class="tab-content">
+        <div class="tab-pane active" id="storage_units">
+          <%= render partial: 'locations/in_show/storage_units' %>
+        </div>
+        <div class="tab-pane" id="features">...b</div>
+        <div class="tab-pane" id="directions">c</div>
+        <div class="tab-pane" id="videos">...</div>
+        <div class="tab-pane" id="reviews">...</div>
+        <div class="tab-pane" id="holders">...</div>
+      </div>
+    </section>
+
+  </div>
+</section>
