@@ -1,0 +1,11 @@
+footer{
+  @media (max-width: $lg){
+    .about{
+      padding-top: 40px;
+    }
+    .navigation{
+      text-align: left;
+      padding-top: 40px;
+    }
+  }
+}

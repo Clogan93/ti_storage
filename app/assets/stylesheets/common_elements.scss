@@ -1,6 +1,6 @@
 .button{
   display: inline-block;
-  height: 45px;
+  min-height: 45px;
   border-radius: 5px;
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
   border: solid 1px white;
@@ -88,7 +88,12 @@ $bright-orange_color: #ff6a00;
 }
 
 .find_storage_input{
-  border-radius: 4px;
-  height: 45px; width: 100%;
-  font-size: 22px;
+  border-radius: 2px;
+  background-color: white;
+  border: solid 1px #d1d1d1;
+  height: 48px;
+  padding: 15px;
+
+  font-family: MyriadPro;
+  font-size: 16px;
 }
