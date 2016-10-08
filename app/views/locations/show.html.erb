@@ -34,68 +34,7 @@
       </div>
     </section>
 
-    <section class="location_view">
-      <div class="row">
-        <div class="col-xs-4 main_photo">
-          <%= image_tag 'http://placehold.it/342x254' %>
-        </div>
-
-        <div class="col-xs-4 info">
-          <div class="row">
-            <div class="col-xs-6">
-              <div class="address">
-                <h6>Location</h6>
-                <p>78-02 Liberty Avenue Ozone Park, NY 11417</p>
-              </div>
-
-              <div class="location_rating">
-                <span class="number">4.9</span>
-                <span class="stars">
-                  <% 5.times do %>
-                    <%= image_tag 'common_elements/star.svg' %>
-                  <% end %>
-                </span>
-                <span class="amount_of_reviews">(6)</span>
-
-                <br>
-                <%= link_to 'Read Reviews', '', class: 'read_reviews' %>
-              </div>
-
-              <div class="get_directions">GET DIRECTIONS</div>
-            </div>
-
-            <div class="col-xs-6">
-              <div class="office_hours">
-                <h6>Office hours</h6>
-                <p>Mon-Sun 8:00am-7:00pm</p>
-              </div>
-
-              <div class="access_hours">
-                <h6>Access hours</h6>
-                <p>Mon-Sun 8:00am-7:00pm</p>
-              </div>
-
-              <div class="phone_number">
-                <h6>Phone number</h6>
-                <p>718-509-6524</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="row additional_photos">
-            <div class="col-xs-12">
-              <% 3.times do %>
-                <%= image_tag 'http://placehold.it/82x52' %>
-              <% end %>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-xs-4 map">
-          <%= image_tag 'http://placehold.it/263x256' %>
-        </div>
-      </div>
-    </section>
+    <%= render partial: 'locations/in_show/location_view' %>
 
     <section class="extensive_information">
       <ul class="tab_navigation">
