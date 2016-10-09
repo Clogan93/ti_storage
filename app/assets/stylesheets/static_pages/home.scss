@@ -31,23 +31,23 @@
     }
 
     .find_storage_rectangle{
-      width: 601px; height: 124px;
+      max-width: 601px; height: 124px;
       margin: 30px auto;
       padding: 0 50px;
 
       border-radius: 6px;
       background-image: linear-gradient(to bottom, #1e4fac, #0d2773);
       border: solid 4px #4a90e2;
-      h4{
+      h4{ // Find Storage in Your Area
         font-size: 28px;
         font-weight: bold;
         padding-top: 10px; padding-bottom: 10px;
       }
-      form{
-        .search.button{
-          font-size: 20px;
-          padding-right: 33px; padding-left: 33px; 
-        }
+      .find_storage_input{ height: 45px; }
+      .search.button{
+        font-size: 20px;
+        padding-right: 33px; padding-left: 33px; 
+        width: 100%;
       }
     }
 
@@ -69,14 +69,6 @@
     border-bottom: solid #ff0500 3px;
     h4{
       color: #ff0500;
-    }
-    .location_preview{
-      &.first{
-        float: right;
-      }
-      &.last{
-        float: left;
-      }
     }
   }
 
@@ -106,8 +98,8 @@
     }
     .article{
       img{
-        max-width: 343px;
-        max-height: 260px;
+        max-width: 343px; max-height: 260px;
+        width: 100%;
       }
     }
     .button.read_more{
@@ -132,6 +124,7 @@
     img{
       max-width: 282px;
       max-height: 282px;
+      width: 100%;
     }
   }
 }

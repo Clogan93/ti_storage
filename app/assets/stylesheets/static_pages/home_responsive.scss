@@ -1,0 +1,35 @@
+#home_page{
+  @media (max-width: $xl){
+    section.find_storage{
+      h6{
+        font-size: 40px;
+      }
+    }
+    section.recommended_locations{
+      .location_preview{
+        margin: 0 auto;
+        &.pull-lg-left{ margin-bottom: 30px; }
+      }
+    }
+    section.blog_articles{
+      .article{ margin-bottom: 50px; }
+    }
+    section.ti_family_of_businesses{
+      .business{
+        margin-bottom: 30px;
+      }
+    }
+  }
+  @media (max-width: $lg){
+    section.ti_storage_benefits{
+      .benefit.col-xs-4{
+        margin-bottom: 30px;
+      }
+      // centering 2 lower benefits:
+      .row{
+        div:nth-child(4){ padding-left: 100px; }
+        div:nth-child(5){ padding-right: 100px; }
+      }
+    }
+  }
+}
