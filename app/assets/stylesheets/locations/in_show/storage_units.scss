@@ -2,6 +2,8 @@
   .select_size_and_sizing_guide{
     background: #e2e6ec;
     padding: 20px 40px;
+    border: solid 1px #cdcdcd;
+    border-bottom: none;
 
     .blue_heading{
       font-size: 22px;
@@ -12,7 +14,7 @@
 
     .select_size{
       .size_option{
-        width: 150px; height: 91px;
+        max-width: 150px; min-height: 91px;
         padding: 10px;
 
         background: linear-gradient(to bottom, white, #dadada);

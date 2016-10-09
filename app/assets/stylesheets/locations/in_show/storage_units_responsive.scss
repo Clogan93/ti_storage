@@ -1,0 +1,45 @@
+#storage_units{
+
+  .unit_options .table_row{
+    h5.mobile_heading{
+      font-family: MyriadPro;
+      font-size: 19px;
+      font-weight: bold;
+      color: #6d6d6d;
+      text-transform: uppercase;
+
+      margin-top: 20px;
+    }
+    .size_help.mobile{
+      display: inline-block;
+      margin: 0 auto;
+    }
+  }
+
+  @media (max-width: $lg){
+    .select_size_and_sizing_guide .sizing_guide{
+      padding-top: 0 !important;
+      text-align: center !important;
+    }
+    .unit_options .table_row{
+      display: block;
+      margin-bottom: 10px;
+      .continue{
+        margin-top: 30px;
+      }
+    }
+  }
+
+  @media (max-width: $xl){
+    .select_size_and_sizing_guide{
+      border-top: none;
+      .sizing_guide{
+        padding-top: 40px;
+        text-align: left;
+      }
+    }
+    .unit_options{
+      border-top: none;
+    }
+  }
+}

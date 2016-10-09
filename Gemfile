@@ -10,11 +10,15 @@ gem 'rails-assets-tether' # bootstrap Tooltips and popovers depend on tether for
 gem 'bootstrap', '~> 4.0.0.alpha4'
 gem 'jquery-rails'
 
+gem 'sprockets', '>= 3.0.0'
+gem 'sprockets-es6'
+
 gem 'uglifier', '>= 1.3.0'
 
 gem 'turbolinks', '~> 5'
 
 gem 'jbuilder', '~> 2.5'
+
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'

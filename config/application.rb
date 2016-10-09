@@ -7,6 +7,12 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+# for ES6
+require 'action_view/railtie'
+require 'sprockets/railtie'
+require 'sprockets/es6'
+
+
 module TiStorage
   class Application < Rails::Application
   end
