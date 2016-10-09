@@ -1,0 +1,50 @@
+<% nav_links = [link_to('Locations'), link_to('Storage Solutions'), link_to('Why Store With Us')] %>
+
+<header>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-2 logo">
+        <%= image_tag 'common/header/logo-header.svg' %>
+      </div>
+      <div class="col-md-10 hidden-md-down">
+        <nav>
+          <div class="links">
+            <% nav_links.each do |nav_link| %>
+              <%= nav_link %>
+            <% end %>
+          </div>
+
+          <div class="live_chat">
+            <%= image_tag 'common/live-chat-icn_red.svg' %>
+            <span>Live Chat</span>
+          </div>
+
+          <div class="my_account button">
+            My Account
+          </div>
+        </nav>
+      </div>
+
+      <nav class="col-xs-10 hidden-xl-up mobile_burger">
+
+        <div class="navbar">
+
+          <div class="navbar-toggler" data-toggle="collapse" data-target="#mobile_collapsing_menu">
+            <%= image_tag 'common/header/mobile_hamburger-menu.svg' %>
+          </div>
+
+          <div class="collapse" id="mobile_collapsing_menu">
+            <% nav_links.each do |nav_link| %>
+              <div><%= nav_link %></div>
+            <% end %>
+          </div>
+        </div>
+
+      </nav>
+    </div>
+  </div>
+
+  
+
+
+</header>
