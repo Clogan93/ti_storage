@@ -1,4 +1,4 @@
-<section id="home_page">
+<main id="home_page">
   
   <section class="find_storage">
     <div class="container-fluid">
@@ -9,10 +9,62 @@
         <div class="row">
           <div class="col-xs-8">
             <input type="text" placeholder="City, Zip Code" class="form-control find_storage_input">
+
+            <div class="dropdown open">
+              <div class="dropdown-menu">
+                <div class="guessed_and_view_all">
+                  <div class="pull-xs-left guessed">New York</div>
+                  <a class="pull-xs-right view_all">View All Locations</a>
+                  <div class="clearfix"></div>
+                </div>
+                
+                <div class="locations">
+                  <% 1.times do %>
+
+                    <a class="location">
+                      <div class="row">
+                        <div class="col-xs-8 name">
+                          <%= image_tag 'common_elements/location_pin_grey.svg' %>
+                          <span>Bronx, NY - 1297</span>
+                        </div>
+                        <div class="col-xs-4 text-xs-right comment red">
+                          XL Unit - 50% off!
+                        </div>
+                      </div>
+                    </a>
+       
+                  <% end %>
+
+                  <% 2.times do %>
+
+                    <a class="location">
+                      <div class="row">
+                        <div class="col-xs-8 name">
+                          <%= image_tag 'common_elements/location_pin_grey.svg' %>
+                          <span>Bronx, NY - 1297 Cromwell Ave</span>
+                        </div>
+                        <div class="col-xs-4 text-xs-right comment grey">
+                          64 Units
+                        </div>
+                      </div>
+                    </a>
+
+                  <% end %>
+                </div>
+
+                <div class="reserve_today">
+                  Reserve storage today and get your first month free!
+                </div>
+                
+              </div>
+            </div>
+
           </div>
           <div class="col-xs-4">
             <a class="button blue search">Search</a>
           </div>
+
+
         </div>
 
       </div>
@@ -178,5 +230,5 @@
     </div>
   </section>
   
-</section>
+</main>
 

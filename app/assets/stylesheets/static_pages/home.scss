@@ -46,8 +46,55 @@
       .find_storage_input{ height: 45px; }
       .search.button{
         font-size: 20px;
-        padding-right: 33px; padding-left: 33px; 
         width: 100%;
+      }
+      .dropdown{
+        .dropdown-menu{
+          width: 127%;
+          font-family: ProximaNova;
+          font-size: 17px;
+          color: #212a34;
+          .guessed_and_view_all{
+            padding: 10px;
+            border-bottom: solid 1px #d9d9d9;
+            a.view_all{
+              color: #656565;
+            }
+          }
+          .locations{
+            border-bottom: solid 1px #d9d9d9;
+            a.location{
+              padding: 10px;
+              display: block;
+              &:hover{ 
+                background: rgba(213, 224, 255, 0.95);
+                cursor: pointer;
+              }
+              .name{
+                padding-right: 0;
+                img{ 
+                  width: 15px;
+                  vertical-align: top;
+                  padding-top: 5px;
+                }
+                span{
+                  display: inline-block;
+                  padding-left: 5px;
+                  width: calc(100% - 20px);
+                }
+              }
+              .comment{
+                &.grey{ color: #8f8f8f; }
+                &.red{ color: #ee1715; }
+              }
+            }
+          }
+          .reserve_today{
+            padding: 10px;
+            color: #8f8f8f;
+            text-align: center;
+          }
+        }
       }
     }
 
@@ -115,6 +162,7 @@
   }
 
   section.ti_family_of_businesses{
+    margin-bottom: -30px; // to compensate for footer's default margin
     text-align: center;
     background-color: #ebebeb;
     h4{ 
