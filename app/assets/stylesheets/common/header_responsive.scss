@@ -1,6 +1,42 @@
 header{
-  .mobile_burger{
-    text-align: right;
-    cursor: pointer;
+  #mobile_collapsing_menu{
+    .mobile_burger{
+      text-align: right;
+      cursor: pointer;
+    }
+
+    .modal-dialog{ 
+      width: 300px;
+      float: right;
+    }
+    .modal-content{
+      background: #1c3a9a;
+      padding: 15px;
+      .close{}
+
+
+      nav{
+        text-align: left;
+        .white{
+          a{
+            display: block;
+            border-bottom: solid 1px white;
+            padding-bottom: 10px; padding-top: 12px;
+            color: white;
+            font-size: 21px;
+            font-weight: bold;
+          }
+        }
+        .grey{
+          div, a{
+            padding-left: 17px; margin-top: 10px;
+            font-size: 19px;
+            color: #6fa8ff;
+          }
+        }
+      }
+      
+    }
+
   }
 }

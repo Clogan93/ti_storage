@@ -8,4 +8,4 @@ $(document).ready(() => {
     const currentTabTitle = $(event.currentTarget).text();
     mobileTabControlEls.buttonToDropLinks.text(currentTabTitle);
   })
-})
+});

@@ -10,6 +10,9 @@ gem 'sass-rails', '~> 5.0'
 gem 'rails-assets-tether'
 gem 'bootstrap', '~> 4.0.0.alpha4'
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
+
+gem 'inline_svg'
 
 gem 'sprockets', '>= 3.0.0'
 gem 'sprockets-es6'

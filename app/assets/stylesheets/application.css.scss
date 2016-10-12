@@ -1,4 +1,5 @@
-@import 'bootstrap';
+@import "bootstrap-flex";
+@import 'jquery-ui/menu';
 
 @import 'fonts';
 @import 'variables';
@@ -9,9 +10,8 @@
 @import 'static_pages/*';
 @import 'locations/*';
 
-
 body{
-  font-family: "San Francisco";
+  font-family: "SFUIDisplay";
 }
 
 .container-fluid{ padding: 0 90px; }
