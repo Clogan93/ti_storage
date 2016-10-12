@@ -1,4 +1,6 @@
 # frozen_string_literal: true
 Rails.application.routes.draw do
-  root to: "home#index"
+  resources :locations, only: :show
+
+  get 'static_pages/home'
 end

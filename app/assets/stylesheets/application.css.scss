@@ -1,0 +1,33 @@
+@import 'bootstrap';
+
+@import 'fonts';
+@import 'variables';
+@import 'common_elements';
+
+@import 'common/*';
+
+@import 'static_pages/*';
+@import 'locations/*';
+
+
+body{
+  font-family: "San Francisco";
+}
+
+.container-fluid{ padding: 0 90px; }
+footer, header, #breadcrumbs{
+  .container-fluid{ padding: 0 75px; }
+}
+
+@media (max-width: $lg){
+  .container-fluid {
+    padding: 0 20px;
+  }
+  footer, header, #breadcrumbs{
+    .container-fluid{ padding: 0 20px; }
+  }
+}
+
+a{
+  cursor: pointer;
+}

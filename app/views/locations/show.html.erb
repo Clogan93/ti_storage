@@ -1,0 +1,131 @@
+<%= render partial: 'common/breadcrumbs', locals: { links: [link_to('Locations'), 'Ozone Park, NY Self Storage - 123 Address Street'] } %>
+
+<main id="locations_show_page">
+  <div class="container-fluid">
+
+    <div class="mobile_ad hidden-lg-up">
+      <%= image_tag 'locations/show/labor-sale.svg' %>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12">
+        <h1 class="standard_page_heading">Reserve Your Space Today!</h1>
+      </div>
+    </div>
+
+    <section class="search_field_and_ad">
+      <div class="row">
+        <div class="col-md-6 col-xs-12 search_field">
+          <div class="showing_results_near">Showing Results Near:</div>
+
+          <div class="row">
+            <div class="col-xs-8">
+              <input type="text" placeholder="City, Zip Code" class="find_storage_input">
+            </div>
+            <div class="col-xs-4">
+              <div class="button search">Search</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 hidden-md-down ad">
+          <%= image_tag 'locations/show/labor-sale.svg' %>
+        </div>
+      </div>
+    </section>
+
+    <%= render partial: 'locations/in_show/location_view' %>
+
+    <section class="extensive_information">
+
+      <% tab_ids = [:storage_units, :features, :directions, :videos, :reviews, :holders] %>
+
+      <ul class="hidden-md-down tab_navigation">
+        <% tab_ids.each do |tab_id| %>
+          <li class="nav-item">
+            <a href="#<%= tab_id %>" data-toggle="tab">
+              <%= tab_id.to_s.titleize %>
+            </a>
+          </li>
+        <% end %>
+      </ul>
+
+      <div class="hidden-lg-up mobile_tab_navigation">
+
+        <div class="row">
+          <div class="col-xs-6 tab_chooser">
+            <!-- .dropdown positions dropdown content lower than button -->
+            <div class="dropdown">
+              <div class="lable">Select...</div>
+              <div class="dropdown-toggle" data-toggle="dropdown">
+                <%= tab_ids[0].to_s.titleize %>
+              </div>
+
+              <div class="dropdown-menu">
+                <!-- ul > li > a structure is necessary for controlling tabs -->
+                <ul>
+                  <% tab_ids.each do |tab_id| %>
+                    <li class="nav-item">
+                      <a href="#<%= tab_id %>"
+                         data-toggle="tab"
+                         class="dropdown-item">
+                        <%= tab_id.to_s.titleize %>
+                      </a>
+                    </li>
+                  <% end %>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-6 size_chooser">
+            <div class="dropdown">
+              <div class="lable">Select Size</div>
+              <div class="dropdown-toggle" data-toggle="dropdown">
+                All Units
+              </div>
+
+              <div class="dropdown-menu">
+                <% ["All Units", "Small", "Middle", "Big"].each do |tab_title| %>
+                    <a class="dropdown-item">
+                      <%= tab_title.titleize %>
+                    </a>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="sizing_guide">
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+
+      <div class="tab-content">
+        <div class="tab-pane active" id="storage_units">
+          <%= render partial: 'locations/in_show/storage_units' %>
+        </div>
+        <div class="tab-pane" id="features">...b</div>
+        <div class="tab-pane" id="directions">c</div>
+        <div class="tab-pane" id="videos">...</div>
+        <div class="tab-pane" id="reviews">...</div>
+        <div class="tab-pane" id="holders">...</div>
+      </div>
+    </section>
+
+
+  </div>
+</main>

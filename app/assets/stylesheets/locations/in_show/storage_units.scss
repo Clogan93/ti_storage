@@ -1,0 +1,122 @@
+#storage_units{
+  .select_size_and_sizing_guide{
+    background: #e2e6ec;
+    padding: 20px 40px;
+    border: solid 1px #cdcdcd;
+    border-bottom: none;
+
+    .blue_heading{
+      font-size: 22px;
+      font-weight: bold;
+      color: $azul_color;
+      text-transform: uppercase;
+    }
+
+    .select_size{
+      .size_option{
+        max-width: 150px; min-height: 91px;
+        padding: 10px;
+
+        background: linear-gradient(to bottom, white, #dadada);
+        border: solid 1px #c0c0c0;
+        &.active{
+          background: $azul_color;
+          border: solid 1px #979797;
+          color: white;
+        }
+        .size{
+          text-transform: uppercase;
+          font-size: 18px;
+          font-weight: bold;
+        }
+        .description{
+          font-family: MyriadPro;
+          font-size: 14px;
+        }
+      }
+    }
+
+    .sizing_guide{
+      text-align: right;
+      .images{
+        .ruler{
+          padding-right: 10px;
+        }
+      }
+    }
+  }
+
+  .unit_options{
+    text-align: center;
+
+    padding: 0 15px; // to compensate for margin -15px on rows to create a border around them
+    border: solid 1px #cdcdcd;
+    background-color: #e2e6ec;
+    .table_head{
+      background-image: linear-gradient(to bottom, #fafbfc, #f4f6f8);
+      font-size: 16px;
+      font-weight: bold;
+      color: #6d6d6d;
+      text-transform: uppercase;
+      padding: 5px 0;
+    }
+    .table_row{
+      padding: 12px 0;
+      margin-bottom: 5px;
+
+      background: white;
+      border-top: solid 1px #cdcdcd;
+      border-bottom: solid 1px #cdcdcd;
+
+      display: flex;
+      align-items: center;
+      .size_help{
+        font-size: 15px;
+        font-weight: bold;
+        color: #164ce0;
+        display:table-cell; vertical-align:middle;
+        span.underline{
+          display: inline-block;
+          border-bottom: solid 2px #164ce1;
+        }
+      }
+      .size{
+        font-size: 20px;
+        font-weight: bold;
+        color: black;
+      }
+      .features{
+        font-size: 15px;
+        ul{
+          list-style-type: none;
+          text-align: left;
+          img.tick_icon{ padding-right: 7px; }
+        }
+      }
+      .promotion{
+        img{
+          max-width: 90px; max-height: 90px;
+          width: 100%;
+        }
+      }
+      .monthly_price{
+        .in_dollars{
+          font-size: 22px;
+          font-weight: bold;
+          color: $cobalt_color;
+        }
+        .online_rate_footnote, .in_dollars_in_store{
+          font-size: 13px;
+        }
+        .in_dollars_in_store{
+          padding-top: 14px;
+        }
+      }
+      .continue{
+        .button{
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}

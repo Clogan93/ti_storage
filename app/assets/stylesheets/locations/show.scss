@@ -1,0 +1,58 @@
+#locations_show_page{
+  color: #303030;
+  section.search_field_and_ad{
+    margin-bottom: 20px;
+    .search_field{
+      font-size: 18px;
+      .showing_results_near{
+        color: #999999;
+        padding-bottom: 10px;
+      }
+      input.find_storage_input{
+        width: 100%;
+      }
+      .button.search{
+        background-image: linear-gradient(to bottom, $orange-red_color, #d70000);
+        padding-top: 10px;
+        height: 49px;
+      }
+    }
+
+    .ad{
+      img{
+        max-width: 300px;
+        max-height: 90px;
+        width: 100%;
+        float: right;
+      }
+    }
+  }
+
+  @import 'in_show/location_view';
+  @import 'in_show/location_view_responsive';
+
+  section.extensive_information{
+    @import 'in_show/storage_units';
+    @import 'in_show/storage_units_responsive';
+    margin-top: 30px;
+    .tab_navigation{
+      padding-left: 0;
+      li{
+        list-style-type: none;
+        display: inline-block;
+
+        background: url(image-path('locations/show/tab_passive.svg')) no-repeat;
+        background-position: 0px 0px;
+        width: 180px;
+        text-align: center;
+        a{
+          &.active{ color: red }
+          font-size: 15px;
+          font-weight: bold;
+          color: #393939;
+        }
+      }
+    }
+  }
+}
+

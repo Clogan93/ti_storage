@@ -1,0 +1,99 @@
+.button{
+  display: inline-block;
+  min-height: 45px;
+  border-radius: 5px;
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
+  border: solid 1px white;
+
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  padding: 0 20px;
+  padding-top: 8px;
+
+  cursor: pointer;
+}
+.button.blue{
+  background: linear-gradient(to bottom, #1f6aff 48%, $azul_color 52%);
+}
+
+$bright-orange_color: #ff6a00;
+.location_rating{
+  font-weight: bold;
+  .number{
+    font-size: 16px;
+    color: #0076ff;
+  }
+  .amount_of_reviews{
+    font-size: 14px;
+    color: $bright-orange_color;
+  }
+}
+.location_preview{
+  width: 402px;
+  height: 203px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16);
+  border: solid 1px #99b0dd;
+  padding: 15px;
+  // TODO install this font
+  font-family: MyriadPro;
+
+  background: url(image-path('common_elements/arrow.svg')) no-repeat;
+  background-position: 370px 90px;
+
+  .city{
+    font-size: 16px;
+    font-weight: bold;
+    color: $cobalt_color;
+  }
+
+  .info{
+    .photo{
+      max-width: 182px;
+      max-height: 136px;
+    }
+    .details{
+      padding-left: 30px;
+      .miles_away{
+        .how_many{
+          font-size: 16px;
+          font-weight: bold;
+          padding-left: 5px;
+        }
+        padding-bottom: 5px;
+      }
+      .address{
+        font-size: 14px;
+        padding-bottom: 5px;
+      }
+      .show_all_units{
+        a{
+          font-size: 14px;
+          color: $bright-orange_color;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+.standard_page_heading{
+  font-family: MyriadPro;
+  font-size: 28px;
+  font-weight: normal;
+  color: #163490;
+
+  padding: 35px 0 15px 0;
+}
+
+.find_storage_input{
+  border-radius: 2px;
+  background-color: white;
+  border: solid 1px #d1d1d1;
+  height: 48px;
+  padding: 15px;
+
+  font-family: MyriadPro;
+  font-size: 16px;
+}

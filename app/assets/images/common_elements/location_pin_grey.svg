@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="22px" viewBox="0 0 16 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>16B72302-272D-4F98-BAD2-37BAB198147F</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="Home" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="home_active_dropdown" transform="translate(-402.000000, -555.000000)" fill="#C1C1C1">
+            <g id="Active-Drop-down" transform="translate(382.000000, 442.000000)">
+                <g id="DROPDOWN-CENTER" transform="translate(0.000000, 48.000000)">
+                    <path d="M27.9998254,76.9975736 C25.7921753,76.9975736 24.0023566,75.2078946 24.0023566,73.0001047 C24.0023566,70.7923149 25.7921753,69.0024962 27.9998254,69.0024962 C30.2077549,69.0024962 31.9975736,70.7923149 31.9975736,73.0001047 C31.9975736,75.2078946 30.2077549,76.9975736 27.9998254,76.9975736 M28.4115124,65.0104737 C28.2754239,65.0035611 28.1380785,65 27.9998254,65 C27.8619215,65 27.724646,65.0035611 27.5882083,65.0104737 C23.3612952,65.2248358 20,68.7197757 20,73.0001047 C20,78.0499727 27.9998254,86.3762989 27.9998254,86.3762989 C27.9998254,86.3762989 35.9999302,78.0499727 35.9999302,73.0001047 C35.9999302,68.7197757 32.6385651,65.2248358 28.4115124,65.0104737" id="icon-location-pin"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

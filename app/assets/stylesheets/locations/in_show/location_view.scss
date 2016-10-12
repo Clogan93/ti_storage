@@ -1,0 +1,51 @@
+section.location_view{
+  border-radius: 7px;
+  background-color: #f1f3f6;
+  border: solid 1px #cdcdcd;
+
+  padding: 20px;
+
+  .main_photo{
+    text-align: center;
+    img{
+      max-width: 342px; max-height: 254px;
+      width: 100%;
+    }
+  }
+
+  .info{
+    h6{
+      text-transform: uppercase;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    p{
+      font-family: MyriadPro;
+      font-size: 16px;
+    }
+    a.read_reviews{
+      font-size: 16px;
+      color: $bright-orange_color;
+    }
+
+    .get_directions{
+      font-size: 18px;
+      color: $bright-orange_color;
+      margin-top: 20px;
+    }
+
+    .additional_photos{
+      img{
+        padding-right: 4px;
+      }
+    }
+  }
+
+  .map{
+    text-align: center;
+    img{
+      max-width: 263px; max-height: 256px;
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,57 @@
+#locations_show_page{
+  .mobile_ad{
+    text-align: center;
+    padding: 30px 0;
+  }
+  .mobile_tab_navigation{
+    background-color: #e2e6ec;
+    padding: 15px;
+    border: solid 1px #cdcdcd;
+    border-bottom: none;
+    // common for .tab_chooser and .size_chooser
+    .dropdown-toggle{
+      background-color: #1f6aff;
+
+      font-family: SFUIText;
+      font-size: 14px;
+      font-weight: bold;
+      color: white;
+      text-align: center;
+      padding-top: 11px;
+
+      height: 44px;
+
+      // getting rid of default bootstrap's arrow:
+      &:after{ content: none; }
+      // adding our arrow:
+      background-image: url(image-path('locations/show/mobile-down-arrow.svg'));
+      background-repeat: no-repeat;
+      background-position: calc(100% - 10px) center;
+      // so that text doesn't go over an arrow
+      padding-right: 30px;
+    }
+    .dropdown-menu{
+      width: 100%;
+      text-align: center;
+    }
+    .lable{
+      font-size: 20px;
+      letter-spacing: 0.4px;
+      color: #163490;
+    }
+
+    .tab_chooser{
+      .dropdown-menu{
+        ul{
+          list-style-type: none;
+          padding-left: 0;
+        }
+      }
+    }
+  }
+  @media (max-width: $md){
+    .button.search{
+      width: 100%;
+    }
+  }
+}
