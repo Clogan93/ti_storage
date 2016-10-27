@@ -14,6 +14,8 @@
 /coverage/*
 !/coverage/.keep
 
+#/public/assets/**
+
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.yml
