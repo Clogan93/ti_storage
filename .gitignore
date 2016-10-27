@@ -14,7 +14,7 @@
 /coverage/*
 !/coverage/.keep
 
-#/public/assets/**
+/public/assets/**
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
