@@ -6,6 +6,7 @@ dependencies:
 test:
   pre:
     - bundle exec rubocop
+    - RAILS_ENV=production bundle exec rake assets:precompile
 
 deployment:
   staging:
