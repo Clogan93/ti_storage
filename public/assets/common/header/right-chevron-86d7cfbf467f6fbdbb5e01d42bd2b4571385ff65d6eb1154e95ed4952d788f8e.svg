@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="7px" height="12px" viewBox="0 0 7 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>569761CB-285A-4492-BAE2-3B1F7426CE4A</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="svg_grey">
+            <stop stop-color="#C1C1C1" offset="0%"></stop>
+            <stop stop-color="#C1C1C1" offset="57.3561065%"></stop>
+            <stop stop-color="#C1C1C1" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="svg_red">
+            <stop stop-color="#F5515F" offset="0%"></stop>
+            <stop stop-color="#9F031B" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Home" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="locations-drop-down" transform="translate(-271.000000, -71.000000)" fill="url(#svg_grey)">
+            <g id="dropdown_place" transform="translate(154.000000, 32.000000)">
+                <path d="M117.33151,50.6615277 C116.893884,50.2147109 116.896467,49.4876402 117.324202,49.0509216 L121.293463,44.9982932 L117.324202,40.9456648 C116.890613,40.5029685 116.890833,39.7849907 117.33151,39.3350587 C117.769135,38.8882418 118.481249,38.8908792 118.908984,39.3275978 L122.878245,43.3802262 L123.670636,44.1892597 C124.108261,44.6360766 124.111312,45.3573947 123.670636,45.8073267 L122.878245,46.6163602 L118.908984,50.6689887 C118.475394,51.111685 117.772186,51.1114597 117.33151,50.6615277 Z" id="Right-Chevron"></path>
+            </g>
+        </g>
+    </g>
+</svg>

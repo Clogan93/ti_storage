@@ -14,8 +14,8 @@ gem 'jquery-ui-rails'
 
 gem 'inline_svg'
 
-gem 'sprockets', '>= 3.0.0'
-gem 'sprockets-es6'
+gem 'sprockets'
+gem 'babel-transpiler'
 
 gem 'uglifier', '>= 1.3.0'
 
