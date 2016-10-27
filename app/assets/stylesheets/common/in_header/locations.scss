@@ -1,0 +1,103 @@
+.locations{
+  display: inline-block;
+  text-align: left;
+  #collapsible_locations_in_header{
+    font-size: 15px;
+    position: absolute;
+    z-index: 10;
+
+    ul{
+      background: white;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+    }
+
+    ul.cities, ul.places{
+      min-width: 200px; min-height: 200px;
+      padding-top: 10px;
+      &> li.ui-menu-item{
+        // !important because jquery-ui will try to override it:
+        margin: 10px 0 !important;
+        padding-left: 20px;
+        &.ui-state-focus, &.ui-state-active{
+          background-color: rgba(213, 224, 255, 0.95);
+        }
+      }
+    }
+
+    // .cities > .places > .location menu.
+    ul.cities{
+      font-weight: bold;
+      color: $cobalt_color;
+      ul.places{
+        color: #353535;
+        font-weight: normal;
+        li.ui-menu-item{
+          svg.chevron{
+            margin-left: 10px; margin-top: 5px;
+            float: right;
+          }
+          &.ui-state-focus, &.ui-state-active{
+            color: $cobalt_color;
+            svg.chevron path{ fill: url(#svg_red); }
+          }
+        }
+
+        ul.location{
+          z-index: 100;
+          li.ui-menu-item{
+            margin: 0 !important;
+            padding: 0;
+            cursor: auto;
+            .location_preview{
+              padding: 0;
+              height: initial;
+              border: none; box-shadow: none;
+              background: none;
+              $vermillion_color: #ee1715;
+              h1.city{
+                padding: 10px 20px;
+                font-family: Bebas;
+                font-size: 28px;
+                text-transform: uppercase;
+                color: white;
+                background-color: $cobalt_color;
+                border-bottom: solid 3px $vermillion_color;
+              }
+              .info{
+                padding: 15px;
+              }
+              .view_in_google_maps{
+                font-weight: bold;
+                color: $bright-orange_color;
+              }
+              .reserve_today_and_view_units{
+                border: solid 1px $vermillion_color;
+                margin: 0 15px; // to compensate for row's -15px for border
+                padding: 10px;
+                text-transform: uppercase;
+                text-align: center;
+                font-size: 18px;
+
+                .reserve_today{
+                  font-family: Bebas;
+                  .red{ color: $vermillion_color; }
+                  .blue{ color: $cobalt_color; }
+                }
+                .view_units{
+                  .button { color: white; }
+                }
+              }
+              .grey_rectangle{
+                margin: 5px 15px;
+                height: 54px;
+                background-color: #d8d8d8;
+                border: solid 1px #979797;
+              }
+            }
+          }
+        }
+      }
+    }
+
+  }
+}

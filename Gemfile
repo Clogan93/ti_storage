@@ -13,8 +13,12 @@ gem 'rails-assets-tether'
 gem 'bootstrap', '~> 4.0.0.alpha4'
 gem 'jquery-rails'
 
-gem 'sprockets', '>= 3.0.0'
-gem 'sprockets-es6'
+gem 'jquery-ui-rails'
+
+gem 'inline_svg'
+
+gem 'sprockets'
+# gem 'babel-transpiler'
 
 gem 'uglifier', '>= 1.3.0'
 

@@ -50,8 +50,9 @@ $bright-orange_color: #ff6a00;
 
   .info{
     .photo{
-      max-width: 182px;
-      max-height: 136px;
+      max-width: 182px; max-height: 136px;
+      padding-right: 0;
+      img{ width: 100%; }
     }
     .details{
       padding-left: 30px;

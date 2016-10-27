@@ -1,5 +1,3 @@
-<% nav_links = [link_to('Locations'), link_to('Storage Solutions'), link_to('Why Store With Us')] %>
-
 <header>
   <div class="container-fluid">
     <div class="row">
@@ -9,9 +7,9 @@
       <div class="col-md-10 hidden-lg-down">
         <nav>
           <div class="links">
-            <% nav_links.each do |nav_link| %>
-              <%= nav_link %>
-            <% end %>
+            <%= render(partial: 'common/in_header/locations') %>
+            <%= link_to('Storage Solutions') %>
+            <%= link_to('Why Store With Us') %>
           </div>
 
           <div class="live_chat">
@@ -27,16 +25,37 @@
 
       <nav class="col-xs-10 hidden-xl-up mobile_burger">
 
-        <div class="navbar">
+        <div data-toggle="modal" data-target="#mobile_collapsing_menu">
+          <%= image_tag 'common/header/mobile_hamburger-menu.svg' %>
+        </div>
 
-          <div class="navbar-toggler" data-toggle="collapse" data-target="#mobile_collapsing_menu">
-            <%= image_tag 'common/header/mobile_hamburger-menu.svg' %>
-          </div>
+        <div class="modal fade" id="mobile_collapsing_menu">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-body">
 
-          <div class="collapse" id="mobile_collapsing_menu">
-            <% nav_links.each do |nav_link| %>
-              <div><%= nav_link %></div>
-            <% end %>
+                <div data-dismiss="modal" class="close">
+                  <%= inline_svg 'common/header/mobile_button-close-mobile-nav.svg' %>
+                </div>
+                
+                <nav>
+                  <div class="white">
+                    <%= link_to('Locations') %>
+                    <%= link_to('Storage Solutions') %>
+                    <%= link_to('Why Store With Us') %>
+                    <%= link_to('Live Chat') %>
+                    <%= link_to('My Account') %>
+                    <%= link_to('Contact Us') %>
+                  </div>
+
+                  <div class="grey">
+                    <div>1-800-847-8672</div>
+                    <a href="" class="email_us">Email Us</a>
+                  </div>
+                </nav>
+
+              </div>
+            </div>
           </div>
         </div>
 
