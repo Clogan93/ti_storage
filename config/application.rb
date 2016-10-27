@@ -7,7 +7,7 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-# for ES6
+# for ES6 TODO: check if needed now
 require 'action_view/railtie'
 require 'sprockets/railtie'
 
