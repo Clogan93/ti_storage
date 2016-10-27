@@ -20,7 +20,6 @@ gem 'inline_svg'
 gem 'sprockets'
 # gem 'babel-transpiler'
 
-
 gem 'uglifier', '>= 1.3.0'
 
 gem 'turbolinks', '~> 5'
