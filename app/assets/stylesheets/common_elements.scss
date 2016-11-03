@@ -36,8 +36,6 @@ $bright-orange_color: #ff6a00;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16);
   border: solid 1px #99b0dd;
   padding: 15px;
-  // TODO install this font
-  font-family: MyriadPro;
 
   background: url(image-path('common_elements/arrow.svg')) no-repeat;
   background-position: 370px 90px;
@@ -80,7 +78,6 @@ $bright-orange_color: #ff6a00;
 }
 
 .standard_page_heading{
-  font-family: MyriadPro;
   font-size: 28px;
   font-weight: normal;
   color: #163490;
@@ -95,6 +92,5 @@ $bright-orange_color: #ff6a00;
   height: 48px;
   padding: 15px;
 
-  font-family: MyriadPro;
   font-size: 16px;
 }

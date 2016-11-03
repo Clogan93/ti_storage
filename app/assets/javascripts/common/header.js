@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  const collapsibleLocationsEl = $("#collapsible_locations_in_header ul.cities");
+  var collapsibleLocationsEl = $("#collapsible_locations_in_header ul.cities");
 
   collapsibleLocationsEl.menu({
     // position inner menus so that their tops are at the top of their outer menus.

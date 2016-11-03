@@ -56,7 +56,6 @@
               $vermillion_color: #ee1715;
               h1.city{
                 padding: 10px 20px;
-                font-family: Bebas;
                 font-size: 28px;
                 text-transform: uppercase;
                 color: white;
@@ -79,7 +78,6 @@
                 font-size: 18px;
 
                 .reserve_today{
-                  font-family: Bebas;
                   .red{ color: $vermillion_color; }
                   .blue{ color: $cobalt_color; }
                 }

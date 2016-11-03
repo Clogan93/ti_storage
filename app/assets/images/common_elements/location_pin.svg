@@ -12,7 +12,7 @@
                         <g id="info-block" transform="translate(219.000000, 51.000000)">
                             <g id="icon-pin">
                                 <path d="M0,7.58128079 C0,11.780144 9,23.3270178 9,23.3270178 C9,23.3270178 18,11.780144 18,7.58128079 C18,3.39699697 13.9745455,0 9,0 C4.02545455,0 0,3.39699697 0,7.58128079 L0,7.58128079 Z" id="Shape" fill="#EE1715"></path>
-                                <text id="1" font-family="ProximaNova-Bold, Proxima Nova" font-size="12" font-weight="bold" fill="#FFFFFF">
+                                <text id="1" font-family="Roboto" font-size="12" font-weight="bold" fill="#FFFFFF">
                                     <tspan x="5.84615385" y="12.6138689">1</tspan>
                                 </text>
                             </g>
