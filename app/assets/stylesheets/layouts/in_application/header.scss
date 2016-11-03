@@ -15,9 +15,7 @@ header{
     padding-top: 30px;
     .links{
       display: inline-block;
-      a{
-        padding-right: 30px;
-      }
+      a.nav_link{ padding-right: 107px; }
     }
     .live_chat, .my_account{ display: inline-block; }
     .live_chat{

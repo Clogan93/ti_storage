@@ -13,24 +13,13 @@
 
     <div class="col-lg-4 info">
       <div class="row">
-        <div class="col-xs-6">
+        <div class="col-xs-6 details location_details">
           <div class="address">
             <h6>Location</h6>
             <p>78-02 Liberty Avenue Ozone Park, NY 11417</p>
           </div>
 
-          <div class="location_rating">
-            <span class="number">4.9</span>
-            <span class="stars">
-              <% 5.times do %>
-                <%= image_tag 'common_elements/star.svg' %>
-              <% end %>
-            </span>
-            <span class="amount_of_reviews">(6)</span>
-
-            <br>
-            <%= link_to 'Read Reviews', '', class: 'read_reviews' %>
-          </div>
+          <%= render 'common/location_rating' %>
 
           <div class="get_directions">GET DIRECTIONS</div>
         </div>

@@ -17,19 +17,44 @@
   background: linear-gradient(to bottom, #1f6aff 48%, $azul_color 52%);
 }
 
-$bright-orange_color: #ff6a00;
-.location_rating{
-  font-weight: bold;
-  .number{
-    font-size: 16px;
-    color: #0076ff;
+// .location_details and .location_preview are separate,
+// because sometimes we need .location_details styling without the border and arrow and etc
+.location_details{
+  .miles_away{
+    .how_many{
+      @extend .heading_font;
+      color: black;
+      font-size: 15px;
+      font-weight: bold;
+      padding-left: 5px;
+    }
+    padding-bottom: 5px;
   }
-  .amount_of_reviews{
+  .address{
+    font-size: 14px;
+    padding-bottom: 5px;
+    line-height: 16px;
+  }
+  .location_rating{
+    font-weight: bold;
+    .number{
+      font-size: 16px;
+      color: #0076ff;
+    }
+    .amount_of_reviews{
+      font-size: 14px;
+      color: $bright-orange_color;
+    }
+  }
+  a.show_all_units, a.view_in_google_maps{
     font-size: 14px;
     color: $bright-orange_color;
+    font-weight: bold;
   }
 }
+
 .location_preview{
+  @extend .location_details;
   width: 402px;
   height: 203px;
   border-radius: 8px;
@@ -54,33 +79,15 @@ $bright-orange_color: #ff6a00;
     }
     .details{
       padding-left: 30px;
-      .miles_away{
-        .how_many{
-          font-size: 16px;
-          font-weight: bold;
-          padding-left: 5px;
-        }
-        padding-bottom: 5px;
-      }
-      .address{
-        font-size: 14px;
-        padding-bottom: 5px;
-      }
-      .show_all_units{
-        a{
-          font-size: 14px;
-          color: $bright-orange_color;
-          font-weight: bold;
-        }
-      }
     }
   }
 }
 
+
 .standard_page_heading{
   font-size: 28px;
   font-weight: normal;
-  color: #163490;
+  color: $light-navy_color;
 
   padding: 35px 0 15px 0;
 }

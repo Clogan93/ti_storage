@@ -1,0 +1,85 @@
+<%= render partial: 'common/breadcrumbs', locals: { links: ['Red Hook'] } %>
+
+<main id="search_index_page">
+  <div class="container-fluid">
+
+    <%= render partial: 'common/search_field_and_ad' %>
+
+    <div class="content_bordering">
+      <div class="row">
+        <div class="col-md-6 map_and_sizing_guide_preview">
+          <div class="fixates_on_scrolldown">
+            <section class="map">
+              <iframe
+                src="https://www.google.com/maps/embed/v1/place?key=<%= ENV['GOOGLE_MAPS_API_KEY']%>&q=Space+Needle,Seattle+WA" allowfullscreen>
+              </iframe>
+            </section>
+
+            <%= render 'common/sizing_guide_preview' %>
+          </div>
+        </div>
+        <div class="col-md-6 search_results">
+          <section class="top_choices_around_you">
+            <div class="trapezoid">
+              <div class="heading heading_font">Top Choices Around You</div>
+            </div>
+            <div class="units">
+              <% 3.times do %>
+                <%= render 'search/in_index/unit' %>
+              <% end %>
+            </div>
+          </section>
+
+          <section class="reserve_online_today_ad">
+            <%= image_tag 'common/ads/green_checkmark_in_circle.png' %>
+            <div class="red">
+              Reserve Online Today To Lock In Savings
+            </div>
+            <div class="black">
+              Up to 20% Off & First Month Free & Free Move-In Truck & Driver!
+            </div>
+          </section>
+
+          <section class="detailed_locations">
+            <% 3.times do %>
+              <div class="detailed_location_and_units">
+                <div class="row detailed_location">
+                  <div class="col-xs-4 photo">
+                    <%= image_tag 'http://placehold.it/182x136' %>
+                  </div>
+                  <div class="col-xs-8 location_details">
+                    <div class="miles_away">
+                      <%= image_tag 'common_elements/location_pin.svg' %>
+                      <span class="how_many">3 Miles Away</span>
+                    </div>
+
+                    <div class="address">
+                      183 Lorraine Street<br>
+                      Brooklyn, NY 11231<br>
+                      <b class="telephone">718-509-6524</b>
+                    </div>
+
+                    <%= render 'common/location_rating.html.erb' %>
+
+                    <a class="show_all_units">
+                      Show All Available Units
+                    </a>
+                  </div>
+                </div>
+
+                <div class="units">
+                  <% 2.times do %>
+                    <%= render 'search/in_index/unit' %>
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
+          </section>
+
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</main>

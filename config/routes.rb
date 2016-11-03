@@ -2,5 +2,7 @@
 Rails.application.routes.draw do
   resources :locations, only: :show
 
-  get 'static_pages/home'
+  get 'search', to: 'search#index'
+
+  root to: 'static_pages#home'
 end

@@ -1,5 +1,5 @@
 <div class="locations">
-  <a data-toggle="collapse" href="#collapsible_locations_in_header">
+  <a data-toggle="collapse" href="#collapsible_locations_in_header" class="nav_link">
     Locations
   </a>
 
@@ -16,12 +16,12 @@
                 <div class="location_preview">
                   <h1 class="city">Red Hook, Brooklyn</h1>
 
-
                   <div class="row info">
                     <div class="col-xs-6 photo">
                       <%= image_tag 'http://placehold.it/182x136' %>
                     </div>
                     <div class="col-xs-6 details">
+
                       <div class="miles_away">
                         <%= image_tag 'common_elements/location_pin.svg' %>
                         <span class="how_many">3 Miles Away</span>
@@ -33,20 +33,11 @@
                         <b class="telephone">718-509-6524</b>
                       </div>
 
-                      <div class="location_rating">
-                        <span class="number">4.9</span>
-                        <span class="stars">
-                          <!-- temporary, since I don't yet know how that will be implemented -->
-                          <% 5.times do %>
-                            <%= image_tag 'common_elements/star.svg' %>
-                          <% end %>
-                        </span>
-                        <span class="amount_of_reviews">(6)</span>
-                      </div>
+                      <%= render 'common/location_rating' %>
 
-                      <div class="view_in_google_maps">
+                      <a class="view_in_google_maps">
                         View in Google Maps
-                      </div>
+                      </a>
                     </div>
                   </div>
 

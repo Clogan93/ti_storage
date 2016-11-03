@@ -1,0 +1,28 @@
+section.search_field_and_ad{
+  margin-bottom: 20px;
+  .search_field{
+    font-size: 18px;
+    .showing_results_near{
+      color: #999999;
+      padding-bottom: 10px;
+    }
+    input.find_storage_input{
+      width: 100%;
+    }
+    .button.search{
+      background-image: linear-gradient(to bottom, $orange-red_color, #d70000);
+      padding-top: 10px;
+      height: 49px;
+      width: 140px;
+    }
+  }
+
+  .ad{
+    img{
+      max-width: 300px;
+      max-height: 90px;
+      width: 100%;
+      float: right;
+    }
+  }
+}

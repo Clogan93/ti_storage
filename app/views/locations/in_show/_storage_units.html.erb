@@ -26,12 +26,8 @@
       </div>
     </div>
 
-    <div class="col-xl-3 col-xs-12 sizing_guide">
-      <h3 class="blue_heading">Sizing guide</h3>
-      <div class="images">
-        <%= image_tag 'locations/in_show/storage_units/sizing_guide_ruler.svg', class: 'ruler' %>
-        <%= image_tag 'locations/in_show/storage_units/sizing_guide_video_preview.jpg', class: 'video_preview' %>
-      </div>
+    <div class="col-xl-3 col-xs-12">
+      <%= render 'common/sizing_guide_preview' %>
     </div>
   </div>
 </div>
@@ -80,7 +76,7 @@
       </div>
       <div class="col-md-2 col-xs-6 promotion">
         <h5 class="hidden-md-up mobile_heading">Promotion</h5>
-        <%= image_tag 'locations/in_show/storage_units/promotion_50_sale.svg' %>
+        <%= image_tag 'common/ads/promotion_50_sale.svg' %>
       </div>
       <div class="col-md-2 col-xs-6 monthly_price">
         <h5 class="hidden-md-up mobile_heading">Monthly Price</h5>

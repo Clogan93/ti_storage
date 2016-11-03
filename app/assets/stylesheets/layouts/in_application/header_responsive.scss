@@ -1,10 +1,10 @@
 header{
+  .burger{
+    padding-top: 41px;
+    text-align: right;
+    cursor: pointer;
+  }
   #mobile_collapsing_menu{
-    .mobile_burger{
-      text-align: right;
-      cursor: pointer;
-    }
-
     .modal-dialog{ 
       width: 300px;
       float: right;
@@ -12,8 +12,10 @@ header{
     .modal-content{
       background: #1c3a9a;
       padding: 15px;
-      .close{}
-
+      .close{
+        opacity: 0.8;
+        &:hover{ opacity: 1; }
+      }
 
       nav{
         text-align: left;
@@ -29,10 +31,11 @@ header{
         }
         .grey{
           div, a{
-            padding-left: 17px; margin-top: 10px;
+            padding-left: 17px; margin-top: 15px;
             font-size: 19px;
             color: #6fa8ff;
           }
+          .email_us{ padding-top: 10px; }
         }
       }
       

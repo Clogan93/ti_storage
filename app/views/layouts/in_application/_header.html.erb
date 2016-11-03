@@ -1,0 +1,30 @@
+<header>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-2 logo">
+        <%= link_to image_tag('common/header/logo-header.png'), root_path %>
+      </div>
+
+      <div class="col-md-10 hidden-lg-down">
+        <nav>
+          <div class="links">
+            <%= render(partial: 'layouts/in_application/in_header/locations') %>
+            <%= link_to 'Storage Solutions', '', class: 'nav_link' %>
+            <%= link_to 'Why Store With Us', '', class: 'nav_link' %>
+          </div>
+
+          <div class="live_chat">
+            <%= image_tag 'common/live-chat-icn_red.svg' %>
+            <span>Live Chat</span>
+          </div>
+
+          <div class="my_account button">
+            My Account
+          </div>
+        </nav>
+      </div>
+
+      <%= render(partial: 'layouts/in_application/header_responsive') %>
+    </div>
+  </div>
+</header>

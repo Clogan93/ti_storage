@@ -1,0 +1,14 @@
+.sizing_guide_preview{
+  text-align: right;
+  .blue_heading{
+    font-size: 22px;
+    font-weight: bold;
+    color: $azul_color;
+    text-transform: uppercase;
+  }
+  .images{
+    .ruler{
+      padding-right: 10px;
+    }
+  }
+}
