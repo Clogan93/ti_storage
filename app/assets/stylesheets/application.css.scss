@@ -1,9 +1,10 @@
-@import "bootstrap-flex";
+@import 'bootstrap-flex';
 @import 'jquery-ui/menu';
 
 @import 'fonts';
 @import 'variables';
 @import 'common_elements';
+@import 'common_elements_responsive';
 
 @import 'common/*';
 
@@ -27,6 +28,6 @@ footer, header, #breadcrumbs{
   }
 }
 
-a{
-  cursor: pointer;
-}
+a{ cursor: pointer; }
+ul{ padding-left: 0; }
+iframe { border: 0; }

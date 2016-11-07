@@ -1,31 +1,50 @@
 #locations_show_page{
   color: #303030;
 
-  @import 'in_show/location_view';
-  @import 'in_show/location_view_responsive';
+  @import 'in_show/storage_view';
+  @import 'in_show/storage_view_responsive';
 
   section.extensive_information{
     @import 'in_show/storage_units';
     @import 'in_show/storage_units_responsive';
     margin-top: 30px;
+    .sizing_guide_preview{ margin: 0 auto; }
     .tab_navigation{
       padding-left: 0;
-      li{
+      margin-bottom: 0;
+      li.nav-item{
         list-style-type: none;
         display: inline-block;
 
-        background: url(image-path('locations/show/tab_passive.svg')) no-repeat;
-        background-position: 0px 0px;
         width: 180px;
+        margin-right: 41px;
         text-align: center;
+        line-height: 33px; // for positioning of text within trapezoid
         a{
-          &.active{ color: red }
           font-size: 15px;
           font-weight: bold;
           color: #393939;
+          div.trapezoid{
+            box-sizing: content-box;
+            height: 0;
+            border-right: 20px solid transparent;
+            border-top: 0 solid;
+            border-bottom: 37px solid #f1f3f6;
+            border-left: 20px solid transparent;
+            width: 200px;
+          }
+          &.active{
+            div.trapezoid{
+              border-bottom-color: #e2e6ec;
+              border-left-width: 0;
+              width: 220px;
+            }
+          }
         }
+        
       }
     }
   }
 }
+
 

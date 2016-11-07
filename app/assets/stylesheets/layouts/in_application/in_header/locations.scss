@@ -48,11 +48,8 @@
             margin: 0 !important;
             padding: 0;
             cursor: auto;
-            .location_preview{
-              padding: 0;
-              height: initial;
-              border: none; box-shadow: none;
-              background: none;
+            .storage_details{
+              width: 411px;
               $vermillion_color: #ee1715;
               h1.city{
                 padding: 10px 20px;

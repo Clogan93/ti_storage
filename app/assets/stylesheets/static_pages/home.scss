@@ -13,7 +13,7 @@
     background-size: cover;
 
     position: relative; // for .reserve_now
-    height: 502px;
+    padding-bottom: 90px;
     padding-top: 160px;
 
     color: white;
@@ -29,9 +29,9 @@
     }
 
     .find_storage_rectangle{
-      max-width: 601px; height: 124px;
-      margin: 30px auto;
-      padding: 0 50px;
+      max-width: 601px;
+      margin: 0 auto;
+      padding: 20px 50px;
 
       border-radius: 9px;
       background-image: linear-gradient(to bottom, #1e4fac, #0d2773);
@@ -39,7 +39,7 @@
       h4{ // Find Storage in Your Area
         font-size: 28px;
         font-weight: bold;
-        padding-top: 15px; padding-bottom: 5px;
+        padding-bottom: 5px;
       }
       .find_storage_input{ height: 45px; }
       .search.button{
@@ -48,7 +48,7 @@
       }
       .dropdown{
         .dropdown-menu{
-          width: 127%;
+          width: 100%;
           font-size: 17px;
           color: #212a34;
           .guessed_and_view_all{

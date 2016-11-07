@@ -17,9 +17,9 @@
   background: linear-gradient(to bottom, #1f6aff 48%, $azul_color 52%);
 }
 
-// .location_details and .location_preview are separate,
-// because sometimes we need .location_details styling without the border and arrow and etc
-.location_details{
+// .storage_details and .storage_preview are separate,
+// because sometimes we need .storage_details styling without the border and arrow and etc
+.storage_details{
   .miles_away{
     .how_many{
       @extend .heading_font;
@@ -35,7 +35,7 @@
     padding-bottom: 5px;
     line-height: 16px;
   }
-  .location_rating{
+  .storage_rating{
     font-weight: bold;
     .number{
       font-size: 16px;
@@ -53,17 +53,16 @@
   }
 }
 
-.location_preview{
-  @extend .location_details;
-  width: 402px;
-  height: 203px;
+.storage_preview{
+  @extend .storage_details;
+  max-width: 402px;
   border-radius: 8px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16);
   border: solid 1px #99b0dd;
   padding: 15px;
 
   background: url(image-path('common_elements/arrow.svg')) no-repeat;
-  background-position: 370px 90px;
+  background-position: 361px 78px;
 
   .city{
     font-size: 16px;
@@ -73,8 +72,7 @@
 
   .info{
     .photo{
-      max-width: 182px; max-height: 136px;
-      padding-right: 0;
+      // padding-right: 0;
       img{ width: 100%; }
     }
     .details{

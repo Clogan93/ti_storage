@@ -7,18 +7,16 @@
 
     <div class="content_bordering">
       <div class="row">
-        <div class="col-md-6 map_and_sizing_guide_preview">
+        <div class="col-xl-6 map_and_sizing_guide_preview">
           <div class="fixates_on_scrolldown">
             <section class="map">
               <iframe
                 src="https://www.google.com/maps/embed/v1/place?key=<%= ENV['GOOGLE_MAPS_API_KEY']%>&q=Space+Needle,Seattle+WA" allowfullscreen>
               </iframe>
             </section>
-
-            <%= render 'common/sizing_guide_preview' %>
           </div>
         </div>
-        <div class="col-md-6 search_results">
+        <div class="col-xl-6 search_results">
           <section class="top_choices_around_you">
             <div class="trapezoid">
               <div class="heading heading_font">Top Choices Around You</div>
@@ -44,10 +42,10 @@
             <% 3.times do %>
               <div class="detailed_location_and_units">
                 <div class="row detailed_location">
-                  <div class="col-xs-4 photo">
+                  <div class="col-sm-4 col-xs-12 photo">
                     <%= image_tag 'http://placehold.it/182x136' %>
                   </div>
-                  <div class="col-xs-8 location_details">
+                  <div class="col-sm-4 col-xs-12 storage_details">
                     <div class="miles_away">
                       <%= image_tag 'common_elements/location_pin.svg' %>
                       <span class="how_many">3 Miles Away</span>
@@ -59,11 +57,15 @@
                       <b class="telephone">718-509-6524</b>
                     </div>
 
-                    <%= render 'common/location_rating.html.erb' %>
+                    <%= render 'common/storage_rating.html.erb' %>
 
                     <a class="show_all_units">
                       Show All Available Units
                     </a>
+                  </div>
+
+                  <div class="col-sm-4 hidden-md-down">
+                    <%= render 'common/sizing_guide_preview' %>
                   </div>
                 </div>
 
@@ -75,6 +77,10 @@
               </div>
             <% end %>
           </section>
+
+          <div class="hidden-lg-up text-md-center">
+            <%= render 'common/sizing_guide_preview' %>
+          </div>
 
         </div>
       </div>

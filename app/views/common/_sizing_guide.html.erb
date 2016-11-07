@@ -1,0 +1,55 @@
+<div class="modal" id="sizing_guide">
+
+ 
+
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+
+      <div class="heading">
+        <h2>Sizing Guide</h2>
+        <div data-dismiss="modal" aria-label="Close" class="close">
+          <%= image_tag 'common/close_modal.svg' %>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+
+      <nav class="sizes">
+        <% 5.times do |i| %>
+          <div class="size <%= i == 0 ? 'active' : '' %>">
+            <div class="number">5x10</div>
+            <div class="text">Size if small closet</div>
+            <div class="arrow-right"></div>
+          </div>
+        <% end %>
+      </nav>
+
+
+      <section class="size_description">
+        <div class="row flex-items-xs-middle number_and_replay">
+          <div class="col-xs-6">
+            <div class="number">5x5</div>
+          </div>
+          <div class="col-xs-6">
+            <div class="replay">Replay</div>
+          </div>
+        </div>
+
+        <div class="video">
+          <%= image_tag 'common_elements/size_video.jpg' %>
+        </div>
+
+        <div class="description">
+          <h5>A 5x5 Unit is this.</h5>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et.</p>
+        </div>
+      </section>
+
+
+
+
+
+
+    </div>
+  </div>
+</div>

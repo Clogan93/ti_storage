@@ -1,4 +1,4 @@
-section.location_view{
+section.storage_view{
   border-radius: 7px;
   background-color: #f1f3f6;
   border: solid 1px #cdcdcd;
@@ -22,15 +22,16 @@ section.location_view{
     p{
       font-size: 16px;
     }
-    a.read_reviews{
-      font-size: 16px;
+    
+    a.read_reviews, a.get_directions{
+      display: block;
       color: $bright-orange_color;
+      font-size: 16px;
     }
 
-    .get_directions{
+    a.get_directions{
       font-size: 18px;
-      color: $bright-orange_color;
-      margin-top: 20px;
+      margin-top: 26px;
     }
 
     .additional_photos{
@@ -41,10 +42,8 @@ section.location_view{
   }
 
   .map{
-    text-align: center;
-    img{
-      max-width: 263px; max-height: 256px;
-      width: 100%;
+    iframe{
+      height: 100%; width: 100%;
     }
   }
 }

@@ -26,3 +26,12 @@ section.search_field_and_ad{
     }
   }
 }
+
+
+section.search_field_and_ad{
+  @media (max-width: $sm){
+    .button.search{
+      margin-top: 15px;
+    }
+  }
+}

@@ -2,7 +2,7 @@
   .select_size_and_sizing_guide{
     background: #e2e6ec;
     padding: 20px 40px;
-    border: solid 1px #cdcdcd;
+    border: solid 1px #cdcdcd; border-top: 0;
     border-bottom: none;
 
     .blue_heading{
@@ -13,8 +13,9 @@
     }
 
     .select_size{
+      .col-xs-2{ padding-right: 0; }
       .size_option{
-        max-width: 150px; min-height: 91px;
+        min-height: 91px;
         padding: 10px;
 
         background: linear-gradient(to bottom, white, #dadada);
@@ -64,7 +65,6 @@
         font-size: 15px;
         font-weight: bold;
         color: #164ce0;
-        display:table-cell; vertical-align:middle;
         span.underline{
           display: inline-block;
           border-bottom: solid 2px #164ce1;
@@ -74,6 +74,10 @@
         font-size: 20px;
         font-weight: bold;
         color: black;
+        .text-md-left{
+          max-width: 111px;
+          margin: 0 auto;
+        }
       }
       .features{
         font-size: 15px;

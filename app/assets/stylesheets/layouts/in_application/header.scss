@@ -3,6 +3,7 @@ header{
   padding: 10px 0;
   font-size: 17px;
   font-weight: bold;
+  letter-spacing: 1px;
   a{ color: $cobalt_color; }
 
   .logo img{
@@ -15,11 +16,11 @@ header{
     padding-top: 30px;
     .links{
       display: inline-block;
-      a.nav_link{ padding-right: 107px; }
+      a.nav_link{ padding-right: 38px; }
     }
     .live_chat, .my_account{ display: inline-block; }
     .live_chat{
-      margin-right: 20px;
+      margin-right: 43px;
       color: $orange-red_color;
       cursor: pointer;
       span{
