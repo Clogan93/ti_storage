@@ -19,7 +19,7 @@
 
     <section class="extensive_information">
 
-      <% tab_ids = [:storage_units, :features, :directions, :videos, :reviews, :holders] %>
+      <% tab_ids = [:storage_units, :features, :directions, :videos, :reviews] %>
 
       <ul class="hidden-lg-down tab_navigation">
         <% tab_ids.each do |tab_id| %>
@@ -68,7 +68,7 @@
               </div>
 
               <div class="dropdown-menu">
-                <% ["All Units", "Small", "Medium", "Large"].each do |tab_title| %>
+                <% ["All Units", "Small", "Medium", "Large", "X-Large"].each do |tab_title| %>
                     <a class="dropdown-item">
                       <%= tab_title.titleize %>
                     </a>

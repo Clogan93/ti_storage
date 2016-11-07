@@ -1,5 +1,5 @@
 <main id="home_page">
-  
+
   <section class="find_storage">
     <div class="container-fluid">
       <h6>Stress-free storage</h6>
@@ -17,7 +17,7 @@
                   <a class="pull-xs-right view_all">View All Locations</a>
                   <div class="clearfix"></div>
                 </div>
-                
+
                 <div class="locations">
 
                   <% 3.times do |i| %>
@@ -40,13 +40,13 @@
                 <div class="reserve_today">
                   Reserve storage today and get your first month free!
                 </div>
-                
+
               </div>
             </div>
 
           </div>
           <div class="col-md-4">
-            <a class="button blue search">Search</a>
+            <a href="/search" class="button blue search">Search</a>
           </div>
 
 
@@ -65,7 +65,7 @@
 
       <div class="row">
 
-      <% 2.times do |i| %> 
+      <% 2.times do |i| %>
         <div class="col-lg-6">
           <div class="storage_preview <%= i == 0 ? 'float-lg-right' : 'float-lg-left' %>">
             <div class="row city">
@@ -131,7 +131,7 @@
 
         <div class="col-lg-2 col-sm-6 col-xs-12 benefit">
           <%= image_tag 'static_pages/home_page/benefits/promotions.svg' %>
-          <div class="name">Promotions &  Specials</div>
+          <div class="name">Promotions & Specials</div>
         </div>
       </div>
     </div>
@@ -156,14 +156,14 @@
     <div class="container-fluid">
       <h4 class="heading">Treasure Island TI Family of Businesses</h4>
       <div class="row">
-        <% 3.times do %>
-          <div class="col-md-4 col-xs-12 business">
-          <%= image_tag 'common_elements/ti_art_studios.png' %>
-          </div>
-        <% end %>
+        <div class="col-md-4 offset-md-2 col-xs-12 business">
+        <%= image_tag 'common_elements/ti_art_studios.png' %>
+        </div>
+        <div class="col-md-4 col-xs-12 business">
+        <%= image_tag 'common_elements/ti_art_studios.png' %>
+        </div>
       </div>
     </div>
   </section>
-  
-</main>
 
+</main>
