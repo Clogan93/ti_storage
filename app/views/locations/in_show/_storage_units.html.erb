@@ -15,10 +15,10 @@
           </div>
         </div>
 
-        <% 4.times do %>
+        <% ["All Units", "Small", "Medium", "Large", "X-Large"].each do |title| %>
           <div class="col-xs-2">
             <div class="size_option">
-              <div class="size">Small</div>
+              <div class="size"><%= title %></div>
               <div class="description">Descritpion of units goes here</div>
             </div>
           </div>
