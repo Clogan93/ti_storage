@@ -21,9 +21,16 @@
 
     border-bottom: solid #ff0500 3px;
     h6{
-      padding-bottom: 30px;
+      position: absolute;
+      top: 0;
+      left: 50%; transform:translateX(-50%);
+      padding: 15px 65px;
+      border: solid 4px #4a90e2; border-top: none;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
 
-      font-size: 51px;
+      background-color: $cobalt_color;
+      font-size: 41px; font-weight: 700;
       text-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
       text-transform: uppercase;
     }
@@ -48,14 +55,17 @@
       }
       .dropdown{
         .dropdown-menu{
-          width: 100%;
+          width: 150%;
           font-size: 17px;
           color: #212a34;
+          padding-bottom: 0;
           .guessed_and_view_all{
             padding: 10px;
             border-bottom: solid 1px #d9d9d9;
+            .guessed{ display: inline-block; }
             a.view_all{
               color: #656565;
+              float: right;
             }
           }
           .locations{

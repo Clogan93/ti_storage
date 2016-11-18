@@ -12,16 +12,15 @@ gem 'sass-rails', '~> 5.0'
 gem 'rails-assets-tether'
 gem 'bootstrap', '~> 4.0.0.alpha4'
 gem 'jquery-rails'
-
 gem 'jquery-ui-rails'
-
 gem 'inline_svg'
 
+gem 'wicked' # maybe an okay solution for wizard form
+
+gem 'react-rails'
 gem 'sprockets'
-# gem 'babel-transpiler'
 
 gem 'uglifier', '>= 1.3.0'
-
 gem 'turbolinks', '~> 5'
 
 gem 'jbuilder', '~> 2.5'
@@ -29,12 +28,15 @@ gem 'jbuilder', '~> 2.5'
 gem 'dotenv-rails'
 
 group :development, :test do
-  gem 'byebug', platform: :mri
   gem 'rspec-rails', '~> 3.5.0.beta4'
   gem 'capybara', '~> 2.5'
   gem 'rubocop', require: false
   gem 'faker', '~> 1.6.1'
   gem 'factory_girl_rails', '~> 4.5.0'
+
+  gem 'pry'
+  gem 'pry-rescue'
+  gem 'pry-rails'
 end
 
 group :test do

@@ -1,0 +1,76 @@
+#search_index_page_mobile{
+  li.nav-item{
+    width: 50%;
+    margin-left: 0;
+    text-align: center;
+    font-size: 21px;
+    a.nav-link{
+      border-bottom: none;
+      &.active{
+        border-top: 3px solid $cobalt_color;
+        color: $cobalt_color;
+      }
+    }
+  }
+
+  section.storages{
+    .storage{
+      background-image: linear-gradient(to bottom, #f8f9fa 0%, #f1f1f1 100%);
+      padding: 10px;
+      .index, .distance, .address_and_price, .arrow{
+        display: inline-block;
+        vertical-align: middle;
+        padding: 10px;
+      }
+      .index{
+        font-weight: bold;
+      }
+      .distance{
+        background: url(image-path('search/location_pin_in_circle.png')) no-repeat;
+        background-size: cover;
+        width: 74px;
+
+        text-align: center;
+        color: $cobalt_color;
+        font-size: 18px;
+        .number{
+          font-weight: bold;
+          position: relative;
+          top: 17px;
+        }
+        .mi{
+          position: relative;
+          top: 6px;
+        }
+      }
+      .address_and_price{
+        .address{
+          font-size: 13px;
+        }
+        .price{
+          font-size: 18px; font-weight: bold;
+          color: $cobalt_color;
+        }
+      }
+      .arrow{
+        float: right;
+        margin-top: 20px;
+      }
+    }
+  }
+}
+
+
+#search_index_page_mobile{
+  @media (max-width: 390px){
+    section.storages .storage{
+      .arrow{ display: none; }
+      .index, .distance, .address_and_price, .arrow{
+        padding: 10px 9px;
+      }
+    }
+  }
+  @media (max-width: 360px){
+    section.storages .storage .index{ display: none; }
+  }
+}

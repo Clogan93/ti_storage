@@ -12,5 +12,7 @@
     <%= render partial: 'layouts/in_application/header' %>
     <%= yield %>
     <%= render partial: 'layouts/in_application/footer' %>
+
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAPS_API_KEY'] %>&libraries=places"></script>
   </body>
 </html>

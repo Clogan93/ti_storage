@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="53px" height="53px" viewBox="0 0 53 53" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 40.3 (33839) - http://www.bohemiancoding.com/sketch -->
+    <title>900E234C-9802-4DCC-9B7F-5B3AE977DDFE</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="41.6552734%" x2="50%" y2="79.7949219%" id="linearGradient-1">
+            <stop stop-color="#EEEEEE" offset="0%"></stop>
+            <stop stop-color="#E0E0E0" offset="34.4642171%"></stop>
+            <stop stop-color="#D8D8D8" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Home" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="content-page" transform="translate(-171.000000, -481.000000)">
+            <g id="Find_storage_block" transform="translate(68.000000, 116.000000)">
+                <g id="video" transform="translate(28.000000, 324.000000)">
+                    <g id="play_icn" transform="translate(75.000000, 41.000000)">
+                        <path d="M26.5439162,52.1764706 C40.838345,52.1764706 52.4262691,40.5885465 52.4262691,26.2941176 C52.4262691,11.9996888 40.838345,0.411764706 26.5439162,0.411764706 C12.2494874,0.411764706 0.661563255,11.9996888 0.661563255,26.2941176 C0.661563255,40.5885465 12.2494874,52.1764706 26.5439162,52.1764706 Z" id="Oval" fill="url(#linearGradient-1)"></path>
+                        <polygon id="Triangle" fill="#1F6AFF" transform="translate(29.132151, 26.294118) rotate(90.000000) translate(-29.132151, -26.294118) " points="29.1321515 15.9411765 39.4850927 36.6470588 18.7792103 36.6470588"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

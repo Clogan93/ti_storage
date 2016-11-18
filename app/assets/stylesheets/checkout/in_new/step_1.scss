@@ -1,0 +1,82 @@
+section.step_1{
+  section{ padding: 15px; }
+  section.explanation{
+    padding-top: 10px;
+    p.order_to_lock_in_rate{
+      font-size: 16px;
+      color: $light-navy_color;
+      border-bottom: solid 1px #cecece;
+      padding-bottom: 17px;
+    }
+
+    .row.rent_or_reserve_radios{
+      padding-top: 20px;
+      align-items: center;
+
+      .custom-control-description{
+        padding-left: 15px;
+        h5{
+          font-size: 18px;
+          font-weight: bold;
+        }
+        p{
+          font-size: 15px;
+          margin-bottom: 0;
+        }
+      }
+      .or{
+        font-size: 18px;
+        text-align: center;
+      }
+    }
+
+    .norton{
+      text-align: center;
+      padding-top: 33px;
+      img{ width: 100%; max-width: 106px; }
+    }
+  }
+  section.general_client_info{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    input, div.button{
+      width: 49%;
+      margin-bottom: 13px;
+      padding: 14px;
+    }
+    div.button.red{
+      height: 50px;
+      padding: 8px;
+      background: linear-gradient(to bottom, #f8332f 49%, #e50200 53%);
+      border: solid 2px white;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    input#reservation_move_in_date{
+      height: 50px;
+      &::-webkit-inner-spin-button{
+        display: none;
+      }
+      &::-webkit-calendar-picker-indicator {
+        color: rgba(0, 0, 0, 0);
+        opacity: 1;
+        cursor: pointer;
+        background: url(image-path("checkout/calendar-icn.svg")) no-repeat;
+   
+        width: 20px;
+        margin-left: 10px;
+        height: 23px;
+      }
+    }
+  }
+  section.sign_up_for_moving_services{
+    a.change_something{
+      margin-left: 30px;
+    }
+    .footnote{
+      padding-top: 12px;
+      font-size: 13px;
+    }
+  }
+}

@@ -3,6 +3,7 @@
 
 @import 'fonts';
 @import 'variables';
+
 @import 'common_elements';
 @import 'common_elements_responsive';
 
@@ -12,7 +13,7 @@
 @import 'locations/*';
 @import 'layouts/in_application/*';
 @import 'search/*';
-
+@import 'checkout/*';
 
 .container-fluid{ padding: 0 90px; }
 footer, header, #breadcrumbs{
@@ -29,5 +30,12 @@ footer, header, #breadcrumbs{
 }
 
 a{ cursor: pointer; }
-ul{ padding-left: 0; }
-iframe { border: 0; }
+ul{
+  padding-left: 0;
+  list-style-type: none;
+}
+iframe{ border: 0; }
+
+body, a{
+  color: $black_color;
+}

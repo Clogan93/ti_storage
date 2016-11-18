@@ -1,5 +1,4 @@
 #storage_units{
-
   .unit_options .table_row{
     h5.mobile_heading{
       font-size: 19px;
@@ -8,10 +7,6 @@
       text-transform: uppercase;
 
       margin-top: 20px;
-    }
-    .size_help.mobile{
-      display: inline-block;
-      margin: 0 auto;
     }
   }
 
@@ -36,8 +31,10 @@
         text-align: left;
       }
     }
-    .unit_options{
+  
+    .unit_options .row.table_row{
       border-top: none;
+      .features ul li{ width: 100%; }
     }
   }
 }

@@ -5,7 +5,9 @@
 
     <%= render partial: 'common/search_field_and_ad' %>
 
-    <div class="content_bordering">
+    <%= render partial: 'search/index.mobile' %>
+
+    <div class="content_bordering hidden-xs-down">
       <div class="row">
         <div class="col-xl-6 map_and_sizing_guide_preview">
           <div class="fixates_on_scrolldown">
@@ -85,7 +87,6 @@
         </div>
       </div>
     </div>
-
 
   </div>
 </main>

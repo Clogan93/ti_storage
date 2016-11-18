@@ -1,0 +1,21 @@
+<nav id="breadcrumbs" class="heading_font">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12">
+        <%= link_to '< Back to Search', search_path %>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<main id="checkout_new_page">
+  <div class="container-fluid">
+    <%= render partial: '/checkout/in_new/step_navigation' %>
+
+    <div class="sidebar_and_steps">
+      <%= render partial: '/checkout/in_new/your_reservation' %>
+
+      <%= render partial: '/checkout/in_new/step_1' %>
+    </div>
+  </div>
+</main>

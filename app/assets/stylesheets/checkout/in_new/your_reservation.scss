@@ -1,0 +1,51 @@
+aside.your_reservation{
+  flex-basis: 320px;
+  flex-shrink: 0; // making aside fixed-width
+  margin-right: 20px;
+  h5.section_heading{
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  section{ padding: 15px; }
+
+  section.storage{
+    .image{
+      padding-right: 0;
+      img{ width: 100%; }
+    }
+    .description{
+      line-height: 19px;
+      font-size: 15px;
+      a.change_something{
+        padding-top: 10px;
+      }
+    }
+  }
+
+  section.unit{
+    .size{
+      font-size: 22px;
+      font-weight: bold;
+      color: $light-navy_color;
+    }
+    .details{
+      line-height: 19px;
+      font-size: 15px;
+    }
+    a.change_something{ padding-top: 15px; }
+  }
+
+  section.monthly_rent{
+    background: #ececec;
+    table{
+      line-height: 19px;
+      font-size: 15px;
+      width: 100%;
+    }
+    .footnote{
+      margin-top: 30px;
+      font-size: 13px;
+    }
+  }
+}

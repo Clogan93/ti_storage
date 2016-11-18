@@ -1,0 +1,32 @@
+main#checkout_new_page{
+  h2{
+    color: $light-navy_color;
+    font-size: 24px;
+  }
+
+  .block{
+    background-color: #f5f6f8;
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
+    h5.block_heading{
+      background: $light-navy_color;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 10px;
+    }
+    a.change_something{
+      display: inline-block;
+      font-size: 13px;
+      font-weight: bold;
+      color: $vermillion_color;
+    }
+  }
+
+  div.sidebar_and_steps{
+    display: flex;
+    @import 'in_new/your_reservation';
+    @import 'in_new/step_1';
+  }
+
+  @import 'in_new/step_navigation';
+}

@@ -1,5 +1,5 @@
-$(document).ready(function(){
-  var collapsibleLocationsEl = $("#collapsible_locations_in_header ul.cities");
+$(document).ready(() => {
+  const collapsibleLocationsEl = $("#collapsible_locations_in_header ul.cities");
 
   collapsibleLocationsEl.menu({
     // position inner menus so that their tops are at the top of their outer menus.
@@ -12,3 +12,5 @@ $(document).ready(function(){
     },
   });
 });
+
+console.log(() => '.es6 works?')

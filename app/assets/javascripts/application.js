@@ -1,7 +1,10 @@
 //= require turbolinks
 //= require jquery
 //= require jquery-ui/menu
+//= require jquery-ui/tabs
 //= require tether
 //= require bootstrap-sprockets
 //= require sticky_kit
+//= require react
+//= require react_ujs
 //= require_tree .

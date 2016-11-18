@@ -1,0 +1,27 @@
+section.step_navigation{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  .row{
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+  h2{
+    font-size: 24px;
+  }
+  .steps{
+    max-width: 420px;
+    text-align: center;
+    .titles{
+      display: flex;
+      h5{
+        font-size: 18px;
+        flex-grow: 1;
+        &:nth-child(2){ position: relative; right: 17px; }
+        &:nth-child(3){ position: relative; right: 24px; }
+        &:not(.active){ color: #999999; }
+        &.active{ color: $light-navy_color; }
+      }
+    }
+    img{ width: 100%; }
+  }
+}

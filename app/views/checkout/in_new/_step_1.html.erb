@@ -1,0 +1,70 @@
+<section class="step_1 step block">
+  <%= form_for @reservation, url: '' do |f| %>
+    <h5 class="block_heading">Lock in Your Rate Now.</h5>
+
+    <section class="explanation">
+      <div class="row">
+        <div class="col-xs-8">
+          <p class="order_to_lock_in_rate">
+            Enter your information below to lock in your discounted storage rate today. Lipsum ipsum unem lorem opem lepsut.
+          </p>
+
+          <div class="row rent_or_reserve_radios">
+            <div class="col-xs-5">
+              <label class="custom-control custom-radio">
+                <input name="rent_or_reserve" type="radio" class="custom-control-input">
+                <span class="custom-control-indicator"></span>
+                <div class="custom-control-description">
+                  <h5>Express Check-In</h5>
+                  <p>Save a time! Rent a storage unit online in a few easy steps</p>
+                </div>
+              </label>
+            </div>
+
+            <div class="col-xs-2 or">
+              – Or –
+            </div>
+
+            <div class="col-xs-5">
+              <label class="custom-control custom-radio">
+                <input name="rent_or_reserve" type="radio" class="custom-control-input">
+                <span class="custom-control-indicator"></span>
+                <div class="custom-control-description">
+                  <h5>Reserve Room</h5>
+                  <p>Hold this unit for 7 days with no obligation</p>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-4 norton">
+          <%= image_tag 'checkout/norton.png' %>
+        </div>
+      </div>
+    </section>
+
+    <section class="general_client_info">
+      <%= f.text_field :first_name, placeholder: "First Name", class: "form-control" %>
+      <%= f.text_field :last_name, placeholder: "Last Name", class: "form-control" %>
+      <%= f.text_field :email, placeholder: "Email Address", class: "form-control" %>
+      <%= f.text_field :phone, placeholder: "Phone Number", class: "form-control" %>
+      <%= f.date_field :move_in_date, placeholder: "Move-In Date", class: "form-control" %>
+
+      <div class="button red">Continue</div>
+    </section>
+
+    <section class="sign_up_for_moving_services">
+      <label class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input">
+        <span class="custom-control-indicator"></span>
+        <span class="custom-control-description">Sign me up for Moving Services</span>
+      </label>
+
+      <a class="change_something">What are Moving Services?</a>
+
+      <div class="footnote">
+        *Storage units will be held for 14 days after lorem ipsum unem placeholder
+      </div>
+    </section>
+  <% end %>
+</section>
