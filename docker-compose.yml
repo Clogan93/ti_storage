@@ -15,13 +15,16 @@
         - '3000:3000'
       volumes:
         - .:/app
-        - bundle-data:/bundle
+      volumes_from:
+        - bundle
     db:
       image: postgres
       volumes:
         - db-data:/var/lib/postgresql/data
+    bundle:
+      image: busybox
+      volumes:
+        - /bundle
   volumes:
     db-data:
-      driver: local
-    bundle-data:
       driver: local
