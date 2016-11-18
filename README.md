@@ -50,4 +50,15 @@ Once you have completed a feature in your featured branch, push the changes to G
 
 `git push`
 
-Then, on Github, create a Pull-Request with your changes.
+Then, on Github, create a Pull-Request with your changes. We want to use a simple message using one of the following keywords followed by referencing the original issue #.
+
+##### keywords:
+* close, closes, closed
+* fix, fixes, fixed
+* resolve, resolves, resolved
+
+For example:
+
+`closes #99`
+
+Including a keyword and the issue # in your PR message will close that issue once it is merged into your default branch. This will automatically move the issue to the Done column on your Waffle board.
