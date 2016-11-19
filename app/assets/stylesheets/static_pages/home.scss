@@ -20,19 +20,23 @@
     text-align: center;
 
     border-bottom: solid #ff0500 3px;
-    h6{
+
+    h4{
+      font-size: 28px;
+      font-weight: bold;
+      text-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    h4.stree-free_storage{
       position: absolute;
       top: 0;
       left: 50%; transform:translateX(-50%);
-      padding: 15px 65px;
+      padding: 15px 173px;
       border: solid 4px #4a90e2; border-top: none;
       border-bottom-left-radius: 5px;
       border-bottom-right-radius: 5px;
 
       background-color: $cobalt_color;
-      font-size: 41px; font-weight: 700;
-      text-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
-      text-transform: uppercase;
     }
 
     .find_storage_rectangle{
@@ -44,8 +48,6 @@
       background-image: linear-gradient(to bottom, #1e4fac, #0d2773);
       border: solid 4px #4a90e2;
       h4{ // Find Storage in Your Area
-        font-size: 28px;
-        font-weight: bold;
         padding-bottom: 5px;
       }
       .find_storage_input{ height: 45px; }
