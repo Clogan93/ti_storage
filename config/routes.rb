@@ -6,6 +6,6 @@ Rails.application.routes.draw do
 
   get 'search', to: 'search#index'
 
-  get 'storage_solutions', to: 'static_pages#storage_solutions'
+  get 'storage-solutions', to: 'static_pages#storage_solutions'
   root to: 'static_pages#home'
 end

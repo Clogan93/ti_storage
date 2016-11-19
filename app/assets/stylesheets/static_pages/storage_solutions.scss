@@ -148,9 +148,13 @@ main#storage_solutions_page{
       .col-xs-4{ padding-left: 0; }
       ul.navigation{
         border-right: solid 1px $pinkish-grey_color;
-        border-bottom: solid 1px $pinkish-grey_color;
-        li.nav-item:first-of-type a {
+        margin-bottom: 0;
+        li.nav-item:first-of-type a{
           border-top-left-radius: 10px;
+        }
+        li.nav-item:last-of-type a{
+          border-bottom: none;
+          border-bottom-left-radius: 5px;
         }
         a.nav-link{
           width: 100%;
@@ -167,7 +171,7 @@ main#storage_solutions_page{
           }
         }     
       }
-      .tab-content_and_weird_rectangle.row{
+      .tab-content{
         padding: 20px; padding-left: 0;
         .underlined{
           border-bottom: solid 1px #cccccc;
@@ -180,9 +184,19 @@ main#storage_solutions_page{
             margin-bottom: 6px;
           }
         }
-        .weird_grey_rectangle{
-          background-color: #d8d8d8;
-          border: solid 1px #979797;
+        article.description{
+          h6{
+            margin-top: 20px;
+            font-weight: bold;
+          }
+          ul{
+            list-style-type: disc;
+            padding-left: 23px;
+          }
+          a{
+            color: $cobalt_color;
+          }
+          img{ float: right; padding-left: 10px; }
         }
       }
     }
