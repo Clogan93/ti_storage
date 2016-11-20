@@ -9,6 +9,7 @@
   }
 
   section.find_storage{
+    min-height: 609px;
     background: image-url("static_pages/home_page/find_storage_bg.jpg");
     background-size: cover;
 
@@ -29,9 +30,10 @@
 
     h4.stree-free_storage{
       position: absolute;
+      width: 596px;
       top: 0;
       left: 50%; transform:translateX(-50%);
-      padding: 15px 173px;
+      padding: 15px 0px;
       border: solid 4px #4a90e2; border-top: none;
       border-bottom-left-radius: 5px;
       border-bottom-right-radius: 5px;
@@ -41,7 +43,7 @@
 
     .find_storage_rectangle{
       max-width: 601px;
-      margin: 0 auto;
+      margin: 0 auto; margin-top: 70px;
       padding: 20px 50px;
 
       border-radius: 9px;

@@ -20,10 +20,12 @@
       }
     }
   }
-  @media (max-width: $lg){
+  @media (max-width: $md){
     section.find_storage{
       .button.blue{ margin-top: 15px; }
     }
+  }
+  @media (max-width: $lg){
     section.ti_storage_benefits{
       .benefit{
         margin-bottom: 30px;
