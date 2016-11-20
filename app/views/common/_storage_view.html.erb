@@ -1,7 +1,7 @@
 <section class="storage_view">
   <div class="row">
     <div class="col-lg-4 col-xs-7 main_photo">
-      <%= image_tag 'http://placehold.it/342x254' %>
+      <%= image_tag "common/storages/#{storage[:id]}.jpg" %>
     </div>
 
     <div class="col-xs-5 hidden-lg-up mobile_additional_photos">
@@ -16,7 +16,7 @@
         <div class="col-sm-6 details storage_details">
           <div class="address">
             <h6>Location</h6>
-            <p>78-02 Liberty Avenue Ozone Park, NY 11417</p>
+            <p><%= storage[:address] + ' ' + storage[:area] %></p>
           </div>
 
           <%= render 'common/storage_rating' %>
@@ -38,7 +38,7 @@
 
           <div class="phone_number">
             <h6>Phone number</h6>
-            <p>718-509-6524</p>
+            <p><%= storage[:phone] %></p>
           </div>
         </div>
       </div>
@@ -54,7 +54,8 @@
 
     <div class="col-lg-4 map">
       <iframe
-        src="https://www.google.com/maps/embed/v1/place?key=<%= ENV['GOOGLE_MAPS_API_KEY']%>&q=Space+Needle,Seattle+WA" allowfullscreen>
+        src="https://www.google.com/maps/embed/v1/place?key=<%= ENV['GOOGLE_MAPS_API_KEY']%>&q=<%= storage[:area] + ' ' + storage[:address] %>"
+        allowfullscreen>
       </iframe>
     </div>
   </div>

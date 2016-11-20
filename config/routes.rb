@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 Rails.application.routes.draw do
-  resources :locations, only: :show
+  resources :locations, only: [:show, :index]
 
   resources :checkout, only: :new
 

@@ -1,4 +1,9 @@
-<%= render partial: 'common/breadcrumbs', locals: { links: [link_to('Locations'), 'Ozone Park, NY Self Storage - 123 Address Street'] } %>
+<%= render partial: 'common/breadcrumbs', locals: {
+  links: [
+    link_to('Locations',  locations_path), 
+    @storage[:address] + ' ' + @storage[:area]
+  ]
+} %>
 
 <main id="locations_show_page">
   <div class="container-fluid">
@@ -15,7 +20,7 @@
 
     <%= render partial: 'common/search_field_and_ad' %>
 
-    <%= render partial: 'locations/in_show/storage_view' %>
+    <%= render partial: 'common/storage_view', locals: { storage: @storage } %>
 
     <section class="extensive_information">
 

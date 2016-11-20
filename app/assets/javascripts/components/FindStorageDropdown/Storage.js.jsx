@@ -5,12 +5,13 @@ const Storage = React.createClass({
   },
 
   render() {
+    const prettyAddress = this.props.storage.area + ' ' + this.props.storage.address
     return (
       <a className="location">
         <div className="row">
           <div className="col-xs-8 name">
             <img src={this.props.src}/>
-            <span>{this.props.storage.address}</span>
+            <span>{prettyAddress}</span>
           </div>
           <div className="col-xs-4 text-xs-right comment grey red">
             XL Unit - 50% off!
