@@ -1,15 +1,16 @@
 <section class="storage_view">
   <div class="row">
-    <div class="col-lg-4 col-xs-7 main_photo">
-      <%= image_tag "common/storages/#{storage[:id]}.jpg" %>
-    </div>
+    <div class="col-lg-4 col-xs-7 photos">
+      <div class="main_photo">
+        <%= image_tag "common/storages/#{storage[:id]}.jpg" %>
+      </div>
 
-    <div class="col-xs-5 hidden-lg-up mobile_additional_photos">
-      <% 3.times do %>
-        <%= image_tag 'http://placehold.it/82x52' %>
-      <% end %>
+      <div class="additional_photos">
+        <% 3.times do %>
+          <%= image_tag 'http://placehold.it/82x52' %>
+        <% end %>
+      </div>
     </div>
-    <div class="clearfix hidden-lg-up"></div>
 
     <div class="col-lg-4 info">
       <div class="row">
@@ -28,12 +29,20 @@
         <div class="col-sm-6">
           <div class="office_hours">
             <h6>Office hours</h6>
-            <p>Mon-Sun 8:00am-7:00pm</p>
+            <p>
+              <% storage[:office_hours].each do |hours| %>
+                <%= hours %><br>
+              <% end %>
+            </p>
           </div>
 
           <div class="access_hours">
             <h6>Access hours</h6>
-            <p>Mon-Sun 8:00am-7:00pm</p>
+            <p>
+              <% storage[:office_hours].each do |hours| %>
+                <%= hours %><br>
+              <% end %>
+            </p>
           </div>
 
           <div class="phone_number">
@@ -43,13 +52,6 @@
         </div>
       </div>
 
-      <div class="row hidden-md-down additional_photos">
-        <div class="col-xs-12">
-          <% 3.times do %>
-            <%= image_tag 'http://placehold.it/82x52' %>
-          <% end %>
-        </div>
-      </div>
     </div>
 
     <div class="col-lg-4 map">
