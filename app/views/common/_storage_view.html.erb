@@ -6,8 +6,8 @@
       </div>
 
       <div class="additional_photos">
-        <% 3.times do %>
-          <%= image_tag 'http://placehold.it/82x52' %>
+        <% 3.times do |i| %>
+          <%= image_tag "common/storages/#{storage[:id]}/#{i+1}.jpg" %>
         <% end %>
       </div>
     </div>
