@@ -1,26 +1,26 @@
-<% 
+<%
   storage_types = [
     {
       title: 'Household Storage',
       description: "When you rent a Household Storage unit at Treasure Island Storage, you can expect Self Storage solutions that are as valuable to you as the items you choose to store. Start by taking an assessment of all the household items you don't use on a regular (monthly and/or yearly) basis. Be merciless with yourself: holiday decorations are only needed once a year, should they really take up all the space in your hall closet every day of the year?",
-      image: 'household'
+      image: 'household.jpg'
     },
     {
       title: 'Commercial Storage',
       description: "Commercial Storage at Treasure Island Storage helps many large and small businesses manage their secure file keeping needs, store excess inventory, and/or free up valuable office space. Affordable and easy – less than a dollar a day and you can manage your account online – Treasure Island Storage Commercial Storage can help you keep your business records safe and maximize your office productivity all with an eye on the bottom line.",
-      image: 'commercial'
+      image: 'commercial.jpg'
     },
     {
       title: 'Boat Storage',
       description: "Boat Storage at Treasure Island Storage is your one-stop, cost-effective and secure option for all boat owners. Our climate controlled Boat Storage units can help extend the life of your boat by protecting the vessel from the elements while providing extra protection from rust. Boat storage is available at almost all of our conveniently located facilities in New Jersey and New York.",
-      image: 'boat'
+      image: 'boat.jpg'
     },
     {
       title: 'Vehicle Storage',
       description: "Treasure Island Storage is a safe and affordable choice when you need to store your automobile for any reason. It doesn't matter if your 'wheels' are vintage, brand new, or on the bottom of a golf cart, our climate controlled, drive-up Car Storage units are designed to protect your car from all of the elements and are available at all most of our Treasure Island Storage facilities in both New Jersey and New York.
         <h6>MOTORCYCLE STORAGE</h6>
         Motorcycle storage at Treasure Island Storage will help keep your motorcycle in prime condition throughout the seasons. Why leave your motorcycle at the mercy of the elements when you can rent a low cost, private alternative to a public garage, or worse, a city street?",
-        image: 'vehicle'
+        image: 'vehicle.jpg'
     },
     {
       title: 'Wine Storage',
@@ -33,13 +33,13 @@
           <li>Pickup and delivery services</li>
           <li>No case minimum requirements</li>
         </li>",
-        image: 'wine'
+        image: 'wine.jpg'
     },
     {
       title: 'TI Art Studios',
       description: "Treasure Island Storage is committed to enriching the communities in which we live. TI Art Studios provide more than 150 New York City visual artists with excellent studio spaces and amenities all within a community of working artists on the third floor of a large warehouse at competitive rates. Additional features of the workspace include Sweet Lorraine Gallery, the Ceramics Arena work space, spray room and roof deck. The secure workspace also has 24/7 access, 6&#39; wide hallways, communal carts, ladders, scaffolding, refrigerators, microwaves, vending machines, two T-1 wireless internet lines, slop sinks, new bathrooms, trash removal and recycling. Private studios have floor-to- ceiling walls and a locking door. <br>
         <a>Learn more about TI Art Studios by visiting our website.</a>",
-        image: 'ti_art_studios'
+        image: 'ti_art_studios.jpg'
     }
 
   ]
@@ -101,8 +101,8 @@
             <ul class="navigation" role="tablist">
               <% storage_types.each_with_index do |storage_type, i| %>
                 <li class="nav-item">
-                  <a 
-                    class="nav-link <%= i == 0 ? 'active' : '' %>" 
+                  <a
+                    class="nav-link <%= i == 0 ? 'active' : '' %>"
                     data-toggle="tab"
                     href="#storage_type_<%= i %>"
                     role="tab">
@@ -171,6 +171,5 @@
       </section>
     </div>
   </div>
-  
-</main>
 
+</main>
