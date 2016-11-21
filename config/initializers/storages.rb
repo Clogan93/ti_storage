@@ -1,6 +1,7 @@
 STORAGES = [
   {
     id: 1,
+    area_title: 'Brooklyn, NY',
     title: 'Red Hook',
     phone: '718-509-6524',
 
@@ -16,6 +17,7 @@ STORAGES = [
   },
   {
     id: 2,
+    area_title: 'Queens, NY',
     title: 'Ozone Park',
     phone: '718-395-2984',
 
@@ -31,6 +33,7 @@ STORAGES = [
   },
   {
     id: 3,
+    area_title: 'Queens, NY',
     title: 'Jamaica',
     phone: '718-509-6543',
 
@@ -46,6 +49,7 @@ STORAGES = [
   },
   {
     id: 4,
+    area_title: 'New Jersey',
     title: 'Paterson',
     phone: '973-870-0454',
 
@@ -61,6 +65,7 @@ STORAGES = [
   },
   {
     id: 5,
+    area_title: 'New Jersey',
     title: 'Woodbridge',
     phone: '732-510-4010',
 
