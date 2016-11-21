@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 STORAGES = [
   {
     id: 1,
@@ -13,7 +14,7 @@ STORAGES = [
       'Mon-Fri 8:00 am - 7:00 pm',
       'Sat 9:00 am - 5:00 pm',
       'Sun 10:00 am - 4:00 pm'
-    ],
+    ]
   },
   {
     id: 2,
@@ -79,4 +80,4 @@ STORAGES = [
       'Sun 10:00 am - 4:00 pm'
     ]
   }
-]
+].freeze
