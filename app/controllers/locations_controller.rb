@@ -2,10 +2,9 @@
 # :nodoc:
 class LocationsController < ApplicationController
   def index
-    @storages = STORAGES
   end
 
   def show
-    @storage = STORAGES[params[:id].to_i]
+    @storage = Storage.find_by(url: params[:id])
   end
 end

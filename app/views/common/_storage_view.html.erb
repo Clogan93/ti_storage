@@ -17,7 +17,11 @@
         <div class="col-sm-6 details storage_details">
           <div class="address">
             <h6>Location</h6>
-            <p><%= storage[:address] + ' ' + storage[:area] %></p>
+            <p>
+              <%= storage.address %><br>
+              <%= storage.area %><br>
+              <%= storage.zip_code %>
+            </p>
           </div>
 
           <%= render 'common/storage_rating' %>
@@ -39,7 +43,7 @@
           <div class="access_hours">
             <h6>Access hours</h6>
             <p>
-              <% storage[:office_hours].each do |hours| %>
+              <% storage[:access_hours].each do |hours| %>
                 <%= hours %><br>
               <% end %>
             </p>

@@ -2,7 +2,7 @@
 
 red_hook = Storage.create!({
   category: 'Brooklyn, NY',
-  title: 'Red Hook',
+  title: 'Red Hook', url: 'red-hook',
   phone: '718-509-6524',
 
   address: '183 Lorraine St.',
@@ -74,7 +74,7 @@ red_hook = Storage.create!({
 
 ozone_park = Storage.create!({
   category: 'Queens, NY',
-  title: 'Ozone Park',
+  title: 'Ozone Park', url: 'ozone-park',
   phone: '718-395-2984',
 
   address: '78-02 Liberty Avenue',
@@ -158,7 +158,7 @@ ozone_park = Storage.create!({
 
 jamaica = Storage.create!({
   category: 'Queens, NY',
-  title: 'Jamaica',
+  title: 'Jamaica', url: 'jamaica',
   phone: '718-509-6543',
 
   address: '109-09 180th St.',
@@ -246,7 +246,7 @@ jamaica = Storage.create!({
 
 paterson = Storage.create!({
   category: 'New Jersey',
-  title: 'Paterson',
+  title: 'Paterson', url: 'paterson',
   phone: '973-870-0454',
 
   address: '404 Grand Street',
@@ -314,11 +314,11 @@ paterson = Storage.create!({
 
 woodbridge = Storage.create!({
   category: 'New Jersey',
-  title: 'Woodbridge',
+  title: 'Woodbridge', url: 'woodbridge',
   phone: '732-510-4010',
 
   address: '881 Saint George Ave',
-  area: 'Woodbridge, New Jersey',
+  area: 'Woodbridge, NJ',
   zip_code: '07095',
   coordinates: [40.567496, -74.292012],
 
@@ -391,10 +391,10 @@ require_relative './seeds/ozone_park_reviews'
 ozone_park.reviews.create!(OZONE_PARK_REVIEWS)
 
 require_relative './seeds/jamaica_reviews'
-ozone_park.reviews.create!(JAMAICA_REVIEWS)
+jamaica.reviews.create!(JAMAICA_REVIEWS)
 
 require_relative './seeds/paterson_reviews'
-ozone_park.reviews.create!(PATERSON_REVIEWS)
+paterson.reviews.create!(PATERSON_REVIEWS)
 
 require_relative './seeds/woodbridge_reviews'
-ozone_park.reviews.create!(WOODBRIDGE_REVIEWS)
+woodbridge.reviews.create!(WOODBRIDGE_REVIEWS)

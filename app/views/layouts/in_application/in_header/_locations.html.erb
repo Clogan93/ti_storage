@@ -7,11 +7,10 @@
   <div class="collapse menu">
 
     <ul class="cities" aria-activedescendant="ui-id-5">
-      <% uniq_area_titles = STORAGES.map { |storage| storage[:area_title] }.uniq %>
-      <% uniq_area_titles.each do |area_title| %>
-        <li><%= area_title %>
+      <% @storage_categories.each do |category| %>
+        <li><%= category %>
           <ul class="places">
-            <% storages = STORAGES.select { |storage| storage[:area_title] == area_title } %>
+            <% storages = @storages.where(category: category) %>
             <% storages.each do |storage| %>
               <li>
                 <%= storage[:title] %>

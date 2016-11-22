@@ -1,7 +1,7 @@
 <%= render partial: 'common/breadcrumbs', locals: {
   links: [
-    link_to('Locations',  locations_path), 
-    @storage[:address] + ' ' + @storage[:area]
+    link_to('Locations', locations_path), 
+    @storage.title
   ]
 } %>
 
@@ -85,15 +85,31 @@
       </div>
 
       <div class="tab-content">
-        <div class="tab-pane active" id="storage_units">
+        <article class="tab-pane active" id="storage_units">
           <%= render partial: 'locations/in_show/storage_units' %>
-        </div>
-        <div class="tab-pane" id="features">...b</div>
-        <div class="tab-pane" id="directions">c</div>
+        </article>
+        <article class="tab-pane" id="features">
+          <ul>
+            <% @storage.features.each do |feature| %>
+              <li><%= feature %></li>
+            <% end %>
+          </ul>
+        </article>
+        <article class="tab-pane" id="directions">
+          <%= @storage.directions.html_safe %>
+        </article>
         <div class="tab-pane" id="videos">...</div>
-        <div class="tab-pane" id="reviews">...</div>
-        <div class="tab-pane" id="holders">...</div>
+        <article class="tab-pane" id="reviews">
+          <% @storage.reviews.each do |review| %>
+            <%= review.comment %><br>
+          <% end %>
+        </article>
       </div>
+    </section>
+
+    <section class="description">
+      <h5>Treasure Island Storage <%= @storage.title %></h5>
+      <%= @storage.description.html_safe %>
     </section>
 
   </div>

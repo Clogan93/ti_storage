@@ -2,7 +2,7 @@
 # :nodoc:
 class StaticPagesController < ApplicationController
   def home
-    @storages = STORAGES
+    @storages = Storage.all
   end
 
   def storage_solutions

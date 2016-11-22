@@ -3,6 +3,7 @@ class CreateStorages < ActiveRecord::Migration[5.0]
     create_table :storages do |t|
       t.string :category
       t.string :title
+      t.string :url
       t.string :phone
 
       t.string :address

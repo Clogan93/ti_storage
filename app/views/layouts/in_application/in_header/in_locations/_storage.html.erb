@@ -15,8 +15,7 @@
           </div>
 
           <div class="address">
-            <%= storage[:address] %><br>
-            <%= storage[:area] %><br>
+            <%= storage.full_address %><br>
             <b class="telephone"><%= storage[:phone] %></b>
           </div>
 
@@ -35,7 +34,7 @@
         </div>
 
         <div class="col-xs-6 view_units">
-        <%= link_to 'View units', location_path(storage[:id]), class: 'button blue' %>
+        <%= link_to 'View units', location_path(storage[:url]), class: 'button blue' %>
         </div>
       </div>
 
