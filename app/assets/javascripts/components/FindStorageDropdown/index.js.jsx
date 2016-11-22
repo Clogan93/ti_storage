@@ -72,7 +72,6 @@ const FindStorageDropdown = React.createClass({
   },
 
   render() {
-    console.log(this.props.storages)
     return(
       <div>
         <input type="text" placeholder="City, Zip Code" className="form-control find_storage_input" onChange={this.somethingIsTyped}/>
