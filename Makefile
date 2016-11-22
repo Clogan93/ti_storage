@@ -16,6 +16,8 @@ setup: bundle
 
 migrate:
 	docker-compose run app bundle exec rails db:migrate
+seed:
+	docker-compose run app bundle exec rails db:seed
 
 ci: bundle lint rspec
 

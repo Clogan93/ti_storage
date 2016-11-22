@@ -2,6 +2,8 @@ AllCops:
   Exclude:
     - 'db/schema.rb'
     - 'db/migrate/*'
+    - 'db/seed.rb'
+    - 'db/seed/*'
     - 'vendor/**/*'
 StringLiterals:
   Enabled: false
