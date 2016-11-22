@@ -26,13 +26,11 @@
 
       <% tab_ids = [:storage_units, :features, :directions, :videos, :reviews] %>
 
-      <ul class="hidden-lg-down tab_navigation">
+      <ul class="hidden-lg-down tab_navigation nav nav-tabs">
         <% tab_ids.each do |tab_id| %>
           <li class="nav-item">
-            <a href="#<%= tab_id %>" class="<%= tab_id == :storage_units ? 'active' : '' %>" data-toggle="tab">
-              <div class="trapezoid">
-                <%= tab_id.to_s.titleize %>
-              </div>
+            <a href="#<%= tab_id %>" class="<%= tab_id == :storage_units ? 'active' : '' %> nav-link" data-toggle="tab">
+              <%= tab_id.to_s.titleize %>
             </a>
           </li>
         <% end %>

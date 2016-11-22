@@ -5,15 +5,16 @@
     @import 'in_show/storage_units_responsive';
     .sizing_guide_preview{ margin: 0 auto; }
     ul.tab_navigation{
-      padding-left: 0;
-      margin-bottom: 0;
-        a{
-          font-size: 15px;
-          font-weight: bold;
-          color: #393939;
-        }
-        
-      
+      li.nav-item{
+        width: 20%;
+        margin-left: 0;
+        text-align: center;
+      }
+      a{
+        font-size: 15px;
+        font-weight: bold;
+        color: #393939;
+      }
     }
     article#features, article#directions{
       ul, ol{
