@@ -1,6 +1,6 @@
+# Storages (we call them /locations occasionaly).
 # frozen_string_literal: true
 class Storage < ApplicationRecord
-
   has_many :reviews
 
   validates_presence_of :category, :title, :phone,

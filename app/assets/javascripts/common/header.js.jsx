@@ -1,4 +1,4 @@
-$(document).ready(() => {
+$(document).on('turbolinks:load', () => {
   const locations = $("header section.locations");
 
   const collapsedMenu = locations.find(".menu");
@@ -16,7 +16,8 @@ $(document).ready(() => {
     }
   });
 
-  locations.find(".toggler").click((e) => {
+  locations.find(".toggler").on('click', (e) => {
+    console.log('clicked')
     e.preventDefault();
     collapsedMenu.collapse('toggle');
   })
