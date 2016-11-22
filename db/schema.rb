@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 20161113032009) do
     t.string   "last_name"
     t.date     "move_in_date"
     t.string   "phone"
+    t.string   "email"
+    t.string   "card_name"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end

@@ -15,7 +15,7 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'inline_svg'
 
-gem 'wicked' # maybe an okay solution for wizard form
+# gem 'wicked' # maybe an okay solution for wizard form
 
 gem 'react-rails'
 gem 'sprockets'

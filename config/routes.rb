@@ -2,7 +2,9 @@
 Rails.application.routes.draw do
   resources :locations, only: [:show, :index]
 
-  resources :checkout, only: :new
+  get 'checkout', to: 'checkout#new'
+  post 'checkout/step_1'
+  post 'checkout/step_2'
 
   get 'search', to: 'search#index'
 

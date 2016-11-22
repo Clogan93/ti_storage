@@ -1,0 +1,11 @@
+<section class="step_1 step block">
+  <%= form_for @reservation, url: checkout_step_2_path do |f| %>
+    <h5 class="block_heading">Confirm your reservation</h5>
+
+    <section class="general_client_info">
+      <%= f.text_field :card_name, placeholder: "Card Name", class: "form-control" %>
+
+      <%= f.submit "Continue", class: 'button red' %>
+    </section>
+  <% end %>
+</section>

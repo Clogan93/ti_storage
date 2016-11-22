@@ -19,7 +19,11 @@ migrate:
 seed:
 	docker-compose run app bundle exec rails db:seed
 reset:
-	docker-compose run app bundle exec rake db:reset
+	docker-compose run app bundle exec rake db:migrate:reset
+	docker-compose run app bundle exec rails db:seed
+
+routes:
+	docker-compose run app bundle exec rake routes
 
 ci: bundle lint rspec
 
