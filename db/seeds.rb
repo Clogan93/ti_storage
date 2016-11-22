@@ -384,6 +384,9 @@ woodbridge = Storage.create!({
   link_to_yelp: 'https://www.yelp.com/biz/treasure-island-self-storage-woodbridge'
 })
 
+puts "seeded #{Storage.count} storages"
+
+
 require_relative './seeds/red_hook_reviews'
 red_hook.reviews.create!(RED_HOOK_REVIEWS)
 
@@ -398,3 +401,5 @@ paterson.reviews.create!(PATERSON_REVIEWS)
 
 require_relative './seeds/woodbridge_reviews'
 woodbridge.reviews.create!(WOODBRIDGE_REVIEWS)
+
+puts "seeded #{Review.count} reviews"
