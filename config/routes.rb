@@ -8,8 +8,7 @@ Rails.application.routes.draw do
 
   get 'search', to: 'search#index'
 
-  get 'storage-solutions', to: 'static_pages#storage_solutions'
-
+  # storage solutions
   get 'commercial-storage', to: 'static_pages#commercial_storage'
   get 'household-storage',  to: 'static_pages#household_storage'
   get 'wine-storage', to: 'static_pages#wine_storage'

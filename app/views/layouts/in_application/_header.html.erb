@@ -9,7 +9,7 @@
         <nav class="<%= 'invisible' if @header_navigation_is_hidden %>">
           <div class="links">
             <%= render(partial: 'layouts/in_application/in_header/locations') %>
-            <%= link_to 'Storage Solutions', storage_solutions_path, class: 'nav_link' %>
+            <%= render(partial: 'layouts/in_application/in_header/storage_solutions') %>
             <%= link_to 'Why Store With Us', '', class: 'nav_link' %>
           </div>
 
