@@ -1,0 +1,53 @@
+<main id="storage_solutions_page">
+  <div class="blue_page_heading">
+    <h1><%= title %></h1>
+  </div>
+
+  <div class="container-fluid">
+    <div class="find_storage_space_near_you">
+      <section class="title">
+        Find Storage Space Near You
+      </section>
+
+      <section class="search_field">
+        <input type="text" placeholder="City, Zip Code" class="find_storage_input" value="Red Hook, Brooklyn 11235">
+        <div class="button search">Search</div>
+      </section>
+
+      <section class="ad">
+        <%= image_tag 'common/ads/labor-sale-horizontal.png' %>
+      </section>
+
+      <section class="sizing_guide_preview">
+        <h6>Sizing Guide</h6>
+        <div class="image_and_play_icon">
+          <%= image_tag 'common_elements/sizing_guide_preview.jpg', class: "preview_image" %>
+          <%= image_tag 'common_elements/play-icn.svg', class: 'play_icon' %>
+        </div>
+      </section>
+
+      <section class="list_of_links">
+        <h6>List Of Links</h6>
+
+        <ul>
+          <% 5.times do |i| %>
+            <li>
+              <%= link_to "Link #{i}" %>
+            </li>
+          <% end %>
+        </ul>
+      </section>
+    </div>
+
+    <div class="actual_page">
+      <section class="heading_with_background">
+        <div class="background"></div>
+        <h1>HEADER IMAGE</h1>
+      </section>
+
+      <article class="description">
+        <%= description.html_safe %>
+      </article>
+    </div>
+  </div>
+</main>

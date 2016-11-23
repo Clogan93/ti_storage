@@ -23,8 +23,11 @@ ActiveRecord::Schema.define(version: 20161113032009) do
     t.string   "phone"
     t.string   "email"
     t.string   "card_name"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.string   "card_number"
+    t.date     "card_expiry_date"
+    t.string   "coupon_code"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   create_table "reviews", force: :cascade do |t|

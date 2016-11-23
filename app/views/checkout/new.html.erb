@@ -15,13 +15,13 @@
     <div class="sidebar_and_steps">
       <%= render partial: '/checkout/in_new/your_reservation' %>
 
-      <% if session[:current_step] == 1 %>
+      <% case session[:current_step] 
+         when 1 %>
         <%= render partial: '/checkout/in_new/step_1' %>
-      <% elsif session[:current_step] == 2 %>
+      <% when 2 %>
         <%= render partial: '/checkout/in_new/step_2' %>
-      <% elsif session[:current_step] == nil %>
-        <h1>Thank you for your order!</h1>
-        <%= @reservation.attributes %>
+      <% when nil %>
+        <%= render partial: '/checkout/in_new/step_3' %>
       <% end %>
     </div>
   </div>

@@ -1,3 +1,6 @@
+# hm hm. this works, but it's hard to manage and looks dirty probably.
+# besides, we'll likely need some js on card validation.
+# let's wait till specs are more clear and then decide if it's worth it switching to react.
 # frozen_string_literal: true
 # :nodoc:
 class CheckoutController < ApplicationController
@@ -49,11 +52,12 @@ class CheckoutController < ApplicationController
 
   private
     def step_1_params
-      params.require(:reservation).permit(:type, :first_name, :last_name, :move_in_date, :phone, :email).merge({ step_1: true })
+      params.require(:reservation).permit(:type, :first_name, :last_name, :move_in_date, :phone, :email).
+        merge({ step_1: true })
     end
 
     def step_2_params
-      session[:reservation_params].
+      session[:reservation_params]. 
         merge({ step_1: false }).
         merge(params.require(:reservation).permit(:card_name))
     end

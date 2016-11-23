@@ -5,6 +5,8 @@ AllCops:
     - 'db/seeds.rb'
     - 'db/seeds/*'
     - 'vendor/**/*'
+    - 'app/controllers/checkout_controller.rb'
+    - 'app/models/reservation.rb'
 StringLiterals:
   Enabled: false
 AlignParameters:

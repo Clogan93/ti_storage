@@ -9,5 +9,12 @@ Rails.application.routes.draw do
   get 'search', to: 'search#index'
 
   get 'storage-solutions', to: 'static_pages#storage_solutions'
+
+  get 'commercial-storage', to: 'static_pages#commercial_storage'
+  get 'household-storage',  to: 'static_pages#household_storage'
+  get 'wine-storage', to: 'static_pages#wine_storage'
+  get 'boat-storage', to: 'static_pages#boat_storage'
+  get 'car-storage', to: 'static_pages#car_storage'
+
   root to: 'static_pages#home'
 end
