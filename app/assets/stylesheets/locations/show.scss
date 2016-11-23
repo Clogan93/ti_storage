@@ -17,10 +17,7 @@
       }
     }
     article#features, article#directions{
-      ul, ol{
-        padding-left: 30px;
-        list-style-type: inherit;
-      }
+      @extend .default_markup;
     }
     article:not(#storage_units){
       padding: 30px;
@@ -28,9 +25,6 @@
   }
   section.description{
     margin-top: 30px;
-    ul, ol{
-      padding-left: 30px;
-      list-style-type: inherit;
-    }
+    @extend .default_markup;
   }
 }
