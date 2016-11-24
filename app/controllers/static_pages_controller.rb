@@ -4,6 +4,9 @@ class StaticPagesController < ApplicationController
   def home
   end
 
+  def contact
+  end
+
   # storage solutions
   before_action -> { render "static_pages/storage_solutions/#{action_name}" }, only: [
     :commercial_storage, :household_storage, :wine_storage,:boat_storage, :car_storage

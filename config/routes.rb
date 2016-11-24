@@ -13,7 +13,9 @@ Rails.application.routes.draw do
   get 'household-storage',  to: 'static_pages#household_storage'
   get 'wine-storage', to: 'static_pages#wine_storage'
   get 'boat-storage', to: 'static_pages#boat_storage'
-  get 'car-storage', to: 'static_pages#car_storage'
+  get 'car-storage',  to: 'static_pages#car_storage'
+
+  get 'contact', to: 'static_pages#contact'
 
   root to: 'static_pages#home'
 end
