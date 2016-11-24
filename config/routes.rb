@@ -9,11 +9,16 @@ Rails.application.routes.draw do
   get 'search', to: 'search#index'
 
   # storage solutions
-  get 'commercial-storage', to: 'static_pages#commercial_storage'
-  get 'household-storage',  to: 'static_pages#household_storage'
-  get 'wine-storage', to: 'static_pages#wine_storage'
-  get 'boat-storage', to: 'static_pages#boat_storage'
-  get 'car-storage',  to: 'static_pages#car_storage'
+
+  scope 'static_pages', module: 'static_pages' do
+    get 'commercial-storage', to: 'storage_solutions#commercial_storage'
+    get 'household-storage',  to: 'storage_solutions#household_storage'
+    get 'wine-storage', to: 'storage_solutions#wine_storage'
+    get 'boat-storage', to: 'storage_solutions#boat_storage'
+    get 'car-storage',  to: 'storage_solutions#car_storage'
+  end
+
+
 
   get 'contact', to: 'static_pages#contact'
 
