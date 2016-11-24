@@ -18,8 +18,6 @@ Rails.application.routes.draw do
     get 'car-storage',  to: 'storage_solutions#car_storage'
   end
 
-
-
   get 'contact', to: 'static_pages#contact'
 
   root to: 'static_pages#home'
