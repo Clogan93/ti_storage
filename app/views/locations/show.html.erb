@@ -1,4 +1,9 @@
-<%= render partial: 'common/breadcrumbs', locals: { links: [link_to('Locations'), 'Ozone Park, NY Self Storage - 123 Address Street'] } %>
+<%= render partial: 'common/breadcrumbs', locals: {
+  links: [
+    link_to('Locations', locations_path), 
+    @storage.title
+  ]
+} %>
 
 <main id="locations_show_page">
   <div class="container-fluid">
@@ -15,19 +20,17 @@
 
     <%= render partial: 'common/search_field_and_ad' %>
 
-    <%= render partial: 'locations/in_show/storage_view' %>
+    <%= render partial: 'common/storage_view', locals: { storage: @storage } %>
 
     <section class="extensive_information">
 
       <% tab_ids = [:storage_units, :features, :directions, :videos, :reviews] %>
 
-      <ul class="hidden-lg-down tab_navigation">
+      <ul class="hidden-lg-down tab_navigation nav nav-tabs">
         <% tab_ids.each do |tab_id| %>
           <li class="nav-item">
-            <a href="#<%= tab_id %>" class="<%= tab_id == :storage_units ? 'active' : '' %>" data-toggle="tab">
-              <div class="trapezoid">
-                <%= tab_id.to_s.titleize %>
-              </div>
+            <a href="#<%= tab_id %>" class="<%= tab_id == :storage_units ? 'active' : '' %> nav-link" data-toggle="tab">
+              <%= tab_id.to_s.titleize %>
             </a>
           </li>
         <% end %>
@@ -80,15 +83,31 @@
       </div>
 
       <div class="tab-content">
-        <div class="tab-pane active" id="storage_units">
+        <article class="tab-pane active" id="storage_units">
           <%= render partial: 'locations/in_show/storage_units' %>
-        </div>
-        <div class="tab-pane" id="features">...b</div>
-        <div class="tab-pane" id="directions">c</div>
+        </article>
+        <article class="tab-pane" id="features">
+          <ul>
+            <% @storage.features.each do |feature| %>
+              <li><%= feature %></li>
+            <% end %>
+          </ul>
+        </article>
+        <article class="tab-pane" id="directions">
+          <%= @storage.directions.html_safe %>
+        </article>
         <div class="tab-pane" id="videos">...</div>
-        <div class="tab-pane" id="reviews">...</div>
-        <div class="tab-pane" id="holders">...</div>
+        <article class="tab-pane" id="reviews">
+          <% @storage.reviews.each do |review| %>
+            <%= review.comment %><br>
+          <% end %>
+        </article>
       </div>
+    </section>
+
+    <section class="description">
+      <h5>Treasure Island Storage <%= @storage.title %></h5>
+      <%= @storage.description.html_safe %>
     </section>
 
   </div>

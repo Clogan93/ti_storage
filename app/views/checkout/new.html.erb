@@ -15,7 +15,14 @@
     <div class="sidebar_and_steps">
       <%= render partial: '/checkout/in_new/your_reservation' %>
 
-      <%= render partial: '/checkout/in_new/step_1' %>
+      <% case session[:current_step] 
+         when 1 %>
+        <%= render partial: '/checkout/in_new/step_1' %>
+      <% when 2 %>
+        <%= render partial: '/checkout/in_new/step_2' %>
+      <% when nil %>
+        <%= render partial: '/checkout/in_new/step_3' %>
+      <% end %>
     </div>
   </div>
 </main>

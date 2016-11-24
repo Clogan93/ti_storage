@@ -1,4 +1,4 @@
-$(document).ready(() => {
+$(document).on('turbolinks:load', () => {
   // mobile dropdown menu that controls tabs
   const mobileTabControlEls = {
     buttonToDropLinks: $('.mobile_tab_navigation .tab_chooser .dropdown-toggle'),

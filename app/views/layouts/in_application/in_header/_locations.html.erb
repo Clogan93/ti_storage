@@ -1,76 +1,28 @@
-<div class="locations">
-  <a data-toggle="collapse" href="#collapsible_locations_in_header" class="nav_link">
+<section class="locations">
+  <!-- href="#" is for styling -->
+  <a href="#" class="nav_link toggler">
     Locations
   </a>
 
-  <div id="collapsible_locations_in_header" class="collapse">
+  <div class="collapse menu">
 
     <ul class="cities">
-      <li>New Jersey
-
-        <ul class="places">
-          <li>
-            Red Hook<%= inline_svg 'common/header/right-chevron.svg', class: 'chevron' %>
-            <ul class="location">
+      <% @storage_categories.each do |category| %>
+        <li><%= category %>
+          <ul class="places">
+            <% storages = @storages.where(category: category) %>
+            <% storages.each do |storage| %>
               <li>
-                <div class="storage_details">
-                  <h1 class="city">Red Hook, Brooklyn</h1>
+                <%= storage[:title] %>
+                <%= inline_svg 'common/header/right-chevron.svg', class: 'chevron' %>
 
-                  <div class="row info">
-                    <div class="col-xs-6 photo">
-                      <%= image_tag 'http://placehold.it/182x136' %>
-                    </div>
-                    <div class="col-xs-6 details">
-
-                      <div class="miles_away">
-                        <%= image_tag 'common_elements/location_pin.svg' %>
-                        <span class="how_many">3 Miles Away</span>
-                      </div>
-
-                      <div class="address">
-                        183 Lorraine Street<br>
-                        Brooklyn, NY 11231<br>
-                        <b class="telephone">718-509-6524</b>
-                      </div>
-
-                      <%= render 'common/storage_rating' %>
-
-                      <a class="view_in_google_maps">
-                        View in Google Maps
-                      </a>
-                    </div>
-                  </div>
-
-                  <div class="row flex-items-xs-middle reserve_today_and_view_units">
-                    <div class="col-xs-6 reserve_today">
-                      <div class="red">Reserve Your Space Today</div>
-                      <div class="blue">646.846.9449</div>
-                    </div>
-
-                    <div class="col-xs-6 view_units">
-                      <a class="button blue">View units</a>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-xs-12">
-                      <div class="grey_rectangle"></div>
-                    </div>
-                  </div>
-                </div>
+                <%= render(partial: 'layouts/in_application/in_header/in_locations/storage', locals: { storage: storage }) %>
               </li>
-            </ul>
-
-          </li>
-          <li>
-            Fort Greene<%= inline_svg 'common/header/right-chevron.svg', class: 'chevron' %>
-          </li>
-        </ul>
-
-      </li>
-      <li>Brooklyn, NY</li>
-      <li>Manhattan</li>
+            <% end %>
+          </ul>
+        </li>
+      <% end %>
     </ul>
 
   </div>
-</div>
+</section>

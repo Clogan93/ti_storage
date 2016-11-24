@@ -1,3 +1,30 @@
+<% sizes = [
+  {
+    size_in_number: '5x5',
+    size_in_words: 'small'
+  },
+  {
+    size_in_number: '5x10',
+    size_in_words: 'normal'
+  },
+  {
+    size_in_number: '5x15',
+    size_in_words: 'normal'
+  },
+  {
+    size_in_number: '10x10',
+    size_in_words: 'big'
+  },
+  {
+    size_in_number: '10x15',
+    size_in_words: 'large'
+  },
+  {
+    size_in_number: '10x25',
+    size_in_words: 'x-large'
+  }
+] %>
+
 <div class="modal" id="sizing_guide">
 
   <div class="modal-dialog" role="document">
@@ -11,36 +38,44 @@
         <div class="clearfix"></div>
       </div>
 
-      <nav class="sizes">
-        <% 5.times do |i| %>
-          <div class="size <%= i == 0 ? 'active' : '' %>">
-            <div class="number">5x10</div>
-            <div class="text">Size if small closet</div>
-            <div class="arrow-right"></div>
-          </div>
-        <% end %>
-      </nav>
+      <div class="tabs">
+        <ul class="sizes" role="tablist">
+          <% sizes.each_with_index do |size, i| %>
+            <li class="nav-item">
+              <a class="nav-link <%= i == 0 ? 'active' : '' %> size" 
+                data-toggle="tab" 
+                href="#size_<%= i %>" 
+                role="tab">
+                <div class="number"><%= size[:size_in_number] %></div>
+                <div class="text"><%= size[:size_in_words] %></div>
+                <div class="arrow-right"></div>
+              </a>
+            </li>
+          <% end %>
+        </ul>
 
-      <section class="size_description">
-        <div class="row flex-items-xs-middle number_and_replay">
-          <div class="col-xs-6">
-            <div class="number">5x5</div>
-          </div>
-          <div class="col-xs-6">
-            <div class="replay">Replay</div>
-          </div>
-        </div>
+        <section class="tab-content size_description">
+          <% sizes.each_with_index do |size, i| %>
+            <div class="tab-pane <%= i == 0 ? 'active' : '' %>" id="size_<%= i %>" role="tabpanel">
+              <div class="row flex-items-xs-middle number">
+                <div class="col-xs-6">
+                  <div class="number"><%= size[:size_in_number] %></div>
+                </div>
+              </div>
 
-        <div class="video">
-          <%= image_tag 'common_elements/size_video.jpg' %>
-        </div>
+              <div class="video">
+                <%= image_tag "common/sizing_guide/#{size[:size_in_number]}.gif" %>
+              </div>
 
-        <div class="description">
-          <h5>A 5x5 Unit is this.</h5>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-          tempor incididunt ut labore et.</p>
-        </div>
-      </section>
+              <div class="description">
+                <h5>A <%= size[:size_in_number] %> Unit is this.</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et.</p>
+              </div>
+            </div>
+          <% end %>
+        </section>
+      </div>
 
     </div>
   </div>

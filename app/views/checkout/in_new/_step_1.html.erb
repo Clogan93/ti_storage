@@ -1,5 +1,5 @@
 <section class="step_1 step block">
-  <%= form_for @reservation, url: '' do |f| %>
+  <%= form_for @reservation, url: checkout_step_1_path do |f| %>
     <h5 class="block_heading">Lock in Your Rate Now.</h5>
 
     <section class="explanation">
@@ -50,7 +50,7 @@
       <%= f.text_field :phone, placeholder: "Phone Number", class: "form-control" %>
       <%= f.date_field :move_in_date, placeholder: "Move-In Date", class: "form-control" %>
 
-      <div class="button red">Continue</div>
+      <%= f.submit "Continue", class: 'button red' %>
     </section>
 
     <section class="sign_up_for_moving_services">

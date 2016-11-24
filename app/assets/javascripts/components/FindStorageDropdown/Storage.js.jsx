@@ -5,12 +5,14 @@ const Storage = React.createClass({
   },
 
   render() {
-    return (
-      <a className="location">
+    const storage = this.props.storage;
+
+    return(
+      <a className="location" href={`/locations/${storage.url}`}>
         <div className="row">
           <div className="col-xs-8 name">
             <img src={this.props.src}/>
-            <span>{this.props.storage.address}</span>
+            <span>{`${storage.area} ${storage.address}`}</span>
           </div>
           <div className="col-xs-4 text-xs-right comment grey red">
             XL Unit - 50% off!

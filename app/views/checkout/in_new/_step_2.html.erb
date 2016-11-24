@@ -1,0 +1,20 @@
+<section class="step_2 step block">
+  <h5 class="block_heading">Confirm your reservation</h5>
+
+  <section class="enter_below">
+    <h4>Enter Your Payment information below</h4>
+    <p>Placeholder Safe money transfer with your bank acount. Visa, Master, Discover, Amex, JCB.</p>
+  </section>
+
+  <%= form_for @reservation, url: checkout_step_2_path do |f| %>
+
+    <%= f.text_field :card_name, placeholder: "Name On Card", class: "form-control" %>
+    <%= f.text_field :card_number, placeholder: "Card Name", class: "form-control" %>
+
+
+    <%= f.submit "Continue", class: 'button red' %>
+
+  <% end %>
+
+  <% end %>
+</section>

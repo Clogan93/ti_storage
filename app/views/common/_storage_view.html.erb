@@ -1,0 +1,68 @@
+<section class="storage_view">
+  <div class="row">
+    <div class="col-lg-4 col-xs-7 photos">
+      <div class="main_photo">
+        <%= image_tag "common/storages/#{storage[:id]}.jpg" %>
+      </div>
+
+      <div class="additional_photos">
+        <% 3.times do |i| %>
+          <%= image_tag "common/storages/#{storage[:id]}/#{i+1}.jpg" %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="col-lg-4 info">
+      <div class="row">
+        <div class="col-sm-6 details storage_details">
+          <div class="address">
+            <h6>Location</h6>
+            <p>
+              <%= storage.address %><br>
+              <%= storage.area %><br>
+              <%= storage.zip_code %>
+            </p>
+          </div>
+
+          <%= render 'common/storage_rating' %>
+          <a class="read_reviews">Read Reviews</a>
+
+          <a class="get_directions">GET DIRECTIONS</a>
+        </div>
+
+        <div class="col-sm-6">
+          <div class="office_hours">
+            <h6>Office hours</h6>
+            <p>
+              <% storage[:office_hours].each do |hours| %>
+                <%= hours %><br>
+              <% end %>
+            </p>
+          </div>
+
+          <div class="access_hours">
+            <h6>Access hours</h6>
+            <p>
+              <% storage[:access_hours].each do |hours| %>
+                <%= hours %><br>
+              <% end %>
+            </p>
+          </div>
+
+          <div class="phone_number">
+            <h6>Phone number</h6>
+            <p><%= storage[:phone] %></p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col-lg-4 map">
+      <iframe
+        src="https://www.google.com/maps/embed/v1/place?key=<%= ENV['GOOGLE_MAPS_API_KEY']%>&q=<%= storage[:area] + ' ' + storage[:address] %>"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+</section>

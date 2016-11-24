@@ -1,7 +1,7 @@
-.locations{
+section.locations{
   display: inline-block;
   text-align: left;
-  #collapsible_locations_in_header{
+  .menu{
     font-size: 15px;
     position: absolute;
     z-index: 10;
@@ -12,8 +12,8 @@
     }
 
     ul.cities, ul.places{
-      min-width: 200px; min-height: 200px;
-      padding-top: 10px;
+      min-width: 200px;
+      padding-top: 10px; padding-bottom: 10px;
       &> li.ui-menu-item{
         // !important because jquery-ui will try to override it:
         margin: 10px 0 !important;
@@ -57,6 +57,9 @@
                 color: white;
                 background-color: $cobalt_color;
                 border-bottom: solid 3px $vermillion_color;
+              }
+              .photo{
+                img{ width: 100%; }
               }
               .info{
                 padding: 15px;
