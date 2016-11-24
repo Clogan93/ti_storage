@@ -1,4 +1,5 @@
 main#contact_page{
+  margin-bottom: -30px;
   section.contact_us{
     background: url(image-path("static_pages/contact/top.jpg")) no-repeat;
     position: relative;
@@ -47,11 +48,14 @@ main#contact_page{
   }
   section.contact_form{
     display: flex;
+    border-top: 5px solid $vermillion_color;
+    border-bottom: 5px solid $vermillion_color;
     div.left_image{
       width: 50%;
       background: url(image-path('static_pages/contact/left')) no-repeat;
     }
     form.right_form{
+      padding-top: 60px;
       width: 50%;
       background: $cobalt_color;
       color: white;
@@ -70,14 +74,32 @@ main#contact_page{
       }
       fieldset.is_current_customer_yes,
       fieldset.is_current_customer_no{
+        display: none;
         .question{
           label{ width: 100%; }
           select{ width: 100%; }
         }
-        textarea{ width: 100%; }
-      }
-  
 
+        label.message{
+          margin-top: 20px;
+          width: 100%;
+          padding-bottom: 10px;
+          textarea{ width: 100%; }
+        }
+      }
+      fieldset.send_and_required_field{
+        padding-bottom: 20px;
+        margin-top: 20px;
+        button{
+          padding: 5px 20px;
+          margin-right: 20px;
+          color: white;
+          background: $vermillion_color;
+          border: none;
+        }
+        button, span{ display: inline-block; }
+        span{ font-style: oblique; }
+      }
     }
   }
 }

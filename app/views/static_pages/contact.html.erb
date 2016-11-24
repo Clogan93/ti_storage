@@ -21,14 +21,14 @@
         <input type="text"  name="phone" placeholder="Phone Number" class="phone">
 
         <div class="is_current_customer">
-          <label>Are you a current customer? *</label>
+          <div>Are you a current customer? *</div>
           <label class="custom-control custom-radio">
-            <input name="is_current_customer" type="radio" class="custom-control-input" name="yes">
+            <input name="is_current_customer" type="radio" class="custom-control-input" value="yes">
             <span class="custom-control-indicator"></span>
             <span class="custom-control-description">Yes</span>
           </label>
           <label class="custom-control custom-radio">
-            <input name="is_current_customer" type="radio" class="custom-control-input" name="no">
+            <input name="is_current_customer" type="radio" class="custom-control-input" value="no">
             <span class="custom-control-indicator"></span>
             <span class="custom-control-description">No</span>
           </label>
@@ -39,29 +39,38 @@
         <div class="question">
           <label>Where do you store with us?</label>
           <select class="custom-select">
-            <option selected>PATERSON</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
+            <% @storages.each do |storage| %>
+              <option value="<%= storage.title %>"><%= storage.title %></option>
+            <% end %>
           </select>
         </div>
-        
-        <textarea name="message"></textarea>
+
+        <label class="message">Message (250 character limit)
+          <textarea name="message"></textarea>
+        </label>
       </fieldset>
 
       <fieldset class="is_current_customer_no">
         <div class="question">
           <label>How did you hear about us?</label>
+
           <select class="custom-select">
-            <option selected>Open this select menu</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
+            <% ['TV Commercial', 'Subway Ad', 'Google Search', 'Referral', 'Other'].each do |source| %>
+              <option value="<%= source %>"><%= source %></option>
+            <% end %>
           </select>
         </div>
-        
 
-        <textarea name="message"></textarea>
+        <label class="message">Message (250 character limit)
+          <textarea name="message"></textarea>
+        </label>
+      </fieldset>
+
+      <fieldset class="send_and_required_field">
+        <button>
+          SEND
+        </button>
+        <span>* Required field</span>
       </fieldset>
     </form>
   </section>
