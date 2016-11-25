@@ -30,48 +30,17 @@
     </div>
   </section>
 
-  <section class="recommended_locations">
+  <section class="featured_specials">
     <div class="container-fluid">
-      <h4 class="heading">Recommended Locations for You</h4>
+      <h4 class="heading">Featured Specials</h4>
 
       <div class="row">
-
-      <% 2.times do |i| %>
-        <div class="col-lg-6">
-          <div class="storage_preview <%= i == 0 ? 'float-lg-right' : 'float-lg-left' %>">
-            <div class="row city">
-              <div class="col-xs-12">
-                Brooklyn
-              </div>
-            </div>
-
-            <div class="row info">
-              <div class="col-sm-6 photo">
-                <%= image_tag 'http://placehold.it/182x136' %>
-              </div>
-              <div class="col-sm-6">
-                <div class="miles_away">
-                  <%= image_tag 'common_elements/location_pin.svg' %>
-                  <span class="how_many">3 Miles Away</span>
-                </div>
-
-                <div class="address">
-                  183 Lorraine Street<br>
-                  Brooklyn, NY 11231<br>
-                  <b class="telephone">718-509-6524</b>
-                </div>
-
-                <%= render 'common/storage_rating' %>
-
-                <a class="show_all_units">
-                  Show All Available Units
-                </a>
-              </div>
-            </div>
-          </div>
+        <div class="col-xs-6 special month">
+          <%= image_tag 'static_pages/home_page/featured_specials/free_month.jpg' %>
         </div>
-      <% end %>
-
+        <div class="col-xs-6 special move">
+          <%= image_tag 'static_pages/home_page/featured_specials/free_move.jpg' %>
+        </div>
       </div>
     </div>
   </section>
