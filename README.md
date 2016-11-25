@@ -62,3 +62,8 @@ For example:
 `closes #99`
 
 Including a keyword and the issue # in your PR message will close that issue once it is merged into your default branch. This will automatically move the issue to the Done column on your Waffle board.
+
+# Heroku
+
+`heroku run rake db:migrate --app desolate-fortress-66664-pr-99`
+`heroku run rake db:seed --app desolate-fortress-66664-pr-99`

@@ -9,7 +9,6 @@ Rails.application.routes.draw do
   get 'search', to: 'search#index'
 
   # storage solutions
-
   scope 'static_pages', module: 'static_pages' do
     get 'commercial-storage', to: 'storage_solutions#commercial_storage'
     get 'household-storage',  to: 'storage_solutions#household_storage'
@@ -18,7 +17,8 @@ Rails.application.routes.draw do
     get 'car-storage',  to: 'storage_solutions#car_storage'
   end
 
-  get 'contact', to: 'static_pages#contact'
+  get 'contact',      to: 'static_pages#contact'
+  get 'sizing-guide', to: 'static_pages#sizing_guide'
 
   root to: 'static_pages#home'
 end
