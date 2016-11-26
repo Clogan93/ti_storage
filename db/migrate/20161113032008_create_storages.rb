@@ -14,7 +14,8 @@ class CreateStorages < ActiveRecord::Migration[5.0]
       t.text :office_hours
       t.text :access_hours
 
-      t.text :description
+      t.text :description_1
+      t.text :description_2
       t.text :directions
       t.text :features
 

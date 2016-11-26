@@ -80,10 +80,20 @@
       </div>
     </section>
 
-    <section class="description">
-      <h5>Treasure Island Storage <%= @storage.title %></h5>
-      <%= @storage.description.html_safe %>
-    </section>
+    <article class="descriptions">
+      <div class="description_1">
+        <div class="text">
+          <%= @storage.description_1.html_safe %>
+        </div>
+        <%= image_tag "locations/show/descriptions/#{@storage.url}/1.jpg" %>
+      </div>
+      <div class="description_2">
+        <%= image_tag "locations/show/descriptions/#{@storage.url}/2.jpg" %>
+        <div class="text">
+          <%= @storage.description_2.html_safe %>
+        </div>
+      </div>
+    </article>
 
   </div>
 </main>
