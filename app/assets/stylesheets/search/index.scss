@@ -98,13 +98,10 @@
   }
 
   .map_and_sizing_guide_preview{
-    .fixates_on_scrolldown{
-      section.map{
-        iframe{
-          width: 100%;
-          height: 300px;
-        }
-      }
+    section.map{
+      width: 100%;
+      height: 300px;
+      margin-bottom: 30px;
     }
   }
 }
