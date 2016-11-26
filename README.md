@@ -65,5 +65,6 @@ Including a keyword and the issue # in your PR message will close that issue onc
 
 # Heroku
 
+`heroku pg:reset DATABASE_URL --app desolate-fortress-66664-pr-99`
 `heroku run rake db:migrate --app desolate-fortress-66664-pr-99`
 `heroku run rake db:seed --app desolate-fortress-66664-pr-99`

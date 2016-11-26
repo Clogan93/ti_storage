@@ -29,6 +29,8 @@
             <p><%= storage[:phone] %></p>
           </div>
 
+          <%= link_to 'FIND UNITS', location_path(storage.url), class: 'button blue find_units' %>
+
           <%= render 'common/storage_rating' %>
           <a class="read_reviews">Read Reviews</a>
         </div>

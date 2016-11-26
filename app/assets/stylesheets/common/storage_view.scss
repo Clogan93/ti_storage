@@ -33,10 +33,14 @@ section.storage_view{
       font-size: 16px;
     }
     .phone_number{ p{ margin-bottom: 4px; } }
-    .storage_rating{
-      margin-top: 59px;
+    a.button.blue{
+      min-height: 30px;
+      padding-top: 2px;
+      margin-top: 12px;
     }
-    
+    .storage_rating{
+      margin-top: 12px;
+    }
     a.read_reviews, a.get_directions{
       display: block;
       color: $bright-orange_color;

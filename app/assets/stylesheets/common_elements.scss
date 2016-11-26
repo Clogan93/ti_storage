@@ -12,6 +12,10 @@
   padding-top: 8px;
 
   cursor: pointer;
+  &:hover{
+    text-decoration: none;
+    color: white;
+  }
 }
 .button.blue{
   background: linear-gradient(to bottom, #1f6aff 48%, $azul_color 52%);

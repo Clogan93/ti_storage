@@ -1,8 +1,13 @@
 #locations_show_page{
+  section.storage_view{
+    .button.blue.find_units{ visibility: hidden; }
+  }
   section.extensive_information{
     margin-top: 30px;
     @import 'in_show/storage_units';
     @import 'in_show/storage_units_responsive';
+
+
     .sizing_guide_preview{ margin: 0 auto; }
     ul.tab_navigation{
       li.nav-item{
@@ -59,4 +64,3 @@
     }
   }
 }
-
