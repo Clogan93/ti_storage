@@ -27,7 +27,9 @@
           <%= render 'common/storage_rating' %>
           <a class="read_reviews">Read Reviews</a>
 
-          <a class="get_directions">GET DIRECTIONS</a>
+          <a href="https://www.google.com/maps/place/<%= storage.coordinates[0] %>,<%= storage.coordinates[1] %>" target="_blank" class="get_directions">
+            GET DIRECTIONS
+          </a>
         </div>
 
         <div class="col-sm-6">

@@ -13,8 +13,8 @@
     <%= yield %>
     <%= render partial: 'layouts/in_application/footer' %>
 
-    <script>    
-      const storages = <%= @storages.to_json.html_safe %>;
+    <script data-turbolinks-eval=false>
+        const storages = <%= @storages.to_json.html_safe %>;
     </script>
 
     <script data-turbolinks-eval=false type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAPS_API_KEY'] %>&libraries=places"></script>

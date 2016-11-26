@@ -41,15 +41,6 @@
       letter-spacing: 0.4px;
       color: $light-navy_color;
     }
-
-    .tab_chooser{
-      .dropdown-menu{
-        ul{
-          list-style-type: none;
-          padding-left: 0;
-        }
-      }
-    }
   }
   @media (max-width: $md){
     .button.search{
