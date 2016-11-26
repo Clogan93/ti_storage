@@ -5,7 +5,7 @@
 
       <div class="row">
         <div class="col-sm-8">
-          <input type="text" placeholder="City, Zip Code" class="find_storage_input">
+          <input type="text" placeholder="City, Zip Code" class="find_storage_input" value="<%= (@storage.area + ', ' + @storage.address) if @storage %>">
         </div>
         <div class="col-sm-4">
           <div class="button search">Search</div>

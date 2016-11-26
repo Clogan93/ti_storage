@@ -24,12 +24,13 @@
             </p>
           </div>
 
+          <div class="phone_number">
+            <h6>Phone number</h6>
+            <p><%= storage[:phone] %></p>
+          </div>
+
           <%= render 'common/storage_rating' %>
           <a class="read_reviews">Read Reviews</a>
-
-          <a href="https://www.google.com/maps/place/<%= storage.coordinates[0] %>,<%= storage.coordinates[1] %>" target="_blank" class="get_directions">
-            GET DIRECTIONS
-          </a>
         </div>
 
         <div class="col-sm-6">
@@ -51,10 +52,9 @@
             </p>
           </div>
 
-          <div class="phone_number">
-            <h6>Phone number</h6>
-            <p><%= storage[:phone] %></p>
-          </div>
+          <a href="https://www.google.com/maps/place/<%= storage.coordinates[0] %>,<%= storage.coordinates[1] %>" target="_blank" class="get_directions">
+            GET DIRECTIONS
+          </a>
         </div>
       </div>
 

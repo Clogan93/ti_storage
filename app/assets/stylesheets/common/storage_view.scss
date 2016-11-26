@@ -9,8 +9,7 @@ section.storage_view{
     .main_photo{
       text-align: center;
       img{
-        max-width: 342px; max-height: 254px;
-        width: 100%;
+        max-height: 180px;
       }
     }
     .additional_photos{
@@ -19,7 +18,7 @@ section.storage_view{
       margin-top: 20px;
       img{
         margin: 0 10px;
-        max-width: 111px; max-height: 92px;
+        max-height: 50px;
       }
     }
   }
@@ -33,17 +32,17 @@ section.storage_view{
     p{
       font-size: 16px;
     }
+    .phone_number{ p{ margin-bottom: 4px; } }
+    .storage_rating{
+      margin-top: 59px;
+    }
     
     a.read_reviews, a.get_directions{
       display: block;
       color: $bright-orange_color;
-      font-size: 16px;
     }
-
-    a.get_directions{
-      font-size: 18px;
-      margin-top: 26px;
-    }
+    a.read_reviews{ font-size: 16px; }
+    a.get_directions{ font-size: 17px; }
   }
 
   .map{
