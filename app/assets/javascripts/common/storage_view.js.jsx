@@ -1,6 +1,6 @@
 $(document).on('turbolinks:load', () => {
-  const page = $('#locations_show_page');
-  if (page.length == 0){ return }
+  const el = $('section.storage_view');
+  if (el.length == 0){ return }
 
   // mobile dropdown menu that controls tabs
   const mobileTabControlEls = {
@@ -11,4 +11,10 @@ $(document).on('turbolinks:load', () => {
     const currentTabTitle = $(event.currentTarget).text();
     mobileTabControlEls.buttonToDropLinks.text(currentTabTitle);
   });
+
+  $('.additional_photos img').on('click', (event) => {
+    const imgClicked = $(event.target);
+    const mainImgEl = imgClicked.closest('.photos').find('.main_photo img');
+    mainImgEl.attr('src', imgClicked.attr('src'))
+  })
 });
