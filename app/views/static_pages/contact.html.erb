@@ -39,6 +39,7 @@
         <div class="question">
           <label>Where do you store with us?</label>
           <select class="custom-select">
+            <option value="Please Select">Please Select</option>
             <% @storages.each do |storage| %>
               <option value="<%= storage.title %>"><%= storage.title %></option>
             <% end %>
@@ -55,7 +56,7 @@
           <label>How did you hear about us?</label>
 
           <select class="custom-select">
-            <% ['TV Commercial', 'Subway Ad', 'Google Search', 'Referral', 'Other'].each do |source| %>
+            <% ['Please Select', 'TV Commercial', 'Subway Ad', 'Google Search', 'Referral', 'Other'].each do |source| %>
               <option value="<%= source %>"><%= source %></option>
             <% end %>
           </select>
