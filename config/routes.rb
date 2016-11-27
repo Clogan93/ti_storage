@@ -2,6 +2,12 @@
 Rails.application.routes.draw do
   resources :locations, only: [:show, :index]
 
+  scope '/', controller: 'locations' do
+    get :nj
+    get :queens
+    get :brooklyn
+  end
+
   get 'checkout', to: 'checkout#new'
   post 'checkout/step_1'
   post 'checkout/step_2'
