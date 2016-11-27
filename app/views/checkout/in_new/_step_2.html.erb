@@ -7,14 +7,17 @@
   </section>
 
   <%= form_for @reservation, url: checkout_step_2_path do |f| %>
-
     <%= f.text_field :card_name, placeholder: "Name On Card", class: "form-control" %>
-    <%= f.text_field :card_number, placeholder: "Card Name", class: "form-control" %>
+    <%= f.text_field :card_number, placeholder: "1111 - 11111 - 1111 - 0000", class: "form-control" %>
 
+    <div class="date_and_cvv">
+      <%= f.date_field :card_expiry_date, placeholder: "Move-In Date", class: "form-control" %>
+
+      <%= f.text_field :card_cvv, placeholder: "CVV CODE", class: "form-control" %>
+    </div>
+
+    <%= f.text_field :coupon_code, placeholder: "Coupon Code", class: "form-control" %>
 
     <%= f.submit "Continue", class: 'button red' %>
-
-  <% end %>
-
   <% end %>
 </section>

@@ -26,6 +26,7 @@ main#checkout_new_page{
     display: flex;
     @import 'in_new/your_reservation';
     @import 'in_new/step_1';
+    @import 'in_new/step_2';
   }
 
   @import 'in_new/step_navigation';
