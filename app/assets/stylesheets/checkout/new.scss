@@ -24,7 +24,7 @@ main#checkout_new_page{
 
   div.sidebar_and_steps{
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: no-wrap;
     @import 'in_new/your_reservation';
     @import 'in_new/step_1';
     @import 'in_new/step_2';
@@ -42,6 +42,7 @@ main#checkout_new_page{
       h2{ margin-bottom: 31px; text-align: center; }
     }
     div.sidebar_and_steps{
+      flex-wrap: wrap;
       aside.your_reservation{
         margin: 0 auto;
       }
@@ -67,6 +68,4 @@ main#checkout_new_page{
       }
     }
   }
-
-
 }
