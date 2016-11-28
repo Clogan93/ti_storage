@@ -12,18 +12,21 @@
   <div class="tab-content">
     <div class="tab-pane active" id="list" role="tabpanel">
       <section class="storages">
-        <% 10.times do |i| %>
+        <% storages.each_with_index do |storage, index| %>
           <div class="storage">
-            <div class="index"><%= i + 1 %></div>
+            <div class="index"><%= index + 1 %></div>
             <div class="distance">
               <div class="number">1.6</div>
               <div class="mi">mi</div>
             </div>
             <div class="address_and_price">
-              <div class="address">269 Gold St<br>Brooklyn, NY 11201</div>
+              <div class="address">
+                <%= storage.address %><br>
+                <%= storage.area %> <%= storage.zip_code %>
+              </div>
               <div class="price">Units from $193</div>
             </div>
-            <a class="arrow">
+            <a href="<%= location_path(storage.url) %>" class="arrow">
               <%= image_tag "common_elements/arrow.svg" %>
             </a>
           </div>

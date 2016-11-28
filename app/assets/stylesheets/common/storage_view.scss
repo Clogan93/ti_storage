@@ -4,7 +4,6 @@ section.storage_view{
   border: solid 1px $pinkish-grey_color;
 
   padding: 20px;
-
   .photos{
     .main_photo{
       text-align: center;
@@ -71,6 +70,7 @@ section.storage_view{
     .map{ margin-top: 30px; }
   }
   @media (max-width: $md){
+    .info{ text-align: center; }
     .office_hours{ margin-top: 20px; }
   }
 }

@@ -1,0 +1,176 @@
+<% 
+  storage_types = [
+    {
+      title: 'Household Storage',
+      description: "When you rent a Household Storage unit at Treasure Island Storage, you can expect Self Storage solutions that are as valuable to you as the items you choose to store. Start by taking an assessment of all the household items you don't use on a regular (monthly and/or yearly) basis. Be merciless with yourself: holiday decorations are only needed once a year, should they really take up all the space in your hall closet every day of the year?",
+      image: 'household'
+    },
+    {
+      title: 'Commercial Storage',
+      description: "Commercial Storage at Treasure Island Storage helps many large and small businesses manage their secure file keeping needs, store excess inventory, and/or free up valuable office space. Affordable and easy – less than a dollar a day and you can manage your account online – Treasure Island Storage Commercial Storage can help you keep your business records safe and maximize your office productivity all with an eye on the bottom line.",
+      image: 'commercial'
+    },
+    {
+      title: 'Boat Storage',
+      description: "Boat Storage at Treasure Island Storage is your one-stop, cost-effective and secure option for all boat owners. Our climate controlled Boat Storage units can help extend the life of your boat by protecting the vessel from the elements while providing extra protection from rust. Boat storage is available at almost all of our conveniently located facilities in New Jersey and New York.",
+      image: 'boat'
+    },
+    {
+      title: 'Vehicle Storage',
+      description: "Treasure Island Storage is a safe and affordable choice when you need to store your automobile for any reason. It doesn't matter if your 'wheels' are vintage, brand new, or on the bottom of a golf cart, our climate controlled, drive-up Car Storage units are designed to protect your car from all of the elements and are available at all most of our Treasure Island Storage facilities in both New Jersey and New York.
+        <h6>MOTORCYCLE STORAGE</h6>
+        Motorcycle storage at Treasure Island Storage will help keep your motorcycle in prime condition throughout the seasons. Why leave your motorcycle at the mercy of the elements when you can rent a low cost, private alternative to a public garage, or worse, a city street?",
+        image: 'vehicle'
+    },
+    {
+      title: 'Wine Storage',
+      description: "Wine Storage at Treasure Island Storage is coming soon.
+        <ul>
+          <li>State-of- the-art security system</li>
+          <li>Climate-controlled for optimal wine cellar conditions</li>
+          <li>Instant online access to your inventory and order requests</li>
+          <li>Easy walk-in access</li>
+          <li>Pickup and delivery services</li>
+          <li>No case minimum requirements</li>
+        </li>",
+        image: 'wine'
+    },
+    {
+      title: 'TI Art Studios',
+      description: "Treasure Island Storage is committed to enriching the communities in which we live. TI Art Studios provide more than 150 New York City visual artists with excellent studio spaces and amenities all within a community of working artists on the third floor of a large warehouse at competitive rates. Additional features of the workspace include Sweet Lorraine Gallery, the Ceramics Arena work space, spray room and roof deck. The secure workspace also has 24/7 access, 6&#39; wide hallways, communal carts, ladders, scaffolding, refrigerators, microwaves, vending machines, two T-1 wireless internet lines, slop sinks, new bathrooms, trash removal and recycling. Private studios have floor-to- ceiling walls and a locking door. <br>
+        <a>Learn more about TI Art Studios by visiting our website.</a>",
+        image: 'ti_art_studios'
+    }
+
+  ]
+%>
+
+
+<main id="storage_solutions_page">
+
+  <div class="blue_page_heading">
+    <h1>Storage Solutions</h1>
+  </div>
+
+  <div class="container-fluid">
+    <div class="find_storage_space_near_you">
+      <section class="title">
+        Find Storage Space Near You
+      </section>
+
+      <section class="search_field">
+        <input type="text" placeholder="City, Zip Code" class="find_storage_input" value="Red Hook, Brooklyn 11235">
+        <div class="button search">Search</div>
+      </section>
+
+      <section class="ad">
+        <%= image_tag 'common/ads/labor-sale-horizontal.png' %>
+      </section>
+
+      <section class="sizing_guide_preview">
+        <h6>Sizing Guide</h6>
+        <div class="image_and_play_icon">
+          <%= image_tag 'common_elements/sizing_guide_preview.jpg', class: "preview_image" %>
+          <%= image_tag 'common_elements/play-icn.svg', class: 'play_icon' %>
+        </div>
+      </section>
+
+      <section class="list_of_links">
+        <h6>List Of Links</h6>
+
+        <ul>
+          <% 5.times do |i| %>
+            <li>
+              <%= link_to "Link #{i}" %>
+            </li>
+          <% end %>
+        </ul>
+      </section>
+    </div>
+
+    <div class="actual_page">
+      <section class="heading_with_background">
+        <div class="background"></div>
+        <h1>Header image</h1>
+      </section>
+
+      <section class="storage_types">
+        <h5 class="subheading">Subheading Font:</h5>
+
+        <div class="tabs row">
+          <div class="col-xs-4">
+            <ul class="navigation" role="tablist">
+              <% storage_types.each_with_index do |storage_type, i| %>
+                <li class="nav-item">
+                  <a 
+                    class="nav-link <%= i == 0 ? 'active' : '' %>" 
+                    data-toggle="tab"
+                    href="#storage_type_<%= i %>"
+                    role="tab">
+                    <%= storage_type[:title] %>
+                  </a>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+
+          <div class="col-xs-8 tab-content">
+            <% storage_types.each_with_index do |storage_type, i| %>
+              <div class="tab-pane <%= i == 0 ? 'active' : '' %>" id="storage_type_<%= i %>" role="tabpanel">
+                <div class="underlined">
+                  <h6 class="blue_heading">
+                    <%= storage_type[:title] %>
+                  </h6>
+                </div>
+                <article class="description">
+                  <%= image_tag "static_pages/storage_solutions/storage_types/#{storage_type[:image]}" %>
+                  <%= storage_type[:description].html_safe %>
+                </article>
+              </div>
+            <% end %>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="descriptions">
+        <h5 class="subheading">Subheading Again</h5>
+        <div class="row">
+          <div class="col-xs-8">
+            <div class="description">
+              <h5 class="subheading">Text heading</h5>
+              <% 3.times do %><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p><% end %>
+            </div>
+          </div>
+          <div class="col-xs-4">
+            <div class="image_and_call_to_action">
+              <div class="image">
+                <%= image_tag 'common/ads/50_off.svg' %>
+              </div>
+              <div class="call_to_action">
+                <h5 class="subheading">CALL TO ACTION!</h5>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.</p>
+              </div>
+            </div>
+
+            <div class="description">
+              <h5 class="subheading">Text heading</h5>
+              <% 3.times do %><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has.</p><% end %>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="description">
+              <h5 class="subheading">FAQ question template</h5>
+
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+  
+</main>

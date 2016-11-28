@@ -1,11 +1,11 @@
-<%= render partial: 'common/breadcrumbs', locals: { links: ['Red Hook'] } %>
+<%= render partial: 'common/breadcrumbs', locals: { links: ['search'] } %>
 
 <main id="search_index_page">
   <div class="container-fluid">
 
     <%= render partial: 'common/search_field_and_ad' %>
 
-    <%= render partial: 'search/index.mobile' %>
+    <%= render partial: 'search/index.mobile', locals: { storages: @storages } %>
 
     <div class="content_bordering hidden-xs-down">
       <div class="row">

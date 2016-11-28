@@ -1,6 +1,6 @@
 <section class="storage_view">
   <div class="row">
-    <div class="col-lg-4 col-xs-7 photos">
+    <div class="col-xl-4 col-md-5 photos">
       <div class="main_photo">
         <%= image_tag "common/storages/#{storage[:id]}.jpg" %>
       </div>
@@ -12,7 +12,7 @@
       </div>
     </div>
 
-    <div class="col-lg-4 info">
+    <div class="col-xl-4 col-md-7 info">
       <div class="row">
         <div class="col-sm-6 details storage_details">
           <h5 class="title"><%= storage.title %></h5>
@@ -63,7 +63,7 @@
 
     </div>
 
-    <div class="col-lg-4 map">
+    <div class="col-xl-4 map">
       <iframe
         src="https://www.google.com/maps/embed/v1/place?key=<%= ENV['GOOGLE_MAPS_API_KEY']%>&q=<%= storage[:area] + ' ' + storage[:address] %>"
         allowfullscreen>

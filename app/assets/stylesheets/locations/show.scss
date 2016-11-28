@@ -57,16 +57,34 @@
     @extend .default_markup;
     div.description_1, div.description_2{
       display: flex;
+      align-items: center;
       padding: 20px;
       .text{ width: 100%; }
-      img{ flex-basis: 350px; }
     }
     div.description_1{
       background: rgba(247, 246, 246, 0.6);
-      img{ margin-left: 100px; }
+      img{ margin-left: 60px; }
     }
     div.description_2{
-      img{ margin-right: 100px; }
+      img{ margin-right: 60px; }
+    }
+  }
+}
+
+
+// responsive
+#locations_show_page{
+  @media (max-width: $lg){
+    article.descriptions{
+      img{ max-width: 250px; }
+      div.description_1 img{ margin-left: 20px; }
+      div.description_2 img{ margin-right: 20px; }
+    }
+  }
+
+  @media (max-width: $md){
+    article.descriptions{
+      img{ display: none; }
     }
   }
 }

@@ -3,6 +3,9 @@
 module StaticPages
   # :nodoc:
   class StorageSolutionsController < ApplicationController
+    def index
+    end
+
     def commercial_storage
     end
 

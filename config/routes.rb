@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 
   # storage solutions
   scope '/', module: 'static_pages' do
+    get 'storage-solutions', to: 'storage_solutions#index'
     get 'commercial-storage', to: 'storage_solutions#commercial_storage'
     get 'household-storage',  to: 'storage_solutions#household_storage'
     get 'wine-storage', to: 'storage_solutions#wine_storage'
