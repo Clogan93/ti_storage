@@ -9,44 +9,18 @@ $(document).on('turbolinks:load', () => {
     mapEl.css({ "height": $(window).height() })
     mapEl.stick_in_parent();
 
-    const map = displayMap(mapEl)
-    placeStoragesOnMap(storages, map);
+    const map = new Map(mapEl);
+    map.displayMap();
+    map.placeBuildingsOnMap(storages);
   } else if ($(window).width() > 576){
-    const map = displayMap(mapEl)
-    placeStoragesOnMap(storages, map);
+    const map = new Map(mapEl);
+    map.displayMap();
+    map.placeBuildingsOnMap(storages);
   } else{
     $('a[href="#map"]').one('shown.bs.tab', (e) => {
-      const map = displayMap(mobileMapEl);
-      placeStoragesOnMap(storages, map);
+      const map = new Map(mobileMapEl);
+      map.displayMap();
+      map.placeBuildingsOnMap(storages);
     })
   }
 })
-
-const displayMap = (mapEl) => {
-  return new google.maps.Map(mapEl.get(0), { mapTypeId: 'roadmap' })
-}
-
-const placeStoragesOnMap = (storages, map) => {
-  // Loop through our array of markers & place each one on the map  
-  const bounds = new google.maps.LatLngBounds();
-  storages.forEach((storage) => {
-    const position = { lat: storage.coordinates[0], lng: storage.coordinates[1] }
-    bounds.extend(position);
-
-    const marker = new google.maps.Marker({
-      position: position,
-      map: map,
-      title: storage.title
-    });
-
-    const infoWindow = new google.maps.InfoWindow();
-    // Allow each marker to have an info window
-    google.maps.event.addListener(marker, 'click', () => {
-      infoWindow.setContent(storage.title);
-      infoWindow.open(map, marker);
-    })
-
-    // Automatically center the map fitting all markers on the screen
-    map.fitBounds(bounds);
-  })
-}
