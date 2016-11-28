@@ -2,7 +2,7 @@
 # :nodoc:
 module StaticPages
   # :nodoc:
-  class SolutionsController < ApplicationController
+  class StorageSolutionsController < ApplicationController
     def commercial_storage
     end
 
@@ -16,6 +16,9 @@ module StaticPages
     end
 
     def car_storage
+    end
+
+    def art_storage
     end
   end
 end

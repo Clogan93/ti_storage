@@ -17,6 +17,10 @@
           font-size: 15px;
           font-weight: bold;
           color: #393939;
+          border-color: #eceeef #eceeef #ddd;
+          &:hover{
+            border-color: $cobalt_color; border-bottom: none;
+          }
           &.active{
             background: $vermillion_color;
             color: white;

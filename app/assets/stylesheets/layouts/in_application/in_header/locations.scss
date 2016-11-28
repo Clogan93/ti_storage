@@ -77,7 +77,10 @@ section.locations{
                   .blue{ color: $cobalt_color; }
                 }
                 .view_units{
-                  .button { color: white; }
+                  .button { 
+                    color: white;
+                    font-size: 17px;
+                  }
                 }
               }
               .grey_rectangle{
