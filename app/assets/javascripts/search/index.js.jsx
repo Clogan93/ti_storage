@@ -5,22 +5,22 @@ $(document).on('turbolinks:load', () => {
   const mobileMapEl = page.find('section.mobile_map');
   const mapEl = page.find('section.map');
 
-  if ($(window).width() > 1314){
+  if ($(window).width() > 1200){
     mapEl.css({ "height": $(window).height() })
     mapEl.stick_in_parent();
 
     const map = new Map(mapEl);
     map.displayMap();
-    map.placeBuildingsOnMap(storages);
+    map.placeMarkersOnMap(storages);
   } else if ($(window).width() > 576){
     const map = new Map(mapEl);
     map.displayMap();
-    map.placeBuildingsOnMap(storages);
+    map.placeMarkersOnMap(storages);
   } else{
     $('a[href="#map"]').one('shown.bs.tab', (e) => {
       const map = new Map(mobileMapEl);
       map.displayMap();
-      map.placeBuildingsOnMap(storages);
+      map.placeMarkersOnMap(storages);
     })
   }
 })

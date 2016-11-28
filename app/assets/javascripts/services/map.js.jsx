@@ -7,7 +7,7 @@ class Map {
     this.map = new google.maps.Map(this.mapEl.get(0), { mapTypeId: 'roadmap' });
   }
 
-  placeBuildingsOnMap(buildings){
+  placeMarkersOnMap(buildings){
     // Loop through our array of markers & place each one on the map  
     const bounds = new google.maps.LatLngBounds();
     buildings.forEach((building) => {
@@ -20,6 +20,9 @@ class Map {
         title: building.title
       });
 
+      // Automatically center the map fitting all markers on the screen
+      this.map.fitBounds(bounds);
+
       const infoWindow = new google.maps.InfoWindow();
       // Allow each marker to have an info window
       google.maps.event.addListener(marker, 'click', () => {
@@ -27,8 +30,6 @@ class Map {
         infoWindow.open(this.map, marker);
       })
 
-      // Automatically center the map fitting all markers on the screen
-      this.map.fitBounds(bounds);
     })
   }
 }

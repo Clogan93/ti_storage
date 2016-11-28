@@ -35,7 +35,7 @@
         font-size: 22px;
       }
     }
-    .continue{ text-align: center; }
+    .continue{ text-align: center; padding: 0; }
   }
 
   $red_color: #f8332f;
@@ -99,9 +99,8 @@
 
   .map_and_sizing_guide_preview{
     section.map{
-      width: 100%;
-      height: 300px;
-      margin-bottom: 30px;
+      position: relative;
+      > div{ position: static; }
     }
   }
 }
@@ -110,6 +109,13 @@
 #search_index_page{
   .hidden-lg-up .sizing_guide_preview{
     margin: 20px auto;
+  }
+
+  @media (max-width: $xl){
+    section.map{
+      height: 300px;
+      margin-bottom: 30px;
+    }
   }
 
   @media (max-width: $md){
