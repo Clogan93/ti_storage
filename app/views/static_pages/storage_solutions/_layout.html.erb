@@ -49,9 +49,13 @@
         <h1>HEADER IMAGE</h1>
       </section>
 
-      <article class="description">
-        <%= description.html_safe %>
-      </article>
+      <% if description === :all_storages %>
+        <%= render partial: 'static_pages/storage_solutions/all_storages' %>
+      <% else %>
+        <article class="description">
+          <%= description.html_safe %>
+        </article>
+      <% end %>
     </div>
   </div>
 </main>
