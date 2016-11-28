@@ -1,6 +1,9 @@
 #locations_show_page{
   section.storage_view{
-    .button.blue.find_units{ visibility: hidden; }
+    .button.blue.find_units{ display: none; }
+    div.storage_rating{
+      margin-top: 14px;
+    }
   }
   section.extensive_information{
     margin-top: 30px;
