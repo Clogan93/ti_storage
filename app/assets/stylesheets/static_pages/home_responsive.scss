@@ -48,7 +48,12 @@
       // uncentering 2 lower benefits:
       .row{
         div:nth-child(4){ padding-left: 0px; }
-        div:nth-child(5){ padding-right: 0px; }
+        div:nth-child(5){
+          // not just .col-xs-12, because popover
+          width: auto;
+          margin: 0 auto;
+          padding-right: 15px;
+        }
       }
     }
   }

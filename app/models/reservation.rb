@@ -8,4 +8,8 @@ class Reservation < ApplicationRecord
 
   # for different validations in different steps in /checkout controller
   attr_accessor :step_1
+
+  # temporary, while we don't know how it will be implemented
+  def card_cvv
+  end
 end

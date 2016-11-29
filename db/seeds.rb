@@ -21,9 +21,11 @@ red_hook = Storage.create!({
     'Sun 10:00 am - 4:00 pm'
   ],
 
-  description: "
+  description_1: "
     <p>Red hook is one of the most desirable neighborhoods in Brooklyn, as it is a hub of continued revitalization and growth. What you will find in this area differs every couple of blocks as you have the parks, industrial businesses, expansive apartments and a sprinkling of quaint little homes. Notable landmarks for the area include the waterfront with breathtaking views of Manhattan, IKEA which has its very own ferry service, Fairway, and streets full of chic dining that attract visitors from all over the city. The best aspects about Red Hook are the residents, the budding artists and the determined entrepreneurs who bring this community of diverse people to life.</p>
     <p>Treasure Island Storage is proud to be the premier Self Storage facility serving the Red Hook community, our iconic state-of-the-art facility, provides residential and commercial storage. With 24-hour access and flexible month-to-month lease options available, we offer everything you’re looking for to meet your <b>storage needs</b> and even have a van to help get your belongings to the location.  If public transportation is a better option the G and F subway lines are a couple of blocks away, as well as the B61 and B54 buses across the street.</p>
+    ",
+  description_2: "
     <p>Treasure Island Storage Red Hook in Brooklyn, New York facility has a large assortment of storage units ranging in size from 4'x 4' to 10'x 30', all of which are climate controlled for your comfort and the protection of your property. We have outdoor accessible storage units, easy loading and parking spaces for vehicles. Recently, we've added space to accommodate large commercial and business units that can range from 500 to more than 6,000 square feet.</p>
     <p>Our storage experts are available all week using the chat feature on www.TIStorage.com, when visiting our site or via the telephone to help answer your questions about the rental process or any situations that might crop up.  We are happy to serve and look forward to seeing you soon.</p>
   ",
@@ -93,7 +95,7 @@ ozone_park = Storage.create!({
     'Sun: 10:00 am - 4:00 pm'
   ],
 
-  description: "
+  description_1: "
     <p>Having self-storage right in your neighborhood not only brings your belongings security and protection, but there is the added benefit of convenience. Treasure Island Storage Ozone Park, New York, is a new state-of-the-art self-storage facility with amenities and services to meet all of your household and commercial storage needs. We offer interior units and exterior drive up units:</p>
 
     <ul>
@@ -102,7 +104,8 @@ ozone_park = Storage.create!({
       <li>24/7 Access</li>
       <li>Free use of our van and additional moving services</li>
     </ul>
-
+  ",
+  description_2: "
     <p>Ozone Park is a residential community of locals that hail from the far corners of the globe. The diverse population brings a distinct flavor that is evident in the neighborhoods’ ambiance which is depicted in the businesses, homes and at community events. The people here are vested as they are proud to be homeowners and many of them are entrepreneurs following their passion in a place they love and Treasure Island Storage is proud to be part of it all.</p>
     <p>We realize that space and time are limited resources for a busy lifestyle, so to keep everything organized you need to store with Treasure Island Storage. Don’t run out of space, let our dedicated team is available 7-days a week help you clear out the clutter so you can get back to enjoying life and focus on making your free time as productive as possible. Getting to us is easy, you can take Atlantic Avenue, which is a main through-road in Brooklyn and Queens, Woodhaven Blvd or Rockaway Boulevard and bump into us by driving on Liberty Avenue. If you take public transportation, we are right next to the 80th Street station on the A line or the Q8 bus.</p>
     <p>Our staff of storage experts are available 7 days a week using the chat feature on www.TIStorage.com,  when visiting our site or via the phone to assist answer your questions about the rental process or any situations that might crop up.  We are happy to serve and look forward to seeing you soon.</p>
@@ -177,8 +180,10 @@ jamaica = Storage.create!({
     'Sun 10:00 am - 4:00 pm'
   ],
 
-  description: "
+  description_1: "
     <p>Jamaica is the vibrant heart of Queens and is the gateway into reaching all points in Long Island. It is a dense residential locale that surrounds a plethora of shopping and dining options that have a strong Caribbean flare, but still attracts people from all walks of life. Anything you need you can get it in Jamaica, and anywhere you need to go it’s reachable as it’s a major transportation hub for the LIRR, subways E, F and J trains, as well as the MTA bus services Q42 and Q83.  A number of major roads intersect in Jamaica, meaning our Treasure Island Storage facility is conveniently accessible to you and our neighbors in Hillside, Hollis, St. Albans, and Richmond Hill.</p>
+  ",
+  description_2: "
     <p>New York living means there's no room for wasted time or misused space and that true for the people that live or do business in Jamaica. Our expert storage managers understand the demands of a hectic lifestyle, and are motivated to help you with your self-storage needs from start to finish. At Treasure Island Storage, we offer a variety of unit sizes to accommodate whatever it is you need to store, from old tax records, to vinyl records, and everything in between. Our unit sizes range from small closets to units up to 5,000 square feet. With the use of climate controlled units, 24-hour security systems, free move-in services, packing supplies, month-to-month leases, and so much more, you are assured a streamlined storage experience. We are fully prepared to help you move your items to a safe and secure storage environment.</p>
   ",
 
@@ -265,13 +270,18 @@ paterson = Storage.create!({
     'Sun 10:00 am - 4:00 pm'
   ],
 
-  description: 'Treasure Island Storage Paterson, New Jersey, offers units of varying sizes to accommodate your household and/or commercial needs in our updated self-storage facility. Our amenities and services are crafted to give our customers the best possible experience when visiting us along with ample space for your possessions and. Our Paterson facility features:
-      <ul>
-        <li>Climate-Control</li>
-        <li>Advanced Security Surveillance</li>
-        <li>24/7 Access Available</li>
-      </ul>
-    Getting to our facility in Paterson is easy, it’s located on Grand Street, directly across from the Passaic County Courthouse. Our friendly storage managers and staff have the expertise to guide you through the process, from packing your items, to renting a unit, moving your belongings, or showing you the proper way to lock your storage unit so that your belongings are always kept safe and secure.',
+  description_1: "
+    <p>Treasure Island Storage Paterson, New Jersey, offers units of varying sizes to accommodate your household and/or commercial needs in our updated self-storage facility. Our amenities and services are crafted to give our customers the best possible experience when visiting us along with ample space for your possessions and.<br>
+      Our Paterson facility features:</p>
+    <ul>
+      <li>Climate-Control</li>
+      <li>Advanced Security Surveillance</li>
+      <li>24/7 Access Available</li>
+    </ul>
+  ",
+  description_2: "
+    <p>Getting to our facility in Paterson is easy, it’s located on Grand Street, directly across from the Passaic County Courthouse. Our friendly storage managers and staff have the expertise to guide you through the process, from packing your items, to renting a unit, moving your belongings, or showing you the proper way to lock your storage unit so that your belongings are always kept safe and secure.</p>
+  ",
 
   directions: "<ol>
     <li>Take I-78 W/Holland Tunnel Towards NJ</li>
@@ -333,7 +343,7 @@ woodbridge = Storage.create!({
     'Sun 10:00 am - 4:00 pm'
   ],
 
-  description: "
+  description_1: "
     <p>Woodbridge is our kind of town. It's a vibrant community of families and small businesses, with something to offer just about everyone, from a close proximity to the beautiful New Jersey shoreline, a Farmer's Market, and local performing arts scene. Being the oldest township in New Jersey, you can feel the history in the air as you pass the buildings on the streets. At Treasure Island Storage in Woodbridge, New Jersey, we've provided a new state-of-the-art self-storage facility with amenities and services to meet all of your household storage, commercial storage, and/or wine storage needs.</p>
     <ul>
       <li>Climate-Control</li>
@@ -341,6 +351,8 @@ woodbridge = Storage.create!({
       <li>24/7 Access</li>
       <li>Free use of our van and additional moving services</li>
     </ul>
+  ",
+  description_2: "
     <p>Whether you run a retail business or restaurant, raise a family while working full time, or perhaps even all of the above, we know that you live a busy lifestyle and can require some extra help in keeping everything organized. There’s no reason to have to do the mental math of making sure your living room looks nice when there’s too much furniture of smaller items for the building to handle. When you find yourself running out of space, let our dedicated team help you in clearing out the clutter so that you can get back to enjoying life and focus on making your free time as productive as possible. Our managers are experts in the best storing practices, and can help guide you on what the best way to move and store your items are from your Woodbridge home to our storage facility. Whether it is how to pack your items, how to transport them, or what the best way to physically place the items into the storage unit is, the Treasure Island Storage team has your questions covered.</p>
     <p>Woodbridge, New Jersey has a large amount of activities available to its residents. Whether it is going shopping at the Brunswick Square Mall, playing at the Louis Brown Athletic Center, or taking the family out to the Keansburg Amusement Park, you should be able to enjoy what’s around you without having the safety of your items linger at the back of your head. Our state-of-the-art security system will keep your items as safe as they were kept in your own Woodbridge home, and our climate controlled storage units make sure that your more sensitive items affected by weather don’t get damaged by the changing seasons. If at any time you feel the need to check up on your stored items, our Woodbridge storage facility is a stone’s throw away, and you’ll have access to your items</p>
   ",

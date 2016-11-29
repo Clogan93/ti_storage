@@ -1,7 +1,10 @@
-#sizing_guide.modal .modal-content{
+#sizing_guide_modal.modal .modal-content{
   max-width: 925px;
   background: white;
   padding: 14px;
+}
+
+section.sizing_guide{
   .heading{
     h2{
       width: calc(100% - 41px);

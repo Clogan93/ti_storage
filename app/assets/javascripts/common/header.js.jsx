@@ -28,8 +28,7 @@ $(document).on('turbolinks:load', () => {
   const storage_solutions = $('header section.storage_solutions');
   const collapsedMenu = storage_solutions.find('nav');
 
-  storage_solutions.find('.toggler').on('click', (e) => {
-    e.preventDefault();
+  storage_solutions.find('.toggler').on('mouseover', (e) => {
     collapsedMenu.collapse('toggle');
   });
 })

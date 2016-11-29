@@ -124,10 +124,19 @@
     }
   }
 
-  section.recommended_locations{
+  section.featured_specials{
     border-bottom: solid #ff0500 3px;
     h4{
       color: #ff0500;
+    }
+    .special{
+      &.month{ text-align: right; }
+      &.move{ text-align: left; }
+      img{
+        max-width: 250px; width: 100%;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16);
+        border: solid 1px #99b0dd;
+      }
     }
   }
 
@@ -140,12 +149,21 @@
       color: #0d2770;
     }
     .benefit{
+      position: relative;
       .name{
         color: $cobalt_color;
         font-size: 16px;
         font-weight: bold;
 
         padding-top: 20px;
+      }
+      &:hover{ p.popover{ display: block } }
+      p.popover{
+        display: none;
+        z-index: 10;
+        top: 160px;
+        padding: 5px;
+        text-align: center;
       }
     }
   }

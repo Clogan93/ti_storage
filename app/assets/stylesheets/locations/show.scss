@@ -1,36 +1,87 @@
 #locations_show_page{
+  section.storage_view{
+    .button.blue.find_units{ display: none; }
+    div.storage_rating{
+      margin-top: 14px;
+    }
+  }
   section.extensive_information{
     margin-top: 30px;
     @import 'in_show/storage_units';
     @import 'in_show/storage_units_responsive';
+
     .sizing_guide_preview{ margin: 0 auto; }
     ul.tab_navigation{
       li.nav-item{
         width: 20%;
         margin-left: 0;
         text-align: center;
-      }
-      a{
-        font-size: 15px;
-        font-weight: bold;
-        color: #393939;
+        a.nav-link{
+          font-size: 15px;
+          font-weight: bold;
+          color: #393939;
+          border-color: #eceeef #eceeef #ddd;
+          &:hover{
+            border-color: $cobalt_color; border-bottom: none;
+          }
+          &.active{
+            background: $vermillion_color;
+            color: white;
+          }
+        }
       }
     }
-    article#features, article#directions{
-      ul, ol{
-        padding-left: 30px;
-        list-style-type: inherit;
-      }
+
+    article#directions{
+      @extend .default_markup;
     }
     article:not(#storage_units){
       padding: 30px;
     }
+
+    article#features{
+      li{
+        display: inline-block;
+        padding: 20px;
+        margin-bottom: 20px;
+        color: white;
+        background: $cobalt_color; 
+      }
+    }
   }
-  section.description{
+  article.descriptions{
     margin-top: 30px;
-    ul, ol{
-      padding-left: 30px;
-      list-style-type: inherit;
+    @extend .default_markup;
+    div.description_1, div.description_2{
+      display: flex;
+      align-items: center;
+      padding: 20px;
+      .text{ width: 100%; }
+    }
+    div.description_1{
+      background: rgba(247, 246, 246, 0.6);
+      img{ margin-left: 60px; }
+    }
+    div.description_2{
+      img{ margin-right: 60px; }
+    }
+  }
+}
+
+
+// responsive
+#locations_show_page{
+  @media (max-width: $lg){
+    article.descriptions{
+      img{ max-width: 250px; }
+      div.description_1 img{ margin-left: 20px; }
+      div.description_2 img{ margin-right: 20px; }
+    }
+  }
+
+  @media (max-width: $md){
+    article.descriptions{
+      img{ display: none; }
     }
   }
 }

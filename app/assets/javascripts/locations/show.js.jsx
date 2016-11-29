@@ -1,4 +1,7 @@
 $(document).on('turbolinks:load', () => {
+  const page = $('#locations_show_page');
+  if (page.length == 0){ return }
+
   // mobile dropdown menu that controls tabs
   const mobileTabControlEls = {
     buttonToDropLinks: $('.mobile_tab_navigation .tab_chooser .dropdown-toggle'),

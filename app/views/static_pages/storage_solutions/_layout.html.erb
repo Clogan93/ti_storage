@@ -41,13 +41,21 @@
 
     <div class="actual_page">
       <section class="heading_with_background">
-        <div class="background"></div>
+        <div class="background"
+          style="background-image: url(
+            <%= image_path("static_pages/storage_solutions/heading/#{heading}.jpg") %>
+          )">
+        </div>
         <h1>HEADER IMAGE</h1>
       </section>
 
-      <article class="description">
-        <%= description.html_safe %>
-      </article>
+      <% if description === :all_storages %>
+        <%= render partial: 'static_pages/storage_solutions/all_storages' %>
+      <% else %>
+        <article class="description">
+          <%= description.html_safe %>
+        </article>
+      <% end %>
     </div>
   </div>
 </main>

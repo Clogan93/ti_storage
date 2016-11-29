@@ -6,7 +6,7 @@ class Storage < ApplicationRecord
   validates_presence_of :category, :title, :phone,
     :address, :area, :zip_code, :coordinates,
     :office_hours, :access_hours,
-    :description, :directions, :features,
+    :description_1, :description_2, :directions, :features,
     :link_to_google, :link_to_yelp,
     :url
   validates_uniqueness_of :url

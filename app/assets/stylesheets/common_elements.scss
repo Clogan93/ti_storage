@@ -12,10 +12,14 @@
   padding-top: 8px;
 
   cursor: pointer;
+  &:hover{
+    text-decoration: none;
+    color: white;
+  }
+  &.blue{ background: linear-gradient(to bottom, #1f6aff 48%, $azul_color 52%); }
+  &.red{ background: linear-gradient(to bottom, #f8332f 49%, #e50200 53%); }
 }
-.button.blue{
-  background: linear-gradient(to bottom, #1f6aff 48%, $azul_color 52%);
-}
+
 
 // .storage_details and .storage_preview are separate,
 // because sometimes we need .storage_details styling without the border and arrow and etc
@@ -98,4 +102,12 @@
   padding: 15px;
 
   font-size: 16px;
+}
+
+// when we want it pretty
+.default_markup{
+  ul, ol{
+    padding-left: 30px;
+    list-style-type: inherit;
+  }
 }

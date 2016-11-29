@@ -1,0 +1,78 @@
+<main id="contact_page">
+  <section class="contact_us">
+    <h1>CONTACT US</h1>
+
+    <div class="phone heading_font">
+      646.846.9449
+    </div>
+
+    <div class="reserve_now">
+      Reserve Now and get your first month free!
+    </div>
+  </section>
+
+  <section class="contact_form">
+    <div class="left_image"></div>
+    <form class="right_form">
+
+      <fieldset class="common">
+        <input type="text"  name="name"  placeholder="Name*" class="name">
+        <input type="email" name="email" placeholder="Email*" class="email">
+        <input type="text"  name="phone" placeholder="Phone Number" class="phone">
+
+        <div class="is_current_customer">
+          <div>Are you a current customer? *</div>
+          <label class="custom-control custom-radio">
+            <input name="is_current_customer" type="radio" class="custom-control-input" value="yes">
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description">Yes</span>
+          </label>
+          <label class="custom-control custom-radio">
+            <input name="is_current_customer" type="radio" class="custom-control-input" value="no">
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description">No</span>
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset class="is_current_customer_yes">
+        <div class="question">
+          <label>Where do you store with us?</label>
+          <select class="custom-select">
+            <option value="Please Select">Please Select</option>
+            <% @storages.each do |storage| %>
+              <option value="<%= storage.title %>"><%= storage.title %></option>
+            <% end %>
+          </select>
+        </div>
+
+        <label class="message">Message (250 character limit)
+          <textarea name="message"></textarea>
+        </label>
+      </fieldset>
+
+      <fieldset class="is_current_customer_no">
+        <div class="question">
+          <label>How did you hear about us?</label>
+
+          <select class="custom-select">
+            <% ['Please Select', 'TV Commercial', 'Subway Ad', 'Google Search', 'Referral', 'Other'].each do |source| %>
+              <option value="<%= source %>"><%= source %></option>
+            <% end %>
+          </select>
+        </div>
+
+        <label class="message">Message (250 character limit)
+          <textarea name="message"></textarea>
+        </label>
+      </fieldset>
+
+      <fieldset class="send_and_required_field">
+        <button>
+          SEND
+        </button>
+        <span>* Required field</span>
+      </fieldset>
+    </form>
+  </section>
+</main>

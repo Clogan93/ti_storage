@@ -45,13 +45,12 @@ section.step_1{
       margin-bottom: 13px;
       padding: 14px;
     }
-    div.button.red{
-      height: 50px;
-      padding: 8px;
-      background: linear-gradient(to bottom, #f8332f 49%, #e50200 53%);
-      border: solid 2px white;
-      font-size: 20px;
-      font-weight: bold;
+    .field_with_errors{
+      width: 49%;
+      input{ 
+        width: 100%;
+        border: $vermillion_color 1px solid;
+      }
     }
     input#reservation_move_in_date{
       height: 50px;
@@ -78,5 +77,17 @@ section.step_1{
       padding-top: 12px;
       font-size: 13px;
     }
+  }
+}
+
+// responsive
+section.step_1{
+  section.general_client_info{
+    input, div.button{
+      width: 100%;
+    }
+  }
+  section.sign_up_for_moving_services{
+    a.change_something{ margin-left: 0; }
   }
 }
