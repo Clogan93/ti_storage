@@ -2,24 +2,12 @@
 # :nodoc:
 class LocationsController < ApplicationController
   def index
+    if params[:area_slug]
+      @storages = @storages.where(area_slug: params[:area_slug])
+    end
   end
 
   def show
-    @storage = Storage.find_by(url: params[:id])
-  end
-
-  def nj
-    @storages = @storages.where(category: 'New Jersey')
-    render :index
-  end
-
-  def queens
-    @storages = @storages.where(category: 'Brooklyn, NY')
-    render :index
-  end
-
-  def brooklyn
-    @storages = @storages.where(category: 'Queens, NY')
-    render :index
+    @storage = @storages.find_by(slug: params[:slug])
   end
 end

@@ -1,12 +1,13 @@
 # frozen_string_literal: true
 Rails.application.routes.draw do
-  resources :locations, only: [:show, :index]
+  resources :locations, only: [:index]
 
-  scope '/', controller: 'locations' do
-    get :nj
-    get :queens
-    get :brooklyn
+  [:brooklyn, :queens, :'new-jersey'].each do |area_slug|
+    get "#{area_slug}/:slug", to: 'locations#show'
   end
+  get ":area_slug", to: 'locations#index', constraints: {
+    area_slug: /brooklyn|queens|new-jersey/
+  }
 
   get 'checkout', to: 'checkout#new'
   post 'checkout/step_1'
@@ -29,4 +30,10 @@ Rails.application.routes.draw do
   get 'sizing-guide', to: 'static_pages#sizing_guide'
 
   root to: 'static_pages#home'
+
+  Rails.application.routes.named_routes.url_helpers_module.module_eval do
+    def location_path(storage)
+      storage.area_slug + '/' + storage.slug
+    end
+  end
 end
