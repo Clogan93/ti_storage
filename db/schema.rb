@@ -43,7 +43,8 @@ ActiveRecord::Schema.define(version: 20161113032009) do
   create_table "storages", force: :cascade do |t|
     t.string "category"
     t.string "title"
-    t.string "url"
+    t.string "slug"
+    t.string "area_slug"
     t.string "phone"
     t.string "address"
     t.string "area"

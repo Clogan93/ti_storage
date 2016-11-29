@@ -8,7 +8,7 @@ const Storage = React.createClass({
     const storage = this.props.storage;
 
     return(
-      <a className="location" href={`/locations/${storage.url}`}>
+      <a className="location" href={`/${storage.slug}`}>
         <div className="row">
           <div className="col-xs-8 name">
             <img src={this.props.src}/>

@@ -8,8 +8,8 @@ class Storage < ApplicationRecord
     :office_hours, :access_hours,
     :description_1, :description_2, :directions, :features,
     :link_to_google, :link_to_yelp,
-    :url
-  validates_uniqueness_of :url
+    :slug
+  validates_uniqueness_of :slug
 
   serialize :coordinates, Array
   serialize :office_hours, Array

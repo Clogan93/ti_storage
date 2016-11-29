@@ -2,7 +2,8 @@
 
 red_hook = Storage.create!({
   category: 'Brooklyn, NY',
-  title: 'Red Hook', url: 'red-hook',
+  title: 'Red Hook',
+  slug: 'red-hook', area_slug: 'brooklyn',
   phone: '718-509-6524',
 
   address: '183 Lorraine St.',
@@ -76,7 +77,8 @@ red_hook = Storage.create!({
 
 ozone_park = Storage.create!({
   category: 'Queens, NY',
-  title: 'Ozone Park', url: 'ozone-park',
+  title: 'Ozone Park',
+  slug: 'ozone-park', area_slug: 'queens',
   phone: '718-395-2984',
 
   address: '78-02 Liberty Avenue',
@@ -161,7 +163,8 @@ ozone_park = Storage.create!({
 
 jamaica = Storage.create!({
   category: 'Queens, NY',
-  title: 'Jamaica', url: 'jamaica',
+  title: 'Jamaica',
+  slug: 'jamaica', area_slug: 'queens',
   phone: '718-509-6543',
 
   address: '109-09 180th St.',
@@ -251,7 +254,8 @@ jamaica = Storage.create!({
 
 paterson = Storage.create!({
   category: 'New Jersey',
-  title: 'Paterson', url: 'paterson',
+  title: 'Paterson',
+  slug: 'paterson', area_slug: 'new-jersey',
   phone: '973-870-0454',
 
   address: '404 Grand Street',
@@ -324,7 +328,8 @@ paterson = Storage.create!({
 
 woodbridge = Storage.create!({
   category: 'New Jersey',
-  title: 'Woodbridge', url: 'woodbridge',
+  title: 'Woodbridge',
+  slug: 'woodbridge', area_slug: 'new-jersey',
   phone: '732-510-4010',
 
   address: '881 Saint George Ave',
