@@ -1,8 +1,16 @@
 <main id="home_page">
 
   <section class="find_storage">
+    <!-- background -->
+    <div class="slider">
+      <div class='slide_1'></div>
+      <div class='slide_2'></div>
+      <div class='slide_3'></div>
+    </div>
+    <!-- /background -->
+
     <div class="container-fluid">
-      <h4 class="stree-free_storage">Stress-Free Storage</h4>
+      <h4 class="first_month_free">First Month Free</h4>
       <div class="find_storage_rectangle">
         <h4>Find Storage in Your Area</h4>
 
@@ -11,7 +19,7 @@
             <%= 
               react_component('FindStorageDropdown', 
                 {
-                  storages: @storages,
+                  storages: @all_storages,
                   pin_src: url_to_image('common_elements/location_pin_grey.svg'),
                   car_src: 'common_elements/icon-truck.svg' 
                 }
@@ -25,71 +33,7 @@
       </div>
     </div>
 
-    <div class="reserve_now">
-      Reserve Now and get your first month free!
-    </div>
-  </section>
-
-  <section class="featured_specials">
-    <div class="container-fluid">
-      <h4 class="heading">Featured Specials</h4>
-
-      <div class="row">
-        <div class="col-xs-6 special month">
-          <%= image_tag 'static_pages/home_page/featured_specials/free_month.jpg' %>
-        </div>
-        <div class="col-xs-6 special move">
-          <%= image_tag 'static_pages/home_page/featured_specials/free_move.jpg' %>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="ti_storage_benefits">
-    <div class="container-fluid">
-      <h4 class="heading">Treasure Island Storage Benefits</h4>
-      <div class="row">
-        <div class="col-lg-2 col-sm-4 col-xs-6 offset-lg-1 benefit">
-          <%= image_tag 'static_pages/home_page/benefits/climate.svg' %>
-          <div class="name">Climate Control</div>
-          <p class="popover">
-            Store in a temperature controlled environment to preserve and protect precious items kept in storage
-          </p>
-        </div>
-
-        <div class="col-lg-2 col-sm-4 col-xs-6 benefit">
-          <%= image_tag 'static_pages/home_page/benefits/moving-services.svg' %>
-          <div class="name">Free Moving Services</div>
-          <p class="popover">
-            There are 2 options for moving, Treasure Island Storage offers free use of our corporate van, or a 2-hour professional moving service.
-          </p>
-        </div>
-
-        <div class="col-lg-2 col-sm-4 col-xs-6 benefit">
-          <%= image_tag 'static_pages/home_page/benefits/express-check.svg' %>
-          <div class="name">Express Check-in</div>
-          <p class="popover">
-            Save time by renting a storage unit online, you are able to pick a space at the best rate by using your device. The come into the office to sign the paper and move right in.
-          </p>
-        </div>
-
-        <div class="col-lg-2 col-sm-6 col-xs-6 benefit">
-          <%= image_tag 'static_pages/home_page/benefits/variety-of.svg' %>
-          <div class="name">Variety of unit sizes</div>
-          <p class="popover">
-            Treasure Island Storage has a variety of units that range from a small closet size to custom warehouse spaces for commercial purposes
-          </p>
-        </div>
-
-        <div class="col-lg-2 col-sm-6 benefit">
-          <%= image_tag 'static_pages/home_page/benefits/promotions.svg' %>
-          <div class="name">Promotions & Specials</div>
-          <p class="popover">
-            Find the best deal when renting a unit with Treasure Island Storage.
-          </p>
-        </div>
-      </div>
-    </div>
+    <div class="blue_strip"></div>
   </section>
 
   <section class="blog_articles">
@@ -107,15 +51,83 @@
     </div>
   </section>
 
+  <section class="featured_specials">
+    <div class="container-fluid">
+      <h4 class="heading">Featured Specials</h4>
+
+      <div class="row">
+        <div class="col-xs-6 special month">
+          <%= image_tag 'static_pages/home/featured_specials/free_month.jpg' %>
+        </div>
+        <div class="col-xs-6 special move">
+          <%= image_tag 'static_pages/home/featured_specials/free_move.jpg' %>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ti_storage_benefits">
+    <div class="container-fluid">
+      <h4 class="heading">Treasure Island Storage Benefits</h4>
+      <div class="row">
+        <div class="col-lg-2 col-sm-4 col-xs-6 offset-lg-1 benefit">
+          <%= image_tag 'static_pages/home/benefits/promotions.svg' %>
+          <div class="name">Promotions & Specials</div>
+          <p class="popover">
+            Find the best deal when renting a unit with Treasure Island Storage.
+          </p>
+        </div>
+
+        <div class="col-lg-2 col-sm-4 col-xs-6 benefit">
+          <%= image_tag 'static_pages/home/benefits/moving-services.svg' %>
+          <div class="name">Free Moving Services</div>
+          <p class="popover">
+            There are 2 options for moving, Treasure Island Storage offers free use of our corporate van, or a 2-hour professional moving service.
+          </p>
+        </div>
+
+        <div class="col-lg-2 col-sm-4 col-xs-6 benefit">
+          <%= image_tag 'static_pages/home/benefits/express-check.svg' %>
+          <div class="name">Express Check-in</div>
+          <p class="popover">
+            Save time by renting a storage unit online, you are able to pick a space at the best rate by using your device. The come into the office to sign the paper and move right in.
+          </p>
+        </div>
+
+        <div class="col-lg-2 col-sm-6 col-xs-6 benefit">
+          <%= image_tag 'static_pages/home/benefits/variety-of.svg' %>
+          <div class="name">Variety of unit sizes</div>
+          <p class="popover">
+            Treasure Island Storage has a variety of units that range from a small closet size to custom warehouse spaces for commercial purposes
+          </p>
+        </div>
+
+        <div class="col-lg-2 col-sm-6 benefit">
+          <%= image_tag 'static_pages/home/benefits/climate.svg' %>
+          <div class="name">Climate Control</div>
+          <p class="popover">
+            Store in a temperature controlled environment to preserve and protect precious items kept in storage
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="ti_family_of_businesses">
     <div class="container-fluid">
       <h4 class="heading">Treasure Island TI Family of Businesses</h4>
       <div class="row">
-        <% 3.times do %>
-          <div class="col-md-4 col-xs-12 business">
-          <%= image_tag 'common_elements/ti_art_studios.png' %>
-          </div>
-        <% end %>
+        <div class="col-md-6 col-xs-12 business">
+          <a href="<%= art_storage_path %>">
+            <%= image_tag 'static_pages/home/businesses/art.png' %>
+          </a>
+        </div>
+
+        <div class="col-md-6 col-xs-12 business">
+          <a href="<%= commercial_storage_path %>">
+            <%= image_tag 'static_pages/home/businesses/commercial.png' %>
+          </a>
+        </div>
       </div>
     </div>
   </section>

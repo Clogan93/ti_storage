@@ -11,4 +11,22 @@ $(document).on('turbolinks:load', () => {
     const currentTabTitle = $(event.currentTarget).text();
     mobileTabControlEls.buttonToDropLinks.text(currentTabTitle);
   });
+
+  // /brooklyn/red-hook#reviews
+  // opens reviews tab
+  if (location.hash){
+    const tabToOpen = $('section.extensive_information a[href="' + location.hash + '"]');
+    tabToOpen.tab('show');
+    window.a = tabToOpen;
+
+    // TODO doesn't work here, only works after everything is loaded
+    // tabToOpen[0].scrollIntoView();
+  }
+
+  // clicking on some tab changes our url to eg /brooklyn/red-hook#features
+  $('section.extensive_information .nav-tabs a').on('shown.bs.tab', (e) => {
+    const hash = e.target.href.split('#')[1];
+    // pushState instead of location.hash = to avoid page jump.
+    history.pushState(null, null, '#' + hash);
+  });
 });

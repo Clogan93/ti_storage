@@ -106,8 +106,21 @@
 
 // when we want it pretty
 .default_markup{
-  ul, ol{
-    padding-left: 30px;
-    list-style-type: inherit;
-  }
+  ul, ol{ padding-left: 30px; }
+  ul{ list-style-type: disc; }
+  ol{ list-style-type: decimal; }
+}
+
+// blue_strip
+div.blue_strip{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+
+  opacity: 0.82;
+  background-color: #4268d8;
+
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px 0;
 }

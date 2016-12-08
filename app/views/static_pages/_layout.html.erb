@@ -1,4 +1,4 @@
-<main id="storage_solutions_page">
+<main id="static_pages_layout">
   <div class="blue_page_heading">
     <h1><%= title %></h1>
   </div>
@@ -10,7 +10,7 @@
       </section>
 
       <section class="search_field">
-        <input type="text" placeholder="City, Zip Code" class="find_storage_input" value="Red Hook, Brooklyn 11235">
+        <input type="text" placeholder="City, Zip Code" class="find_storage_input">
         <div class="button search">Search</div>
       </section>
 
@@ -20,20 +20,25 @@
 
       <section class="sizing_guide_preview">
         <h6>Sizing Guide</h6>
-        <div class="image_and_play_icon">
+        <div class="image_and_play_icon" data-toggle="modal" data-target="#sizing_guide_modal">
           <%= image_tag 'common_elements/sizing_guide_preview.jpg', class: "preview_image" %>
           <%= image_tag 'common_elements/play-icn.svg', class: 'play_icon' %>
         </div>
       </section>
 
       <section class="list_of_links">
-        <h6>List Of Links</h6>
-
         <ul>
-          <% 5.times do |i| %>
-            <li>
-              <%= link_to "Link #{i}" %>
-            </li>
+          <% links = ['commercial_storage', 'household_storage', 'wine_storage', 'boat_storage', 'car_storage', 'art_storage'] %>
+          <% links.each do |link| %>
+            <% if !current_page?(controller: 'static_pages/storage_solutions', action: link) %>
+              <li>
+                <a
+                  href="<%= url_for(controller: 'static_pages/storage_solutions', action: link) %>"
+                  target="_blank">
+                  <%= link.split('_').join(' ').titleize %>
+                </a>
+              </li>
+            <% end %>
           <% end %>
         </ul>
       </section>
@@ -43,7 +48,7 @@
       <section class="heading_with_background">
         <div class="background"
           style="background-image: url(
-            <%= image_path("static_pages/storage_solutions/heading/#{heading}.jpg") %>
+            <%= image_path("static_pages/heading/#{heading}.jpg") %>
           )">
         </div>
         <h1><%= title %></h1>
@@ -59,3 +64,5 @@
     </div>
   </div>
 </main>
+
+<%= render partial: 'common/sizing_guide_modal' %>

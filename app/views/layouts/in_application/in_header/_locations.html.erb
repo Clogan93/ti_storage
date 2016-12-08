@@ -10,7 +10,7 @@
       <% @storage_categories.each do |category| %>
         <li><%= category %>
           <ul class="places">
-            <% storages = @storages.where(category: category) %>
+            <% storages = @all_storages.where(category: category) %>
             <% storages.each do |storage| %>
               <li>
                 <%= storage[:title] %>

@@ -1,4 +1,8 @@
 #locations_show_page{
+  .container-fluid{
+    max-width: 1260px;
+    padding: 0 20px;
+  }
   section.storage_view{
     .button.blue.find_units{ display: none; }
     div.storage_rating{
@@ -32,6 +36,10 @@
       }
     }
 
+    article.tab-pane:not(#storage_units){
+      border: 1px solid #eceeef;
+    }
+
     article#directions{
       @extend .default_markup;
     }
@@ -48,14 +56,30 @@
         background: $cobalt_color; 
       }
     }
+
+    article#reviews{
+      div.coming_soon{
+        display: inline-block;
+        padding: 20px;
+        color: white;
+        background: $cobalt_color; 
+      }
+      section.reviews{
+        .review{
+          margin-bottom: 30px;
+          div{ display: inline-block; }
+        }
+      }
+    }
   }
   article.descriptions{
     margin-top: 30px;
+    margin-bottom: -30px;
     @extend .default_markup;
     div.description_1, div.description_2{
+      padding: 20px 90px;
       display: flex;
       align-items: center;
-      padding: 20px;
       .text{ width: 100%; }
     }
     div.description_1{
@@ -74,6 +98,9 @@
   @media (max-width: $lg){
     article.descriptions{
       img{ max-width: 250px; }
+      div.description_1, div.description_2{
+        padding-left: 20px; padding-right: 20px;
+      }
       div.description_1 img{ margin-left: 20px; }
       div.description_2 img{ margin-right: 20px; }
     }

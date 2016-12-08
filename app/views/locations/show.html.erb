@@ -1,6 +1,6 @@
 <%= render partial: 'common/breadcrumbs', locals: {
   links: [
-    link_to('Locations', locations_path), 
+    link_to(@storage.area_name, "/#{@storage.area_slug}"),
     @storage.title
   ]
 } %>
@@ -73,27 +73,32 @@
         </article>
         <div class="tab-pane" id="videos">...</div>
         <article class="tab-pane" id="reviews">
-          <% @storage.reviews.each do |review| %>
-            <%= review.comment %><br>
-          <% end %>
+          <%= react_component('StorageReviews', { placeId: @storage.place_id }) %>
+
+          <section class="links_to_reviews">
+            <a target="_blank" href="<%= @storage.link_to_google %>">See Google reviews</a>
+            <a target="_blank" href="<%= @storage.link_to_yelp %>">See Yelp reviews</a>
+          </section>
+
+          <div class="coming_soon">Coming Soon</div>
         </article>
       </div>
     </section>
 
-    <article class="descriptions">
-      <div class="description_1">
-        <div class="text">
-          <%= @storage.description_1.html_safe %>
-        </div>
-        <%= image_tag "locations/show/descriptions/#{@storage.slug}/1.jpg" %>
-      </div>
-      <div class="description_2">
-        <%= image_tag "locations/show/descriptions/#{@storage.slug}/2.jpg" %>
-        <div class="text">
-          <%= @storage.description_2.html_safe %>
-        </div>
-      </div>
-    </article>
+  </div><!-- /container-fluid -->
 
-  </div>
+  <article class="descriptions">
+    <div class="description_1">
+      <div class="text">
+        <%= @storage.description_1.html_safe %>
+      </div>
+      <%= image_tag "locations/show/descriptions/#{@storage.slug}/1.jpg" %>
+    </div>
+    <div class="description_2">
+      <%= image_tag "locations/show/descriptions/#{@storage.slug}/2.jpg" %>
+      <div class="text">
+        <%= @storage.description_2.html_safe %>
+      </div>
+    </div>
+  </article>
 </main>

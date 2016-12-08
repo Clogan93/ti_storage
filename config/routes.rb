@@ -29,12 +29,13 @@ Rails.application.routes.draw do
 
   get 'contact',      to: 'static_pages#contact'
   get 'sizing-guide', to: 'static_pages#sizing_guide'
+  get 'faq', to: 'static_pages#faq'
 
   root to: 'static_pages#home'
 
   Rails.application.routes.named_routes.url_helpers_module.module_eval do
     def location_path(storage)
-      storage.area_slug + '/' + storage.slug
+      '/' + storage.area_slug + '/' + storage.slug
     end
   end
 end

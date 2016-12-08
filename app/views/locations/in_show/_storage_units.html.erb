@@ -1,3 +1,29 @@
+<%
+  sizes = [
+    {
+      title: 'small',
+      explanation: 'up to 50',
+      description: 'Our small storage units are up to 50 sq. ft. in size and is the equivalent of holding enough items that would fit in a studio to 1 bed. Belongings that can fit includes a full/queen mattress set, sofa and dining room set, plus a few boxes and smaller items.'
+    },
+    {
+      title: 'medium',
+      explanation: 'up to 150',
+      description: 'Organizing items in our medium units is similar to packing a 1 - 2-bedroom apartment. Holds typical household items and furniture, plus appliances, with room for boxes and extras.'
+    },
+    {
+      title: 'large',
+      explanation: 'up to 300',
+      description: 'A large unit accommodates items that are comparable to a 3 - 4-bedroom home. At this capacity units can hold bedroom sets, appliances, dining/living sets and office furniture.'
+    },
+    {
+      title: 'x-large',
+      explanation: '300+',
+      description: 'Our premium sized units are custom sizes mostly for our commercial customers who have a lot of equipment or to excess inventory.'
+    }
+  ]
+%>
+
+
 <div class="select_size_and_sizing_guide">
   <div class="row">
     <div class="col-xl-10 col-xs-12 hidden-lg-down select_size">
@@ -7,12 +33,19 @@
         </div>
       </div>
 
+      Treasure Island Storage units are in accordance to industry standard sizes. The dimensions are displayed  with width, depth, and if noted, height.
+
       <div class="row">
-        <% ["All Units", "Small", "Medium", "Large", "X-Large"].each do |title| %>
+        <div class="col-xs-2">
+          <div class="size_option">
+            <div class="size">All Units</div>
+          </div>
+        </div>
+        <% sizes.each do |size| %>
           <div class="col-xs-2">
             <div class="size_option">
-              <div class="size"><%= title %></div>
-              <div class="description">Descritpion of units goes here</div>
+              <div class="size"><%= size[:title] %></div>
+              <div class="description"><%= size[:explanation] %>. <%= size[:description] %></div>
             </div>
           </div>
         <% end %>

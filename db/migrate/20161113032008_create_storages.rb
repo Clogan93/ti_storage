@@ -11,6 +11,7 @@ class CreateStorages < ActiveRecord::Migration[5.0]
       t.string :area
       t.string :zip_code
       t.string :coordinates
+      t.string :place_id
 
       t.text :office_hours
       t.text :access_hours

@@ -9,32 +9,31 @@
   }
 
   section.find_storage{
-    min-height: 609px;
-    background: image-url("static_pages/home_page/find_storage_bg.jpg");
-    background-size: cover;
+    // this T-like border___
+    .container-fluid{ border-top: solid 4px #4a90e2; }
+    h4.first_month_free{ margin-top: -4px !important; }
+    // ___this T-like border
 
-    position: relative; // for .reserve_now
-    padding-bottom: 90px;
-    padding-top: 160px;
+    position: relative;
+    @import 'in_home/background_slider';
+    min-height: 504px;
+    padding: 0;
 
     color: white;
     text-align: center;
 
     border-bottom: solid #ff0500 3px;
-
     h4{
       font-size: 28px;
       font-weight: bold;
       text-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
     }
 
-    h4.stree-free_storage{
-      position: absolute;
+    h4.first_month_free{
+      margin: 0 auto;
       max-width: 596px;
       width: 100%;
-      top: 0;
-      left: 50%; transform:translateX(-50%);
-      padding: 15px 0px;
+      padding: 15px 0px; padding-top: 0;
       border: solid 4px #4a90e2; border-top: none;
       border-bottom-left-radius: 5px;
       border-bottom-right-radius: 5px;
@@ -44,7 +43,7 @@
 
     .find_storage_rectangle{
       max-width: 601px;
-      margin: 0 auto; margin-top: 200px;
+      margin: 0 auto; margin-top: 205px;
       padding: 20px 50px;
 
       border-radius: 9px;
@@ -110,62 +109,7 @@
       }
     }
 
-    .reserve_now{
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-
-      opacity: 0.82;
-      background-color: #4268d8;
-
-      font-size: 20px;
-      font-weight: bold;
-      padding: 10px 0;
-    }
-  }
-
-  section.featured_specials{
-    border-bottom: solid #ff0500 3px;
-    h4{
-      color: #ff0500;
-    }
-    .special{
-      &.month{ text-align: right; }
-      &.move{ text-align: left; }
-      img{
-        max-width: 250px; width: 100%;
-        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16);
-        border: solid 1px #99b0dd;
-      }
-    }
-  }
-
-  section.ti_storage_benefits{
-    border-bottom: solid #ff0500 3px;
-    background-color: #f6f8fa;
-
-    text-align: center;
-    h4{
-      color: #0d2770;
-    }
-    .benefit{
-      position: relative;
-      .name{
-        color: $cobalt_color;
-        font-size: 16px;
-        font-weight: bold;
-
-        padding-top: 20px;
-      }
-      &:hover{ p.popover{ display: block } }
-      p.popover{
-        display: none;
-        z-index: 10;
-        top: 160px;
-        padding: 5px;
-        text-align: center;
-      }
-    }
+    div.blue_strip{ height: 27px; }
   }
 
   section.blog_articles{
@@ -188,6 +132,46 @@
 
       border: solid 1px $cobalt_color;
       min-width: 188px;
+    }
+  }
+
+  section.featured_specials{
+    background-color: #ebebeb;
+    h4{ color: #1f3d9b; }
+    .special{
+      &.month{ text-align: right; }
+      &.move{ text-align: left; }
+      img{
+        max-width: 250px; width: 100%;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16);
+        border: solid 1px #99b0dd;
+      }
+    }
+  }
+
+  section.ti_storage_benefits{
+    background-color: #f6f8fa;
+    text-align: center;
+    h4{
+      color: #0d2770;
+    }
+    .benefit{
+      position: relative;
+      .name{
+        color: $cobalt_color;
+        font-size: 16px;
+        font-weight: bold;
+
+        padding-top: 20px;
+      }
+      &:hover{ p.popover{ display: block } }
+      p.popover{
+        display: none;
+        z-index: 10;
+        top: 160px;
+        padding: 5px;
+        text-align: center;
+      }
     }
   }
 

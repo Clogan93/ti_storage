@@ -61,25 +61,5 @@ main#storage_solutions_page{
         }
       }
     }
-    section.descriptions{
-      .description{
-        border-radius: 7px;
-        border: solid 1px $pinkish-grey_color;
-        padding: 15px 35px;
-        margin-bottom: 20px;
-      }
-      .image_and_call_to_action{
-        .image{
-          display: inline-block;
-          max-width: 103px;
-          img{ max-width: 99px; }
-        }
-        .call_to_action{
-          display: inline-block;
-          width: calc(100% - 106px);
-          vertical-align: middle;
-        }
-      }
-    }
   }
 }

@@ -10,6 +10,7 @@ red_hook = Storage.create!({
   area: 'Brooklyn, NY',
   zip_code: '11231',
   coordinates: [40.673591, -74.001568],
+  place_id: 'ChIJgcP4oTe0w4kRRqg8c8bJdEY',
 
   office_hours: [
     'Mon-Fri 8:00 am - 7:00 pm',
@@ -85,6 +86,7 @@ ozone_park = Storage.create!({
   area: 'Ozone Park, NY',
   zip_code: '11417',
   coordinates: [40.67869, -73.858889],
+  place_id: 'ChIJgcP4oTe0w4kRRqg8c8bJdEY',
 
   office_hours: [
     'Mon - Fri: 8:00 am - 8:00 pm',
@@ -171,6 +173,7 @@ jamaica = Storage.create!({
   area: 'Queens, NY',
   zip_code: '11433',
   coordinates: [40.700799, -73.774523],
+  place_id: 'ChIJgcP4oTe0w4kRRqg8c8bJdEY',
 
   office_hours: [
     'Mon-Fri 8:00 am - 7:00 pm',
@@ -262,6 +265,7 @@ paterson = Storage.create!({
   area: 'Paterson, NJ',
   zip_code: '07505',
   coordinates: [40.912536, -74.170175],
+  place_id: 'ChIJgcP4oTe0w4kRRqg8c8bJdEY',
 
   office_hours: [
     'Mon-Fri 9:00 am - 8:00 pm',
@@ -336,6 +340,7 @@ woodbridge = Storage.create!({
   area: 'Woodbridge, NJ',
   zip_code: '07095',
   coordinates: [40.567496, -74.292012],
+  place_id: 'ChIJgcP4oTe0w4kRRqg8c8bJdEY',
 
   office_hours: [
     'Mon-Fri 9:00 am - 8:00 pm',
@@ -402,21 +407,3 @@ woodbridge = Storage.create!({
 })
 
 puts "seeded #{Storage.count} storages"
-
-
-require_relative './seeds/red_hook_reviews'
-red_hook.reviews.create!(RED_HOOK_REVIEWS)
-
-require_relative './seeds/ozone_park_reviews'
-ozone_park.reviews.create!(OZONE_PARK_REVIEWS)
-
-require_relative './seeds/jamaica_reviews'
-jamaica.reviews.create!(JAMAICA_REVIEWS)
-
-require_relative './seeds/paterson_reviews'
-paterson.reviews.create!(PATERSON_REVIEWS)
-
-require_relative './seeds/woodbridge_reviews'
-woodbridge.reviews.create!(WOODBRIDGE_REVIEWS)
-
-puts "seeded #{Review.count} reviews"

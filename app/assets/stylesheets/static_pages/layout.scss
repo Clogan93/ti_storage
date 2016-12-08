@@ -1,7 +1,7 @@
-main#storage_solutions_page{
+main#static_pages_layout{
   div.blue_page_heading{
     padding-left: 389px;
-    background: $light-navy_color;
+    background: $cobalt-color;
     padding-top: 54px; padding-bottom: 20px;
     h1{
       color: white;
@@ -9,7 +9,6 @@ main#storage_solutions_page{
     }
   }
 
-  // common
   .search_field{
     text-align: right;
     input.find_storage_input{
@@ -99,13 +98,6 @@ main#storage_solutions_page{
     display: inline-block;
     vertical-align: top;
     padding-left: 20px;
-    section.storage_types, section.descriptions{
-      h5.subheading{
-        color: $light-navy_color;
-        font-size: 16px;
-        margin: 20px 0 15px 0;
-      }
-    }
     section.heading_with_background{
       position: relative;
       width: 100%;
@@ -149,12 +141,13 @@ main#storage_solutions_page{
       @extend .default_markup;
     }
   }
+
 }
 
 
 // responsive
 
-main#storage_solutions_page{
+main#static_pages_layout{
   @media (max-width: $lg){
     div.blue_page_heading{
       padding-left: 319px;

@@ -12,6 +12,15 @@ section.step_1{
     .row.rent_or_reserve_radios{
       padding-top: 20px;
       align-items: center;
+      align-items: flex-start;
+
+      h4.please_choose_one{
+        color: #1f3d9b;
+        width: 100%;
+        padding-left: 15px;
+        padding-bottom: 10px;
+        font-weight: 700;
+      }
 
       .custom-control-description{
         padding-left: 15px;
@@ -27,6 +36,7 @@ section.step_1{
       .or{
         font-size: 18px;
         text-align: center;
+        align-self: center;
       }
     }
 

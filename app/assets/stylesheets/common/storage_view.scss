@@ -4,19 +4,30 @@ section.storage_view{
   border: solid 1px $pinkish-grey_color;
 
   padding: 20px;
+
+  // general storage_view layout___
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  .info{ flex-basis: 200px; }
+  .info.first{ flex-basis: 150px; }
+  // ___general storage_view layout
+
   .photos{
     .main_photo{
       text-align: center;
       img{
         max-height: 180px;
+        width: 100%;
+        max-width: 243px;
       }
     }
     .additional_photos{
       display: flex;
-      justify-content: center;
-      margin-top: 20px;
+      justify-content: space-between;
+      max-width: 247px;
+      margin: 30px auto;
       img{
-        margin: 0 10px;
         max-height: 50px;
         cursor: pointer;
       }
@@ -45,6 +56,7 @@ section.storage_view{
     .storage_rating{
       margin-top: 5px;
     }
+    .details{ padding-right: 0; }
     a.read_reviews, a.get_directions{
       display: block;
       color: $bright-orange_color;
@@ -56,6 +68,7 @@ section.storage_view{
   .map{
     padding: 8px;
     background: white;
+    height: 290px;
     iframe{
       height: 100%; width: 100%;
     }
@@ -64,14 +77,23 @@ section.storage_view{
 
 // responsive
 section.storage_view{
-  @media (max-width: $xl){
-    .map{ margin-top: 30px; }
+  @media (max-width: 1024px){
+    .map{
+      width: 100%;
+      margin-top: 20px;
+    }
   }
-  @media (max-width: $md){
+  @media (max-width: 772px){
+    justify-content: space-around;
+    .photos{
+      width: 100%;
+    }
     .info{
       padding-top: 30px;
-      text-align: center;
     }
     .office_hours{ margin-top: 20px; }
+  }
+  @media (max-width: 446px){
+    .info{ text-align: center; }
   }
 }

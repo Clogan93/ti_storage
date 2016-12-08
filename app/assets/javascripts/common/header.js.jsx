@@ -32,3 +32,13 @@ $(document).on('turbolinks:load', () => {
     collapsedMenu.collapse('toggle');
   });
 })
+
+// section.why_store_with_us
+$(document).on('turbolinks:load', () => {
+  const why_store_with_us = $('header section.why_store_with_us');
+  const collapsedMenu = why_store_with_us.find('nav');
+
+  why_store_with_us.find('.toggler').on('mouseover', (e) => {
+    collapsedMenu.collapse('toggle');
+  });
+})

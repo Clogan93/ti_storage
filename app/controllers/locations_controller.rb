@@ -3,10 +3,10 @@
 class LocationsController < ApplicationController
   def index
     return unless params[:area_slug]
-    @storages = @storages.where(area_slug: params[:area_slug])
+    @storages = @all_storages.where(area_slug: params[:area_slug])
   end
 
   def show
-    @storage = @storages.find_by(slug: params[:slug])
+    @storage = @all_storages.find_by(slug: params[:slug])
   end
 end

@@ -1,8 +1,6 @@
 # Storages (we call them /locations occasionaly).
 # frozen_string_literal: true
 class Storage < ApplicationRecord
-  has_many :reviews
-
   validates_presence_of :category, :title, :phone,
     :address, :area, :zip_code, :coordinates,
     :office_hours, :access_hours,
@@ -22,5 +20,11 @@ class Storage < ApplicationRecord
 
   def self.categories
     Storage.all.map { |storage| storage[:category] }.uniq
+  end
+
+  # ugh, maybe we should add area_name to db then too. possible TODO
+  # possibly not consistent enough to be calculating slugs from titles etc.
+  def area_name
+    area_slug.split('-').join(' ').titleize
   end
 end

@@ -9,4 +9,7 @@ class StaticPagesController < ApplicationController
 
   def sizing_guide
   end
+
+  def faq
+  end
 end
