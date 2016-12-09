@@ -79,20 +79,28 @@
 
   section.detailed_locations{
     background: #e2e6ec;
-    .photo img{ width: 100%; }
     .detailed_location_and_units{
       background: white;
       border: solid 1px #dfdfdf;
       margin-bottom: 9px;
       .detailed_location{
-        .storage_details{ padding-top: 10px; }
+        border-bottom: solid 1px #dfdfdf;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .photo{
+          flex-basis: 230px;
+          img{ width: 100%; }
+        };
+        .storage_details{
+          padding: 0 10px;
+        }
       }
       .units{
         padding: 15px;
       }
     }
     .sizing_guide_preview{
-      padding-top: 14px;
       padding-right: 10px;
     }
   }
@@ -104,6 +112,7 @@
     }
   }
 }
+
 
 // ___responsive
 #search_index_page{
@@ -135,6 +144,12 @@
     section.reserve_online_today_ad{
       img{ max-width: 106px; }
       margin-top: 40px; margin-bottom: 50px;
+    }
+
+    section.detailed_locations{
+      .detailed_location{
+        justify-content: space-around !important;
+      }
     }
   }
 

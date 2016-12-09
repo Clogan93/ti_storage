@@ -11,7 +11,10 @@
   section.find_storage{
     // this T-like border___
     .container-fluid{ border-top: solid 4px #4a90e2; }
-    h4.first_month_free{ margin-top: -4px !important; }
+    h4.first_month_free{
+      position: relative;
+      top: -4px;
+    }
     // ___this T-like border
 
     position: relative;

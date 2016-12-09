@@ -1,0 +1,45 @@
+.storage_details{
+  width: 411px;
+  h1.city{
+    padding: 10px 20px;
+    font-size: 28px;
+    text-transform: uppercase;
+    color: white;
+    background-color: $cobalt_color;
+    border-bottom: solid 3px $vermillion_color;
+  }
+  .photo{
+    img{ width: 100%; }
+  }
+  .info{
+    padding: 15px;
+  }
+  .reserve_today_and_view_units{
+    border: solid 1px $vermillion_color;
+    margin: 0 15px; // to compensate for row's -15px for border
+    padding: 10px;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 18px;
+
+    .reserve_today{
+      font-weight: bold;
+      .red{ color: $vermillion_color; }
+      .blue{ color: $cobalt_color; }
+    }
+    .view_units{
+      .button { 
+        color: white;
+        font-size: 17px;
+      }
+    }
+  }
+  .units_starting_at{
+    margin: 10px 15px;
+    padding: 15px;
+    color: black;
+    background-color: #ffe200; // yellow
+    text-transform: uppercase;
+    font-size: 17px;
+  }
+}

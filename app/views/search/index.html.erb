@@ -37,15 +37,20 @@
           <section class="detailed_locations">
             <% @all_storages.each do |storage| %>
               <div class="detailed_location_and_units">
-                <div class="row detailed_location">
-                  <div class="col-sm-4 col-xs-12 photo">
+
+                <div class="detailed_location">
+                  <div class="photo">
                     <%= image_tag "common/storages/#{storage.id}.jpg" %>
                   </div>
-                  <div class="col-sm-4 col-xs-12 storage_details">
+                  <div class="storage_details">
                     <div class="miles_away">
                       <%= image_tag 'common_elements/location_pin.svg' %>
                       <span class="how_many">3 Miles Away</span>
                     </div>
+
+                    <h5 class="title">
+                      <%= storage.title %>
+                    </h5>
 
                     <div class="address">
                       <%= storage.address %><br>
@@ -60,7 +65,7 @@
                     </a>
                   </div>
 
-                  <div class="col-sm-4 hidden-md-down">
+                  <div class="hidden-sm-down">
                     <%= render 'common/sizing_guide_preview' %>
                   </div>
                 </div>
