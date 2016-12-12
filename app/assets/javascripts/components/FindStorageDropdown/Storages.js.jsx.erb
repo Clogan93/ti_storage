@@ -10,6 +10,7 @@ const Storages = React.createClass({
     const storages = this.props.storages.map((storage, index) => {
       return <Storage key={index} storage={storage} src={pin_src}/>
     });
+
     return(
       <div className="locations">
         {storages}

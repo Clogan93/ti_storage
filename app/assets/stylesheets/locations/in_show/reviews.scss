@@ -1,0 +1,36 @@
+article#reviews{
+  section.reviews{
+    .review{
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #efecec;
+      a.author{
+        font-size: 20px;
+        font-weight: bold;
+        img.photo{
+          width: 40px;
+          margin-right: 20px;
+        }
+      }
+      .time_and_rating{
+        margin-top: 10px;
+        .storage_rating{
+          display: inline-block;
+        }
+        .time{
+          display: inline-block;
+          margin-left: 20px;
+          font-size: 12px;
+        }
+      }
+      .text{}
+    }
+  }
+  section.links_to_reviews{
+    a{
+      display: block;
+      margin-top: 10px;
+      color: $vermillion_color;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+const StorageRating = React.createClass({
+  propTypes: {
+    rating: React.PropTypes.number.isRequired,
+    numberIsDisplayed: React.PropTypes.bool.isRequired
+  },
+
+  render() {
+    return(
+      <div className="storage_rating">
+        <span className="number">{this.props.rating}</span>
+        <span className="stars">
+          <%= image_tag 'common_elements/star.svg' %>
+          <%= image_tag 'common_elements/star.svg' %>
+          <%= image_tag 'common_elements/star.svg' %>
+          <%= image_tag 'common_elements/star.svg' %>
+          <%= image_tag 'common_elements/star.svg' %>
+        </span>
+      </div>
+    );
+  }
+});

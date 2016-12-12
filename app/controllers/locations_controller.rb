@@ -2,8 +2,12 @@
 # :nodoc:
 class LocationsController < ApplicationController
   def index
-    return unless params[:area_slug]
-    @storages = @all_storages.where(area_slug: params[:area_slug])
+    @storages =
+      if params[:area_slug]
+        @all_storages.where(area_slug: params[:area_slug])
+      else
+        @all_storages
+      end
   end
 
   def show

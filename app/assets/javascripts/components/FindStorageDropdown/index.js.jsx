@@ -59,6 +59,26 @@ const FindStorageDropdown = React.createClass({
     }
   },
 
+  onFocus() {
+    // if browser doesn't supports geolocation
+    if (!navigator.geolocation) { return }
+    // if location has laready been guessed once
+    if (this.state.currentGuessedLocation) { return }
+
+    navigator.geolocation.getCurrentPosition((position) => {
+      const { latitude, longitude } = position.coords;
+      findAddressByCoordinates(latitude, longitude, (address) => {
+        this.refs.input.value = address;
+        this.setState({ modalIsOpen: true });
+        this.autocompleteLocation(address);
+      });
+    });
+  },
+
+  onKeyPress(event) {
+    if(event.key == 'Enter'){ this.refs.link_to_search_page.click(); }
+  },
+
   render() {
     const searchValue = this.state.currentGuessedLocation;
     const href = searchValue ? encodeURI("/search?" + searchValue) : '/search';
@@ -77,7 +97,7 @@ const FindStorageDropdown = React.createClass({
           </div>
         </div>
 
-        <input ref="input" type="text" placeholder="City, Zip Code" className="form-control" onChange={this.somethingIsTyped}/>
+        <input ref="input" type="text" placeholder="City, Zip Code" className="form-control" onChange={this.somethingIsTyped} onFocus={this.onFocus} onKeyPress={this.onKeyPress}/>
 
         <a ref="link_to_search_page" href={href} className="button blue search">Search</a>
       </section>

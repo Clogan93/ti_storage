@@ -27,19 +27,21 @@ const StorageReviews = React.createClass({
   render() {
     const reviews = this.state.reviews.map((review, index) => {
       return <div key={index} className="review">
-        <div>{review.author_name}</div>
-        <div>google+</div>
-        <a target="_blank" href={review.author_url}>{review.author_name}</a>
-        <img style={{ width: 30 }} src={review.profile_photo_url}/>
-        <div>{review.rating}</div>
-        <div>{review.relative_time_description}</div>
-        <div>{review.relative_time_description}</div>
-        <div>{review.text}</div>
+        <a className="author" target="_blank" href={review.author_url}>
+          <img className="photo" src={review.profile_photo_url}/>
+          {review.author_name}
+        </a>
+
+        <div className="time_and_rating">
+          <StorageRating rating={review.rating} numberIsDisplayed={false}/>
+          <span className="time">{review.relative_time_description}</span>
+        </div>
+
+        <div className="text">{review.text}</div>
       </div>
     });
     return(
       <section className="reviews">
-        <%= image_tag 'common_elements/star.svg' %>
         {reviews}
       </section>
     );
