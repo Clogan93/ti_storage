@@ -27,6 +27,7 @@ Rails.application.routes.draw do
     get 'art-storage',  to: 'storage_solutions#art_storage'
   end
 
+  get 'myaccount',    to: 'static_pages#myaccount'
   get 'contact',      to: 'static_pages#contact'
   get 'sizing-guide', to: 'static_pages#sizing_guide'
   get 'faq', to: 'static_pages#faq'

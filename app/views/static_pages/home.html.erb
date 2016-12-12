@@ -30,12 +30,26 @@
   <section class="blog_articles">
     <div class="container-fluid">
       <div class="row">
-        <% 3.times do %>
-          <div class="col-md-4 col-xs-12 article">
-            <h4 class="heading">This is an Article Or Post</h4>
-            <%= image_tag 'http://placehold.it/343x260' %>
-          </div>
-        <% end %>
+        <div class="col-md-4 col-xs-12 article">
+          <h4 class="heading">Storing Collectable Posters</h4>
+        </div>
+        <div class="col-md-4 col-xs-12 article">
+          <h4 class="heading">Saving Space: Futon Vs Bed</h4>
+        </div>
+        <div class="col-md-4 col-xs-12 article">
+          <h4 class="heading">Organize Your Garage in 3 Steps</h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 col-xs-12 article">
+          <%= image_tag 'static_pages/home/blog/posters.jpg' %>
+        </div>
+        <div class="col-md-4 col-xs-12 article">
+          <%= image_tag 'static_pages/home/blog/futon.jpg' %>
+        </div>
+        <div class="col-md-4 col-xs-12 article">
+          <%= image_tag 'static_pages/home/blog/garage.jpg' %>
+        </div>
       </div>
 
       <%= link_to 'Read More', '', class: 'button read_more' %>
