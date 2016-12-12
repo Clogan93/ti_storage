@@ -1,0 +1,70 @@
+// rendered when when $(window).width() > 576px
+const Search_Index_desktop_SearchResults = React.createClass({
+  propTypes: {
+    nearestStorages: React.PropTypes.array.isRequired,
+  },
+
+  getInitialState() {
+    return {
+      scrollDownToStorageId: null
+    };
+  },
+
+  componentDidMount() {
+    console.log(this.props.nearestStorages)
+    this.initializeMap();
+  },
+
+  initializeMap() {
+    const mapEl = $(this.refs.map);
+
+    if ($(window).width() > 1200){
+      mapEl.css({ "height": $(window).height() })
+      mapEl.stick_in_parent();
+    }
+    this.createScrollableMap(mapEl);
+  },
+
+  createScrollableMap(mapEl) {
+    const map = new Map(mapEl);
+    map.displayMap();
+    map.placeMarkersOnMap(
+      this.props.nearestStorages,
+      {
+        onClick: (infoWindow, storage) => {
+          infoWindow.setContent(storage.title);
+          this.setState({ scrollDownToStorageId: storage.id });
+        }
+      }
+    );
+  },
+
+  render() {
+    return <div className="content_bordering">
+      <div className="row">
+        <div className="col-xl-6 map_and_sizing_guide_preview">
+          <section ref="map" className="map"></section>
+        </div>
+        <div className="col-xl-6 search_results">
+          <Search_Index_desktop_TopChoicesAroundYou/>
+
+          <section className="reserve_online_today_ad">
+            <%= image_tag 'common/ads/green_checkmark_in_circle.png' %>
+            <div className="red">
+              Reserve Online Today To Lock In Savings
+            </div>
+            <div className="black">
+              Up to 20% Off & First Month Free & Free Move-In Truck & Driver!
+            </div>
+          </section>
+
+          <Search_Index_desktop_Storages storages={this.props.nearestStorages} scrollDownToStorageId={this.state.scrollDownToStorageId}/>
+
+          <div className="hidden-lg-up text-md-center">
+            <SizingGuidePreview/>
+          </div>
+        </div>
+      </div>
+    </div>
+  }
+})

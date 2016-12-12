@@ -1,5 +1,5 @@
 .sizing_guide_preview{
-  width: 150px;
+  width: 154px;
   cursor: pointer;
   .blue_heading{
     text-align: right;
@@ -8,4 +8,5 @@
     color: $azul_color;
     text-transform: uppercase;
   }
+  img.ruler{ padding-right: 10px; }
 }

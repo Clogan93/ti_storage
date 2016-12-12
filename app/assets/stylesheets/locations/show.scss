@@ -47,13 +47,13 @@
       padding: 30px;
     }
 
-    article#features{
+    article#features, article#videos{
       li{
         display: inline-block;
         padding: 20px;
         margin-bottom: 20px;
         color: white;
-        background: $cobalt_color; 
+        background: $cobalt_color;
       }
     }
 
@@ -62,7 +62,7 @@
         display: inline-block;
         padding: 20px;
         color: white;
-        background: $cobalt_color; 
+        background: $cobalt_color;
       }
       section.reviews{
         .review{

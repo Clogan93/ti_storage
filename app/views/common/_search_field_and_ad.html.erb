@@ -3,14 +3,7 @@
     <div class="col-md-6 col-xs-12 search_field">
       <div class="showing_results_near">Showing Results Near:</div>
 
-      <div class="row">
-        <div class="col-sm-8">
-          <input type="text" placeholder="City, Zip Code" class="find_storage_input" value="<%= (@storage.area + ', ' + @storage.address) if @storage %>">
-        </div>
-        <div class="col-sm-4">
-          <div class="button search">Search</div>
-        </div>
-      </div>
+      <%= react_component('FindStorageDropdown', { storages: @all_storages }) %>
     </div>
 
     <div class="col-md-6 hidden-md-down ad">

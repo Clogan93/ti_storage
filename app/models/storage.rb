@@ -27,4 +27,20 @@ class Storage < ApplicationRecord
   def area_name
     area_slug.split('-').join(' ').titleize
   end
+
+  def image_src
+    ActionController::Base.helpers.asset_path("common/storages/#{id}.jpg")
+  end
+
+  def url
+    '/' + area_slug + '/' + slug
+  end
+
+  # http://stackoverflow.com/a/9649359/3192470
+  def serializable_hash(options = {})
+    options = {
+      methods: [:image_src, :url]
+    }.update(options)
+    super(options)
+  end
 end

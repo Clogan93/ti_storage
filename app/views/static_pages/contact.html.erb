@@ -3,7 +3,7 @@
     <h1>CONTACT US</h1>
 
     <div class="phone heading_font">
-      646.846.9449
+      1-800-TI-STORAGE
     </div>
 
     <div class="blue_strip">
@@ -40,7 +40,7 @@
           <label>Where do you store with us?</label>
           <select class="custom-select">
             <option value="Please Select">Please Select</option>
-            <% @storages.each do |storage| %>
+            <% @all_storages.each do |storage| %>
               <option value="<%= storage.title %>"><%= storage.title %></option>
             <% end %>
           </select>

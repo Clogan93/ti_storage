@@ -12,7 +12,7 @@ section.locations{
     }
 
     ul.cities, ul.places{
-      min-width: 200px;
+      min-width: 135px;
       padding-top: 10px; padding-bottom: 10px;
       &> li.ui-menu-item{
         // !important because jquery-ui will try to override it:

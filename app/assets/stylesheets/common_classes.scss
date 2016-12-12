@@ -94,16 +94,6 @@
   padding: 35px 0 15px 0;
 }
 
-.find_storage_input{
-  border-radius: 2px;
-  background-color: white;
-  border: solid 1px #d1d1d1;
-  height: 48px;
-  padding: 15px;
-
-  font-size: 16px;
-}
-
 // when we want it pretty
 .default_markup{
   ul, ol{ padding-left: 30px; }
@@ -123,4 +113,17 @@ div.blue_strip{
   font-size: 20px;
   font-weight: bold;
   padding: 10px 0;
+}
+
+// responsive
+@media (max-width: $sm){
+  .storage_preview{
+    text-align: center;
+    background: none;
+    .miles_away{ padding-top: 20px; }
+    .photo{
+      max-width: 250px;
+      margin: 20px auto 0 auto;
+    }
+  }
 }

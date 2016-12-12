@@ -1,0 +1,46 @@
+const Search_Index_mobile_SearchResults = React.createClass({
+  propTypes: {
+    nearestStorages: React.PropTypes.array.isRequired,
+  },
+
+  componentDidMount() {
+    const mobileMapEl = $('section.mobile_map');
+    $('a[href="#map"]').one('shown.bs.tab', (e) => {
+      const map = new Map(mobileMapEl);
+      map.displayMap();
+      map.placeMarkersOnMap(this.props.nearestStorages);
+    })
+  },
+
+  render() {
+    const storages = this.props.nearestStorages.map((storage, index) => {
+      return <Search_Index_mobile_Storage key={index} index={index} storage={storage}/>
+    })
+
+    return <div id="search_index_page_mobile">
+
+      <ul className="nav nav-tabs" role="tablist">
+        <li className="nav-item">
+          <a className="nav-link active" data-toggle="tab" href="#list" role="tab">List</a>
+        </li>
+        <li className="nav-item">
+          <a className="nav-link" data-toggle="tab" href="#map" role="tab">Map</a>
+        </li>
+      </ul>
+
+      <div className="tab-content">
+        <div className="tab-pane active" id="list" role="tabpanel">
+          <section className="storages">
+            {storages}
+          </section>
+        </div>
+
+        <div className="tab-pane" id="map" role="tabpanel">
+          <section className="mobile_map"></section>
+        </div>
+      </div>
+
+    </div>
+  }
+
+});

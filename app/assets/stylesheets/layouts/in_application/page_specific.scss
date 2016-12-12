@@ -1,0 +1,9 @@
+// body classes for insides of body, but not <main>
+
+.storage_solutions_controller{
+  // place logo above the aside
+  header .logo img{
+    left: 60px;
+    @media (max-width: 992px){ left: initial; }
+  }
+}

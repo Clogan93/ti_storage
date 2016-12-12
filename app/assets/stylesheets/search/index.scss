@@ -1,6 +1,9 @@
 #search_index_page{
   .container-fluid{ padding-top: 24px; }
-  .search_field .showing_results_near{ color: $light-navy_color; }
+  .search_field .showing_results_near{
+    color: $light-navy_color;
+    margin-bottom: 17px;
+  }
   .content_bordering{
     border: solid 1px #dfdfdf;
     padding: 12px;
@@ -109,6 +112,9 @@
     section.map{
       position: relative;
       > div{ position: static; }
+      // to fix .stick_in_parent() bug that makes 
+      // pins on a map unclickable
+      &.is_stuck+div{ display: none !important; }
     }
   }
 }

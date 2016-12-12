@@ -1,0 +1,52 @@
+const Search_Index_SearchResultsMobileAndDesktop = React.createClass({
+  propTypes: {
+    storages: React.PropTypes.array.isRequired,
+  },
+
+  getInitialState() {
+    return {
+      getNearestStoragesStatus: 'request', // request success failure
+      nearestStorages: []
+    };
+  },
+
+  componentDidMount() {
+    this.findNearestStorages();
+  },
+
+  findNearestStorages() {
+    origin = currentQueryString();
+    if (origin.length === 0){ // if it's just /search, return all storages in random order
+      this.setState({ nearestStorages: this.props.storages, getNearestStoragesStatus: 'success' })
+    } else { // if it's /search?New%20York,%20NY,%20United%20States. return nearest
+      findNearestStorages(origin, this.props.storages,
+        (nearestStorages) => {
+          console.log(nearestStorages)
+          this.setState({ nearestStorages, getNearestStoragesStatus: 'success' });
+        },
+        (error) => {
+          console.log({ error })
+          this.setState({ getNearestStoragesStatus: 'failure' });
+        }
+      )
+    }
+  },
+
+  render() {
+    const { getNearestStoragesStatus, nearestStorages } = this.state;
+
+    switch (getNearestStoragesStatus){
+      case 'request':
+        return <div className="col-xl-6 search_results">fetching</div>
+      case 'failure':
+        return <div className="col-xl-6 search_results">error</div>
+      case 'success':
+        if ($(window).width() > 576){
+          return <Search_Index_desktop_SearchResults nearestStorages={nearestStorages}/>
+        } else {
+          return <Search_Index_mobile_SearchResults nearestStorages={nearestStorages}/>
+        }
+    }
+  }
+
+});

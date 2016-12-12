@@ -1,6 +1,7 @@
 section.search_field_and_ad{
   margin-bottom: 20px;
-  .search_field{
+  section.find_storage_dropdown{
+    max-width: 470px;
     font-size: 18px;
     .showing_results_near{
       color: #999999;
@@ -28,10 +29,11 @@ section.search_field_and_ad{
 }
 
 
+// responsive
+
 section.search_field_and_ad{
   @media (max-width: $sm){
     .button.search{
-      margin-top: 15px;
     }
   }
 }

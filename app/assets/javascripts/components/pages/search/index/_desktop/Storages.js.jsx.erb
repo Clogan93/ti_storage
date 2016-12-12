@@ -1,0 +1,23 @@
+const Search_Index_desktop_Storages = React.createClass({
+  propTypes: {
+    storages: React.PropTypes.array.isRequired,
+    scrollDownToStorageId: React.PropTypes.number
+  },
+
+  componentDidUpdate() {
+    const el = this.refs[this.props.scrollDownToStorageId];
+    if (el){ el.scrollIntoView(); }
+  },
+
+  render() {
+    storages = this.props.storages.map((storage, index) => {
+      return <div ref={storage.id} key={index}>
+        <Search_Index_desktop_Storage storage={storage}/>
+      </div>
+    })
+
+    return <section className="detailed_locations">
+      {storages}
+    </section>
+  }
+});

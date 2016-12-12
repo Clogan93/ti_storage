@@ -1,0 +1,49 @@
+const Search_Index_desktop_Storage = React.createClass({
+  propTypes: {
+    storage: React.PropTypes.object.isRequired,
+  },
+
+  render() {
+    const storage = this.props.storage;
+
+    return <div className="detailed_location_and_units">
+      <div className="detailed_location">
+        <div className="photo">
+          <img src={storage.image_src}/>
+        </div>
+        <div className="storage_details">
+          <div className="miles_away">
+            <%= image_tag 'common_elements/location_pin.svg' %>
+            <span className="how_many">
+              {googleDistanceToMiles(storage.distanceToOriginObject)} Mi Away
+            </span>
+          </div>
+
+          <h5 className="title">
+            {storage.title}
+          </h5>
+
+          <div className="address">
+            {storage.address}<br/>
+            {storage.area + ' ' + storage.zip_code}<br/>
+            <b className="telephone">{storage.phone}</b>
+          </div>
+
+          <a className="show_all_units" href={storage.url}>
+            Show All Available Units
+          </a>
+        </div>
+
+        <div className="hidden-sm-down">
+          <SizingGuidePreview/>
+        </div>
+      </div>
+
+      <div className="units">
+        <Search_Index_desktop_Unit/>
+        <Search_Index_desktop_Unit/>
+        <Search_Index_desktop_Unit/>
+      </div>
+    </div>
+  }
+});

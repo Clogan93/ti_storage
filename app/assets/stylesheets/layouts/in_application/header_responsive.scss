@@ -43,6 +43,7 @@ header{
   }
 
   @media (max-width: $xl){
+    border-bottom: none;
     .logo{
       padding: 10px;
       img{ position: initial; }

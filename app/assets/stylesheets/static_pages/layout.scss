@@ -9,27 +9,36 @@ main#static_pages_layout{
     }
   }
 
-  .search_field{
-    text-align: right;
-    input.find_storage_input{
-      margin-bottom: 11px;
-      width: 100%;
-      background: white;
-      border: solid 2px $orange-red_color;
-      padding: 6px;
-      height: initial;
+  section.search_field{
+    // some major hacky overriding here due to different designs of search field on different pages
+    section.find_storage_dropdown{
+      display: block;
+      text-align: right;
+      padding: 0px;
+      border-bottom: none;
+      input{
+        margin-bottom: 11px;
+        width: 100%;
+        background: white;
+        border: solid 2px $orange-red_color;
+        padding: 6px;
+        height: initial;
 
-      // for magnifier icon
-      background-image: url(image-path('common/search-icon.svg'));
-      background-repeat: no-repeat;
-      background-position: 10px;
-      padding-left: 30px;
-    }
-    .button{
-      background: linear-gradient(to bottom, $orange-red_color, #d70000);
-      font-size: 18px;
-      min-height: initial;
-      padding-top: 3px; padding-bottom: 3px;
+        // for magnifier icon
+        background-image: url(image-path('common/search-icon.svg'));
+        background-repeat: no-repeat;
+        background-position: 10px;
+        padding-left: 30px;
+      }
+      a.button.search{
+        width: auto; min-height: initial;
+        background: linear-gradient(to bottom, $orange-red_color, #d70000);
+        font-size: 18px;
+        padding-top: 3px; padding-bottom: 3px;
+      }
+      .dropdown-menu{
+        top: 90px;
+      }
     }
   }
 

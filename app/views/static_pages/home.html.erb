@@ -14,22 +14,13 @@
       <div class="find_storage_rectangle">
         <h4>Find Storage in Your Area</h4>
 
-        <div class="row">
-          <div class="col-md-8">
-            <%=
-              react_component('FindStorageDropdown',
-                {
-                  storages: @all_storages,
-                  pin_src: url_to_image('common_elements/location_pin_grey.svg'),
-                  car_src: 'common_elements/icon-truck.svg'
-                }
-              )
-            %>
-          </div>
-          <div class="col-md-4">
-            <%= link_to("Search", search_path, class: "button blue search") %>
-          </div>
-        </div>
+        <%=
+          react_component('FindStorageDropdown',
+            {
+              storages: @all_storages,
+            }
+          )
+        %>
       </div>
     </div>
 

@@ -2,11 +2,13 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-xs-12">
-        <%= link_to 'Home', root_path %> /
-        <% links[0..-2].each do |link| %>
-          <%= link %> /
-        <% end %>
-        <%= links[-1] %>
+        <div class="breadcrumbs-inner">
+          <%= link_to 'Home', root_path %> /
+          <% links[0..-2].each do |link| %>
+            <%= link %> /
+          <% end %>
+          <%= links[-1] %>
+        </div>
       </div>
     </div>
   </div>

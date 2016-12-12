@@ -71,7 +71,11 @@
         <article class="tab-pane" id="directions">
           <%= @storage.directions.html_safe %>
         </article>
-        <div class="tab-pane" id="videos">...</div>
+        <article class="tab-pane" id="videos">
+          <ul>
+            <li>Coming Soon</li>
+          </ul>
+        </article>
         <article class="tab-pane" id="reviews">
           <%= react_component('StorageReviews', { placeId: @storage.place_id }) %>
 

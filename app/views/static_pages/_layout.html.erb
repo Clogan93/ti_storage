@@ -10,9 +10,9 @@
       </section>
 
       <section class="search_field">
-        <input type="text" placeholder="City, Zip Code" class="find_storage_input">
-        <div class="button search">Search</div>
+        <%= react_component('FindStorageDropdown', { storages: @all_storages }) %>
       </section>
+
 
       <section class="ad">
         <%= image_tag 'common/ads/labor-sale-horizontal.png' %>
