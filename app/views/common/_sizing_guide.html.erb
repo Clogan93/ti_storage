@@ -2,31 +2,37 @@
   {
     size_in_number: '5x5',
     size_in_words: 'Small',
+    title: 'Store the Contents of a Small Room',
     description: 'A 5x5 storage unit provides about 25 square feet of storage space. Typically, this size unit is ideal for individuals who need to store the contents of a small room. A 5x5 unit is also ideal for those who need to store the contents of a large walk-in closet. Common items to put in this size unit may include office chairs, small to mid-size bookshelves, and a small desk.'
   },
   {
     size_in_number: '5x10',
     size_in_words: 'Medium',
+    title: 'Store the Contents of a Mid-Size Room',
     description: 'A 5x10 storage unit provides about 50 square feet of storage space, meaning it’s about twice as big as a 5x5 unit. Typically, this size unit can fit the contents of an average-sized room including chairs, a sofa, lighting fixtures, drawers, a mattress, and several miscellaneous boxes.'
   },
   {
     size_in_number: '5x15',
     size_in_words: 'Medium',
+    title: 'Store the Contents of Two Mid-Size Rooms',
     description: 'A 5x15 storage unit provides about 75 square feet of storage space. This unit size can hold the contents of two mid-sized room such as two kid’s rooms or a large master bedroom in addition to several miscellaneous boxes. Common items for this size unit are mattress sets, desks, bookshelves, sofas, and drawers.'
   },
   {
     size_in_number: '10x10',
     size_in_words: 'Large',
+    title: 'Store the Contents of Three Rooms',
     description: 'A 10x10 storage unit provides 100 square feet of storage space, meaning it’s about twice the size of a 5x10 unit. This size unit is ideal for anyone looking to store the contents of up to three rooms. Common items to place in a 10x10 unit include dining room sets, bedroom sets, mattress sets, sofas, and many boxes.'
   },
   {
     size_in_number: '10x15',
     size_in_words: 'Large',
+    title: 'Store the Contents of a Small Home',
     description: 'A 10x15 storage unit provides about 150 square feet of storage space. This size unit can be used to fit household items from up to four rooms. This size unit is best for a family which is moving and needs to store the contents of a small to mid-size home. Common items to store in a 10x15 unit include mattress sets, armchairs, drawers, dining room sets, kitchenware, boxes, and more.'
   },
   {
     size_in_number: '10x25',
     size_in_words: 'X-large',
+    title: 'Store the Contents of Over Six Rooms',
     description: 'A 10x25 storage unit provides about 250 square feet of storage space. This unit size provides enough space to store the contents of over 6 rooms. This makes a 10x25 unit ideal for moving and for other large storage needs. Common items to store in this size unit include patio furniture, appliances, living room sets, bedroom sets, garage items, and more.'
   }
 ] %>
@@ -70,7 +76,7 @@
           </div>
 
           <div class="description">
-            <h5>A <%= size[:size_in_number] %> Unit is this.</h5>
+            <h5><%= size[:title] %></h5>
             <%= size[:description].html_safe %>
           </div>
         </div>
