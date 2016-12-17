@@ -66,3 +66,18 @@ section.find_storage_dropdown{
     }
   }
 }
+
+
+// responsive
+
+@media (max-width: $sm){
+  section.find_storage_dropdown{
+    // making dropdown 100% width___
+    .dropdown{ position: initial; }
+    .dropdown-menu{
+      right: 0;
+      width: initial !important;
+    }
+    // ___making dropdown 100% width
+  }
+}

@@ -21,7 +21,6 @@ const Search_Index_SearchResultsMobileAndDesktop = React.createClass({
     } else { // if it's /search?New%20York,%20NY,%20United%20States. return nearest
       findNearestStorages(origin, this.props.storages,
         (nearestStorages) => {
-          console.log(nearestStorages)
           this.setState({ nearestStorages, getNearestStoragesStatus: 'success' });
         },
         (error) => {

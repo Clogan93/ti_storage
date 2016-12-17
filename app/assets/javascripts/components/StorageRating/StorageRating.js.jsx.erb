@@ -1,20 +1,33 @@
+// mostly taken from https://codepen.io/Bluetidepro/pen/GkpEa?editors=1100
 const StorageRating = React.createClass({
   propTypes: {
     rating: React.PropTypes.number.isRequired,
     numberIsDisplayed: React.PropTypes.bool.isRequired
   },
 
+  renderStars() {
+    return <div>
+      <span>★</span>
+      <span>★</span>
+      <span>★</span>
+      <span>★</span>
+      <span>★</span>
+    </div>
+  },
+
   render() {
+    const ratingInPercents = this.props.rating * 20;
     return(
       <div className="storage_rating">
         <span className="number">{this.props.rating}</span>
-        <span className="stars">
-          <%= image_tag 'common_elements/star.svg' %>
-          <%= image_tag 'common_elements/star.svg' %>
-          <%= image_tag 'common_elements/star.svg' %>
-          <%= image_tag 'common_elements/star.svg' %>
-          <%= image_tag 'common_elements/star.svg' %>
-        </span>
+        <div className="stars">
+          <div className="top" style={{ width: ratingInPercents + '%' }}>
+            {this.renderStars()}
+          </div>
+          <div className="bottom">
+            {this.renderStars()}
+          </div>
+        </div>
       </div>
     );
   }

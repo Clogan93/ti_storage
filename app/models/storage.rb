@@ -36,6 +36,18 @@ class Storage < ApplicationRecord
     '/' + area_slug + '/' + slug
   end
 
+  # (because not enough info on units yet)
+  def min_unit_price
+    case title
+    when 'Jamaica', 'Ozone Park', 'Paterson'
+      19
+    when 'Red Hook'
+      29
+    when 'Woodbridge'
+      39
+    end
+  end
+
   # http://stackoverflow.com/a/9649359/3192470
   def serializable_hash(options = {})
     options = {

@@ -17,7 +17,7 @@ const StorageReviews = React.createClass({
     getPlaceDetails(
       this.props.placeId,
       (place) => {
-        const fiveStarReviews = place.reviews.filter((review) => review.rating == 5);
+        const fiveStarReviews = place.reviews.filter((review) => review.rating === 5);
         this.setState({ reviews: fiveStarReviews });
       },
       (error) => { console.log(error) }

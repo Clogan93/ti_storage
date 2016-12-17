@@ -10,7 +10,7 @@ red_hook = Storage.create!({
   area: 'Brooklyn, NY',
   zip_code: '11231',
   coordinates: [40.673591, -74.001568],
-  place_id: 'ChIJgcP4oTe0w4kRRqg8c8bJdEY',
+  place_id: 'ChIJ7TyQ8PNawokRf9vNpds593g',
 
   office_hours: [
     'Mon-Fri 8:00 am - 7:00 pm',
@@ -86,7 +86,7 @@ ozone_park = Storage.create!({
   area: 'Ozone Park, NY',
   zip_code: '11417',
   coordinates: [40.67869, -73.858889],
-  place_id: 'ChIJgcP4oTe0w4kRRqg8c8bJdEY',
+  place_id: 'ChIJN0jyr-xdwokR89AC6EpsxYk',
 
   office_hours: [
     'Mon - Fri: 8:00 am - 8:00 pm',
@@ -173,7 +173,7 @@ jamaica = Storage.create!({
   area: 'Queens, NY',
   zip_code: '11433',
   coordinates: [40.700799, -73.774523],
-  place_id: 'ChIJgcP4oTe0w4kRRqg8c8bJdEY',
+  place_id: 'ChIJGbBVzz5hwokR1VMvwDUmb-k',
 
   office_hours: [
     'Mon-Fri 8:00 am - 7:00 pm',
@@ -265,7 +265,7 @@ paterson = Storage.create!({
   area: 'Paterson, NJ',
   zip_code: '07505',
   coordinates: [40.912536, -74.170175],
-  place_id: 'ChIJgcP4oTe0w4kRRqg8c8bJdEY',
+  place_id: 'ChIJo4TALTP8wokRQc_MSGrC5aw',
 
   office_hours: [
     'Mon-Fri 9:00 am - 8:00 pm',

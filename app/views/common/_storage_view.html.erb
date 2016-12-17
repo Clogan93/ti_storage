@@ -27,11 +27,11 @@
       <p><%= storage[:phone] %></p>
     </div>
 
-    <%= link_to 'FIND UNITS', location_path(storage), class: 'button blue find_units' %>
+    <%= link_to 'FIND UNITS', storage.url, class: 'button blue find_units' %>
 
-    <%# TODO render 'common/storage_rating' %>
+    <%= react_component('FetchableStorageRating', { placeId: storage.place_id, numberIsDisplayed: true }) %>
 
-    <a href="<%= location_path(storage) %>#reviews" class="read_reviews">Read Reviews</a>
+    <a href="<%= storage.url %>#reviews" class="read_reviews">Read Reviews</a>
   </section>
 
   <section class="info second">

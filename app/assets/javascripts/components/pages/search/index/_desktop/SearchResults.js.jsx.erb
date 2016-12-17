@@ -11,7 +11,6 @@ const Search_Index_desktop_SearchResults = React.createClass({
   },
 
   componentDidMount() {
-    console.log(this.props.nearestStorages)
     this.initializeMap();
   },
 
@@ -28,15 +27,34 @@ const Search_Index_desktop_SearchResults = React.createClass({
   createScrollableMap(mapEl) {
     const map = new Map(mapEl);
     map.displayMap();
-    map.placeMarkersOnMap(
-      this.props.nearestStorages,
-      {
-        onClick: (infoWindow, storage) => {
-          infoWindow.setContent(storage.title);
-          this.setState({ scrollDownToStorageId: storage.id });
-        }
+
+    let markers = this.props.nearestStorages;
+
+    // what we were searching for
+    const origin = currentQueryString();
+    if (origin) {
+      findCoordinatesByAddress(origin)
+        .then(({ lat, lng }) => {
+          markers.push({
+            coordinates: [lat, lng],
+            title: 'Here you are!',
+            type: 'me'
+          });
+        })
+        .catch((error) => console.log(error))
+        .then(() => this.placeMarkersOnMap(map, markers))
+    } else {
+      this.placeMarkersOnMap(map, markers)
+    }
+  },
+
+  placeMarkersOnMap(map, markers){
+    map.placeMarkersOnMap(markers, {
+      onClick: (infoWindow, storage) => {
+        infoWindow.setContent(storage.title);
+        this.setState({ scrollDownToStorageId: storage.id });
       }
-    );
+    });
   },
 
   render() {

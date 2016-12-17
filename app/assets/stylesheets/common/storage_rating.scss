@@ -1,0 +1,33 @@
+// mostly taken from https://codepen.io/Bluetidepro/pen/GkpEa?editors=1100
+
+.storage_rating{
+  .stars, .number{ display: inline-block; }
+  .number{
+    margin-right: 5px;
+    font-family: 'Roboto';
+  }
+  .stars{
+    unicode-bidi: bidi-override;
+    color: #c5c5c5;
+    font-size: 22px;
+    margin: 0 auto; padding: 0;
+    line-height: 1;
+    position: relative;
+    top: 2px;
+    .top{
+      color: #FFC000;
+      padding: 0;
+      position: absolute;
+      z-index: 1;
+      display: block;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+    }
+    .bottom{
+      padding: 0;
+      display: block;
+      z-index: 0;
+    }
+  }
+}

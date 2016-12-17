@@ -7,6 +7,11 @@ class Map {
     this.map = new google.maps.Map(this.mapEl.get(0), { mapTypeId: 'roadmap' });
   }
 
+
+  // buildings = [{
+  //  coordinates: [12321, 432432],
+  //  any additional attributes like title, to use on infoWindow.setContent
+  // }]
   placeMarkersOnMap(buildings, events){
     // Loop through our array of markers & place each one on the map  
     const bounds = new google.maps.LatLngBounds();

@@ -10,21 +10,33 @@
     <!-- /background -->
 
     <div class="container-fluid">
-      <h4 class="first_month_free">First Month Free</h4>
       <div class="find_storage_rectangle">
         <h4>Find Storage in Your Area</h4>
-
-        <%=
-          react_component('FindStorageDropdown',
-            {
-              storages: @all_storages,
-            }
-          )
-        %>
+        <%= react_component('FindStorageDropdown', { storages: @all_storages })%>
       </div>
     </div>
 
     <div class="blue_strip"></div>
+  </section>
+
+  <section class="featured_specials">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-4 special featured_locations">
+          <h4 class="header">Featured Locations</h4>
+          <%= render partial: 'static_pages/in_home/carousel' %>
+        </div>
+
+        <div class="col-lg-4 special free_truck">
+          <%= image_tag 'static_pages/home/featured_specials/free_truck.png' %>
+        </div>
+
+        <div class="col-lg-4 special in_the_news">
+          <h4 class="header">In The News</h4>
+          <img src="http://placehold.it/350x250">
+        </div>
+      </div>
+    </div>
   </section>
 
   <section class="blog_articles">
@@ -53,21 +65,6 @@
       </div>
 
       <%= link_to 'Read More', '', class: 'button read_more' %>
-    </div>
-  </section>
-
-  <section class="featured_specials">
-    <div class="container-fluid">
-      <h4 class="heading">Featured Specials</h4>
-
-      <div class="row">
-        <div class="col-xs-6 special month">
-          <%= image_tag 'static_pages/home/featured_specials/free_month.jpg' %>
-        </div>
-        <div class="col-xs-6 special move">
-          <%= image_tag 'static_pages/home/featured_specials/free_move.jpg' %>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -121,18 +118,14 @@
   <section class="ti_family_of_businesses">
     <div class="container-fluid">
       <h4 class="heading">Treasure Island TI Family of Businesses</h4>
-      <div class="row">
-        <div class="col-md-6 col-xs-12 text-xs-right">
-          <a href="http://www.tiartstudios.com">
-            <%= image_tag 'static_pages/home/businesses/art.png' %>
-          </a>
-        </div>
+      <div class="businesses">
+        <a class="left" href="http://www.tiartstudios.com">
+          <%= image_tag 'static_pages/home/businesses/art.png' %>
+        </a>
 
-        <div class="col-md-6 col-xs-12 text-xs-left">
-          <a href="<%= commercial_storage_path %>">
-            <%= image_tag 'static_pages/home/businesses/commercial.png' %>
-          </a>
-        </div>
+        <a class="right" href="<%= commercial_storage_path %>">
+          <%= image_tag 'static_pages/home/businesses/commercial.png' %>
+        </a>
       </div>
     </div>
   </section>

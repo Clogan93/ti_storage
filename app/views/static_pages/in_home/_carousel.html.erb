@@ -1,0 +1,18 @@
+<div id="featured_locations_carousel" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner" role="listbox">
+    <% @all_storages.each_with_index do |storage, index| %>
+      <div class="carousel-item <%= index == 1 ? 'active' : '' %>">
+        <div class="carousel-caption">
+          <h3><%= storage.category %></h3>
+        </div>
+        <%= image_tag storage.image_src %>
+      </div>
+    <% end %>
+  </div>
+  <a class="left carousel-control" href="#featured_locations_carousel" role="button" data-slide="prev">
+    <%= image_tag 'static_pages/home/featured_specials/arrow_left.svg' %>
+  </a>
+  <a class="right carousel-control" href="#featured_locations_carousel" role="button" data-slide="next">
+    <%= image_tag 'static_pages/home/featured_specials/arrow_right.svg' %>
+  </a>
+</div>

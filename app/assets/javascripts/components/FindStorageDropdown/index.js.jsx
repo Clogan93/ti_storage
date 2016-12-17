@@ -62,8 +62,10 @@ const FindStorageDropdown = React.createClass({
   onFocus() {
     // if browser doesn't supports geolocation
     if (!navigator.geolocation) { return }
-    // if location has laready been guessed once
+    // if location has already been guessed once
     if (this.state.currentGuessedLocation) { return }
+    // if something's already searched for (happens when we go to url with ?origin)
+    if (this.refs.input.value.length > 0) { return }
 
     navigator.geolocation.getCurrentPosition((position) => {
       const { latitude, longitude } = position.coords;
