@@ -28,9 +28,9 @@ routes:
 	docker-compose run app bundle exec rake routes
 
 heroku_reset:
-	heroku pg:reset DATABASE_URL --app desolate-fortress-66664-pr-132 --confirm desolate-fortress-66664-pr-132
-	heroku run rake db:migrate --app desolate-fortress-66664-pr-132
-	heroku run rake db:seed --app desolate-fortress-66664-pr-132
+	heroku pg:reset DATABASE_URL --app desolate-fortress-66664-pr-158 --confirm desolate-fortress-66664-pr-158
+	heroku run rake db:migrate --app desolate-fortress-66664-pr-158
+	heroku run rake db:seed --app desolate-fortress-66664-pr-158
 
 ci: lint rspec
 

@@ -10,50 +10,61 @@
     <!-- /background -->
 
     <div class="container-fluid">
-      <h4 class="first_month_free">First Month Free</h4>
       <div class="find_storage_rectangle">
         <h4>Find Storage in Your Area</h4>
-
-        <%=
-          react_component('FindStorageDropdown',
-            {
-              storages: @all_storages,
-            }
-          )
-        %>
+        <%= react_component('FindStorageDropdown', { storages: @all_storages })%>
       </div>
     </div>
 
     <div class="blue_strip"></div>
   </section>
 
-  <section class="blog_articles">
+  <section class="featured_specials">
     <div class="container-fluid">
       <div class="row">
-        <% 3.times do %>
-          <div class="col-md-4 col-xs-12 article">
-            <h4 class="heading">This is an Article Or Post</h4>
-            <%= image_tag 'http://placehold.it/343x260' %>
-          </div>
-        <% end %>
-      </div>
+        <div class="col-lg-4 special featured_locations">
+          <h4 class="header">Featured Locations</h4>
+          <%= render partial: 'static_pages/in_home/carousel' %>
+        </div>
 
-      <%= link_to 'Read More', '', class: 'button read_more' %>
+        <div class="col-lg-4 special free_truck">
+          <%= image_tag 'static_pages/home/featured_specials/free_truck.png' %>
+        </div>
+
+        <div class="col-lg-4 special in_the_news">
+          <h4 class="header">In The News</h4>
+          <img src="http://placehold.it/350x250">
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="featured_specials">
+  <section class="blog_articles">
     <div class="container-fluid">
-      <h4 class="heading">Featured Specials</h4>
-
       <div class="row">
-        <div class="col-xs-6 special month">
-          <%= image_tag 'static_pages/home/featured_specials/free_month.jpg' %>
+        <div class="col-md-4 col-xs-12 article">
+          <h4 class="heading">Storing Collectable Posters</h4>
         </div>
-        <div class="col-xs-6 special move">
-          <%= image_tag 'static_pages/home/featured_specials/free_move.jpg' %>
+        <div class="col-md-4 col-xs-12 article">
+          <h4 class="heading">Saving Space: Futon Vs Bed</h4>
+        </div>
+        <div class="col-md-4 col-xs-12 article">
+          <h4 class="heading">Organize Your Garage in 3 Steps</h4>
         </div>
       </div>
+      <div class="row">
+        <div class="col-md-4 col-xs-12 article">
+          <%= image_tag 'static_pages/home/blog/posters.jpg' %>
+        </div>
+        <div class="col-md-4 col-xs-12 article">
+          <%= image_tag 'static_pages/home/blog/futon.jpg' %>
+        </div>
+        <div class="col-md-4 col-xs-12 article">
+          <%= image_tag 'static_pages/home/blog/garage.jpg' %>
+        </div>
+      </div>
+
+      <%= link_to 'Read More', '', class: 'button read_more' %>
     </div>
   </section>
 
@@ -79,15 +90,15 @@
 
         <div class="col-lg-2 col-sm-4 col-xs-6 benefit">
           <%= image_tag 'static_pages/home/benefits/express-check.svg' %>
-          <div class="name">Express Check-in</div>
+          <div class="name">Express Check-In</div>
           <p class="popover">
-            Save time by renting a storage unit online, you are able to pick a space at the best rate by using your device. The come into the office to sign the paper and move right in.
+            Save time by renting a storage unit online, you are able to pick a space at the best rate by using your device. Then come into the office to sign the paper and move right in.
           </p>
         </div>
 
         <div class="col-lg-2 col-sm-6 col-xs-6 benefit">
           <%= image_tag 'static_pages/home/benefits/variety-of.svg' %>
-          <div class="name">Variety of unit sizes</div>
+          <div class="name">Variety of Unit Sizes</div>
           <p class="popover">
             Treasure Island Storage has a variety of units that range from a small closet size to custom warehouse spaces for commercial purposes
           </p>
@@ -107,18 +118,16 @@
   <section class="ti_family_of_businesses">
     <div class="container-fluid">
       <h4 class="heading">Treasure Island TI Family of Businesses</h4>
-      <div class="row">
-        <div class="col-md-6 col-xs-12 text-xs-right">
-          <a href="http://www.tiartstudios.com">
-            <%= image_tag 'static_pages/home/businesses/art.png' %>
-          </a>
-        </div>
 
-        <div class="col-md-6 col-xs-12 text-xs-left">
-          <a href="<%= commercial_storage_path %>">
-            <%= image_tag 'static_pages/home/businesses/commercial.png' %>
-          </a>
-        </div>
+      <div class="businesses">
+        <a class="left" href="http://www.tiartstudios.com">
+          <%= image_tag 'static_pages/home/businesses/art.png' %>
+        </a>
+
+        <a class="right" href="<%= commercial_storage_path %>">
+          <%= image_tag 'static_pages/home/businesses/commercial.png' %>
+        </a>
+
       </div>
     </div>
   </section>

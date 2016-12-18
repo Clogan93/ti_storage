@@ -11,3 +11,14 @@
     margin-left: 60px;
   }
 }
+
+
+// responsive
+
+#breadcrumbs{
+  @media (max-width: 1000px){
+    .breadcrumbs-inner{
+      margin-left: 0;
+    }
+  }
+}

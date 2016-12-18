@@ -9,14 +9,6 @@
   }
 
   section.find_storage{
-    // this T-like border___
-    .container-fluid{ border-top: solid 4px #4a90e2; }
-    h4.first_month_free{
-      position: relative;
-      top: -4px;
-    }
-    // ___this T-like border
-
     section.find_storage_dropdown{ padding: 0; }
 
     position: relative;
@@ -34,26 +26,21 @@
       text-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
     }
 
-    h4.first_month_free{
-      margin: 0 auto;
-      max-width: 596px;
-      width: 100%;
-      padding: 15px 0px; padding-top: 0;
-      border: solid 4px #4a90e2; border-top: none;
-      border-bottom-left-radius: 5px;
-      border-bottom-right-radius: 5px;
-
-      background-color: $cobalt_color;
+    // to center find_storage_rectangle
+    .container-fluid{
+      display: flex;
+      justify-content: center;
     }
-
     .find_storage_rectangle{
+      position: absolute;
+      bottom: -41px;
+      z-index: 100;
+
+      width: 100%;
       max-width: 601px;
-      margin: 0 auto; margin-top: 205px;
       padding: 20px 50px;
 
-      border-radius: 9px;
       background-image: linear-gradient(to bottom, #1e4fac, #0d2773);
-      border: solid 4px #4a90e2;
       h4{ // Find Storage in Your Area
         padding-bottom: 5px;
       }
@@ -61,6 +48,56 @@
     }
 
     div.blue_strip{ height: 27px; }
+  }
+
+  section.featured_specials{
+    margin-top: 40px;
+    // common___
+    h4.header{
+      text-align: center;
+      color: $vermillion_color;
+      text-transform: uppercase;
+      font-weight: bold;
+      padding-bottom: 10px;
+    }
+    .special{
+      margin-bottom: 60px;
+      text-align: center;
+    }
+    // ___common
+
+    .special.featured_locations{
+      .carousel#featured_locations_carousel{
+        max-width: 343px;
+        margin: 0 auto;
+        .carousel-caption{
+          background: #303030;
+          left: inherit; right: inherit;
+          bottom: initial;
+          width: 100%; height: 48px;
+          top: 0;
+          padding: 0;
+
+          text-transform: uppercase;
+          h3{
+            margin-bottom: 0;
+            padding-top: 10px;
+          }
+        }
+        .carousel-control{
+          height: 48px;
+          background: rgb(86, 85, 85);
+          opacity: 1;
+          bottom: initial;
+          &.right{}
+        }
+      }
+    }
+    .special.free_truck, .special.in_the_news{
+      img{
+        width: 100%; max-width: 330px;
+      }
+    }
   }
 
   section.blog_articles{
@@ -83,20 +120,6 @@
 
       border: solid 1px $cobalt_color;
       min-width: 188px;
-    }
-  }
-
-  section.featured_specials{
-    background-color: #ebebeb;
-    h4{ color: #1f3d9b; }
-    .special{
-      &.month{ text-align: right; }
-      &.move{ text-align: left; }
-      img{
-        max-width: 250px; width: 100%;
-        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16);
-        border: solid 1px #99b0dd;
-      }
     }
   }
 
@@ -134,10 +157,24 @@
       color: $cobalt_color;
     }
 
-    img{
-      max-width: 282px;
-      max-height: 282px;
-      width: 100%;
+    .businesses{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      a{
+        margin: 0 20px;
+        img{ width: 100%; height: 100%; }
+        &.left{
+          width: 282px;
+          height: 272px;
+        }
+        &.right{
+          width: 265px;
+          height: 254px;
+        }
+      }
+
     }
   }
 }

@@ -19,7 +19,7 @@
             <b class="telephone"><%= storage[:phone] %></b>
           </div>
 
-          <%= render 'common/storage_rating' %>
+          <%# TODO render 'common/storage_rating' %>
 
           <a class="view_in_google_maps">
             View in Google Maps
@@ -34,14 +34,14 @@
         </div>
 
         <div class="col-xs-6 view_units">
-        <%= link_to 'View units', location_path(storage), class: 'button blue' %>
+        <%= link_to 'View units', storage.url, class: 'button blue' %>
         </div>
       </div>
 
       <div class="row">
         <div class="col-xs-12">
           <div class="units_starting_at">
-            Units starting at <b>$19</b>
+            Units starting at <b>$<%= storage.min_unit_price %></b>
           </div>
         </div>
       </div>

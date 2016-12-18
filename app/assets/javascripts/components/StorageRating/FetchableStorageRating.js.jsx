@@ -1,8 +1,7 @@
-// can be used in both reviews and in common storage rating
 const FetchableStorageRating = React.createClass({
   propTypes: {
     placeId: React.PropTypes.string.isRequired,
-    starImg: React.PropTypes.string.isRequired
+    numberIsDisplayed: React.PropTypes.bool.isRequired
   },
 
   getInitialState() {
@@ -17,7 +16,7 @@ const FetchableStorageRating = React.createClass({
 
   fetchStorageRating() {
     getPlaceDetails(
-      this.props.storage.place_id,
+      this.props.placeId,
       (place) => {
         this.setState({ rating: place.rating });
       },
@@ -26,8 +25,11 @@ const FetchableStorageRating = React.createClass({
   },
 
   render() {
-    return(
-      <StorageRating rating={this.state.rating} starImg={1}/>
-    );
+    const rating = this.state.rating;
+    if (rating){
+      return(
+        <StorageRating rating={this.state.rating} numberIsDisplayed={this.props.numberIsDisplayed}/>
+      );
+    } else { return null }
   }
 });

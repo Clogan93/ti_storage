@@ -12,4 +12,7 @@ class StaticPagesController < ApplicationController
 
   def faq
   end
+
+  def moving_services
+  end
 end

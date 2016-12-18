@@ -14,6 +14,7 @@
     @import 'in_show/storage_units';
     @import 'in_show/storage_units_responsive';
 
+    @import 'in_show/reviews';
     .sizing_guide_preview{ margin: 0 auto; }
     ul.tab_navigation{
       li.nav-item{
@@ -54,21 +55,6 @@
         margin-bottom: 20px;
         color: white;
         background: $cobalt_color;
-      }
-    }
-
-    article#reviews{
-      div.coming_soon{
-        display: inline-block;
-        padding: 20px;
-        color: white;
-        background: $cobalt_color;
-      }
-      section.reviews{
-        .review{
-          margin-bottom: 30px;
-          div{ display: inline-block; }
-        }
       }
     }
   }
