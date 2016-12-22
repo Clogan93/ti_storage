@@ -1,4 +1,4 @@
-<section class="storage_view">
+<section class="storage_view hidden-md-down">
   <div class="photos">
     <div class="main_photo">
       <%= image_tag "common/storages/#{storage[:id]}.jpg" %>
@@ -27,7 +27,7 @@
       <p><%= storage[:phone] %></p>
     </div>
 
-    <%= link_to 'FIND UNITS', storage.url, class: 'button blue find_units' %>
+    <a href="<%= storage.url %>" class="button blue find_units">FIND UNITS</a>
 
     <%= react_component('FetchableStorageRating', { placeId: storage.place_id, numberIsDisplayed: true }) %>
 
@@ -64,4 +64,8 @@
       allowfullscreen>
     </iframe>
   </div>
+</section>
+
+<section class="storage_view-mobile hidden-lg-up">
+  <%= render partial: 'common/storage_view.mobile', locals: { storage: storage } %>
 </section>

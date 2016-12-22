@@ -48,6 +48,7 @@
     }
 
     div.blue_strip{ height: 27px; }
+    div.blue_strip.top{ bottom: initial; }
   }
 
   section.featured_specials{
@@ -100,28 +101,29 @@
     }
   }
 
-  section.blog_articles{
-    text-align: center;
-    h4{ 
-      color: $cobalt_color;
-    }
-    .article{
-      img{
-        max-width: 343px; max-height: 260px;
-        width: 100%;
-      }
-    }
-    .button.read_more{
-      margin-top: 40px;
+  // will probably need them back some time?
+  // section.blog_articles{
+  //   text-align: center;
+  //   h4{ 
+  //     color: $cobalt_color;
+  //   }
+  //   .article{
+  //     img{
+  //       max-width: 343px; max-height: 260px;
+  //       width: 100%;
+  //     }
+  //   }
+  //   .button.read_more{
+  //     margin-top: 40px;
 
-      font-size: 16px;
-      font-weight: bold;
-      color: $cobalt_color;
+  //     font-size: 16px;
+  //     font-weight: bold;
+  //     color: $cobalt_color;
 
-      border: solid 1px $cobalt_color;
-      min-width: 188px;
-    }
-  }
+  //     border: solid 1px $cobalt_color;
+  //     min-width: 188px;
+  //   }
+  // }
 
   section.ti_storage_benefits{
     background-color: #f6f8fa;
@@ -152,7 +154,6 @@
   section.ti_family_of_businesses{
     margin-bottom: -30px; // to compensate for footer's default margin
     text-align: center;
-    background-color: #ebebeb;
     h4{ 
       color: $cobalt_color;
     }
@@ -164,15 +165,7 @@
       align-items: center;
       a{
         margin: 0 20px;
-        img{ width: 100%; height: 100%; }
-        &.left{
-          width: 282px;
-          height: 272px;
-        }
-        &.right{
-          width: 265px;
-          height: 254px;
-        }
+        img{ width: 100%; max-width: 250px; }
       }
 
     }

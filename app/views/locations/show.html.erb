@@ -8,10 +8,6 @@
 <main id="locations_show_page">
   <div class="container-fluid">
 
-    <div class="mobile_ad hidden-lg-up">
-      <%= image_tag 'locations/show/labor-sale.svg' %>
-    </div>
-
     <div class="row">
       <div class="col-xs-12">
         <h1 class="standard_page_heading">Reserve Your Space Today!</h1>
@@ -22,11 +18,13 @@
 
     <%= render partial: 'common/storage_view', locals: { storage: @storage } %>
 
+    <section class="mobile_ad hidden-lg-up">
+      <%= image_tag 'common/ads/labor-sale-horizontal.png' %>
+    </section>
+
     <section class="extensive_information">
-
       <% tab_ids = [:storage_units, :features, :directions, :videos, :reviews] %>
-
-      <ul class="hidden-lg-down tab_navigation nav nav-tabs">
+      <ul class="hidden-md-down tab_navigation nav nav-tabs">
         <% tab_ids.each do |tab_id| %>
           <li class="nav-item">
             <a href="#<%= tab_id %>" class="<%= tab_id == :storage_units ? 'active' : '' %> nav-link" data-toggle="tab">
@@ -36,30 +34,13 @@
         <% end %>
       </ul>
 
-      <div class="hidden-xl-up mobile_tab_navigation">
-        <div class="row">
-          <div class="col-sm-12 size_chooser">
-            <div class="dropdown">
-              <div class="lable">Select Size</div>
-              <div class="dropdown-toggle" data-toggle="dropdown">
-                All Units
-              </div>
-
-              <div class="dropdown-menu">
-                <% ["All Units", "Small", "Medium", "Large", "X-Large"].each do |tab_title| %>
-                    <a class="dropdown-item">
-                      <%= tab_title.titleize %>
-                    </a>
-                <% end %>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <div class="tab-content">
         <article class="tab-pane active" id="storage_units">
+          <%= render partial: 'locations/in_show/choose_size' %>
+          <%= render partial: 'locations/in_show/choose_size.mobile' %>
+
           <%= render partial: 'locations/in_show/storage_units' %>
+          <%= render partial: 'locations/in_show/storage_units.mobile' %>
         </article>
         <article class="tab-pane" id="features">
           <ul>
@@ -104,3 +85,5 @@
     </div>
   </article>
 </main>
+
+<%= render 'common/sizing_guide_modal' %>

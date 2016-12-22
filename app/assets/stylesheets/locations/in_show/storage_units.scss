@@ -1,41 +1,5 @@
 #storage_units{
-  .select_size_and_sizing_guide{
-    background: #e2e6ec;
-    padding: 20px 40px;
-    border: solid 1px $pinkish-grey_color; border-top: none;
-    border-bottom: none;
-
-    .blue_heading{
-      font-size: 22px;
-      font-weight: bold;
-      color: $azul_color;
-      text-transform: uppercase;
-    }
-
-    .select_size{
-      .col-xs-2{ padding-right: 0; }
-      .size_option{
-        min-height: 91px;
-        padding: 10px;
-
-        background: linear-gradient(to bottom, white, #dadada);
-        border: solid 1px #c0c0c0;
-        &.active{
-          background: $azul_color;
-          border: solid 1px #979797;
-          color: white;
-        }
-        .size{
-          text-transform: uppercase;
-          font-size: 18px;
-          font-weight: bold;
-        }
-        .description{
-          font-size: 14px;
-        }
-      }
-    }
-  }
+  @import 'choose_size';
 
   .unit_options{
     text-align: center;
@@ -88,21 +52,30 @@
           }
         }
       }
-      .promotion{
-        img{
-          max-width: 90px; max-height: 90px;
-          width: 100%;
-        }
-      }
       .monthly_price{
-        .in_dollars{
-          font-size: 22px;
+        .price{
           font-weight: bold;
-          color: $cobalt_color;
+          font-size: 28px;
+          font-family: Roboto;
+          display: inline-block;
+          position: relative;
+          // instead of text-dectoration, because
+          // browsers don't support text-decoration-color
+          .line_through{
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            border-bottom: 2px $vermillion_color solid;
+          }
         }
-        .online_rate_footnote, .in_dollars_in_store{
-          font-size: 13px;
-          padding-top: 3px;
+
+      }
+      .promotion{
+        font-weight: bold;
+        .red{
+          font-size: 28px;
+          font-family: Roboto;
+          color: $vermillion_color;
         }
       }
       .continue{

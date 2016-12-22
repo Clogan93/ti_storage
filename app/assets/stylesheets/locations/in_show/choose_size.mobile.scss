@@ -1,0 +1,68 @@
+.mobile_size_chooser{
+  // layout
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  .lable{ width: 20%; min-width: 121px; }
+  .dropdown{ width: 40%; max-width: 380px; }
+
+  // prettiness
+  background-color: #e2e6ec;
+  padding: 15px;
+  border: solid 1px $pinkish-grey_color;
+  border-bottom: none;
+  .lable{
+    font-size: 25px;
+    letter-spacing: 0.4px;
+    font-weight: bold;
+  }
+  .dropdown{
+    margin: 0 20px;
+    .dropdown-toggle{
+      background-color: #1f6aff;
+
+      font-size: 14px;
+      font-weight: bold;
+      color: white;
+      text-align: center;
+      padding-top: 11px;
+
+      height: 44px;
+
+      // getting rid of default bootstrap's arrow:
+      &:after{ content: none; }
+      // adding our arrow:
+      background-image: url(image-path('locations/show/mobile-down-arrow.svg'));
+      background-repeat: no-repeat;
+      background-position: calc(100% - 10px) center;
+      // so that text doesn't go over an arrow
+      padding-right: 30px;
+    }
+    .dropdown-menu{
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
+
+
+// responsive
+
+.mobile_size_chooser{
+  @media (max-width: 620px){
+    flex-wrap: nowrap;
+    .lable{
+      margin-right: 20px;
+      font-size: 23px;
+    }
+    .dropdown{
+      width: 100%;
+      margin: 0;
+    }
+    .sizing_guide_preview{ display: none; }
+  }
+  @media (max-width: 370px){
+    .lable{ display: none; }
+  }
+}

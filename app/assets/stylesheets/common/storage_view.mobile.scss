@@ -1,0 +1,79 @@
+section.storage_view-mobile{
+  // layout
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: relative;
+  section.photo_and_links{
+    width: 50%;
+  }
+  section.info{
+    width: 50%; padding-left: 20px;
+  }
+  a.arrow{
+    position: absolute;
+    height: calc(100% - 20px);
+    right: 0;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+  }
+
+  // prettiness
+  border-radius: 7px;
+  background-color: #f1f3f6;
+  border: solid 1px $pinkish-grey_color;
+  padding: 20px;
+
+  section.photo_and_links{
+    text-align: center;
+    img, a{ display: block; }
+    img{
+      max-height: 180px;
+      width: 100%;
+      max-width: 206px;
+      margin: 0 auto; margin-bottom: 10px;
+    }
+    a{
+      color: $vermillion_color;
+      font-weight: bold;
+    }
+  }
+
+  section.info{
+    h5.title{
+      font-weight: bold;
+    }
+    .phone_number{
+      margin-bottom: 10px;
+      font-size: 19px;
+      font-weight: bold;
+      color: #565454;
+    }
+    .office_hours{
+      h6{
+        text-transform: uppercase;
+        font-size: 16px;
+        font-weight: bold;
+      }
+    }
+  }
+
+}
+
+
+// responsive
+
+section.storage_view-mobile{
+  @media (max-width: 465px){
+    section.photo_and_links{
+      width: 100%;
+    }
+    section.info{
+      width: 100%;
+      margin-top: 20px;
+      text-align: center;
+      padding-left: 0;
+    }
+  }
+}

@@ -1,0 +1,53 @@
+#storage_units{
+  @import 'choose_size.mobile';
+  .unit_options-mobile{
+    background-color: #e2e6ec;
+    .table_row{
+      // layout
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      section.size{ width: 30%; }
+      section.monthly_price{ width: 30%; }
+      section.continue{ width: 30%; }
+
+      // prettiness
+      text-align: center;
+      background: white;
+      border: solid 1px $pinkish-grey_color;
+      padding: 10px 0;
+      section.size{
+        font-weight: bold;
+        .word_and_number{
+          font-size: 21px;
+          font-family: 'Roboto';
+        }
+      }
+
+      section.monthly_price{
+        font-weight: bold;
+        .price{
+          font-size: 24px;
+          font-family: 'Roboto';
+          .previous{ text-decoration: line-through; }
+          .current{ color: $vermillion_color; }
+        }
+      }
+    }
+  }
+}
+
+
+// reponsive
+
+#storage_units .unit_options-mobile{
+  @media (max-width: 462px){
+    .table_row{
+      flex-wrap: wrap;
+      section.size{ width: 50%; }
+      section.monthly_price{ width: 50%; }
+      section.continue{ width: 100%; margin-top: 20px; }
+    }
+  }
+}

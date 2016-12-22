@@ -1,6 +1,8 @@
 <main id="home_page">
 
   <section class="find_storage">
+    <div class="blue_strip top"></div>
+
     <!-- background -->
     <div class="slider">
       <div class='slide_1'></div>
@@ -39,7 +41,8 @@
     </div>
   </section>
 
-  <section class="blog_articles">
+  <!-- will probably need them back some time? -->
+  <!-- <section class="blog_articles">
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-4 col-xs-12 article">
@@ -66,7 +69,7 @@
 
       <%= link_to 'Read More', '', class: 'button read_more' %>
     </div>
-  </section>
+  </section> -->
 
   <section class="ti_storage_benefits">
     <div class="container-fluid">
@@ -118,14 +121,16 @@
   <section class="ti_family_of_businesses">
     <div class="container-fluid">
       <h4 class="heading">Treasure Island TI Family of Businesses</h4>
+
       <div class="businesses">
-        <a class="left" href="http://www.tiartstudios.com">
+        <a href="http://www.tiartstudios.com">
           <%= image_tag 'static_pages/home/businesses/art.png' %>
         </a>
 
-        <a class="right" href="<%= commercial_storage_path %>">
+        <a href="<%= commercial_storage_path %>">
           <%= image_tag 'static_pages/home/businesses/commercial.png' %>
         </a>
+
       </div>
     </div>
   </section>
