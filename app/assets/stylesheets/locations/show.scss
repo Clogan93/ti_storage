@@ -12,9 +12,10 @@
   section.extensive_information{
     margin-top: 30px;
     @import 'in_show/storage_units';
-    @import 'in_show/storage_units_responsive';
+    @import 'in_show/storage_units.mobile';
 
     @import 'in_show/reviews';
+
     .sizing_guide_preview{ margin: 0 auto; }
     ul.tab_navigation{
       li.nav-item{
@@ -81,6 +82,20 @@
 
 // responsive
 #locations_show_page{
+  section.mobile_ad{
+    text-align: center;
+    margin-top: 20px;
+    img{
+      max-width: 300px;
+      max-height: 90px;
+      width: 100%;
+    }
+  }
+
+  section.storage_view-mobile{
+    a.arrow{ display: none; }
+  }
+
   @media (max-width: $lg){
     article.descriptions{
       img{ max-width: 250px; }

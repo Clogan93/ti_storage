@@ -1,0 +1,17 @@
+<div class="hidden-lg-up mobile_size_chooser">
+  <div class="lable">Select Size</div>
+  <div class="dropdown">
+    <div class="dropdown-toggle" data-toggle="dropdown">
+      All Units
+    </div>
+
+    <div class="dropdown-menu">
+      <% ["All Units", "Small", "Medium", "Large", "X-Large"].each do |tab_title| %>
+          <a class="dropdown-item">
+            <%= tab_title.titleize %>
+          </a>
+      <% end %>
+    </div>
+  </div>
+  <%= react_component('SizingGuidePreview') %>
+</div>

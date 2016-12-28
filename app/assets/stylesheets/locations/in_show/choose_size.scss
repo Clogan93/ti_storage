@@ -1,0 +1,53 @@
+.select_size_and_sizing_guide{
+  // layout
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+
+  .select_size{
+    width: 80%;
+    h3, p{ width: 100%; }
+    .size_options{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      .size_option{ width: 19%; }
+    }
+  }
+  .sizing_guide{ width: 20%; }
+
+
+  // prettiness
+  background: #e2e6ec;
+  padding: 20px 40px;
+  border: solid 1px $pinkish-grey_color; border-top: none;
+  border-bottom: none;
+
+  .blue_heading{
+    font-size: 22px;
+    font-weight: bold;
+    color: $azul_color;
+    text-transform: uppercase;
+  }
+
+  .size_option{
+    padding: 10px;
+
+    background: linear-gradient(to bottom, white, #dadada);
+    border: solid 1px #c0c0c0;
+    &.active{
+      background: $azul_color;
+      border: solid 1px #979797;
+      color: white;
+    }
+    .size{
+      text-transform: uppercase;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .description{
+      font-size: 14px;
+    }
+  }
+}
