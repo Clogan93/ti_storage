@@ -3,6 +3,7 @@
   <head>
     <title>TiStorage</title>
     <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -18,5 +19,9 @@
     </script>
 
     <script data-turbolinks-eval=false type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAPS_API_KEY'] %>&libraries=places"></script>
+
+    <!-- option to get a Mailshimp subscription on / -->
+    <!-- isDebug: true requires firebug -->
+    <script data-turbolinks-eval=false type="text/javascript" src="https://s3.amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
   </body>
 </html>

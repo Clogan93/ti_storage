@@ -1,0 +1,23 @@
+// map with a single storage on it
+const StorageMap = React.createClass({
+  propTypes: {
+    storage: React.PropTypes.object.isRequired
+  },
+
+  componentDidMount() {
+    this.initializeMap();
+  },
+
+  initializeMap() {
+    const mapEl = $(this.refs.map);
+    const map = new Map(mapEl);
+    map.displayMap();
+
+    let marker = this.props.storage;
+    map.placeMarkersOnMap([marker]);
+  },
+
+  render() {
+    return <section ref="map"></section>
+  }
+});

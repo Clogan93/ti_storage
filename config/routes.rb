@@ -1,15 +1,5 @@
-# rubocop:disable BlockLength
 # frozen_string_literal: true
 Rails.application.routes.draw do
-  resources :locations, only: [:index]
-
-  [:brooklyn, :queens, :'new-jersey'].each do |area_slug|
-    get "#{area_slug}/:slug", to: 'locations#show'
-  end
-  get ":area_slug", to: 'locations#index', constraints: {
-    area_slug: /brooklyn|queens|new-jersey/
-  }
-
   get 'checkout', to: 'checkout#new'
   post 'checkout/step_1'
   post 'checkout/step_2'
@@ -28,10 +18,18 @@ Rails.application.routes.draw do
   end
 
   get 'myaccount',    to: 'static_pages#myaccount'
-  get 'contact',      to: 'static_pages#contact'
   get 'sizing-guide', to: 'static_pages#sizing_guide'
+
+  # in header: why store with us?
+  get 'why-store-with-us', to: 'static_pages#why_store_with_us'
   get 'faq', to: 'static_pages#faq'
   get 'moving-services', to: 'static_pages#moving_services'
+  get 'contact', to: 'static_pages#contact'
 
   root to: 'static_pages#home'
+
+  # must be in the end, matches all
+  get "locations", to: 'locations#locations'
+  get ":category_slug/:storage_slug", to: 'locations#show'
+  get ":category_slug", to: 'locations#index'
 end

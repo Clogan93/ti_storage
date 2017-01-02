@@ -5,6 +5,6 @@ class ApplicationController < ActionController::Base
 
   before_action do
     @all_storages = Storage.all
-    @storage_categories = Storage.categories
+    @all_categories = Category.all
   end
 end

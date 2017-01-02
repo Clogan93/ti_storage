@@ -4,41 +4,39 @@
 
     <section class="explanation">
       <div class="row">
-        <div class="col-xl-8">
+        <div class="col-xl-10">
           <p class="order_to_lock_in_rate">
             Enter your information below to lock in your discounted storage rate today.
           </p>
 
-          <div class="row rent_or_reserve_radios">
+          <div class="rent_or_reserve_radios">
             <h4 class="please_choose_one">Please Choose One</h4>
-            <div class="col-xl-5">
-              <label class="custom-control custom-radio">
-                <input name="rent_or_reserve" type="radio" class="custom-control-input">
-                <span class="custom-control-indicator"></span>
-                <div class="custom-control-description">
-                  <h5>Express Check-In</h5>
-                  <p>Take advantage of our fast and easy online rental service, as it will save you precious time at the facility and it’s free of charge.  Your unit is guaranteed in 2 easy steps, by simply selecting a location, and unit size you can rent a storage within minutes.</p>
-                </div>
-              </label>
-            </div>
 
-            <div class="col-xl-2 or">
+            <label class="rent custom-control custom-radio">
+              <input name="rent_or_reserve" type="radio" class="custom-control-input">
+              <span class="custom-control-indicator"></span>
+              <div class="custom-control-description">
+                <h5>Express Check-In</h5>
+                <p>Take advantage of our fast and easy online rental service, as it will save you precious time at the facility and it’s free of charge.  Your unit is guaranteed in 2 easy steps, by simply selecting a location, and unit size you can rent a storage within minutes.</p>
+              </div>
+            </label>
+
+            <div class="or">
               – Or –
             </div>
 
-            <div class="col-xl-5">
-              <label class="custom-control custom-radio">
-                <input name="rent_or_reserve" type="radio" class="custom-control-input">
-                <span class="custom-control-indicator"></span>
-                <div class="custom-control-description">
-                  <h5>Reserve Room</h5>
-                  <p>Hold a unit and lock in the current rate for up to 7 days with no obligation.  This free service allows you to take your time with unit selection until you decide complete the rental.</p>
-                </div>
-              </label>
-            </div>
+            <label class="reserve custom-control custom-radio">
+              <input name="rent_or_reserve" type="radio" class="custom-control-input">
+              <span class="custom-control-indicator"></span>
+              <div class="custom-control-description">
+                <h5>Reserve Room</h5>
+                <p>Hold a unit and lock in the current rate for up to 7 days with no obligation.  This free service allows you to take your time with unit selection until you decide complete the rental.</p>
+              </div>
+            </label>
+
           </div>
         </div>
-        <div class="col-xl-4 norton">
+        <div class="col-xl-2 norton">
           <%= image_tag 'checkout/norton.png' %>
         </div>
       </div>
@@ -58,7 +56,7 @@
       <label class="custom-control custom-checkbox">
         <input type="checkbox" class="custom-control-input">
         <span class="custom-control-indicator"></span>
-        <span class="custom-control-description">Sign me up for Moving Services</span>
+        <span class="custom-control-description">Need help moving?</span>
       </label>
 
       <a class="change_something">What are Moving Services?</a>

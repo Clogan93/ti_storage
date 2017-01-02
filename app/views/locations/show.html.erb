@@ -1,6 +1,6 @@
 <%= render partial: 'common/breadcrumbs', locals: {
   links: [
-    link_to(@storage.area_name, "/#{@storage.area_slug}"),
+    link_to(@category.title, @category.url),
     @storage.title
   ]
 } %>
@@ -19,7 +19,7 @@
     <%= render partial: 'common/storage_view', locals: { storage: @storage } %>
 
     <section class="mobile_ad hidden-lg-up">
-      <%= image_tag 'common/ads/labor-sale-horizontal.png' %>
+      <%= image_tag '_common/ads/first_month_free.png' %>
     </section>
 
     <section class="extensive_information">

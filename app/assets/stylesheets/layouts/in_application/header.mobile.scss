@@ -1,6 +1,12 @@
-header{
+header.mobile{
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .logo{ width: 50%; }
+  .burger{ width: 50%; }
+
   .burger{
-    padding-top: 41px;
     text-align: right;
     cursor: pointer;
   }
@@ -39,20 +45,6 @@ header{
         }
       }
       
-    }
-  }
-
-  @media (max-width: $xl){
-    border-bottom: none;
-    .logo{
-      padding: 10px;
-      img{ position: initial; }
-    }
-    nav .links a.nav_link {
-      padding-right: 10px;
-    }
-    .container-fluid{
-      padding: 0 20px !important;
     }
   }
 }

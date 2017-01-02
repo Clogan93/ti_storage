@@ -2,15 +2,15 @@
 # :nodoc:
 class LocationsController < ApplicationController
   def index
-    @storages =
-      if params[:area_slug]
-        @all_storages.where(area_slug: params[:area_slug])
-      else
-        @all_storages
-      end
+    @category = Category.find_by(slug: params[:category_slug])
+    @storages = @all_storages.where(category: @category)
+  end
+
+  def locations
   end
 
   def show
-    @storage = @all_storages.find_by(slug: params[:slug])
+    @category = Category.find_by(slug: params[:category_slug])
+    @storage = @all_storages.find_by(slug: params[:storage_slug])
   end
 end

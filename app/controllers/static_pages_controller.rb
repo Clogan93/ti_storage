@@ -15,4 +15,7 @@ class StaticPagesController < ApplicationController
 
   def moving_services
   end
+
+  def why_store_with_us
+  end
 end

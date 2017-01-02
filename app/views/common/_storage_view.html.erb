@@ -1,12 +1,12 @@
 <section class="storage_view hidden-md-down">
   <div class="photos">
     <div class="main_photo">
-      <%= image_tag "common/storages/#{storage[:id]}.jpg" %>
+      <%= image_tag "_db/storages/#{storage[:id]}.jpg" %>
     </div>
 
     <div class="additional_photos">
       <% 3.times do |i| %>
-        <%= image_tag "common/storages/#{storage[:id]}/#{i+1}.jpg" %>
+        <%= image_tag "_db/storages/#{storage[:id]}/#{i+1}.jpg" %>
       <% end %>
     </div>
   </div>
@@ -53,17 +53,14 @@
       </p>
     </div>
 
-    <a href="https://www.google.com/maps/place/<%= storage.coordinates[0] %>,<%= storage.coordinates[1] %>" target="_blank" class="get_directions">
+    <a href="<%= storage.link_to_google_maps %>" target="_blank" class="get_directions">
       GET DIRECTIONS
     </a>
   </section>
 
-  <div class="map">
-    <iframe
-      src="https://www.google.com/maps/embed/v1/place?key=<%= ENV['GOOGLE_MAPS_API_KEY']%>&q=<%= storage[:area] + ' ' + storage[:address] %>"
-      allowfullscreen>
-    </iframe>
-  </div>
+  <section class="map">
+    <%= react_component('StorageMap', { storage: storage }) %>
+  </section>
 </section>
 
 <section class="storage_view-mobile hidden-lg-up">

@@ -1,9 +1,27 @@
 # frozen_string_literal: true
 
+
+brooklyn = Category.create!({
+  title: 'Brooklyn, NY',
+  slug: 'brooklyn'
+})
+queens = Category.create!({
+  title: 'Queens, NY',
+  slug: 'queens'
+})
+nj = Category.create!({
+  title: 'New Jersey',
+  slug: 'new-jersey'
+})
+
+puts "seeded #{Category.count} categories"
+
+
 red_hook = Storage.create!({
-  category: 'Brooklyn, NY',
+  category: brooklyn,
+
   title: 'Red Hook',
-  slug: 'red-hook', area_slug: 'brooklyn',
+  slug: 'red-hook',
   phone: '718-509-6524',
 
   address: '183 Lorraine St.',
@@ -77,9 +95,10 @@ red_hook = Storage.create!({
 })
 
 ozone_park = Storage.create!({
-  category: 'Queens, NY',
+  category: queens,
+
   title: 'Ozone Park',
-  slug: 'ozone-park', area_slug: 'queens',
+  slug: 'ozone-park',
   phone: '718-395-2984',
 
   address: '78-02 Liberty Avenue',
@@ -164,9 +183,10 @@ ozone_park = Storage.create!({
 })
 
 jamaica = Storage.create!({
-  category: 'Queens, NY',
+  category: queens,
+
   title: 'Jamaica',
-  slug: 'jamaica', area_slug: 'queens',
+  slug: 'jamaica',
   phone: '718-509-6543',
 
   address: '109-09 180th St.',
@@ -256,9 +276,9 @@ jamaica = Storage.create!({
 })
 
 paterson = Storage.create!({
-  category: 'New Jersey',
+  category: nj,
   title: 'Paterson',
-  slug: 'paterson', area_slug: 'new-jersey',
+  slug: 'paterson',
   phone: '973-870-0454',
 
   address: '404 Grand Street',
@@ -331,9 +351,9 @@ paterson = Storage.create!({
 })
 
 woodbridge = Storage.create!({
-  category: 'New Jersey',
+  category: nj,
   title: 'Woodbridge',
-  slug: 'woodbridge', area_slug: 'new-jersey',
+  slug: 'woodbridge',
   phone: '732-510-4010',
 
   address: '881 Saint George Ave',

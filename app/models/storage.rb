@@ -1,12 +1,22 @@
+# frozen_string_literal: true
+# TODO: Rubocop treats comment as constant?
 # Storages (we call them /locations occasionaly).
+# ___category vs area_slug:
+# > Storage.pluck(:category)
+# => ["Brooklyn, NY", "Queens, NY", "Queens, NY", "New Jersey", "New Jersey"]
+# > Storage.pluck(:area_slug)
+# => ["brooklyn", "queens", "queens", "new-jersey", "new-jersey"]
+#
+# TODO extract to Category with :title, :slug
+
 # frozen_string_literal: true
 class Storage < ApplicationRecord
-  validates_presence_of :category, :title, :phone,
+  validates_presence_of :title, :phone, :slug,
     :address, :area, :zip_code, :coordinates,
     :office_hours, :access_hours,
     :description_1, :description_2, :directions, :features,
     :link_to_google, :link_to_yelp,
-    :slug
+    :category
   validates_uniqueness_of :slug
 
   serialize :coordinates, Array
@@ -14,26 +24,14 @@ class Storage < ApplicationRecord
   serialize :access_hours, Array
   serialize :features, Array
 
-  def full_address
-    "#{address}, #{area}, #{zip_code}"
-  end
-
-  def self.categories
-    Storage.all.map { |storage| storage[:category] }.uniq
-  end
-
-  # ugh, maybe we should add area_name to db then too. possible TODO
-  # possibly not consistent enough to be calculating slugs from titles etc.
-  def area_name
-    area_slug.split('-').join(' ').titleize
-  end
+  belongs_to :category
 
   def image_src
-    ActionController::Base.helpers.asset_path("common/storages/#{id}.jpg")
+    ActionController::Base.helpers.asset_path("_db/storages/#{id}.jpg")
   end
 
   def url
-    '/' + area_slug + '/' + slug
+    '/' + category.slug + '/' + slug
   end
 
   # (because not enough info on units yet)
@@ -48,10 +46,21 @@ class Storage < ApplicationRecord
     end
   end
 
+  def link_to_google_maps
+    "https://www.google.com/maps/place/" +
+      coordinates[0].to_s + "," +
+      coordinates[1].to_s
+  end
+
   # http://stackoverflow.com/a/9649359/3192470
   def serializable_hash(options = {})
     options = {
-      methods: [:image_src, :url]
+      methods: [
+        :image_src,
+        :url,
+        :min_unit_price,
+        :link_to_google_maps
+      ]
     }.update(options)
     super(options)
   end

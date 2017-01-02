@@ -1,28 +1,37 @@
-<header>
-  <div class="container-fluid heading_font">
-    <div class="row">
-      <div class="col-xs-2 logo">
-        <%= link_to image_tag('common/header/logo-header.png'), root_path %>
-      </div>
+<header class="desktop hidden-md-down">
+  <%# 'invisible' if @header_navigation_is_hidden %>
+  <section class="sup_header">
+    <section class="links">
+      <a href="">Email Us</a>
+      <a href="<%= commercial_storage_path %>">Commercial Storage</a>
+      <a href="">Residential Storage</a>
+    </section>
 
-      <div class="col-md-10 hidden-md-down">
-        <nav class="<%= 'invisible' if @header_navigation_is_hidden %>">
-          <div class="links">
-            <%= render(partial: 'layouts/in_application/in_header/locations') %>
-            <%= render(partial: 'layouts/in_application/in_header/storage_solutions') %>
-            <%= render(partial: 'layouts/in_application/in_header/why_store_with_us') %>
-          </div>
+    <%= render(partial: 'common/social_icons') %>
+  </section>
 
-          <div class="live_chat">
-            <%= image_tag 'common/live-chat-icn_red.svg' %>
-            <span>Live Chat</span>
-          </div>
+  <section class="main_header">
+    <a href="<%= root_path %>" class="logo">
+      <%= image_tag('layouts/header/logo-header.png') %>
+    </a>
 
-          <%= link_to("My Account", myaccount_path, class: "my_account button") %>
-        </nav>
-      </div>
-
-      <%= render(partial: 'layouts/in_application/header_responsive') %>
+    <div class="phone">
+      <%= image_tag '_common/phone.png' %>
+      <span>1-800-TI-STORAGE</span>
     </div>
-  </div>
+
+    <%= react_component('Header_DropdownMenus', {
+      storages: @all_storages,
+      categories: @all_categories
+    }) %>
+
+    <div class="live_chat">
+      <%= image_tag '_common/live-chat-icn_red.svg' %>
+      <span>Live Chat</span>
+    </div>
+
+    <%= link_to("My Account", myaccount_path, class: "my_account button") %>
+  </section>
 </header>
+
+<%= render(partial: 'layouts/in_application/header.mobile') %>

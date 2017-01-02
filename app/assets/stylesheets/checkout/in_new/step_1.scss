@@ -9,15 +9,20 @@ section.step_1{
       padding-bottom: 17px;
     }
 
-    .row.rent_or_reserve_radios{
-      padding-top: 20px;
-      align-items: center;
+    .rent_or_reserve_radios{
+      // layout
+      display: flex;
       align-items: flex-start;
+      flex-wrap: wrap;
+      label.rent{  width: 45%; }
+      label.reserve{ width: 45%; }
+      .or{ width: 10%; }
 
+      // prettiness
+      padding-top: 20px;
       h4.please_choose_one{
         color: #1f3d9b;
         width: 100%;
-        padding-left: 15px;
         padding-bottom: 10px;
         font-weight: 700;
       }
@@ -42,8 +47,8 @@ section.step_1{
 
     .norton{
       text-align: center;
-      padding-top: 33px;
-      img{ width: 100%; max-width: 106px; }
+      align-self: center;
+      img{ width: 100%; max-width: 212px; }
     }
   }
   section.general_client_info{

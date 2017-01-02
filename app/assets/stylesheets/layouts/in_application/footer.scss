@@ -43,8 +43,10 @@ footer{
         font-weight: bold; 
       }
     }
-    .social_icons{
+    section.social_icons{
       margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
     }
   }
 

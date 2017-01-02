@@ -1,0 +1,50 @@
+const Header_DropdownMenus_dropdowns_Storages_Storage = React.createClass({
+
+  propTypes: {
+    storage: React.PropTypes.object.isRequired,
+  },
+
+  render(){
+    const storage = this.props.storage;
+
+    return <section className="storage">
+      <h1 className="city">{storage.title}</h1>
+
+      <section className="info">
+        <div className="photo">
+          <img src={storage.image_src}/>
+        </div>
+        <div className="storage_details">
+          <div className="miles_away">
+            <%= image_tag '_common/location_pin.svg' %>
+            <span className="how_many">3 Miles Away</span>
+          </div>
+
+          <div className="address">
+            {storage.address}, {storage.area}, {storage.zip_code}
+            <b className="telephone">{storage.phone}</b>
+          </div>
+
+          <a href={storage.link_to_google_maps} target="_blank" className="view_in_google_maps">
+            View in Google Maps
+          </a>
+        </div>
+      </section>
+
+      <section className="reserve_today_and_view_units">
+        <div className="reserve_today">
+          <div className="red">Reserve Your Space Today</div>
+          <div className="blue">646.846.9449</div>
+        </div>
+
+        <div className="view_units">
+          <a href={storage.url} className="button blue">View units</a>
+        </div>
+      </section>
+
+      <section className="units_starting_at">
+        Units starting at <b>${storage.min_unit_price}</b>
+      </section>
+    </section>
+  }
+});

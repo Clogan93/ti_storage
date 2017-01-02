@@ -11,6 +11,7 @@
 
   .unit.row{
     padding-bottom: 24px;
+    align-items: center;
     &:last-child{ padding-bottom: 0; }
     .size_and_location{
       padding-right: 0;
@@ -29,15 +30,7 @@
         .address{ font-size: 15px; }
       }
     }
-    .first_month_price, .online_rate{
-      text-align: center;
-      .black{ font-size: 14px; }
-      .blue{ 
-        color: $cobalt_color;
-        font-weight: bold;
-        font-size: 22px;
-      }
-    }
+
     .continue{ text-align: center; padding: 0; }
   }
 
