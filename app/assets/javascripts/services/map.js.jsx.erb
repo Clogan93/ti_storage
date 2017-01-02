@@ -4,9 +4,11 @@ class Map {
   }
 
   displayMap(){
-    this.map = new google.maps.Map(this.mapEl.get(0), { mapTypeId: 'roadmap' });
+    this.map = new google.maps.Map(this.mapEl.get(0), {
+      mapTypeId: 'roadmap',
+      maxZoom: 15
+    });
   }
-
 
   // buildings = [{
   //  coordinates: [12321, 432432],
@@ -25,7 +27,11 @@ class Map {
 
       const marker = new google.maps.Marker({
         position: position,
-        map: this.map
+        map: this.map,
+        icon: {
+          url: '<%= image_url("_common/map_pin.png") %>',
+          scaledSize : new google.maps.Size(30, 50)
+        }
       });
 
       // Automatically center the map fitting all markers on the screen

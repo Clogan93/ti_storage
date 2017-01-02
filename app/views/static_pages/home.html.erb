@@ -11,11 +11,9 @@
     </div>
     <!-- /background -->
 
-    <div class="container-fluid">
-      <div class="find_storage_rectangle">
-        <h4>Find Storage in Your Area</h4>
-        <%= react_component('FindStorageDropdown', { storages: @all_storages })%>
-      </div>
+    <div class="find_storage_rectangle">
+      <h4>Find Storage in Your Area</h4>
+      <%= react_component('FindStorageDropdown', { storages: @all_storages })%>
     </div>
 
     <div class="blue_strip"></div>
@@ -24,16 +22,16 @@
   <section class="featured_specials">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-lg-4 special featured_locations">
+        <div class="col-lg-4 hidden-md-down special featured_locations">
           <h4 class="header">Featured Locations</h4>
           <%= render partial: 'static_pages/in_home/carousel' %>
         </div>
 
-        <div class="col-lg-4 special free_truck">
+        <div class="col-lg-4 col-sm-6 special free_truck">
           <%= image_tag 'static_pages/home/featured_specials/free_truck.png' %>
         </div>
 
-        <div class="col-lg-4 special in_the_news">
+        <div class="col-lg-4 col-sm-6 special in_the_news">
           <h4 class="header">In The News</h4>
           <img src="http://placehold.it/350x250">
         </div>
@@ -41,35 +39,12 @@
     </div>
   </section>
 
-  <!-- will probably need them back some time? -->
-  <!-- <section class="blog_articles">
+  <section class="sign_up_for_emails">
     <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-4 col-xs-12 article">
-          <h4 class="heading">Storing Collectable Posters</h4>
-        </div>
-        <div class="col-md-4 col-xs-12 article">
-          <h4 class="heading">Saving Space: Futon Vs Bed</h4>
-        </div>
-        <div class="col-md-4 col-xs-12 article">
-          <h4 class="heading">Organize Your Garage in 3 Steps</h4>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-4 col-xs-12 article">
-          <%= image_tag 'static_pages/home/blog/posters.jpg' %>
-        </div>
-        <div class="col-md-4 col-xs-12 article">
-          <%= image_tag 'static_pages/home/blog/futon.jpg' %>
-        </div>
-        <div class="col-md-4 col-xs-12 article">
-          <%= image_tag 'static_pages/home/blog/garage.jpg' %>
-        </div>
-      </div>
-
-      <%= link_to 'Read More', '', class: 'button read_more' %>
+      <h3>SIGN UP FOR EMAIL DISCOUNTS</h3>
+      <a class="button red">Sign Up</a>
     </div>
-  </section> -->
+  </section>
 
   <section class="ti_storage_benefits">
     <div class="container-fluid">

@@ -1,5 +1,6 @@
 AllCops:
   Exclude:
+    - 'why/**/*'
     - 'db/schema.rb'
     - 'db/migrate/*'
     - 'db/seeds.rb'

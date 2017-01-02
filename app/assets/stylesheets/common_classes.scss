@@ -61,7 +61,7 @@
   border: solid 1px #99b0dd;
   padding: 15px;
 
-  background: url(image-path('common_elements/arrow.svg')) no-repeat;
+  background: url(image-path('_common/arrow.svg')) no-repeat;
   background-position: 361px 78px;
 
   .city{
@@ -78,6 +78,33 @@
     .details{
       padding-left: 30px;
     }
+  }
+}
+
+// for storage units
+.unit_monthly_price{
+  .price{
+    font-weight: bold;
+    font-size: 28px;
+    font-family: Roboto;
+    display: inline-block;
+    position: relative;
+    // instead of text-dectoration, because
+    // browsers don't support text-decoration-color
+    .line_through{
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      border-bottom: 2px $vermillion_color solid;
+    }
+  }
+}
+.unit_promotion{
+  font-weight: bold;
+  .red{
+    font-size: 28px;
+    font-family: Roboto;
+    color: $vermillion_color;
   }
 }
 
@@ -111,6 +138,12 @@ div.blue_strip{
   font-weight: bold;
   padding: 10px 0;
 }
+
+// hide logged in photo in google maps
+.profile-photo{
+  display: none;
+}
+
 
 // responsive
 @media (max-width: $sm){

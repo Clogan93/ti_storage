@@ -1,0 +1,91 @@
+section.storages{
+  position: relative;
+  ul.categories, ul.storages{
+    z-index: 100;
+    li{ padding: 20px; }
+  }
+
+  ul.categories{
+    position: absolute;
+    width: 160px;
+  }
+
+  ul.storages{
+    position: absolute;
+    left: 160px;
+    width: 200px;
+    height: 201px;
+  }
+
+  section.storage{
+    // layout
+    position: absolute;
+    left: 360px;
+    width: 411px;
+
+    section.info{
+      display: flex;
+      justify-content: space-between;
+      .photo{ width: 50%; }
+      .storage_details{ width: 50%; }
+    }
+
+    section.reserve_today_and_view_units{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 15px;
+      .reserve_today{ width: 50%; }
+      .view_units{ width: 50%; }
+    }
+
+    // prettiness
+    background: white;
+    padding: 15px;
+
+    h1.city{
+      margin: -15px; margin-bottom: 15px;
+      padding: 10px 20px;
+      font-size: 28px;
+      text-transform: uppercase;
+      color: white;
+      background-color: $cobalt_color;
+      border-bottom: solid 3px $vermillion_color;
+    }
+    section.info{
+      .photo{
+        img{ width: 100%; }
+      }
+      .storage_details{
+        padding-left: 15px;
+      }
+    }
+    section.reserve_today_and_view_units{
+      border: solid 1px $vermillion_color;
+      padding: 10px;
+      text-transform: uppercase;
+      text-align: center;
+      font-size: 18px;
+
+      .reserve_today{
+        font-weight: bold;
+        .red{ color: $vermillion_color; }
+        .blue{ color: $cobalt_color; }
+      }
+      .view_units{
+        .button { 
+          color: white;
+          font-size: 17px;
+        }
+      }
+    }
+    section.units_starting_at{
+      margin-top: 10px;
+      padding: 15px;
+      color: black;
+      background-color: #ffe200; // yellow
+      text-transform: uppercase;
+      font-size: 17px;
+    }
+  }
+}

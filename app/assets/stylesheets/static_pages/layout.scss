@@ -25,7 +25,7 @@ main#static_pages_layout{
         height: initial;
 
         // for magnifier icon
-        background-image: url(image-path('common/search-icon.svg'));
+        background-image: url(image-path('_common/search-icon.svg'));
         background-repeat: no-repeat;
         background-position: 10px;
         padding-left: 30px;
@@ -132,6 +132,7 @@ main#static_pages_layout{
         }
       }
       h1{
+        margin-bottom: 0;
         text-transform: uppercase;
         font-size: 40px;
         text-align: center;

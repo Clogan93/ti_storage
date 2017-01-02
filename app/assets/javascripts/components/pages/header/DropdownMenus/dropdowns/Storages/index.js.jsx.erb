@@ -1,0 +1,68 @@
+const Header_DropdownMenus_dropdowns_Storages = React.createClass({
+  propTypes: {
+    storages: React.PropTypes.array.isRequired,
+    categories: React.PropTypes.array.isRequired
+  },
+
+  getInitialState(){
+    return {
+      selectedCategoryIndex: 0, // open first category and storage by default
+      selectedStorageIndex: 0
+    }
+  },
+
+  selectCategory(index){
+    this.setState({
+      selectedCategoryIndex: index,
+      selectedStorageIndex: 0
+    });
+  },
+
+  selectStorage(index){
+    this.setState({
+      selectedStorageIndex: index
+    });
+  },
+
+  renderCategoryTitles(){
+    const lis = this.props.categories.map((category, index) => 
+      <li key={index} onMouseOver={() => this.selectCategory(index)}>
+        <a href={category.url}>{category.title}</a>
+      </li>
+    );
+
+    return <ul className="categories">
+      {lis}
+    </ul>
+  },
+
+  renderStorageTitles(storages){
+    const lis = storages.map((storage, index) =>
+      <li key={index} onMouseOver={() => this.selectStorage(index)}>
+        <a href={storage.url}>{storage.title}</a>
+      </li>
+    );
+
+    return <ul className="storages">
+      {lis}
+    </ul>
+  },
+
+  render(){
+    const selectedCategory = this.props.categories[this.state.selectedCategoryIndex];
+
+    const storagesOfSelectedCategory = this.props.storages.filter((storage) => 
+      storage.category_id == selectedCategory.id
+    );
+
+    const selectedStorage = storagesOfSelectedCategory[this.state.selectedStorageIndex];
+
+    return(
+      <nav className={'dropdown ' + (this.props.isOpen == true ? '' : 'invisible')}>
+        {this.renderCategoryTitles()}
+        {this.renderStorageTitles(storagesOfSelectedCategory)}
+        <Header_DropdownMenus_dropdowns_Storages_Storage storage={selectedStorage}/>
+      </nav>
+    );
+  }
+});

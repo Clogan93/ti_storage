@@ -1,8 +1,8 @@
 <section class="photo_and_links">
-  <%= image_tag "common/storages/#{storage[:id]}.jpg" %>
+  <%= image_tag "_db/storages/#{storage[:id]}.jpg" %>
 
   <a href="<%= storage.link_to_google %>" class="read_reviews" target="_blank">Read Reviews</a>
-  <a href="https://www.google.com/maps/place/<%= storage.coordinates[0] %>,<%= storage.coordinates[1] %>" target="_blank">Get Directions</a>
+  <a href="<%= storage.link_to_google_maps %>" target="_blank">Get Directions</a>
 </section>
 
 <section class="info">
@@ -23,5 +23,5 @@
 </section>
 
 <a class="arrow" href="<%= storage.url %>">
-  <%= image_tag 'common_elements/arrow.svg' %>
+  <%= image_tag '_common/arrow.svg' %>
 </a>

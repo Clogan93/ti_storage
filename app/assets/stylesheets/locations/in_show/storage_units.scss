@@ -52,32 +52,6 @@
           }
         }
       }
-      .monthly_price{
-        .price{
-          font-weight: bold;
-          font-size: 28px;
-          font-family: Roboto;
-          display: inline-block;
-          position: relative;
-          // instead of text-dectoration, because
-          // browsers don't support text-decoration-color
-          .line_through{
-            position: absolute;
-            top: 50%;
-            width: 100%;
-            border-bottom: 2px $vermillion_color solid;
-          }
-        }
-
-      }
-      .promotion{
-        font-weight: bold;
-        .red{
-          font-size: 28px;
-          font-family: Roboto;
-          color: $vermillion_color;
-        }
-      }
       .continue{
         .button{
           font-size: 18px;

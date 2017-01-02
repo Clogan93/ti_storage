@@ -1,0 +1,71 @@
+const Header_DropdownMenus = React.createClass({
+  propTypes: {
+    storages: React.PropTypes.array.isRequired,
+    categories: React.PropTypes.array.isRequired
+  },
+
+  getInitialState(){
+    return({
+      currentlyOpenNav: null // why_store_with_us, storages, or storage_solutions (title)
+    })
+  },
+
+  closeAll(){
+    this.setState({ currentlyOpenNav: null });
+  },
+
+  open(navTitle){
+    this.setState({ currentlyOpenNav: navTitle });
+  },
+
+  renderToggler(text, link, isOpen){
+    return <a href={link} className={"toggler " + (isOpen ? "open" : "")}>
+      <span className="underline">{text}</span>
+    </a>
+  },
+
+  render(){
+    const currentlyOpenNav = this.state.currentlyOpenNav; 
+    const storagesIsOpen = currentlyOpenNav == 'storages';
+    const storageSolutionsIsOpen = currentlyOpenNav == 'storage_solutions';
+    const whyStoreWithUsIsOpen = currentlyOpenNav == 'why_store_with_us';
+
+    return(
+      <nav className="dropdown_menus">
+        <section className="storages dropdown_menu"
+          onMouseLeave={this.closeAll}
+          onMouseEnter={() => this.open('storages')}
+        >
+          {this.renderToggler('Locations', '/locations', storagesIsOpen)}
+
+          <Header_DropdownMenus_dropdowns_Storages
+            isOpen={storagesIsOpen}
+            storages={this.props.storages}
+            categories={this.props.categories}/>
+        </section>
+
+        <section className="storage_solutions dropdown_menu"
+          onMouseLeave={this.closeAll}
+          onMouseEnter={() => this.open('storage_solutions')}
+        >
+          {this.renderToggler('Storage Solutions', '/storage-solutions', storageSolutionsIsOpen)}
+
+          <Header_DropdownMenus_dropdowns_StorageSolutions
+            isOpen={storageSolutionsIsOpen}/>
+        </section>
+
+        <section className="why_store_with_us dropdown_menu"
+          onMouseLeave={this.closeAll}
+          onMouseEnter={() => this.open('why_store_with_us')}
+        >
+          {this.renderToggler('Why Store With Us?', '/why-store-with-us', whyStoreWithUsIsOpen)}
+
+          <Header_DropdownMenus_dropdowns_WhyStoreWithUs
+            isOpen={whyStoreWithUsIsOpen}/>
+        </section>
+      </nav>
+    )
+  }
+
+
+})

@@ -20,26 +20,25 @@
         <ul>
           <% ['Climate Control', 'Interior', 'Locker Upper'].each do |feature| %>
             <li>
-              <%= image_tag 'locations/in_show/storage_units/tick_icon.svg', class: 'tick_icon' %>
+              <%= image_tag '_common/tick_icon.svg', class: 'tick_icon' %>
               <%= feature %>
             </li>
           <% end %>
         </ul>
       </div>
-      <div class="col-md-2 monthly_price">
+      <div class="col-md-2 unit_monthly_price">
         <div class="text">Regular Price</div>
         <div class="price">
           $48
           <div class="line_through"></div>
         </div>
-
       </div>
-      <div class="col-md-2 promotion">
+      <div class="col-md-2 unit_promotion">
         <div class="black">1st Month Free</div>
         <div class="red">$20/mo</div>
       </div>
       <div class="col-md-3 continue">
-        <div class="button blue">Continue</div>
+        <a href="<%= checkout_path %>" class="button blue">Continue</a>
       </div>
     </div>
   <% end %>

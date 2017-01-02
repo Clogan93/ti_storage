@@ -4,8 +4,8 @@ const Storages = React.createClass({
   },
 
   render() {
-    const pin_src = "<%= url_to_image('common_elements/location_pin_grey.svg') %>";
-    const car_src = "<%= url_to_image('common_elements/icon-truck.svg') %>";
+    const pin_src = "<%= url_to_image('_common/location_pin_grey.svg') %>";
+    const car_src = "<%= url_to_image('_common/icon-truck.svg') %>";
 
     const storages = this.props.storages.map((storage, index) => {
       return <Storage key={index} storage={storage} src={pin_src}/>

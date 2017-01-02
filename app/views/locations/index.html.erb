@@ -1,7 +1,5 @@
 <%= render partial: 'common/breadcrumbs', locals: {
-  links: [
-    params[:area_slug] ? link_to(@storages.first.area_name, "/#{params[:area_slug]}") : link_to('Locations',  locations_path)
-  ]
+  links: [@category.title]
 } %>
 
 <main id="locations_page">

@@ -27,6 +27,7 @@ section.storage_view{
       justify-content: space-between;
       max-width: 247px;
       margin: 30px auto;
+      margin-bottom: 0;
       img{
         max-height: 50px;
         cursor: pointer;
@@ -68,12 +69,15 @@ section.storage_view{
   .map{
     padding: 8px;
     background: white;
-    height: 290px;
-    iframe{
-      height: 100%; width: 100%;
+    flex-basis: 300px;
+
+    > div, section{
+      height: 100%;
     }
+
   }
 }
+
 
 // responsive
 section.storage_view{

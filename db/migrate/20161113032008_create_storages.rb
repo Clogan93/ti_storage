@@ -1,10 +1,10 @@
 class CreateStorages < ActiveRecord::Migration[5.0]
   def change
     create_table :storages do |t|
-      t.string :category
+      t.belongs_to :category
+
       t.string :title
       t.string :slug
-      t.string :area_slug
       t.string :phone
 
       t.string :address

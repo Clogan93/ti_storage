@@ -1,7 +1,11 @@
-<div class="col-xs-10 hidden-lg-up">
+<header class="mobile hidden-lg-up">
 
-  <div data-toggle="modal" data-target="#mobile_collapsing_menu" class="flex-items-xs-middle burger">
-    <%= image_tag 'common/header/mobile_hamburger-menu.svg' %>
+  <a href="<%= root_path %>" class="logo">
+    <%= image_tag('layouts/header/logo-header.png') %>
+  </a>
+
+  <div data-toggle="modal" data-target="#mobile_collapsing_menu" class="burger">
+    <%= image_tag 'layouts/header/mobile_hamburger-menu.svg' %>
   </div>
 
   <div class="modal fade" id="mobile_collapsing_menu">
@@ -10,7 +14,7 @@
         <div class="modal-body">
 
           <div data-dismiss="modal" class="close">
-            <%= image_tag 'common/header/mobile_button-close-mobile-nav.svg' %>
+            <%= image_tag 'layouts/header/mobile_button-close-mobile-nav.svg' %>
           </div>
 
           <nav>
@@ -34,4 +38,4 @@
     </div>
   </div>
 
-</div>
+</header>
