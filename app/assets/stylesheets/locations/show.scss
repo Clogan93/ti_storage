@@ -27,11 +27,12 @@
           font-weight: bold;
           color: #393939;
           border-color: #eceeef #eceeef #ddd;
+          background: linear-gradient(to bottom, white, #dadada);
           &:hover{
             border-color: $cobalt_color; border-bottom: none;
           }
           &.active{
-            background: $vermillion_color;
+            background: linear-gradient(to bottom, $vermillion_color, #b51210);
             color: white;
           }
         }

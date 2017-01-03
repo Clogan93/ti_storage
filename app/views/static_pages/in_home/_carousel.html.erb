@@ -3,7 +3,7 @@
     <% @all_storages.each_with_index do |storage, index| %>
       <div class="carousel-item <%= index == 1 ? 'active' : '' %>">
         <div class="carousel-caption">
-          <h3><%= storage.category %></h3>
+          <h3><%= storage.title %></h3>
         </div>
         <a href="<%= storage.url %>">
           <%= image_tag storage.image_src %>
