@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TiStorage</title>
+    <title><%= content_for?(:title_tag) ? yield(:title_tag) : 'TI Storage' %></title>
+
     <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <% if content_for?(:meta_description_tag) %>
+      <meta name="description" content="<%= yield(:meta_description_tag) %>"/>
+    <% end %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>

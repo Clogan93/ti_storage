@@ -87,3 +87,6 @@
 </main>
 
 <%= render 'common/sizing_guide_modal' %>
+
+<%= content_for :title_tag, "Self Storage Units #{@storage.title} #{@storage.area} | Treasure Island Storage" %>
+<%= content_for :meta_description_tag, 'Looking for self storage units in#{@storage.title} #{@storage.area}? Treasure Island Storage offers clean and affordable storage to fit any need. Reserve today!' %>
