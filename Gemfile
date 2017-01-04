@@ -26,6 +26,8 @@ gem 'turbolinks', '~> 5'
 
 gem 'dotenv-rails'
 
+gem 'savon', '~> 2.0'
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.5.0.beta4'
   gem 'capybara', '~> 2.5'

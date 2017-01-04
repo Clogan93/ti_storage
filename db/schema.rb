@@ -10,10 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161113032009) do
+ActiveRecord::Schema.define(version: 20170103000625) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "citext"
 
   create_table "categories", force: :cascade do |t|
     t.string "title"
@@ -35,6 +36,14 @@ ActiveRecord::Schema.define(version: 20161113032009) do
     t.datetime "updated_at",       null: false
   end
 
+  create_table "storage_units", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "site_id"
+    t.integer  "unit_id"
+    t.jsonb    "data"
+  end
+
   create_table "storages", force: :cascade do |t|
     t.integer "category_id"
     t.string  "title"
@@ -53,6 +62,8 @@ ActiveRecord::Schema.define(version: 20161113032009) do
     t.text    "features"
     t.string  "link_to_google"
     t.string  "link_to_yelp"
+    t.integer "site_id"
+    t.jsonb   "data"
     t.index ["category_id"], name: "index_storages_on_category_id", using: :btree
   end
 

@@ -1,0 +1,22 @@
+<table>
+  <thead>
+    <tr>
+      <th>Unit ID</th>
+      <th>Site ID</th>
+      <th>Name</th>
+      <th>LxHxW</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @storage_units.each do |storage_unit| %>
+    <tr>
+      <td><%= storage_unit.unit_id %></td>
+      <td><%= storage_unit.site_id %></td>
+      <td><%= storage_unit.dimensions %></td>
+      <td><%= link_to('View', [:admin, @storage, storage_unit]) %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= button_to("Sync", [:sync, :admin, @storage, :storage_units], class: 'btn btn-primary', data: {disable_with: 'Syncing...'}) %>

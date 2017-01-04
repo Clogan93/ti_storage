@@ -25,9 +25,9 @@ reset:
 	docker-compose run app bundle exec rails db:seed
 
 heroku_reset:
-	heroku pg:reset DATABASE_URL --app desolate-fortress-66664-pr-171 --confirm desolate-fortress-66664-pr-171
-	heroku run rake db:migrate --app desolate-fortress-66664-pr-171
-	heroku run rake db:seed --app desolate-fortress-66664-pr-171
+	heroku pg:reset DATABASE_URL --app desolate-fortress-66664-pr-184 --confirm desolate-fortress-66664-pr-184
+	heroku run rake db:migrate --app desolate-fortress-66664-pr-184
+	heroku run rake db:seed --app desolate-fortress-66664-pr-184
 
 routes:
 	docker-compose run app bundle exec rake routes

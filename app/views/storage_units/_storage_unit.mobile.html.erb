@@ -1,0 +1,31 @@
+<% return if storage_unit.data.total_units_in_available_status.to_i < 1 %>
+<div class="table_row">
+  <section class="size">
+    <div class="word_and_number">
+      <%= size_class(storage_unit.data.square_feet).to_s.titlecase %>
+      <%= storage_unit.dimensions %>
+    </div>
+    <ul class="features">
+      <% storage_unit.features.each do |feature| %>
+      <li><%= feature %></li>
+      <% end %>
+    </ul>
+  </section>
+
+  <section class="monthly_price">
+    <div class="price">
+      <span class="previous">
+        <%= number_to_currency(storage_unit.data.push_rate) %>
+      </span>
+      <span class="current">
+        <%= number_to_currency(storage_unit.data.rent_rate) %>
+      </span>
+    </div>
+
+    <div class="per_month">Per Month</div>
+  </section>
+
+  <section class="continue">
+    <a href="/checkout/new" class="button blue">Continue</a>
+  </section>
+</div>

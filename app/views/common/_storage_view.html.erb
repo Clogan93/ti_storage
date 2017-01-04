@@ -1,13 +1,13 @@
 <section class="storage_view hidden-md-down">
   <div class="photos">
     <div class="main_photo">
-      <%= image_tag "_db/storages/#{storage[:id]}.jpg" %>
+      <%= image_tag storage_image_path(storage) %>
     </div>
 
     <div class="additional_photos">
-      <% 3.times do |i| %>
-        <%= image_tag "_db/storages/#{storage[:id]}/#{i+1}.jpg" %>
-      <% end %>
+      <%= image_tag(storage_image_path(storage).gsub(".jpg", "/1.jpg")) %>
+      <%= image_tag(storage_image_path(storage).gsub(".jpg", "/2.jpg")) %>
+      <%= image_tag(storage_image_path(storage).gsub(".jpg", "/3.jpg")) %>
     </div>
   </div>
 
@@ -27,18 +27,18 @@
       <p><%= storage[:phone] %></p>
     </div>
 
-    <a href="<%= storage.url %>" class="button blue find_units">FIND UNITS</a>
+    <a href="<%= seo_storage_path(storage) %>" class="button blue find_units">FIND UNITS</a>
 
     <%= react_component('FetchableStorageRating', { placeId: storage.place_id, numberIsDisplayed: true }) %>
 
-    <a href="<%= storage.url %>#reviews" class="read_reviews">Read Reviews</a>
+    <a href="<%= seo_storage_path(storage) %>#reviews" class="read_reviews">Read Reviews</a>
   </section>
 
   <section class="info second">
     <div class="office_hours">
       <h6>Office hours</h6>
       <p>
-        <% storage[:office_hours].each do |hours| %>
+        <% storage.office_hours.each do |hours| %>
           <%= hours %><br>
         <% end %>
       </p>
@@ -47,7 +47,7 @@
     <div class="access_hours">
       <h6>Access hours</h6>
       <p>
-        <% storage[:access_hours].each do |hours| %>
+        <% storage.access_hours.each do |hours| %>
           <%= hours %><br>
         <% end %>
       </p>

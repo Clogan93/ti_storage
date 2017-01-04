@@ -5,8 +5,8 @@
         <div class="carousel-caption">
           <h3><%= storage.title %></h3>
         </div>
-        <a href="<%= storage.url %>">
-          <%= image_tag storage.image_src %>
+        <a href="<%= seo_storage_path(storage) %>">
+          <%= image_tag(storage_image_path(storage)) %>
         </a>
       </div>
     <% end %>

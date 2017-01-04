@@ -1,0 +1,36 @@
+<%-
+storages_by_category ||= {}
+@all_storages.each do |storage|
+  area = storage.area
+
+  storages_by_category[area] ||= []
+  storages_by_category[area] << storage
+end
+-%>
+<section class="locations">
+  <!-- href="#" is for styling -->
+  <a href="#" class="nav_link toggler">
+    Locations
+  </a>
+
+  <div class="collapse menu">
+
+    <ul class="cities">
+      <% storages_by_category.each do |category, storages| %>
+        <li><%= category %>
+          <ul class="places">
+            <% storages.each do |storage| %>
+              <li>
+                <%= storage.area %>
+                <%= inline_svg 'common/header/right-chevron.svg', class: 'chevron' %>
+
+                <%= render(partial: 'layouts/in_application/in_header/in_locations/storage', locals: { storage: storage }) %>
+              </li>
+            <% end %>
+          </ul>
+        </li>
+      <% end %>
+    </ul>
+
+  </div>
+</section>

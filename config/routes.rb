@@ -1,5 +1,21 @@
 # frozen_string_literal: true
 Rails.application.routes.draw do
+  namespace :admin do
+    resources :storages do
+      collection do
+        post 'sync'
+      end
+
+      resources :storage_units do
+        collection do
+          post 'sync'
+        end
+      end
+    end
+  end
+
+  resources :locations, only: [:index]
+
   get 'checkout', to: 'checkout#new'
   post 'checkout/step_1'
   post 'checkout/step_2'
@@ -32,6 +48,6 @@ Rails.application.routes.draw do
 
   # must be in the end, matches all
   get "locations", to: 'locations#locations'
-  get ":category_slug/:storage_slug", to: 'locations#show'
+  get ":category_slug/:storage_slug", to: 'locations#show', as: :sluggable_location
   get ":category_slug", to: 'locations#index'
 end

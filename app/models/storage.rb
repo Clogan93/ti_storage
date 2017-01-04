@@ -26,8 +26,10 @@ class Storage < ApplicationRecord
 
   belongs_to :category
 
+  has_many :storage_units, foreign_key: :site_id, primary_key: :site_id
+
   def image_src
-    ActionController::Base.helpers.asset_path("_db/storages/#{id}.jpg")
+    ActionController::Base.helpers.asset_path("_db/storages/#{slug}.jpg")
   end
 
   def url
@@ -63,5 +65,11 @@ class Storage < ApplicationRecord
       ]
     }.update(options)
     super(options)
+  end
+
+  def data
+    @data ||= JSON.parse(self[:data], object_class: OpenStruct)
+  rescue
+    nil
   end
 end
