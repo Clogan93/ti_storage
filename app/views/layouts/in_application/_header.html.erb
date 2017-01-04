@@ -2,9 +2,11 @@
   <%# 'invisible' if @header_navigation_is_hidden %>
   <section class="sup_header">
     <section class="links">
-      <a href="">Email Us</a>
+      <a href="<%= contact_path %>">Contact Us</a>
       <a href="<%= commercial_storage_path %>">Commercial Storage</a>
-      <a href="">Residential Storage</a>
+      <a href="/brooklyn">Brooklyn Self-Storage</a>
+      <a href="/queens">Queens Self-Storage</a>
+      <a href="/new-jersey">New Jersey Self-Storage</a>
     </section>
 
     <%= render(partial: 'common/social_icons') %>
@@ -25,7 +27,8 @@
       categories: @all_categories
     }) %>
 
-    <div class="live_chat">
+    <!-- https://docs.livechatinc.com/js-api/#open-the-chat-window -->
+    <div class="live_chat" onclick="LC_API.open_chat_window();">
       <%= image_tag '_common/live-chat-icn_red.svg' %>
       <span>Live Chat</span>
     </div>

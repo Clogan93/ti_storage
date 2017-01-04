@@ -3,7 +3,7 @@ main#storage_solutions_page{
     section.storage_types .tabs.row{
       border-radius: 7px;
       border: solid 1px $pinkish-grey_color;
-      margin-left: 0;
+      margin-left: 0; margin-right: 0;
       .col-xs-4{ padding-left: 0; }
       ul.navigation{
         border-right: solid 1px $pinkish-grey_color;

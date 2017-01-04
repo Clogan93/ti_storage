@@ -12,6 +12,8 @@ main#static_pages_layout{
   section.search_field{
     // some major hacky overriding here due to different designs of search field on different pages
     section.find_storage_dropdown{
+      position: relative;
+      .dropdown-menu{ top: 80px; }
       display: block;
       text-align: right;
       padding: 0px;
@@ -36,9 +38,9 @@ main#static_pages_layout{
         font-size: 18px;
         padding-top: 3px; padding-bottom: 3px;
       }
-      .dropdown-menu{
-        top: 90px;
-      }
+      // .dropdown-menu{
+      //   top: 90px;
+      // }
     }
   }
 
@@ -169,10 +171,11 @@ main#static_pages_layout{
       text-align: center;
     }
     div.find_storage_space_near_you{
-      position: static;
-      margin: 30px auto;
-      display: block;
+      display: none;
     }
-    div.actual_page{ width: 100%; }
+    div.actual_page{
+      width: 100%;
+      padding-left: 0;
+    }
   }
 }

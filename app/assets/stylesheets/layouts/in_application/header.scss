@@ -73,8 +73,9 @@ header.desktop{
             padding: 5px 10px;
             text-align: left;
             a{ color: white; }
-            &:hover{
+            &:hover, &.active{
               background: white;
+              color: $cobalt_color;
               cursor: pointer;
               a{
                 color: $cobalt_color;

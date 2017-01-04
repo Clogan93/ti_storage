@@ -27,8 +27,8 @@
           <%= render partial: 'static_pages/in_home/carousel' %>
         </div>
 
-        <div class="col-lg-4 col-sm-6 special free_truck">
-          <%= image_tag 'static_pages/home/featured_specials/free_truck.png' %>
+        <div class="col-lg-4 col-sm-6 special promotion">
+          <%= image_tag 'static_pages/home/featured_specials/promotion.png' %>
         </div>
 
         <div class="col-lg-4 col-sm-6 special in_the_news">
@@ -42,7 +42,18 @@
   <section class="sign_up_for_emails">
     <div class="container-fluid">
       <h3>SIGN UP FOR EMAIL DISCOUNTS</h3>
-      <a class="button red">Sign Up</a>
+      <a class="button red" data-toggle="modal" data-target="#sign_up_for_emails_modal">Sign Up</a>
+    </div>
+
+    <div class="modal" id="sign_up_for_emails_modal">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div data-dismiss="modal" aria-label="Close" class="close">
+            <%= image_tag '_common/close_modal.svg' %>
+          </div>
+          <%= react_component('StaticPages_Home_SignUpForEmailsForm') %>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -111,3 +122,4 @@
   </section>
 
 </main>
+

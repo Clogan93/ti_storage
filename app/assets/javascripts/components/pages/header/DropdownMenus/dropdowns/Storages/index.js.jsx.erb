@@ -26,7 +26,10 @@ const Header_DropdownMenus_dropdowns_Storages = React.createClass({
 
   renderCategoryTitles(){
     const lis = this.props.categories.map((category, index) => 
-      <li key={index} onMouseOver={() => this.selectCategory(index)}>
+      <li key={index}
+        onMouseOver={() => this.selectCategory(index)}
+        className={this.state.selectedCategoryIndex == index ? 'active' : ''}
+      >
         <a href={category.url}>{category.title}</a>
       </li>
     );
@@ -38,7 +41,10 @@ const Header_DropdownMenus_dropdowns_Storages = React.createClass({
 
   renderStorageTitles(storages){
     const lis = storages.map((storage, index) =>
-      <li key={index} onMouseOver={() => this.selectStorage(index)}>
+      <li key={index}
+        onMouseOver={() => this.selectStorage(index)}
+        className={this.state.selectedStorageIndex == index ? 'active' : ''}
+      >
         <a href={storage.url}>{storage.title}</a>
       </li>
     );

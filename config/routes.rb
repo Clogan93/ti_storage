@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   post 'checkout/step_1'
   post 'checkout/step_2'
 
+  post 'emails/send_sign_up_for_emails_email'
+
   get 'search', to: 'search#index'
 
   # storage solutions
