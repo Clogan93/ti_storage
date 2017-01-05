@@ -44,7 +44,8 @@ main#contact_page{
       background: url(image-path('static_pages/contact/left')) no-repeat;
       background-size: cover;
     }
-    form.right_form{
+
+    div[data-react-class=StaticPages_Contact_ContactForm]{
       padding: 20px; padding-top: 60px;
       width: 50%;
       background: $cobalt_color;
@@ -64,7 +65,6 @@ main#contact_page{
       }
       fieldset.is_current_customer_yes,
       fieldset.is_current_customer_no{
-        display: none;
         .question{
           label{ width: 100%; }
           select{ width: 100%; }
@@ -80,14 +80,24 @@ main#contact_page{
       fieldset.send_and_required_field{
         padding-bottom: 20px;
         margin-top: 20px;
-        button{
+        a.button{
           padding: 5px 20px;
           margin-right: 20px;
           color: white;
           background: $vermillion_color;
           border: none;
+
+          &.disabled{
+            background: black;
+            opacity: 0.3;
+            cursor: default;
+          }
+          &.active{}
+          &.sending{
+            cursor: default;
+            font-size: 20px;
+          }
         }
-        button, span{ display: inline-block; }
         span{ font-style: oblique; }
       }
     }
