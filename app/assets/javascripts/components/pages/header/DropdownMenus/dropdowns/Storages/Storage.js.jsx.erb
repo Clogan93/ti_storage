@@ -15,11 +15,6 @@ const Header_DropdownMenus_dropdowns_Storages_Storage = React.createClass({
           <img src={storage.image_src}/>
         </div>
         <div className="storage_details">
-          <div className="miles_away">
-            <%= image_tag '_common/location_pin.svg' %>
-            <span className="how_many">3 Miles Away</span>
-          </div>
-
           <div className="address">
             {storage.address}, {storage.area}, {storage.zip_code}
             <b className="telephone">{storage.phone}</b>
