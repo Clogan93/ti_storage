@@ -19,17 +19,16 @@
 
           <nav>
             <div class="white heading_font">
-              <%= link_to('Live Chat') %>
+              <a onclick="LC_API.open_chat_window();">Live Chat</a>
               <%= link_to('Locations', locations_path) %>
               <%= link_to('Storage Solutions', storage_solutions_path) %>
-              <%= link_to('Why Store With Us', faq_path) %>
-              <%= link_to('My Account') %>
+              <%= link_to('Why Store With Us', why_store_with_us_path) %>
+              <%= link_to('My Account', '/myaccount') %>
               <%= link_to('Contact Us', contact_path) %>
             </div>
 
-            <div class="grey">
-              <div>646-846-9449</div>
-              <a href="" class="email_us">Email Us</a>
+            <a href="tel:646-846-9449" class="phone">
+              646-846-9449
             </div>
           </nav>
 
