@@ -1,39 +1,5 @@
 main#contact_page{
   margin-bottom: -30px;
-  section.contact_us{
-    background: url(image-path("static_pages/contact/top.jpg")) no-repeat;
-    position: relative;
-    height: 500px; width: 100%;
-    background-size: cover;
-
-    text-align: center;
-    color: white;
-
-    // for phone
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    h1{
-      position: absolute;
-      max-width: 596px;
-      width: 100%;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      padding: 15px 0px;
-      border: solid 4px #4a90e2;
-      border-top: none;
-      border-bottom-left-radius: 5px;
-      border-bottom-right-radius: 5px;
-      background: $cobalt_color;
-    }
-    div.phone{
-      font-weight: bold;
-      font-size: 40px;
-      background: $cobalt_color;
-      padding: 25px 40px;
-    }
-  }
   section.contact_form{
     display: flex;
     flex-wrap: wrap;
