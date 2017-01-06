@@ -169,12 +169,14 @@ main#static_pages_layout{
     }
   }
   @media (max-width: $md){
+    div.find_storage_space_near_you{
+      display: none;
+    }
     div.blue_page_heading{
       padding-left: 0;
       text-align: center;
-    }
-    div.find_storage_space_near_you{
-      display: none;
+      padding-top: 12px;
+      h1{ display: none; }
     }
     div.actual_page{
       width: 100%;
