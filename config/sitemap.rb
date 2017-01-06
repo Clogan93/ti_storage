@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 # use rake sitemap:refresh after you update it.
 # it will recreate the /public/sitemap.xml.gz file.
 # it's okay it's gzipped, most search englines read it just fine.
