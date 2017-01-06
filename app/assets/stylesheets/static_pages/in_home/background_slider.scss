@@ -21,21 +21,39 @@ div.slider{
     animation: fade_3 18s infinite;
   }
   @keyframes fade_1{
+    // from 0 to 27
     0%   { opacity: 1 }
+
+    27%  { opacity: 1 }
     30%  { opacity: 0 }
+
     60%  { opacity: 0 }
+
+    97%  { opacity: 0 }
     100% { opacity: 1 }
   }
   @keyframes fade_2{
+    // from 30 to 57
     0%   { opacity: 0 }
+
+    27%  { opacity: 0 }
     30%  { opacity: 1 }
+
+    57%  { opacity: 1 }
     60%  { opacity: 0 }
+
     100% { opacity: 0 }
   }
   @keyframes fade_3{
+    // from 60 to 97
     0%   { opacity: 0 }
+
     30%  { opacity: 0 }
+
+    57%  { opacity: 0 }
     60%  { opacity: 1 }
+
+    97%  { opacity: 1 }
     100% { opacity: 0 }
   }
 }
