@@ -1,8 +1,5 @@
 #home_page{
   @media (max-width: $xl){
-    section.find_storage{
-      h4.first_month_free{ padding-top: 15px; }
-    }
     section.recommended_locations{
       .storage_preview{
         margin: 0 auto;
@@ -32,8 +29,11 @@
   }
   @media (max-width: $sm){
     section.find_storage{
+      min-height: initial;
+      .slider, .blue_strip{ display: none; }
       .find_storage_rectangle{
-        top: 153px;
+        position: static;
+        border-top: solid $vermillion_color 3px;
         section.find_storage_dropdown{
           flex-wrap: wrap;
           input{
@@ -62,11 +62,6 @@
           padding-right: 15px;
         }
       }
-    }
-  }
-  @media (max-width: 430px){
-    section.find_storage .find_storage_rectangle{
-      padding-left: 20px; padding-right: 20px;
     }
   }
   @media (max-width: 380px){
