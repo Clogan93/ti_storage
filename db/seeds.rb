@@ -55,32 +55,22 @@ _storages = [
       <h6>Treasure Island Storage Red Hook is just 5 minutes from the Brooklyn-Queen Expressway</h6>
 
       <ol>
-        From the Brooklyn- Queens Expressway/Staten Island
-
-        Drive to exit 26 to merge onto Hamilton Ave toward Battery Tunnel/Manhattan
-
-        Turn right onto Clinton St and turn left onto Lorraine St
-
-        Destination will be on the left
-
+        From the Brooklyn- Queens Expressway/Staten Island<br>
+        Drive to exit 26 to merge onto Hamilton Ave toward Battery Tunnel/Manhattan<br>
+        Turn right onto Clinton St and turn left onto Lorraine St<br>
+        Destination will be on the left<br>
         183 Lorraine Street
       </ol>
 
       <h6>Treasure Island Storage Red Hook is just a short drive from Flatbush Avenue</h6>
 
       <ol>
-        From Flatbush Ave
-
-        Turn onto 5th Ave
-
-        Make a right at the 2nd cross street onto Bergen St
-
-        Then turn left at the 1st cross street onto 4th Ave
-
-        Go onto 9th St by going right
-
-        Turn left onto Court St and make a right onto Lorraine St
-
+        From Flatbush Ave<br>
+        Turn onto 5th Ave<br>
+        Make a right at the 2nd cross street onto Bergen St<br>
+        Then turn left at the 1st cross street onto 4th Ave<br>
+        Go onto 9th St by going right<br>
+        Turn left onto Court St and make a right onto Lorraine St<br>
         183 Lorraine Street
       </ol>
     ",
@@ -160,14 +150,10 @@ _storages = [
       <h6>Treasure Island Storage Ozone Park is just 5-minute drive from Cross Bay Blvd.</h6>
 
       <ol>
-        From Cross Bay Blvd
-
-        Turn onto Conduit Blvd W
-
-        Merge onto N Conduit Ave
-
-        Turn right onto 78th St
-
+        From Cross Bay Blvd<br>
+        Turn onto Conduit Blvd W<br>
+        Merge onto N Conduit Ave<br>
+        Turn right onto 78th St<br>
         Then another right onto Liberty Ave
       </ol>
     ",
@@ -238,26 +224,19 @@ _storages = [
 
     directions: "
       <h6>Treasure Island Storage Jamaica is just a 5-minute drive from Jamaica Ave</h6>
-
       <ol>
-        From Jamaica Ave
-
-        Turn onto Merrick Blvd
-
-        Then make a left onto Brinkerhoff Ave
-
-        On 180th St turn left
-
+        From Jamaica Ave<br>
+        Turn onto Merrick Blvd<br>
+        Then make a left onto Brinkerhoff Ave<br>
+        On 180th St turn left<br>
         109-09 180th Street
+      </ol>
 
-        Treasure Island Storage Jamaica is a short drive from Hillside Avenue
-
-        From Hillside Avenue make a right onto 179th St
-
-        Turn right at the 2nd cross street onto Jamaica Ave and then a left onto 177th St
-
-        Go on to Liberty Ave by making a left and then turn right onto 180th St
-
+      <h6>Treasure Island Storage Jamaica is a short drive from Hillside Avenue</h6>
+      <ol>
+        From Hillside Avenue make a right onto 179th St<br>
+        Turn right at the 2nd cross street onto Jamaica Ave and then a left onto 177th St<br>
+        Go on to Liberty Ave by making a left and then turn right onto 180th St<br>
         Destination will be on the left
       </ol>
     ",
@@ -334,31 +313,42 @@ _storages = [
     directions: "
       <h6>From East via George Washington Bridge:</h6>
       <ol>
-        Take Route 80 West. Get off at 57B, Downtown Paterson Exit. Turn Right on Main Street (keep straight).
-
+        Take Route 80 West. Get off at 57B, Downtown Paterson Exit. Turn Right on Main Street (keep straight).<br>
         Turn left on Grand Street the Storage is about ¼-mile ahead. (Right on Prince Street).
       </ol>
 
       <h6>From West via Route 80:</h6>
       <ol>
-        Take Route 80 East. Get off at 57B, Downtown Paterson Exit. Follow signs for Downtown Paterson. Turn Right on Main Street (keep straight). Turn left on Grand Street the Storage is about ¼-mile ahead.
-
+        Take Route 80 East. Get off at 57B, Downtown Paterson Exit. Follow signs for Downtown Paterson.<br>
+        Turn Right on Main Street (keep straight).<br>
+        Turn left on Grand Street the Storage is about ¼-mile ahead.<br>
         (Right on Prince Street).
       </ol>
 
       <h6>From North via Garden State Parkway:</h6>
       <ol>
-        Take Garden State Parkway to Exit 159, Route 80 West. Take 80 West. Get off at 57B, Downtown Paterson Exit. Turn right on Main Street (keep straight). Turn left on Grand Street the Storage is about ¼-mile ahead. (Right on Prince Street).
+        Take Garden State Parkway to Exit 159, Route 80 West.<br>
+        Take 80 West.<br>
+        Get off at 57B, Downtown Paterson Exit.<br>
+        Turn right on Main Street (keep straight).<br>
+        Turn left on Grand Street the Storage is about ¼-mile ahead.<br>
+        (Right on Prince Street).
       </ol>
 
       <h6>From South via Garden State Parkway:</h6>
       <ol>
-        Take Garden State Parkway to Exit 155P. Follow Route 19 to Downtown Paterson Exit. Turn right on Main Street (Keep Straight). Turn left on Grand Street. The Storage is about ¼-mile ahead. (Right on Prince Street)
+        Take Garden State Parkway to Exit 155P.<br>
+        Follow Route 19 to Downtown Paterson Exit.<br>
+        Turn right on Main Street (Keep Straight).<br>
+        Turn left on Grand Street. The Storage is about ¼-mile ahead. (Right on Prince Street)
       </ol>
 
       <h6>Public Transportation:</h6>
       <ol>
-        Bus and train transportation is available from surrounding areas. NJ Transit buses stop in front of the College. For further information on bus service call the NJ Transit Toll Free Number 1-800- 772-2222. For train service call NJ Transit at (973) 762-5100 or (215) 569-3752.
+        Bus and train transportation is available from surrounding areas.<br>
+        NJ Transit buses stop in front of the College.<br>
+        For further information on bus service call the NJ Transit Toll Free Number 1-800- 772-2222.<br>
+        For train service call NJ Transit at (973) 762-5100 or (215) 569-3752.
       </ol>
     ",
 
@@ -422,12 +412,9 @@ _storages = [
     directions: "
       <h6>Treasure Island Storage Woodbridge is a short from US-1 S/U.S. 9 S</h6>
       <ol>
-        From US-1 S/U.S. 9 S
-
-        Take the NJ-35 exit
-
-        Turn left onto NJ-35 S/St George Ave
-
+        From US-1 S/U.S. 9 S<br>
+        Take the NJ-35 exit<br>
+        Turn left onto NJ-35 S/St George Ave<br>
         881 Saint George Avenue
       </ol>
     ",

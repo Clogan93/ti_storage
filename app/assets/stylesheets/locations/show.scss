@@ -45,6 +45,7 @@
 
     article#directions{
       @extend .default_markup;
+      ol{ margin-bottom: 20px; }
     }
     article:not(#storage_units){
       padding: 30px;
