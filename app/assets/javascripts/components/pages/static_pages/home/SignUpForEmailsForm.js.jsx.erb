@@ -59,7 +59,7 @@ const StaticPages_Home_SignUpForEmailsForm = React.createClass({
 
   },
 
-  renderSendButtonStatus(){
+  renderSendButton(){
     switch(this.state.sendButtonStatus){
       case 'sending':
         return <a className="button red sending">
@@ -100,11 +100,8 @@ const StaticPages_Home_SignUpForEmailsForm = React.createClass({
         </div>
       </label>
 
-      {this.renderSendButtonStatus()}
+      {this.renderSendButton()}
       {this.renderApiResponse()}
     </form>
   }
 });
-
-
-

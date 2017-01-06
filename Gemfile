@@ -11,12 +11,10 @@ gem 'sass-rails', '~> 5.0'
 # bootstrap's tooltips and popovers depend on tether for positioning:
 gem 'rails-assets-tether'
 gem 'bootstrap', '~> 4.0.0.alpha4'
-gem "font-awesome-rails"
+gem 'font-awesome-rails'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'inline_svg'
-
-# gem 'wicked' # maybe an okay solution for wizard form
 
 gem 'react-rails'
 gem 'sprockets'
@@ -27,6 +25,8 @@ gem 'turbolinks', '~> 5'
 gem 'dotenv-rails'
 
 gem 'savon', '~> 2.0'
+
+gem 'sitemap_generator'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.5.0.beta4'
