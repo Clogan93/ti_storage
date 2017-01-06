@@ -3,10 +3,10 @@
 class AdminMailer < ApplicationMailer
   def sign_up_for_emails_email(name, email)
     mail(
-      to: ['reservations@tistorage', 'sales@tistorage.com'],
-      subject: 'User wants to sign up for discount emails'
+      to: 'chase@marketmymymarket.com', # ['reservations@tistorage', 'sales@tistorage.com'],
+      subject: 'User has signed up to receive discounts'
     ) do |format|
-      format.text { render plain: "name: #{name}, email: #{email}" }
+      format.text { render plain: "#{name}, #{email} has signed up to receive discounts." }
     end
   end
 end
