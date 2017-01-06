@@ -30,7 +30,14 @@ footer, header, #breadcrumbs{
   }
 }
 
-a{ cursor: pointer; }
+a{
+  cursor: pointer;
+  &:focus{
+    outline: none;
+    color: white;
+    text-decoration: none;
+  }
+}
 ol, ul{
   padding-left: 0;
   margin-bottom: 0;
