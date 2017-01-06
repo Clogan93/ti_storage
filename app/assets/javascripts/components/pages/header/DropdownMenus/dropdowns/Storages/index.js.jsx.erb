@@ -7,20 +7,14 @@ const Header_DropdownMenus_dropdowns_Storages = React.createClass({
   getInitialState(){
     return {
       selectedCategoryIndex: 0, // open first category and storage by default
-      selectedStorageIndex: 0
+      selectedStorageIndex: null
     }
   },
 
   selectCategory(index){
     this.setState({
       selectedCategoryIndex: index,
-      selectedStorageIndex: 0
-    });
-  },
-
-  selectStorage(index){
-    this.setState({
-      selectedStorageIndex: index
+      selectedStorageIndex: null
     });
   },
 
@@ -42,14 +36,15 @@ const Header_DropdownMenus_dropdowns_Storages = React.createClass({
   renderStorageTitles(storages){
     const lis = storages.map((storage, index) =>
       <li key={index}
-        onMouseOver={() => this.selectStorage(index)}
+        onMouseOver={() => this.setState({ selectedStorageIndex: index })}
         className={this.state.selectedStorageIndex == index ? 'active' : ''}
       >
         <a href={storage.url}>{storage.title}</a>
       </li>
     );
 
-    return <ul className="storages">
+    // position it at the level of selected li.category
+    return <ul className="storages" style={{ top: 67 * this.state.selectedCategoryIndex }}>
       {lis}
     </ul>
   },
@@ -67,7 +62,7 @@ const Header_DropdownMenus_dropdowns_Storages = React.createClass({
       <nav className={'dropdown ' + (this.props.isOpen == true ? '' : 'invisible')}>
         {this.renderCategoryTitles()}
         {this.renderStorageTitles(storagesOfSelectedCategory)}
-        <Header_DropdownMenus_dropdowns_Storages_Storage storage={selectedStorage}/>
+        {selectedStorage ? <Header_DropdownMenus_dropdowns_Storages_Storage storage={selectedStorage}/> : null}
       </nav>
     );
   }
