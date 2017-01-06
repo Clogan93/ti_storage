@@ -17,7 +17,7 @@
     <h6>Office hours</h6>
 
     <% storage.office_hours.each do |hours| %>
-      <%= hours %><br>
+      <%= hours.gsub('Mon-Fri', 'M-F') %><br>
     <% end %>
   </div>
 </section>

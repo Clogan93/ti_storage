@@ -4,8 +4,6 @@
 # frozen_string_literal: true
 # :nodoc:
 class CheckoutController < ApplicationController
-  before_action { @header_navigation_is_hidden = true }
-
   def new
     session[:current_step] ||= 1
     reservation_params = session[:reservation_params]

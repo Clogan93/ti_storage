@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-
 brooklyn = Category.find_or_create_by({
   title: 'Brooklyn, NY',
   slug: 'brooklyn'
