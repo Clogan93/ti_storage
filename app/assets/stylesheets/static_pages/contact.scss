@@ -47,7 +47,6 @@ main#contact_page{
         padding-bottom: 20px;
         margin-top: 20px;
         a.button{
-          padding: 5px 20px;
           margin-right: 20px;
           color: white;
           background: $vermillion_color;
@@ -64,7 +63,7 @@ main#contact_page{
             font-size: 20px;
           }
         }
-        span{ font-style: oblique; }
+        div.required{ font-style: oblique; }
       }
     }
   }

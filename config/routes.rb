@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   post 'checkout/step_2'
 
   post 'emails/send_sign_up_for_emails_email'
+  post 'emails/send_contact_email'
 
   get 'search', to: 'search#index'
 

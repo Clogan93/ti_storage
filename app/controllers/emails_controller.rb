@@ -13,4 +13,21 @@ class EmailsController < ApplicationController
   rescue => message
     render json: message, status: 500
   end
+
+  def send_contact_email
+    if params[:is_current_customer] == 'false'
+      AdminMailer.new_customer_contacts_us_email(
+        params[:name], params[:email], params[:phone],
+        params[:message], params[:where_from_heard_about_us]
+      ).deliver_now
+    else
+      AdminMailer.old_customer_contacts_us_email(
+        params[:name], params[:email], params[:phone],
+        params[:message], params[:storage_used]
+      ).deliver_now
+    end
+    render nothing: true, status: 200
+  rescue => message
+    render json: message, status: 500
+  end
 end
