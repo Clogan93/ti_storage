@@ -1,0 +1,8 @@
+<table>
+  <% [:name, :email, :phone, :message, :storage_used].each do |title| %>
+    <tr>
+      <td><%= title.to_s %></td>
+      <td><%= @data[title] %></td>
+    </tr>
+  <% end %>
+</table>

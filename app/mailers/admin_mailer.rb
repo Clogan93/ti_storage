@@ -12,34 +12,26 @@ class AdminMailer < ApplicationMailer
     end
   end
 
-  def new_customer_contacts_us_email(name, email, phone, message, where_from_heard_about_us)
+  def new_customer_contacts_us_email(data)
+    @data = data
     mail(
       to: mail_to(['reservations@tistroage.com', 'sales@tistroage.com']),
       subject: 'New customer wants to contact you'
-    ) do |format|
-      format.text do
-        render plain: "
-          name: #{name}, email: #{email}, phone: #{phone},
-          heard about us: #{where_from_heard_about_us}
-        "
-      end
-    end
+    )
   end
 
-  def old_customer_contacts_us_email(name, email, phone, message, storage_used)
+  def old_customer_contacts_us_email(data)
+    @data = data
     mail(
       to: mail_to(['gt@ceqy.com']),
       subject: 'Old customer wants to contact you'
-    ) do |format|
-      format.text do
-        render plain: "name: #{name}, email: #{email}, phone: #{phone}"
-      end
-    end
+    )
   end
 
   private
-    # used for staging and development
-    def mail_to(default)
-      ENV['SEND_EMAILS_TO'] ? ENV['SEND_EMAILS_TO'] : default
-    end
+
+  # used for staging and development
+  def mail_to(default)
+    ENV['SEND_EMAILS_TO'] ? ENV['SEND_EMAILS_TO'] : default
+  end
 end

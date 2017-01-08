@@ -1,13 +1,6 @@
 # frozen_string_literal: true
 # TODO: Rubocop treats comment as constant?
 # Storages (we call them /locations occasionaly).
-# ___category vs area_slug:
-# > Storage.pluck(:category)
-# => ["Brooklyn, NY", "Queens, NY", "Queens, NY", "New Jersey", "New Jersey"]
-# > Storage.pluck(:area_slug)
-# => ["brooklyn", "queens", "queens", "new-jersey", "new-jersey"]
-#
-# TODO extract to Category with :title, :slug
 
 # frozen_string_literal: true
 class Storage < ApplicationRecord
