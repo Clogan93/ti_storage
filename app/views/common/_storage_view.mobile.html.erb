@@ -17,11 +17,11 @@
     <h6>Office hours</h6>
 
     <% storage.office_hours.each do |hours| %>
-      <%= hours %><br>
+      <%= hours.gsub('Mon-Fri', 'M-F') %><br>
     <% end %>
   </div>
 </section>
 
-<a class="arrow" href="<%= seo_storage_path(storage) %>">
-  <%= image_tag '_common/arrow.svg' %>
+<a class="button blue" href="<%= seo_storage_path(storage) %>">
+  View Units
 </a>

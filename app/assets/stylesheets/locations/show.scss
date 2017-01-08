@@ -45,6 +45,7 @@
 
     article#directions{
       @extend .default_markup;
+      ol{ margin-bottom: 20px; }
     }
     article:not(#storage_units){
       padding: 30px;
@@ -94,7 +95,7 @@
   }
 
   section.storage_view-mobile{
-    a.arrow{ display: none; }
+    a.button{ display: none; }
   }
 
   @media (max-width: $lg){

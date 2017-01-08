@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-
 brooklyn = Category.find_or_create_by({
   title: 'Brooklyn, NY',
   slug: 'brooklyn'
@@ -53,18 +52,27 @@ _storages = [
     ",
 
     directions: "
+      <h6>Treasure Island Storage Red Hook is just 5 minutes from the Brooklyn-Queen Expressway</h6>
+
       <ol>
-        <li>Take Steve Flanders Square toward Broadway/Canyon of Heroes</li>
-        <li>Continue onto Murray Street</li>
-        <li>Turn left onto West St</li>
-        <li>Take the Battery Tunnel/Brooklyn ramp on the left to Interstate 278</li>
-        <li>Continue onto I-478</li>
-        <li>Keep left to stay on I-478</li>
-        <li>Take exit 26 to merge onto Hamilton Ave</li>
-        <li>Turn right onto Clinton St</li>
-        <li>Turn left onto Bush St</li>
+        From the Brooklyn- Queens Expressway/Staten Island<br>
+        Drive to exit 26 to merge onto Hamilton Ave toward Battery Tunnel/Manhattan<br>
+        Turn right onto Clinton St and turn left onto Lorraine St<br>
+        Destination will be on the left<br>
+        183 Lorraine Street
       </ol>
-      Destination will be on the right
+
+      <h6>Treasure Island Storage Red Hook is just a short drive from Flatbush Avenue</h6>
+
+      <ol>
+        From Flatbush Ave<br>
+        Turn onto 5th Ave<br>
+        Make a right at the 2nd cross street onto Bergen St<br>
+        Then turn left at the 1st cross street onto 4th Ave<br>
+        Go onto 9th St by going right<br>
+        Turn left onto Court St and make a right onto Lorraine St<br>
+        183 Lorraine Street
+      </ol>
     ",
 
     features: [
@@ -139,18 +147,15 @@ _storages = [
     ",
 
     directions: "
+      <h6>Treasure Island Storage Ozone Park is just 5-minute drive from Cross Bay Blvd.</h6>
+
       <ol>
-        <li>Merge onto I-278 towards Belt Pkwy/Shore Pkwy</li>
-        <li>Keep left at the fork to continue on Belt Pkwy/Shore Pkwy</li>
-        <li>Take exit 17 for Cross Bay Blvd toward Woodhaven/Rockaways</li>
-        <li>Merge onto Shore Pkwy</li>
-        <li>Turn left onto Cross Bay Blvd</li>
-        <li>Slight right onto the ramp to Conduit Blvd W</li>
-        <li>Merge onto N Conduit Ave</li>
-        <li>Keep right to stay on N Conduit Ave</li>
-        <li>Turn right onto 78th St</li>
+        From Cross Bay Blvd<br>
+        Turn onto Conduit Blvd W<br>
+        Merge onto N Conduit Ave<br>
+        Turn right onto 78th St<br>
+        Then another right onto Liberty Ave
       </ol>
-      Destination will be on the right
     ",
 
     features: [
@@ -218,33 +223,22 @@ _storages = [
     ",
 
     directions: "
+      <h6>Treasure Island Storage Jamaica is just a 5-minute drive from Jamaica Ave</h6>
       <ol>
-        <li>Take the FDR Drive toward I-495/E 34 St/Midtown Tun</li>
-        <li>Take exit 8</li>
-        <li>Merge onto FDR Drive/Fdr Drive Service Rd E</li>
-        <li>Keep right to stay on FDR Drive/Fdr Drive Service Rd E</li>
-        <li>Turn left onto E 35th St</li>
-        <li>Turn right onto Tunnel Entrance St</li>
-        <li>Turn right onto the ramp to I-495 E</li>
-        <li>Continue onto I-495 E</li>
-        <li>Continue onto Queens Midtown Tunnel</li>
-        <li>Continue onto I-495 E/Queens Midtown Tunnel</li>
-        <li>Keep left to stay on I-495 E</li>
-        <li>Keep left to stay on I-495 E</li>
-        <li>Take exit 22A-E toward Interstate 678/Grand Central Parkway/Van Wyck Expwy</li>
-        <li>Keep right at the fork, follow signs for Grand Central Pkwy/Eastbound and merge onto Grand Central Pkwy</li>
-        <li>Take exit 18 for Utopia Pkwy</li>
-        <li>Merge onto Grand Central Pkwy</li>
-        <li>Turn left to stay on Grand Central Pkwy</li>
-        <li>Turn right at the 1st cross street onto Midland Pkwy</li>
-        <li>Turn right onto Hillside Avenue</li>
-        <li>Turn left onto 180th St</li>
-        <li>Turn right at the 3rd cross street onto 93rd Ave</li>
-        <li>Turn left onto 177th St</li>
-        <li>Turn left at the 1st cross street onto Liberty Ave</li>
-        <li>Turn right onto 180th St</li>
+        From Jamaica Ave<br>
+        Turn onto Merrick Blvd<br>
+        Then make a left onto Brinkerhoff Ave<br>
+        On 180th St turn left<br>
+        109-09 180th Street
       </ol>
-      Destination will be on the left
+
+      <h6>Treasure Island Storage Jamaica is a short drive from Hillside Avenue</h6>
+      <ol>
+        From Hillside Avenue make a right onto 179th St<br>
+        Turn right at the 2nd cross street onto Jamaica Ave and then a left onto 177th St<br>
+        Go on to Liberty Ave by making a left and then turn right onto 180th St<br>
+        Destination will be on the left
+      </ol>
     ",
 
     features: [
@@ -316,25 +310,47 @@ _storages = [
       <p>Getting to our facility in Paterson is easy, it’s located on Grand Street, directly across from the Passaic County Courthouse. Our friendly storage managers and staff have the expertise to guide you through the process, from packing your items, to renting a unit, moving your belongings, or showing you the proper way to lock your storage unit so that your belongings are always kept safe and secure.</p>
     ",
 
-    directions: "<ol>
-      <li>Take I-78 W/Holland Tunnel Towards NJ</li>
-      <li>Keep <b>left</b> at the fork to continue on NJ-139 W</li>
-      <li>Keep <b>left</b> to stay on NJ-139 W</li>
-      <li>Take the US-1 N/US-9 N exit</li>
-      <li>Keep right to continue toward US-1 N/U.S. 9 N/Tonnelle Ave</li>
-      <li>Turn right onto US-1 N/U.S. 9 N/Tonnelle Ave</li>
-      <li>Take the NJ-3 W exit on the <b>left</b> toward NJ-495 E/Clifton/Lincoln Tunnel</li>
-      <li>Continue onto NJ-3 W</li>
-      <li>Keep <b>left</b> at the fork and merge onto NJ-3 W</li>
-      <li>Continue onto NJ-3 W</li>
-      <li>Slight right onto the Garden State Pkwy N ramp</li>
-      <li>Merge onto Garden State Pkwy</li>
-      <li>Take exit 155 A on the <b>left</b> for NJ-19 toward I-80/Paterson</li>
-      <li>Continue onto NJ-19 N</li>
-      <li>Turn right onto Marshall St</li>
-      <li>Turn <b>left</b> onto Grand St</li>
-      <li>Turn right onto Prince St'</li>
-    </ol>",
+    directions: "
+      <h6>From East via George Washington Bridge:</h6>
+      <ol>
+        Take Route 80 West. Get off at 57B, Downtown Paterson Exit. Turn Right on Main Street (keep straight).<br>
+        Turn left on Grand Street the Storage is about ¼-mile ahead. (Right on Prince Street).
+      </ol>
+
+      <h6>From West via Route 80:</h6>
+      <ol>
+        Take Route 80 East. Get off at 57B, Downtown Paterson Exit. Follow signs for Downtown Paterson.<br>
+        Turn Right on Main Street (keep straight).<br>
+        Turn left on Grand Street the Storage is about ¼-mile ahead.<br>
+        (Right on Prince Street).
+      </ol>
+
+      <h6>From North via Garden State Parkway:</h6>
+      <ol>
+        Take Garden State Parkway to Exit 159, Route 80 West.<br>
+        Take 80 West.<br>
+        Get off at 57B, Downtown Paterson Exit.<br>
+        Turn right on Main Street (keep straight).<br>
+        Turn left on Grand Street the Storage is about ¼-mile ahead.<br>
+        (Right on Prince Street).
+      </ol>
+
+      <h6>From South via Garden State Parkway:</h6>
+      <ol>
+        Take Garden State Parkway to Exit 155P.<br>
+        Follow Route 19 to Downtown Paterson Exit.<br>
+        Turn right on Main Street (Keep Straight).<br>
+        Turn left on Grand Street. The Storage is about ¼-mile ahead. (Right on Prince Street)
+      </ol>
+
+      <h6>Public Transportation:</h6>
+      <ol>
+        Bus and train transportation is available from surrounding areas.<br>
+        NJ Transit buses stop in front of the College.<br>
+        For further information on bus service call the NJ Transit Toll Free Number 1-800- 772-2222.<br>
+        For train service call NJ Transit at (973) 762-5100 or (215) 569-3752.
+      </ol>
+    ",
 
     features: [
       'Move-in Trucks',
@@ -393,22 +409,14 @@ _storages = [
       <p>Woodbridge, New Jersey has a large amount of activities available to its residents. Whether it is going shopping at the Brunswick Square Mall, playing at the Louis Brown Athletic Center, or taking the family out to the Keansburg Amusement Park, you should be able to enjoy what’s around you without having the safety of your items linger at the back of your head. Our state-of-the-art security system will keep your items as safe as they were kept in your own Woodbridge home, and our climate controlled storage units make sure that your more sensitive items affected by weather don’t get damaged by the changing seasons. If at any time you feel the need to check up on your stored items, our Woodbridge storage facility is a stone’s throw away, and you’ll have access to your items</p>
     ",
 
-    directions: "<ol>
-      <li>Take the I-95 toward Turnpike S</li>
-        <li>Keep left to continue toward I-95 S</li>
-        <li>Keep left at the fork and merge onto I-95 S</li>
-        <li>Take exit 11 for U.S. 9 toward Woodbridge</li>
-        <li>Keep left at the fork to continue toward King Georges Rd</li>
-        <li>Keep right at the fork, follow signs for US-1 N/US-9 N/NJ-440 N/Woodbridge and merge onto King Georges Rd</li>
-        <li>Continue onto NJ-184 E/W Pond Rd</li>
-        <li>Turn right to merge onto U.S. 9 N</li>
-        <li>Continue onto U.S. 9 N</li>
-        <li>Slight right onto US-1 N/U.S. 9 N</li>
-        <li>Take first right</li>
-        <li>Take first right</li>
-        <li>Take first left</li>
+    directions: "
+      <h6>Treasure Island Storage Woodbridge is a short from US-1 S/U.S. 9 S</h6>
+      <ol>
+        From US-1 S/U.S. 9 S<br>
+        Take the NJ-35 exit<br>
+        Turn left onto NJ-35 S/St George Ave<br>
+        881 Saint George Avenue
       </ol>
-      Destination will be on the left
     ",
 
     features: [

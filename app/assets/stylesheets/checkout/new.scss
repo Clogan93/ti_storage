@@ -69,3 +69,9 @@ main#checkout_new_page{
     }
   }
 }
+
+.checkout_controller{
+  header.desktop{
+    div, a.my_account{ display: none; }
+  }
+}
