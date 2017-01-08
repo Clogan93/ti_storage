@@ -5,7 +5,7 @@ main#contact_page{
     flex-wrap: wrap;
     border-top: 5px solid $vermillion_color;
     border-bottom: 5px solid $vermillion_color;
-    div.left_image{
+    section.left_image{
       width: 50%;
       background: url(image-path('static_pages/contact/left')) no-repeat;
       background-size: cover;
@@ -80,11 +80,12 @@ main#contact_page{
 // responsive
 main#contact_page{
   @media (max-width: $md){
-    section.contact_us div.phone{
-      padding-right: 10px; padding-left: 10px;
-    }
-    section.contact_form form.right_form{
-      width: 100%;
+    section.contact_form{
+      div[data-react-class=StaticPages_Contact_ContactForm]{ width: 100%; }
+      section.left_image{
+        width: 100%;
+        height: 200px;
+      }
     }
   }
 }
