@@ -15,10 +15,10 @@
   <section class="monthly_price">
     <div class="price">
       <span class="previous">
-        <%= number_to_currency(storage_unit.data.push_rate) %>
+        <%= number_to_currency(storage_unit.data.push_rate, precision: 0) %>
       </span>
       <span class="current">
-        <%= number_to_currency(storage_unit.data.rent_rate) %>
+        <%= number_to_currency(storage_unit.data.rent_rate, precision: 0) %>
       </span>
     </div>
 

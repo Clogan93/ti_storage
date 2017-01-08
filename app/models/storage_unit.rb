@@ -3,24 +3,18 @@
 class StorageUnit < ApplicationRecord
   belongs_to :storage, foreign_key: :site_id, primary_key: :site_id
 
+  has_many :reservations, foreign_key: :unit_id, primary_key: :unit_id
+
+  scope :available, -> { where('total_units_in_available_status > 0') }
+
   def data
     @data ||= JSON.parse(self[:data], object_class: OpenStruct)
   end
 
-  def width
-    data.width.to_i
-  end
-
-  def height
-    data.height.to_i
-  end
-
-  def depth
-    data.depth.to_i
-  end
-
   def dimensions
-    [depth, width, height].join("x")
+    @dimensions = [width, depth]
+    @dimensions << height if height.positive?
+    @dimensions.join("x")
   end
 
   def features

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170103000625) do
+ActiveRecord::Schema.define(version: 20170106063139) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,14 +34,23 @@ ActiveRecord::Schema.define(version: 20170103000625) do
     t.string   "coupon_code"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.integer  "unit_id"
   end
 
   create_table "storage_units", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                                              null: false
+    t.datetime "updated_at",                                              null: false
     t.integer  "site_id"
     t.integer  "unit_id"
     t.jsonb    "data"
+    t.integer  "version"
+    t.decimal  "rent_rate",                       precision: 7, scale: 2
+    t.decimal  "push_rate",                       precision: 7, scale: 2
+    t.integer  "width"
+    t.integer  "depth"
+    t.integer  "height"
+    t.decimal  "square_feet",                     precision: 7, scale: 2
+    t.integer  "total_units_in_available_status"
   end
 
   create_table "storages", force: :cascade do |t|

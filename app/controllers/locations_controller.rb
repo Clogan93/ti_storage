@@ -12,5 +12,6 @@ class LocationsController < ApplicationController
   def show
     @category = Category.find_by(slug: params[:category_slug])
     @storage = @all_storages.find_by(slug: params[:storage_slug])
+    @storage_units = @storage.storage_units.available.order(rent_rate: :asc)
   end
 end
