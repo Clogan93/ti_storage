@@ -14,9 +14,14 @@ Rails.application.routes.draw do
     end
   end
 
-  get 'checkout', to: 'checkout#new'
-  post 'checkout/step_1'
-  post 'checkout/step_2'
+  resource :reservation, only: [:show, :create, :update] do
+    resource :checkout, only: [:show, :update]
+    resource :lease, only: [:show]
+  end
+
+  # get 'checkout', to: 'checkout#new'
+  # post 'checkout/step_1'
+  # post 'checkout/step_2'
 
   post 'emails/send_sign_up_for_emails_email'
 

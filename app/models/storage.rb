@@ -27,6 +27,7 @@ class Storage < ApplicationRecord
   belongs_to :category
 
   has_many :storage_units, foreign_key: :site_id, primary_key: :site_id
+  has_many :reservations, through: :storage_units
 
   def image_src
     ActionController::Base.helpers.asset_path("_db/storages/#{slug}.jpg")

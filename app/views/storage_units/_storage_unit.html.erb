@@ -1,4 +1,3 @@
-<% return if storage_unit.data.total_units_in_available_status.to_i < 1 %>
 <div class="row table_row">
   <div class="col-md-2 size">
     <div class="word_and_number">
@@ -20,15 +19,18 @@
   <div class="col-md-2 unit_monthly_price">
     <div class="text">Regular Price</div>
     <div class="price">
-      <%= number_to_currency(storage_unit.data.push_rate) %>
+      <%= number_to_currency(storage_unit.data.push_rate, precision: 0) %>
       <div class="line_through"></div>
     </div>
   </div>
   <div class="col-md-2 unit_promotion">
     <div class="black">1st Month Free</div>
-    <div class="red"><%= number_to_currency(storage_unit.data.rent_rate) %>/mo</div>
+    <div class="red"><%= number_to_currency(storage_unit.data.rent_rate, precision: 0) %>/mo</div>
   </div>
   <div class="col-md-3 continue">
-    <a href="<%= checkout_path %>" class="button blue">Continue</a>
+    <%= form_for(:reservation, url: [:reservation]) do |f| %>
+      <%= hidden_field_tag(:unit_id, storage_unit.unit_id) %>
+      <%= f.submit("Continue", class: "button blue") %>
+    <% end %>
   </div>
 </div>
