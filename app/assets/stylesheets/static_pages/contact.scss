@@ -19,14 +19,19 @@ main#contact_page{
       fieldset{
         max-width: 400px;
         margin: 0 auto;
+        .error{
+          color: #fd9a99; // bright red
+        }
       }
       fieldset.common{
-        input.name, input.email, input.phone{
-          width: 100%;
-          display: block;
-          margin: 0 auto;
+        div.input_and_error{
           margin-bottom: 20px;
-          padding: 5px;
+          input{
+            width: 100%;
+            display: block;
+            margin: 0 auto;
+            padding: 5px;
+          }
         }
       }
       fieldset.is_current_customer_yes,
@@ -39,18 +44,20 @@ main#contact_page{
         label.message{
           margin-top: 20px;
           width: 100%;
-          padding-bottom: 10px;
-          textarea{ width: 100%; }
+          textarea{
+            width: 100%;
+            margin-top: 7px;
+          }
         }
       }
-      fieldset.send_and_required_field{
+      fieldset.send{
         padding-bottom: 20px;
         margin-top: 20px;
         a.button{
-          margin-right: 20px;
           color: white;
           background: $vermillion_color;
           border: none;
+          width: 74px; // so that it doesn't shrink when .sending
 
           &.disabled{
             background: black;

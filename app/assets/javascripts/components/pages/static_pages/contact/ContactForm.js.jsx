@@ -2,10 +2,11 @@ const CommonFieldset = {
   changeCurrentCustomer(event){
     this.setState({
       isCurrentCustomer: event.target.value == 'Yes' ? true : false
-    }, this.validate);
+    }, this.state.didTryToSendEmail ? this.validate : null);
   },
 
   _renderIsCurrentCustomerRadio(value){
+    // (name="any" is needed for it to function as a radio)
     return <label className="custom-control custom-radio">
       <input name="isCurrentCustomer" type="radio" className="custom-control-input" value={value} onChange={this.changeCurrentCustomer}/>
       <span className="custom-control-indicator"></span>
@@ -13,16 +14,30 @@ const CommonFieldset = {
     </label>
   },
 
+  _renderInput(type, ref){
+    return <div className={'input_and_error ' + ref}>
+      <input type={type} ref={ref} placeholder={ref} onChange={this.state.didTryToSendEmail ? this.validate : null}/>
+      {this.__renderError(ref)}
+    </div>
+  },
+
+  __renderError(ref){
+    if (this.state.didTryToSendEmail){
+      return <div className="error">{ this.state.errors[ref]}</div>
+    }
+  },
+
   renderCommonFieldset(){
     return <fieldset className="common">
-      <input type="text" ref="name" placeholder="Name*" className="name" onChange={this.validate}/>
-      <input type="email" ref="email" placeholder="Email*" className="email" onChange={this.validate}/>
-      <input type="text" ref="phone" placeholder="Phone Number" className="phone" onChange={this.validate}/>
+      {this._renderInput('text', 'name')}
+      {this._renderInput('email', 'email')}
+      {this._renderInput('text', 'phone')}
 
       <div className="is_current_customer">
         <div>Are you a current customer? *</div>
         {this._renderIsCurrentCustomerRadio('Yes')}
         {this._renderIsCurrentCustomerRadio('No')}
+        {this.__renderError('isCurrentCustomer')}
       </div>
     </fieldset>
   }
@@ -87,7 +102,7 @@ const SendButton = {
       case 'active':
         return <a className="button blue active" onClick={this.sendEmail}>Send</a>
       case 'disabled':
-        return  <a className="button blue disabled">Send</a>
+        return  <a className="button blue disabled" onClick={this.vainlyTryToSendEmail}>Send</a>
     }
   },
 
@@ -100,9 +115,8 @@ const SendButton = {
 
   renderSendFieldset(){
     return(
-      <fieldset className="send_and_required_field">
+      <fieldset className="send">
         {this._renderSendButton()}
-        <div className="required">* Required field</div>
         {this._renderApiResponse()}
       </fieldset>
     )
@@ -119,11 +133,13 @@ const StaticPages_Contact_ContactForm = React.createClass({
       errors: {},
       sendButtonStatus: 'disabled', // 'active', 'sending'
       apiResponse: null,
-      isCurrentCustomer: null // true/false
+      isCurrentCustomer: null, // true/false
+      didTryToSendEmail: false
     }
   },
 
   validate(){
+    console.log('validates')
     const errors = {};
 
     if (this.refs.name.value.length < 2){
@@ -148,9 +164,12 @@ const StaticPages_Contact_ContactForm = React.createClass({
     }
   },
 
-  sendEmail(){
-    if (!this.validate()) { return };
+  vainlyTryToSendEmail(){
+    this.setState({ didTryToSendEmail: true });
+    this.validate();
+  },
 
+  sendEmail(){
     this.setState({ sendButtonStatus: 'sending' });
 
     const isCurrentCustomer = this.state.isCurrentCustomer;
