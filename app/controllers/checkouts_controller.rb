@@ -2,8 +2,8 @@
 # :nodoc:
 class CheckoutsController < ApplicationController
   def update
-    current_reservation.assign_attributes(checkout_params)
-    if current_reservation.save(context: :checkout)
+    request = Reservationist::Pay.new(request_attributes).call
+    if request
       redirect_to([:reservation, :lease])
     else
       render(:show)
@@ -12,7 +12,17 @@ class CheckoutsController < ApplicationController
 
   private
 
-  def checkout_params
-    params.require(:reservation).permit(:card_name, :card_number, :coupon_code)
+  def request_attributes
+    {
+      reservation: current_reservation,
+      payment_params: payment_params
+    }
+  end
+
+  def payment_params
+    params.require(:payment).permit(
+      :card_holder_name, :card_number,
+      :expire_month, :expire_year, :cvv2, :postal_code
+    )
   end
 end

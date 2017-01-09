@@ -75,12 +75,22 @@
           </section>
 
           <section class="general_client_info">
-            <%= f.text_field :first_name, placeholder: "First Name", class: "form-control" %>
-            <%= f.text_field :last_name, placeholder: "Last Name", class: "form-control" %>
-            <%= f.text_field :email, placeholder: "Email Address", class: "form-control" %>
-            <%= f.text_field :phone, placeholder: "Phone Number", class: "form-control" %>
+            <%= fields_for :account, current_account do |c| %>
+            <%= c.text_field :first_name, placeholder: "First Name", class: "form-control" %>
+            <%= c.text_field :last_name, placeholder: "Last Name", class: "form-control" %>
+            <%= c.text_field :email, placeholder: "Email Address", class: "form-control" %>
+            <% end %>
+            <%= fields_for :phone, current_phone do |phone| %>
+            <%= phone.text_field :phone, placeholder: "Phone Number", class: "form-control" %>
+            <% end %>
+            <%= fields_for :address, current_address do |address| %>
+            <%= address.text_field :address_1, placeholder: "Address 1", class: "form-control" %>
+            <%= address.text_field :address_2, placeholder: "Address 2", class: "form-control" %>
+            <%= address.text_field :city, placeholder: "City", class: "form-control" %>
+            <%= address.text_field :state, placeholder: "State", class: "form-control" %>
+            <%= address.text_field :postal_code, placeholder: "Postal Code", class: "form-control" %>
+            <% end %>
             <%= f.date_field :move_in_date, placeholder: "Move-In Date", class: "form-control" %>
-
             <%= f.submit "Continue", class: 'button red' %>
           </section>
 
@@ -90,12 +100,6 @@
               <span class="custom-control-indicator"></span>
               <span class="custom-control-description">Need help moving?</span>
             </label>
-
-            <a class="change_something">What are Moving Services?</a>
-
-            <div class="footnote">
-              *Storage units will be held for 14 days after lorem ipsum unem placeholder
-            </div>
           </section>
         <% end %>
       </section>

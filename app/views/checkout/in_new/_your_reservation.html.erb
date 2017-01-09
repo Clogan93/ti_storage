@@ -1,5 +1,5 @@
-<% storage = current_reservation.storage %>
-<% storage_unit = current_reservation.storage_unit %>
+<% storage_unit = current_storage_unit %>
+<% storage = current_storage_unit.storage %>
 <aside class="your_reservation block">
   <h5 class="block_heading">Your Reservation</h5>
 
@@ -16,7 +16,7 @@
           <%= storage.phone %><br/>
           <%= storage.office_hours.join("<br/>").html_safe %>
         </div>
-        <a class="change_something">Change Location</a>
+        <%= link_to('Change Location', [:locations], class: 'change_something') %>
       </div>
     </div>
   </section>

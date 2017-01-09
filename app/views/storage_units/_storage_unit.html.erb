@@ -28,9 +28,6 @@
     <div class="red"><%= number_to_currency(storage_unit.data.rent_rate, precision: 0) %>/mo</div>
   </div>
   <div class="col-md-3 continue">
-    <%= form_for(:reservation, url: [:reservation]) do |f| %>
-      <%= hidden_field_tag(:unit_id, storage_unit.unit_id) %>
-      <%= f.submit("Continue", class: "button blue") %>
-    <% end %>
+    <%= button_to("Continue", [:reserve, storage_unit], class: "button blue") %>
   </div>
 </div>

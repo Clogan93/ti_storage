@@ -5,8 +5,6 @@
 # columns
 # link_to_google_reviews: seeded manually,
 # because supposedly it can't be generated from CID (?)
-
-# frozen_string_literal: true
 class Storage < ApplicationRecord
   validates_presence_of :title, :phone, :slug,
     :address, :area, :zip_code, :coordinates,
@@ -34,7 +32,12 @@ class Storage < ApplicationRecord
     '/' + category.slug + '/' + slug
   end
 
-  # (because not enough info on units yet)
+  def link_to_google_maps
+    "https://www.google.com/maps/place/" +
+      coordinates[0].to_s + "," +
+      coordinates[1].to_s
+  end
+
   def min_unit_price
     case title
     when 'Jamaica', 'Ozone Park', 'Paterson'
@@ -44,12 +47,6 @@ class Storage < ApplicationRecord
     when 'Woodbridge'
       39
     end
-  end
-
-  def link_to_google_maps
-    "https://www.google.com/maps/place/" +
-      coordinates[0].to_s + "," +
-      coordinates[1].to_s
   end
 
   # http://stackoverflow.com/a/9649359/3192470
@@ -69,5 +66,9 @@ class Storage < ApplicationRecord
     @data ||= JSON.parse(self[:data], object_class: OpenStruct)
   rescue
     nil
+  end
+
+  def email
+    "#{slug.delete('-')}@tistorage.com"
   end
 end

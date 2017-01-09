@@ -9,6 +9,8 @@
         BUNDLE_JOBS: 8
         BUNDLE_PATH: /bundle
         POSTGRES_USER: postgres
+        EMAIL_USER_NAME: mmm@tistorage.com
+        EMAIL_PASSWORD: ChaseMMM2017!
       depends_on:
         - db
       ports:

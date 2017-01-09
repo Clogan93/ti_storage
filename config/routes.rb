@@ -14,6 +14,12 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :storage_units, only: [] do
+    member do
+      post 'reserve'
+    end
+  end
+
   resource :reservation, only: [:show, :create, :update] do
     resource :checkout, only: [:show, :update]
     resource :lease, only: [:show]

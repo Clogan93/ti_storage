@@ -10,15 +10,50 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170106063139) do
+ActiveRecord::Schema.define(version: 20170109060601) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "citext"
 
+  create_table "accounts", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "phone"
+    t.integer  "account_id"
+    t.integer  "contact_id"
+  end
+
+  create_table "addresses", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "address_id"
+    t.integer  "contact_id"
+    t.jsonb    "data"
+  end
+
   create_table "categories", force: :cascade do |t|
     t.string "title"
     t.string "slug"
+  end
+
+  create_table "payments", force: :cascade do |t|
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "reservation_id"
+    t.integer  "transaction_id"
+    t.jsonb    "data"
+  end
+
+  create_table "phones", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "phone_id"
+    t.integer  "contact_id"
+    t.jsonb    "data"
   end
 
   create_table "reservations", force: :cascade do |t|
@@ -32,9 +67,15 @@ ActiveRecord::Schema.define(version: 20170106063139) do
     t.string   "card_number"
     t.date     "card_expiry_date"
     t.string   "coupon_code"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
     t.integer  "unit_id"
+    t.integer  "site_id"
+    t.integer  "account_id"
+    t.integer  "version"
+    t.decimal  "price",            precision: 7, scale: 2
+    t.integer  "quote_id"
+    t.integer  "rental_id"
   end
 
   create_table "storage_units", force: :cascade do |t|

@@ -36,19 +36,20 @@
 
         <section class="enter_below">
           <h4>Enter Your Payment information below</h4>
-          <p>Placeholder Safe money transfer with your bank acount. Visa, Master, Discover, Amex, JCB.</p>
+          <p>Safe money transfer with your bank acount. Visa, Master, Discover, Amex, JCB.</p>
         </section>
 
         <%= form_for current_reservation, url: [:reservation, :checkout] do |f| %>
-          <%= f.text_field :card_name, placeholder: "Name On Card", class: "form-control" %>
-          <%= f.text_field :card_number, placeholder: "1111 - 11111 - 1111 - 0000", class: "form-control" %>
-
+          <%= fields_for(:payment, current_payment) do |p| %>
+          <%= p.text_field :card_holder_name, placeholder: "Name", class: "form-control" %>
+          <%= p.text_field :card_number, placeholder: "Number", class: "form-control" %>
           <div class="date_and_cvv">
-            <%= f.date_field :card_expiry_date, placeholder: "Move-In Date", class: "form-control" %>
-
-            <%= f.text_field :card_cvv, placeholder: "CVV CODE", class: "form-control" %>
+            <%= p.select :expire_month, card_month_options, {}, { class: "form-control" } %>
+            <%= p.select :expire_year, card_year_options, {}, { class: "form-control" } %>
+            <%= p.text_field :cvv2, placeholder: "CVV", class: "form-control" %>
           </div>
-
+          <%= p.text_field :postal_code, placeholder: "Billing Postal Code", class: "form-control" %>
+          <% end %>
           <%= f.text_field :coupon_code, placeholder: "Coupon Code", class: "form-control" %>
 
           <%= f.submit "Continue", class: 'button red' %>
