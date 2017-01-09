@@ -30,11 +30,11 @@ reset:
 	make sync
 
 heroku_reset:
-	heroku pg:reset DATABASE_URL --app desolate-fortress-66664-pr-231 --confirm desolate-fortress-66664-pr-231
-	heroku run rake db:migrate --app desolate-fortress-66664-pr-231
-	heroku run rake db:seed --app desolate-fortress-66664-pr-231
-	heroku run bundle exec rails centershift:units:sync --app desolate-fortress-66664-pr-231
-	heroku run bundle exec rails centershift:units:sync --app desolate-fortress-66664-pr-231
+	heroku pg:reset DATABASE_URL --app desolate-fortress-66664 --confirm desolate-fortress-66664
+	heroku run rake db:migrate --app desolate-fortress-66664
+	heroku run rake db:seed --app desolate-fortress-66664
+	heroku run bundle exec rails centershift:units:sync --app desolate-fortress-66664
+	heroku run bundle exec rails centershift:units:sync --app desolate-fortress-66664
 
 routes:
 	docker-compose run app bundle exec rake routes
