@@ -3,7 +3,8 @@
 # Storages (we call them /locations occasionaly).
 
 # columns
-# link_to_google_reviews: seeded manually, because supposedly it can't generated from CID (?)
+# link_to_google_reviews: seeded manually,
+# because supposedly it can't be generated from CID (?)
 
 # frozen_string_literal: true
 class Storage < ApplicationRecord
