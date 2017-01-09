@@ -2,7 +2,7 @@ const CommonFieldset = {
   changeCurrentCustomer(event){
     this.setState({
       isCurrentCustomer: event.target.value == 'Yes' ? true : false
-    }, this.state.didTryToSendEmail ? this.validate : null);
+    }, this.validate);
   },
 
   _renderIsCurrentCustomerRadio(value){
@@ -14,9 +14,9 @@ const CommonFieldset = {
     </label>
   },
 
-  _renderInput(type, ref){
+  _renderInput(ref, type, placeholder){
     return <div className={'input_and_error ' + ref}>
-      <input type={type} ref={ref} placeholder={ref} onChange={this.state.didTryToSendEmail ? this.validate : null}/>
+      <input type={type} ref={ref} placeholder={placeholder} onChange={this.validate}/>
       {this.__renderError(ref)}
     </div>
   },
@@ -29,12 +29,12 @@ const CommonFieldset = {
 
   renderCommonFieldset(){
     return <fieldset className="common">
-      {this._renderInput('text', 'name')}
-      {this._renderInput('email', 'email')}
-      {this._renderInput('text', 'phone')}
+      {this._renderInput('name', 'text', 'Your Name')}
+      {this._renderInput('email', 'email', 'Your E-mail')}
+      {this._renderInput('phone', 'text', 'Your Phone #')}
 
       <div className="is_current_customer">
-        <div>Are you a current customer? *</div>
+        <div>Are you a current customer?</div>
         {this._renderIsCurrentCustomerRadio('Yes')}
         {this._renderIsCurrentCustomerRadio('No')}
         {this.__renderError('isCurrentCustomer')}
