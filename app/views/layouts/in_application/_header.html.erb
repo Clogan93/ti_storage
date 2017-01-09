@@ -1,37 +1,25 @@
 <header class="desktop hidden-md-down">
-  <%# 'invisible' if @header_navigation_is_hidden %>
-  <section class="sup_header">
-    <section class="links">
-      <a href="">Email Us</a>
-      <a href="<%= commercial_storage_path %>">Commercial Storage</a>
-      <a href="">Residential Storage</a>
-    </section>
+  <a href="<%= root_path %>" class="logo">
+    <%= image_tag('layouts/header/logo-header.png') %>
+  </a>
 
-    <%= render(partial: 'common/social_icons') %>
-  </section>
+  <div class="phone">
+    <%= image_tag '_common/phone.png' %>
+    <span>646-846-9449</span>
+  </div>
 
-  <section class="main_header">
-    <a href="<%= root_path %>" class="logo">
-      <%= image_tag('layouts/header/logo-header.png') %>
-    </a>
+  <%= react_component('Header_DropdownMenus', {
+    storages: @all_storages,
+    categories: @all_categories
+  }) %>
 
-    <div class="phone">
-      <%= image_tag '_common/phone.png' %>
-      <span>1-800-TI-STORAGE</span>
-    </div>
+  <!-- https://docs.livechatinc.com/js-api/#open-the-chat-window -->
+  <div class="live_chat" onclick="LC_API.open_chat_window();">
+    <%= image_tag '_common/live-chat-icn_red.svg' %>
+    <span>Live Chat</span>
+  </div>
 
-    <%= react_component('Header_DropdownMenus', {
-      storages: @all_storages,
-      categories: @all_categories
-    }) %>
-
-    <div class="live_chat">
-      <%= image_tag '_common/live-chat-icn_red.svg' %>
-      <span>Live Chat</span>
-    </div>
-
-    <%= link_to("My Account", myaccount_path, class: "my_account button") %>
-  </section>
+  <%= link_to("My Account", myaccount_path, class: "my_account button") %>
 </header>
 
 <%= render(partial: 'layouts/in_application/header.mobile') %>

@@ -1,5 +1,5 @@
 Search_Index_mobile_Storage = ({ storage, index }) =>
-  <div className="storage">
+  <a href={storage.url} className="storage">
     <div className="index">{index + 1}</div>
     <div className="distance">
       <div className="number">{googleDistanceToMiles(storage.distanceToOriginObject)}</div>
@@ -12,7 +12,7 @@ Search_Index_mobile_Storage = ({ storage, index }) =>
       </div>
       <div className="price">Units from $193</div>
     </div>
-    <a href={storage.url} className="arrow">
+    <div className="arrow">
       <%= image_tag "_common/arrow.svg" %>
-    </a>
-  </div>
+    </div>
+  </a>

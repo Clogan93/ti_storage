@@ -1,41 +1,33 @@
-<main id="why_store_with_us_page">
-  <%=
-    render partial: './static_pages/layout', locals: {
-      title: 'Why Store With Us?',
-      description: "
-        <article>
-          <h5>We know the neighborhood.</h5>
-          <p>With convenient sites in Brooklyn, Queens, the Bronx, and in Paterson & Woodbridge, NJ, we know the local neighborhood and we know you. Our team members are proud to live and work in the very same neighborhoods as you.</p>
+<div class="static_pages_layout">
+  <div class="blue_page_heading"><h1>Why Store With Us?</h1></div>
+  <div class="container-fluid">
+    <%= render partial: 'static_pages/common/find_storage_space_near_you' %>
+    <div class="actual_page">
+      <%= render partial: 'static_pages/common/heading_with_background', locals: { title: 'Why Store With Us?' } %>
 
-          <h5>Temperature Control</h5>
-          <p>Treasure Island Storage offers countless unit sizes in temperature-controlled facilities to give you the peace of mind you deserve.</p>
+      <main class="default_static_page_main default_markup">
+        <h5>We know the neighborhood.</h5>
+        <p>With convenient sites in Brooklyn, Queens, the Bronx, and in Paterson & Woodbridge, NJ, we know the local neighborhood and we know you. Our team members are proud to live and work in the very same neighborhoods as you.</p>
 
-          <h5>Storage Bliss.</h5>
-          <p>Delivering the best possible customer experience is our primary goal. We give our employees the necessary training to satisfy your storage needs. We are here to help!</p>
+        <h5>Temperature Control</h5>
+        <p>Treasure Island Storage offers countless unit sizes in temperature-controlled facilities to give you the peace of mind you deserve.</p>
 
-          <h5>Flawless facilities.</h5>
-          <p>Store your belongings in locations that are clean and organized. Life is hectic enough, your storage facility doesn’t need to be as well.</p>
+        <h5>Storage Bliss.</h5>
+        <p>Delivering the best possible customer experience is our primary goal. We give our employees the necessary training to satisfy your storage needs. We are here to help!</p>
 
-          <h5>Round the Clock Protection.</h5>
-          <p>Keeping your property safe is paramount to us, so our facilities are protected by our 24/7 security system.</p>
+        <h5>Flawless facilities.</h5>
+        <p>Store your belongings in locations that are clean and organized. Life is hectic enough, your storage facility doesn’t need to be as well.</p>
 
-          <h5>Transparent Pricing.</h5>
-          <p>Our pricing is highly competitive and easy to understand. We are committed to finding you the right storage unit for your needs at a price you can afford.</p>
+        <h5>Round the Clock Protection.</h5>
+        <p>Keeping your property safe is paramount to us, so our facilities are protected by our 24/7 security system.</p>
 
-          <h5>We know storage.</h5>
-          <p>With more than 10 years’ experience in the storage business we know how to take care of you and your belongings.</p>
-        </article>
-      ",
-      heading: 'Why Store With Us?'
-    }
-  %>
-</main>
+        <h5>Transparent Pricing.</h5>
+        <p>Our pricing is highly competitive and easy to understand. We are committed to finding you the right storage unit for your needs at a price you can afford.</p>
 
+        <h5>We know storage.</h5>
+        <p>With more than 10 years’ experience in the storage business we know how to take care of you and your belongings.</p>
+      </main>
 
-
-
-
-
-
-
-
+    </div>
+  </div>
+</div>

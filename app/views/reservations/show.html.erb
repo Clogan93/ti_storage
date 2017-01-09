@@ -1,0 +1,108 @@
+<nav id="breadcrumbs" class="heading_font">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12">
+        <%= link_to '< Back to Search', search_path %>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<main id="checkout_new_page">
+  <div class="container-fluid">
+    <section class="step_navigation">
+      <div class="row">
+        <div class="col-md-6">
+          <h2>Step 1: Reserve Your Space. No Credit Card Required</h2>
+        </div>
+
+        <div class="col-md-6 steps">
+          <div class="titles">
+            <h5 class="active">Step 1</h5>
+            <h5>Step 2</h5>
+            <h5>Step 3</h5>
+          </div>
+          <%= image_tag 'checkout/step_1_active.png' %>
+        </div>
+      </div>
+    </section>
+
+    <div class="sidebar_and_steps">
+      <%= render partial: '/checkout/in_new/your_reservation' %>
+
+      <section class="step_1 step block">
+        <%= form_for current_reservation, url: [:reservation] do |f| %>
+          <h5 class="block_heading">Lock in Your Rate Now.</h5>
+
+          <section class="explanation">
+            <div class="row">
+              <div class="col-xl-10">
+                <p class="order_to_lock_in_rate">
+                  Enter your information below to lock in your discounted storage rate today.
+                </p>
+
+                <div class="rent_or_reserve_radios">
+                  <h4 class="please_choose_one">Please Choose One</h4>
+
+                  <label class="rent custom-control custom-radio">
+                    <input name="rent_or_reserve" type="radio" class="custom-control-input">
+                    <span class="custom-control-indicator"></span>
+                    <div class="custom-control-description">
+                      <h5>Express Check-In</h5>
+                      <p>Take advantage of our fast and easy online rental service, as it will save you precious time at the facility and it’s free of charge.  Your unit is guaranteed in 2 easy steps, by simply selecting a location, and unit size you can rent a storage within minutes.</p>
+                    </div>
+                  </label>
+
+                  <div class="or">
+                    – Or –
+                  </div>
+
+                  <label class="reserve custom-control custom-radio">
+                    <input name="rent_or_reserve" type="radio" class="custom-control-input">
+                    <span class="custom-control-indicator"></span>
+                    <div class="custom-control-description">
+                      <h5>Reserve Room</h5>
+                      <p>Hold a unit and lock in the current rate for up to 7 days with no obligation.  This free service allows you to take your time with unit selection until you decide complete the rental.</p>
+                    </div>
+                  </label>
+
+                </div>
+              </div>
+              <div class="col-xl-2 norton">
+                <%= image_tag 'checkout/norton.png' %>
+              </div>
+            </div>
+          </section>
+
+          <section class="general_client_info">
+            <%= fields_for :account, current_account do |c| %>
+            <%= c.text_field :first_name, placeholder: "First Name", class: "form-control" %>
+            <%= c.text_field :last_name, placeholder: "Last Name", class: "form-control" %>
+            <%= c.text_field :email, placeholder: "Email Address", class: "form-control" %>
+            <% end %>
+            <%= fields_for :phone, current_phone do |phone| %>
+            <%= phone.text_field :phone, placeholder: "Phone Number", class: "form-control" %>
+            <% end %>
+            <%= fields_for :address, current_address do |address| %>
+            <%= address.text_field :address_1, placeholder: "Address 1", class: "form-control" %>
+            <%= address.text_field :address_2, placeholder: "Address 2", class: "form-control" %>
+            <%= address.text_field :city, placeholder: "City", class: "form-control" %>
+            <%= address.text_field :state, placeholder: "State", class: "form-control" %>
+            <%= address.text_field :postal_code, placeholder: "Postal Code", class: "form-control" %>
+            <% end %>
+            <%= f.date_field :move_in_date, placeholder: "Move-In Date", class: "form-control" %>
+            <%= f.submit "Continue", class: 'button red' %>
+          </section>
+
+          <section class="sign_up_for_moving_services">
+            <label class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input">
+              <span class="custom-control-indicator"></span>
+              <span class="custom-control-description">Need help moving?</span>
+            </label>
+          </section>
+        <% end %>
+      </section>
+    </div>
+  </div>
+</main>

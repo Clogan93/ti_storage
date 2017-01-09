@@ -1,0 +1,44 @@
+<p>Dear <%= @reservation.account.name %>:</p>
+
+<p>
+  Thank you for reserving a unit with Treasure Island Storage. We make storage easy. It’s quite simple, you treasure your items, we value your business.
+</p>
+<p>
+  The next steps to complete your reservation includes:
+</p>
+<ul>
+  <li>Your storage consultant will contact you shortly to confirm the details of this reservation and answer any questions you might have.</li>
+  <li>Letting us help you arrange moving services, if needed.</li>
+  <li>Completing the Occupancy Agreement.</li>
+  <li>Selecting your access code.</li>
+  <li>Completing the StorSafe Agreement.</li>
+  <li>Remembering to bring a form of Government ID with you.</li>
+  <li>Signing up for automatic payment.</li>
+  <li>Arriving at least 30 minutes before closing time.</li>
+</ul>
+<p>
+  We also stock a full line of packing supplies and boxes that can be purchased online or on-site.
+</p>
+<p>
+  Refer a friend to receive a $50 credit.
+</p>
+<p>
+  Below is a summary of your reservation:
+</p>
+<table>
+  <tr>
+    <td>Confirmation Number:</td>
+    <td>XXXXXXX</td>
+  </tr>
+</table>
+<br/>
+<small>Unit sizes are approximate. Pricing is subject to change based on availability.</small>
+<br/>
+<p>
+  <strong>Treasure Island Storage - <%= @reservation.storage.title %></strong><br/>
+  <%= @reservation.storage.email %><br/>
+  <%= @reservation.storage.address %><br/>
+  <%= @reservation.storage.area %> <%= @reservation.storage.zip_code %><br/>
+  <%= @reservation.storage.phone %><br/>
+  <%= @reservation.storage.office_hours.join("<br/>").html_safe %>
+</p>

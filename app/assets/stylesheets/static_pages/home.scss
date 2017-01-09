@@ -9,6 +9,10 @@
   }
 
   section.find_storage{
+    background-image: url(image-path('static_pages/home/find_storage/first_free_month.png'));
+    background-repeat: no-repeat;
+    background-position: right 71px top 56px;
+
     position: relative;
     min-height: 504px;
     padding: 0;
@@ -88,7 +92,7 @@
         }
       }
     }
-    .special.free_truck, .special.in_the_news{
+    .special.promotion, .special.in_the_news{
       img{
         width: 100%; max-width: 330px;
       }
@@ -112,6 +116,52 @@
       }
       a.button{
         flex-basis: 170px;
+      }
+    }
+
+    #sign_up_for_emails_modal{
+      .modal-content{ padding: 20px; }
+      form{
+        color: $black_color;
+        h3{
+          margin-bottom: 20px;
+          text-align: center;
+        }
+        label{
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          .title{ width: 30%; }
+          .input_and_errors{
+            width: 100%;
+            input{
+              @extend .form-control;
+            }
+            .errors{
+              color: $vermillion_color;
+            }
+          }
+        }
+        a.button{
+          display: block;
+          width: 170px;
+          margin: 0 auto; margin-top: 20px;
+          color: white;
+          &.disabled{
+            background: black;
+            opacity: 0.3;
+            cursor: default;
+          }
+          &.active{}
+          &.sending{
+            cursor: default;
+            font-size: 20px;
+          }
+        }
+        .api_response{
+          margin-top: 20px;
+          text-align: center;
+        }
       }
     }
   }

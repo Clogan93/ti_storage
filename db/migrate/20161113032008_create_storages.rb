@@ -23,6 +23,7 @@ class CreateStorages < ActiveRecord::Migration[5.0]
 
       t.string :link_to_google
       t.string :link_to_yelp
+      t.string :link_to_google_reviews
     end
   end
 end

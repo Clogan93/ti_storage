@@ -27,11 +27,12 @@
           font-weight: bold;
           color: #393939;
           border-color: #eceeef #eceeef #ddd;
+          background: linear-gradient(to bottom, white, #dadada);
           &:hover{
             border-color: $cobalt_color; border-bottom: none;
           }
           &.active{
-            background: $vermillion_color;
+            background: linear-gradient(to bottom, $vermillion_color, #b51210);
             color: white;
           }
         }
@@ -44,6 +45,7 @@
 
     article#directions{
       @extend .default_markup;
+      ol{ margin-bottom: 20px; }
     }
     article:not(#storage_units){
       padding: 30px;
@@ -93,7 +95,7 @@
   }
 
   section.storage_view-mobile{
-    a.arrow{ display: none; }
+    a.button{ display: none; }
   }
 
   @media (max-width: $lg){

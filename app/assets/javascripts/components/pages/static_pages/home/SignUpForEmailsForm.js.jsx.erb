@@ -1,0 +1,107 @@
+const StaticPages_Home_SignUpForEmailsForm = React.createClass({
+
+  getInitialState(){
+    return {
+      errors: {},
+      sendButtonStatus: 'disabled', // 'active', 'sending'
+      apiResponse: null
+    }
+  },
+
+  validate(){
+    const name = this.refs.name.value;
+    const email = this.refs.email.value;
+
+    const errors = {};
+    if (name.length < 2){
+      errors['name'] = 'should be longer';
+    }
+
+    const emailRegex = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i;
+    if (!emailRegex.test(email)){
+      errors['email'] = "doesn't look like an email";
+    }
+
+    if (Object.keys(errors).length === 0){
+      this.setState({ errors, sendButtonStatus: 'active' });
+      return true;
+    } else {
+      this.setState({ errors, sendButtonStatus: 'disabled' });
+      return false;
+    }
+  },
+
+  sendEmail(){
+    if (!this.validate()) { return };
+
+    this.setState({ sendButtonStatus: 'sending' });
+    $.ajax({
+      url: "/emails/send_sign_up_for_emails_email",
+      type: "POST",
+      data: { 
+        name: this.refs.name.value,
+        email: this.refs.email.value
+      },
+      success: () => {
+        this.setState({
+          apiResponse: "You've successfully subscibed.",
+          sendButtonStatus: 'disabled'
+        });
+      },
+      error: (error) => {
+        console.log(error);
+        this.setState({
+          apiResponse: error.responseJSON,
+          sendButtonStatus: 'disabled'
+        });
+      }
+    });
+
+  },
+
+  renderSendButton(){
+    switch(this.state.sendButtonStatus){
+      case 'sending':
+        return <a className="button red sending">
+          <i className="fa fa-circle-o-notch fa-spin"></i>
+        </a>
+      case 'active':
+        return <a className="button red active" onClick={this.sendEmail}>Send</a>
+      case 'disabled':
+        return  <a className="button red disabled">Send</a>
+    }
+  },
+
+  renderApiResponse(){
+    apiResponse = this.state.apiResponse;
+
+    if (apiResponse){
+      return <div className="api_response">{this.state.apiResponse}</div>
+    }
+  },
+
+  render(){
+    return <form>
+      <h3>Sign Up For Discount Emails:</h3>
+
+      <label>
+        <div className="title">Name</div>
+        <div className="input_and_errors">
+          <input ref="name" type="text" onKeyUp={this.validate}/>
+          <div className="errors">{this.state.errors.name}</div>
+        </div>
+      </label>
+
+      <label>
+        <div className="title">Email</div>
+        <div className="input_and_errors">
+          <input ref="email" type="text" onKeyUp={this.validate}/>
+          <div className="errors">{this.state.errors.email}</div>
+        </div>
+      </label>
+
+      {this.renderSendButton()}
+      {this.renderApiResponse()}
+    </form>
+  }
+});

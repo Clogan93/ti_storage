@@ -35,16 +35,13 @@ header.mobile{
             font-weight: bold;
           }
         }
-        .grey{
-          div, a{
-            padding-left: 17px; margin-top: 15px;
-            font-size: 19px;
-            color: #6fa8ff;
-          }
-          .email_us{ padding-top: 10px; }
+        a.phone{
+          display: block;
+          margin-top: 15px;
+          font-size: 25px;
+          color: #6fa8ff;
         }
       }
-      
     }
   }
 }

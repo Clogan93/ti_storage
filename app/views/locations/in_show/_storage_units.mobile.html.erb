@@ -1,28 +1,3 @@
 <div class="unit_options-mobile hidden-md-up">
-  <% 3.times do %>
-    <div class="table_row">
-      <section class="size">
-        <div class="word_and_number">
-          Small 4x4
-        </div>
-        <ul class="features">
-          <li>Climate Control</li>
-          <li>Interior Room</li>
-        </ul>
-      </section>
-
-      <section class="monthly_price">
-        <div class="price">
-          <span class="previous">$68</span>
-          <span class="current">$61.20</span>
-        </div>
-
-        <div class="per_month">Per Month</div>
-      </section>
-
-      <section class="continue">
-        <a href="/checkout/new" class="button blue">Continue</a>
-      </section>
-    </div>
-  <% end %>
+  <%= render(partial: 'storage_units/storage_unit.mobile', collection: @storage.storage_units) %>
 </div>

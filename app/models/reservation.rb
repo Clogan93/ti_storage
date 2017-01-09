@@ -1,15 +1,12 @@
 # frozen_string_literal: true
 class Reservation < ApplicationRecord
-  validates_presence_of :first_name, :last_name
-    #:type,
-    # :move_in_date,
-    # :phone, :email
-  validates_presence_of :card_name, unless: :step_1
+  belongs_to :account, foreign_key: :account_id, primary_key: :account_id
+  belongs_to :storage_unit, foreign_key: :unit_id, primary_key: :unit_id
+  has_one :storage, through: :storage_unit
+  has_one :payment
 
-  # for different validations in different steps in /checkout controller
-  attr_accessor :step_1
+  # validates_presence_of :move_in_date
 
-  # temporary, while we don't know how it will be implemented
   def card_cvv
   end
 end

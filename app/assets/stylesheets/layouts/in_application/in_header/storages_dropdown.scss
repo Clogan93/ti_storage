@@ -2,7 +2,9 @@ section.storages{
   position: relative;
   ul.categories, ul.storages{
     z-index: 100;
-    li{ padding: 20px; }
+    li{
+      padding: 20px;
+    }
   }
 
   ul.categories{

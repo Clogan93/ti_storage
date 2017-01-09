@@ -1,14 +1,20 @@
-<main id="storage_solutions_page">
-  <%= 
-    render partial: './static_pages/layout', locals: { 
-      title: 'Car Storage',
-      description: "
+<div class="static_pages_layout">
+  <div class="blue_page_heading"><h1>Car Storage</h1></div>
+  <div class="container-fluid">
+    <%= render partial: 'static_pages/common/find_storage_space_near_you' %>
+    <div class="actual_page">
+      <%= render partial: 'static_pages/common/heading_with_background', locals: { title: 'Car Storage', bg: 'car' } %>
+
+      <main class="default_static_page_main default_markup">
         <p>Preserving one of the biggest investments you will make in life, such as a car especially if you are a collector it is paramount. Treasure Island Storage offers the best value when you need to store your automobile for any reason. It doesn't matter if your \"wheels\" are vintage, brand new, or on the bottom of a golf cart, our climate controlled, drive-up car storage units are designed to protect your car from all of the elements and are available at all most of our Treasure Island Storage facilities in both New Jersey and New York.</p>
          
         <h5>Motorcycle Storage</h5>
         <p>Why leave your motorcycle at the mercy of the elements when you can rent a low cost, private alternative to a public garage, or worse, a city street? Motorcycle storage at Treasure Island Storage keeps your motorcycle in prime condition throughout the seasons.</p>
-      ",
-      heading: 'car'
-    }
-  %>
-</main>
+      </main>
+
+    </div>
+  </div>
+</div>
+
+<%= content_for :title_tag, 'Auto Storage at Treasure Island Storage' %>
+<%= content_for :meta_description_tag, 'Treasure Island Storage offers car storage so that your valuable investment is protected; visit our website to learn more about storing your car, truck, motorcycle, or any other vehicle.' %>

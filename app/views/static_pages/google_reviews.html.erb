@@ -1,0 +1,19 @@
+<div class="static_pages_layout">
+  <div class="blue_page_heading"><h1>Google+ Reviews</h1></div>
+  <div class="container-fluid">
+    <%= render partial: 'static_pages/common/find_storage_space_near_you' %>
+    <div class="actual_page">
+      <%= render partial: 'static_pages/common/heading_with_background', locals: { title: 'Google+ Reviews' } %>
+
+      <main class="default_static_page_main">
+        <ul>
+          <% @all_storages.each do |storage| %>
+            <li>
+              <a href="<%= storage.link_to_google_reviews %>"><%= storage.title %></a>
+            </li>
+          <% end %>
+        </ul>
+      </main>
+    </div>
+  </div>
+</div>

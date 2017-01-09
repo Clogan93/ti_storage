@@ -1,0 +1,33 @@
+<div class="row table_row">
+  <div class="col-md-2 size">
+    <div class="word_and_number">
+      <%= size_class(storage_unit.data.square_feet).upcase %><br>
+      <%= storage_unit.dimensions %>
+    </div>
+    <a class="size_help" data-toggle="modal" data-target="#sizing_guide_modal">Size Help</a>
+  </div>
+  <div class="col-md-3 features">
+    <ul>
+      <% storage_unit.features.each do |feature| %>
+        <li>
+          <%= image_tag '_common/tick_icon.svg', class: 'tick_icon' %>
+          <%= feature %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="col-md-2 unit_monthly_price">
+    <div class="text">Regular Price</div>
+    <div class="price">
+      <%= number_to_currency(storage_unit.data.push_rate, precision: 0) %>
+      <div class="line_through"></div>
+    </div>
+  </div>
+  <div class="col-md-2 unit_promotion">
+    <div class="black">1st Month Free</div>
+    <div class="red"><%= number_to_currency(storage_unit.data.rent_rate, precision: 0) %>/mo</div>
+  </div>
+  <div class="col-md-3 continue">
+    <%= button_to("Continue", [:reserve, storage_unit], class: "button blue") %>
+  </div>
+</div>

@@ -2,12 +2,11 @@
   <div class="row">
     <div class="col-md-6 col-xs-12 search_field">
       <div class="showing_results_near">Showing Results Near:</div>
-
       <%= react_component('FindStorageDropdown', { storages: @all_storages }) %>
     </div>
 
     <div class="col-md-6 hidden-md-down ad">
-      <%= image_tag '_common/ads/first_month_free.png' %>
+      <%= image_tag(defined?(ad_src) ? ad_src : '_common/ads/amazon_rectangular.png') %>
     </div>
   </div>
 </section>

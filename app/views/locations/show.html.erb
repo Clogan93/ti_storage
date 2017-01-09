@@ -14,12 +14,12 @@
       </div>
     </div>
 
-    <%= render partial: 'common/search_field_and_ad' %>
+    <%= render partial: 'common/search_field_and_ad', locals: { ad_src: '_common/ads/amazon_rectangular.png' } %>
 
     <%= render partial: 'common/storage_view', locals: { storage: @storage } %>
 
     <section class="mobile_ad hidden-lg-up">
-      <%= image_tag '_common/ads/first_month_free.png' %>
+      <%= image_tag '_common/ads/amazon_rectangular.png' %>
     </section>
 
     <section class="extensive_information">
@@ -75,7 +75,7 @@
       <div class="text">
         <%= @storage.description_1.html_safe %>
       </div>
-      <%= image_tag "locations/show/descriptions/#{@storage.slug}/1.jpg" %>
+      <%= image_tag "locations/show/descriptions/1.jpg" %>
     </div>
     <div class="description_2">
       <%= image_tag "locations/show/descriptions/#{@storage.slug}/2.jpg" %>
@@ -87,3 +87,6 @@
 </main>
 
 <%= render 'common/sizing_guide_modal' %>
+
+<%= content_for :title_tag, "Self Storage Units #{@storage.title} #{@storage.area} | Treasure Island Storage" %>
+<%= content_for :meta_description_tag, 'Looking for self storage units in#{@storage.title} #{@storage.area}? Treasure Island Storage offers clean and affordable storage to fit any need. Reserve today!' %>

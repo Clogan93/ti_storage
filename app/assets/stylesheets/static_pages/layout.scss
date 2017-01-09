@@ -1,4 +1,4 @@
-main#static_pages_layout{
+div.static_pages_layout{
   div.blue_page_heading{
     padding-left: 389px;
     background: $cobalt-color;
@@ -12,6 +12,8 @@ main#static_pages_layout{
   section.search_field{
     // some major hacky overriding here due to different designs of search field on different pages
     section.find_storage_dropdown{
+      position: relative;
+      .dropdown-menu{ top: 80px; }
       display: block;
       text-align: right;
       padding: 0px;
@@ -36,13 +38,10 @@ main#static_pages_layout{
         font-size: 18px;
         padding-top: 3px; padding-bottom: 3px;
       }
-      .dropdown-menu{
-        top: 90px;
-      }
     }
   }
 
-  div.find_storage_space_near_you{
+  aside.find_storage_space_near_you{
     position: relative; display: inline-block;
     top: -93px;
     width: 275px;
@@ -63,8 +62,9 @@ main#static_pages_layout{
       font-weight: bold;
     }
     section.ad{
+      text-align: center;
       img{
-        max-width: 240px;
+        max-width: 200px;
         width: 100%;
       }
     }
@@ -110,7 +110,7 @@ main#static_pages_layout{
     section.heading_with_background{
       position: relative;
       width: 100%;
-      margin-top: 10px; margin-right: -15px;
+      margin-top: 10px;
       .background{
         background-repeat: no-repeat;
         background-size: cover;
@@ -143,36 +143,41 @@ main#static_pages_layout{
         width: 100%;
       }
     }
-    article.description{
+    main.default_static_page_main{
       border-radius: 7px;
       border: solid 1px $pinkish-grey_color;
       padding: 15px 35px;
       margin-bottom: 20px;
-      @extend .default_markup;
     }
   }
-
 }
-
 
 // responsive
 
-main#static_pages_layout{
+div.static_pages_layout{
+  @media (max-width: $xl){
+    .container-fluid{
+      padding: 0 10px;
+    }
+  }
   @media (max-width: $lg){
     div.blue_page_heading{
       padding-left: 319px;
     }
   }
   @media (max-width: $md){
+    aside.find_storage_space_near_you{
+      display: none;
+    }
     div.blue_page_heading{
       padding-left: 0;
       text-align: center;
+      padding-top: 12px;
+      h1{ display: none; }
     }
-    div.find_storage_space_near_you{
-      position: static;
-      margin: 30px auto;
-      display: block;
+    div.actual_page{
+      width: 100%;
+      padding-left: 0;
     }
-    div.actual_page{ width: 100%; }
   }
 }

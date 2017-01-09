@@ -1,0 +1,40 @@
+<aside class="find_storage_space_near_you">
+  <section class="title">
+    Find Storage Space Near You
+  </section>
+
+  <section class="search_field">
+    <%= react_component('FindStorageDropdown', { storages: @all_storages }) %>
+  </section>
+
+  <section class="ad">
+    <%= image_tag '_common/ads/amazon.png' %>
+  </section>
+
+  <section class="sizing_guide_preview">
+    <h6>Sizing Guide</h6>
+    <div class="image_and_play_icon" data-toggle="modal" data-target="#sizing_guide_modal">
+      <%= image_tag 'common/sizing_guide_preview/sizing_guide_preview.jpg', class: "preview_image" %>
+      <%= image_tag 'common/sizing_guide_preview/play-icn.svg', class: 'play_icon' %>
+    </div>
+  </section>
+
+  <section class="list_of_links">
+    <ul>
+      <% links = ['commercial_storage', 'household_storage', 'wine_storage', 'boat_storage', 'car_storage', 'art_storage'] %>
+      <% links.each do |link| %>
+        <% if !current_page?(controller: 'static_pages/storage_solutions', action: link) %>
+          <li>
+            <a
+              href="<%= url_for(controller: 'static_pages/storage_solutions', action: link) %>"
+              target="_blank">
+              <%= link.split('_').join(' ').titleize %>
+            </a>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+  </section>
+</aside>
+
+<%= render partial: 'common/sizing_guide_modal' %>

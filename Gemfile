@@ -11,11 +11,10 @@ gem 'sass-rails', '~> 5.0'
 # bootstrap's tooltips and popovers depend on tether for positioning:
 gem 'rails-assets-tether'
 gem 'bootstrap', '~> 4.0.0.alpha4'
+gem 'font-awesome-rails'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'inline_svg'
-
-# gem 'wicked' # maybe an okay solution for wizard form
 
 gem 'react-rails'
 gem 'sprockets'
@@ -25,15 +24,9 @@ gem 'turbolinks', '~> 5'
 
 gem 'dotenv-rails'
 
-# gem 'devise'
+gem 'savon', '~> 2.0'
 
-# Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 3.0'
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+gem 'sitemap_generator'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.5.0.beta4'
@@ -54,11 +47,7 @@ group :test do
 end
 
 group :development do
-  gem 'web-console'
   gem 'listen', '~> 3.0.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-
-  # gem "better_errors"
-  # gem "binding_of_caller"
 end

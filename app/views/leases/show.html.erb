@@ -1,0 +1,42 @@
+<nav id="breadcrumbs" class="heading_font">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12">
+        <%= link_to '< Back to Search', search_path %>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<main id="checkout_new_page">
+  <div class="container-fluid">
+    <section class="step_navigation">
+      <div class="row">
+        <div class="col-md-6">
+          <h2>Step 3: Confirm Your Reservation</h2>
+        </div>
+
+        <div class="col-md-6 steps">
+          <div class="titles">
+            <h5>Step 1</h5>
+            <h5>Step 2</h5>
+            <h5 class: 'active'>Step 3</h5>
+          </div>
+
+          <%= image_tag 'checkout/step_3_active.png' %>
+        </div>
+      </div>
+    </section>
+
+    <div class="sidebar_and_steps">
+      <%= render partial: '/checkout/in_new/your_reservation' %>
+
+      <section class="step_3 step block">
+        <h3>Thank you for your order!</h3>
+        <p>Your order number is: <%= current_reservation.id %></p>
+        <p>You will receive an email confirmation shorty at <%= current_reservation.email %></p>
+        <p class="print_receipt">Print Receipt</p>
+      </section>
+    </div>
+  </div>
+</main>

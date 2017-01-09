@@ -6,40 +6,5 @@
     <div class="col-xs-2"></div>
     <div class="col-xs-3"></div>
   </div>
-
-  <% 3.times do %>
-    <div class="row table_row">
-      <div class="col-md-2 size">
-        <div class="word_and_number">
-          SMALL<br>
-          4x4
-        </div>
-        <a class="size_help" data-toggle="modal" data-target="#sizing_guide_modal">Size Help</a>
-      </div>
-      <div class="col-md-3 features">
-        <ul>
-          <% ['Climate Control', 'Interior', 'Locker Upper'].each do |feature| %>
-            <li>
-              <%= image_tag '_common/tick_icon.svg', class: 'tick_icon' %>
-              <%= feature %>
-            </li>
-          <% end %>
-        </ul>
-      </div>
-      <div class="col-md-2 unit_monthly_price">
-        <div class="text">Regular Price</div>
-        <div class="price">
-          $48
-          <div class="line_through"></div>
-        </div>
-      </div>
-      <div class="col-md-2 unit_promotion">
-        <div class="black">1st Month Free</div>
-        <div class="red">$20/mo</div>
-      </div>
-      <div class="col-md-3 continue">
-        <a href="<%= checkout_path %>" class="button blue">Continue</a>
-      </div>
-    </div>
-  <% end %>
+  <%= render(partial: @storage_units) %>
 </div>

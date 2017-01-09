@@ -1,0 +1,8 @@
+<table>
+  <% [:name, :email, :phone, :message, :where_from_heard_about_us].each do |title| %>
+    <tr>
+      <td><%= title.to_s %></td>
+      <td><%= @data[title] %></td>
+    </tr>
+  <% end %>
+</table>

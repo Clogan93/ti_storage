@@ -1,32 +1,33 @@
+<% storage_unit = current_storage_unit %>
+<% storage = current_storage_unit.storage %>
 <aside class="your_reservation block">
   <h5 class="block_heading">Your Reservation</h5>
 
   <section class="storage">
     <div class="row">
       <div class="col-sm-6 image">
-        <%= image_tag 'checkout/storage.jpg' %>
+        <%= image_tag(storage_image_path(storage)) %>
       </div>
       <div class="col-sm-6 description">
-        <h5 class="section_heading">TI Storage</h5>
+        <h5 class="section_heading">TI Storage - <%= storage.title %></h5>
         <div class="details">
-          183 Lorraine Street<br>
-          Brooklyn, NY 11231<br>
-          718-509-6524<br> 
-          Mon-Fri 9am-11pm
+          <%= storage.address %><br/>
+          <%= storage.area %> <%= storage.zip_code %><br/>
+          <%= storage.phone %><br/>
+          <%= storage.office_hours.join("<br/>").html_safe %>
         </div>
-        <a class="change_something">Change Location</a>
+        <%= link_to('Change Location', [:locations], class: 'change_something') %>
       </div>
     </div>
   </section>
 
   <section class="unit">
     <h5 class="section_heading">Unit:</h5>
-    <div class="size">4' x 4'</div>
+    <div class="size"><%= storage_unit.dimensions %></div>
     <div class="details">
-      Climate Controlled Unit<br>
-      Indoor, 1st Floor Access, Reduced Height, Rolling Stair Access
+      <%= storage_unit.features.join(",") %>
     </div>
-    <a class="change_something">Change Unit</a>
+    <%= link_to('Change Unit', seo_storage_path(storage), class: "change_something") %>
   </section>
 
   <section class="monthly_rent">
@@ -37,12 +38,12 @@
         <tr>
           <td>Online only special*</td>
           <td></td>
-          <td>$38.00</td>
+          <td><%= number_to_currency(storage_unit.rent_rate) %></td>
         </tr>
         <tr>
           <td>In-Store</td>
           <td></td>
-          <td>$59.00</td>
+          <td><%= number_to_currency(storage_unit.push_rate) %></td>
         </tr>
         <tr>
           <td>Protection Plan</td>

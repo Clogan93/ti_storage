@@ -1,5 +1,6 @@
 @import 'bootstrap-flex';
 @import 'jquery-ui/menu';
+@import 'font-awesome';
 
 @import 'fonts';
 @import 'variables';
@@ -29,7 +30,14 @@ footer, header, #breadcrumbs{
   }
 }
 
-a{ cursor: pointer; }
+a{
+  cursor: pointer;
+}
+a.button:focus{
+  outline: none;
+  color: white;
+  text-decoration: none;
+}
 ol, ul{
   padding-left: 0;
   margin-bottom: 0;

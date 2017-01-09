@@ -1,0 +1,33 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Unit ID</th>
+      <th>Site ID</th>
+      <th>Name</th>
+      <th>LxHxW</th>
+      <th>Version</th>
+      <th>Push</th>
+      <th>Rent</th>
+      <th>Available</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @storage_units.each do |storage_unit| %>
+    <tr>
+      <td><%= storage_unit.unit_id %></td>
+      <td><%= storage_unit.site_id %></td>
+      <td><%= storage_unit.data.class_description %></td>
+      <td><%= storage_unit.dimensions %> (<%= storage_unit.square_feet %>)</td>
+      <td><%= storage_unit.version %></td>
+      <td><%= number_to_currency(storage_unit.push_rate) %></td>
+      <td><%= number_to_currency(storage_unit.rent_rate) %></td>
+      <td><%= storage_unit.total_units_in_available_status %></td>
+      <td><%= number_to_currency(storage_unit.total_units_in_available_status * storage_unit.rent_rate) %></td>
+      <td><%= link_to('View', [:admin, @storage, storage_unit]) %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= button_to("Sync", [:sync, :admin, @storage, :storage_units], class: 'btn btn-primary', data: {disable_with: 'Syncing...'}) %>

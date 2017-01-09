@@ -1,14 +1,20 @@
-<main id="storage_solutions_page">
-  <%= 
-    render partial: './static_pages/layout', locals: { 
-      title: 'Commercial Storage',
-      description: "
+<div class="static_pages_layout">
+  <div class="blue_page_heading"><h1>Commercial Storage</h1></div>
+  <div class="container-fluid">
+    <%= render partial: 'static_pages/common/find_storage_space_near_you' %>
+    <div class="actual_page">
+      <%= render partial: 'static_pages/common/heading_with_background', locals: { title: 'Commercial Storage', bg: 'commercial' } %>
+
+      <main class="default_static_page_main default_markup">
         <p>In today's economy, businesses need to be able to adapt quickly and easily. Treasure Island Storage, one of the only storage companies in the area that can accommodate large customized space needs, offers unsurpassed Commercial Storage solutions for your business that will help you save time and money. All of our Treasure Island Storage facilities offer commercial storage and our friendly and professional storage managers will provide you with a tour of the facility; help you choose the unit size that will best suit your needs and even make recommendations on how to maximize your storage space.</p>
         <p>Commercial storage services include: customized work/space units that include electricity; packing and shipping partners to ship domestically and internationally; on-site delivery acceptance; business center with free Wi-Fi, fax, copy and shredding service; and elevator access along with the other amenities Treasure Island Storage provides all of its valued customers.</p>
         <p>No matter what your business, Treasure Island Storage believes your time is essential. Don't waste another minute working through clutter or reorganizing your inventory, rather, use our Commercial Storage services to store corporate records, furniture, supplies, product samples, machinery and/or medical equipment.</p>
         <p>At Treasure Island Storage, we pride ourselves in having the ability to meet the unique needs of our Commercial Storage customers, including customizing spaces from 200 to 10,000 square feet.</p>
-      ",
-      heading: 'commercial'
-    }
-  %>
-</main>
+      </main>
+
+    </div>
+  </div>
+</div>
+
+<%= content_for :title_tag, 'Commercial Storage | Treasure Island Storage' %>
+<%= content_for :meta_description_tag, 'Need storage for your business? At Treasure Island Storage we offer storage for your files, extra inventory, office furniture and more!' %>

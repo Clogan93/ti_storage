@@ -27,13 +27,13 @@
           <%= render partial: 'static_pages/in_home/carousel' %>
         </div>
 
-        <div class="col-lg-4 col-sm-6 special free_truck">
-          <%= image_tag 'static_pages/home/featured_specials/free_truck.png' %>
-        </div>
+        <a href="<%= search_path %>" class="col-lg-4 col-sm-6 special promotion">
+          <%= image_tag '_common/ads/amazon.png' %>
+        </a>
 
         <div class="col-lg-4 col-sm-6 special in_the_news">
           <h4 class="header">In The News</h4>
-          <img src="http://placehold.it/350x250">
+          <%= link_to(image_tag('static_pages/home/blog/tips.jpg'), 'http://ti-storage-blog.herokuapp.com/tips-moving-in-cold-weather/') %>
         </div>
       </div>
     </div>
@@ -42,7 +42,18 @@
   <section class="sign_up_for_emails">
     <div class="container-fluid">
       <h3>SIGN UP FOR EMAIL DISCOUNTS</h3>
-      <a class="button red">Sign Up</a>
+      <a class="button red" data-toggle="modal" data-target="#sign_up_for_emails_modal">Sign Up</a>
+    </div>
+
+    <div class="modal" id="sign_up_for_emails_modal">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div data-dismiss="modal" aria-label="Close" class="close">
+            <%= image_tag '_common/close_modal.svg' %>
+          </div>
+          <%= react_component('StaticPages_Home_SignUpForEmailsForm') %>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -95,7 +106,7 @@
 
   <section class="ti_family_of_businesses">
     <div class="container-fluid">
-      <h4 class="heading">Treasure Island TI Family of Businesses</h4>
+      <h4 class="heading">Treasure Island Family of Businesses</h4>
 
       <div class="businesses">
         <a href="http://www.tiartstudios.com">
@@ -111,3 +122,6 @@
   </section>
 
 </main>
+
+<%= content_for :title_tag, 'Treasure Island Storage | NYC and New Jersey Self Storage' %>
+<%= content_for :meta_description_tag, 'At Treasure Island Storage we are dedicated to providing the best self storage! Visit our website to learn more about our storage solutions.' %>

@@ -8,6 +8,7 @@ AllCops:
     - 'vendor/**/*'
     - 'app/controllers/checkout_controller.rb'
     - 'app/models/reservation.rb'
+    - 'config/routes.rb'
 StringLiterals:
   Enabled: false
 AlignParameters:

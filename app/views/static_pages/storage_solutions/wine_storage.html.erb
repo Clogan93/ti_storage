@@ -1,8 +1,11 @@
-<main id="storage_solutions_page">
-  <%= 
-    render partial: './static_pages/layout', locals: { 
-      title: 'Wine Storage',
-      description: "
+<div class="static_pages_layout">
+  <div class="blue_page_heading"><h1>Wine Storage</h1></div>
+  <div class="container-fluid">
+    <%= render partial: 'static_pages/common/find_storage_space_near_you' %>
+    <div class="actual_page">
+      <%= render partial: 'static_pages/common/heading_with_background', locals: { title: 'Wine Storage', bg: 'wine' } %>
+
+      <main class="default_static_page_main default_markup">
         Wine Storage at Treasure Island Storage:
 
         <ul>
@@ -13,8 +16,11 @@
           <li>Pickup and delivery services</li>
           <li>No case minimum requirements</li>
         </ul>
-      ",
-      heading: 'wine'
-    }
-  %>
-</main>
+      </main>
+
+    </div>
+  </div>
+</div>
+
+<%= content_for :wine_tag, 'Wine Storage | Treasure Island Storage' %>
+<%= content_for :meta_description_tag, 'We provide secure, climate controlled wine storage at Treasure Island Storage. We are committed to your peace of mind and will help you protect your investment.' %>

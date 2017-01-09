@@ -1,0 +1,53 @@
+<p>Dear Treasure Island Storage <%= @reservation.storage.title %></p>
+
+<p>
+  <%= @reservation.account.name %> has submitted a reservation form from Treasure Island Storage <%= @reservation.storage.title %>.
+</p>
+<p>
+  Below is a summary of the reservation.
+</p>
+
+<table>
+  <tr>
+    <td>Name</td>
+    <td><%= @reservation.account.name %></td>
+  </tr>
+  <tr>
+    <td>Address</td>
+    <td><%= @reservation.account.address.address_1 %></td>
+  </tr>
+  <tr>
+    <td>City</td>
+    <td><%= @reservation.account.address.city %></td>
+  </tr>
+  <tr>
+    <td>State</td>
+    <td><%= @reservation.account.address.state %></td>
+  </tr>
+  <tr>
+    <td>Zip</td>
+    <td><%= @reservation.account.address.postal_code %></td>
+  </tr>
+  <tr>
+    <td>Phone</td>
+    <td><%= @reservation.account.phone.phone %></td>
+  </tr>
+  <tr>
+    <td>Email</td>
+    <td><%= @reservation.account.email %></td>
+  </tr>
+  <tr>
+    <td>Move-In-Date</td>
+    <td><%= @reservation.move_in_date %></td>
+  </tr>
+  <tr>
+    <td>Rental Rate</td>
+    <td><%= number_to_currency(@reservation.storage_unit.rent_rate) %></td>
+  </tr>
+  <tr>
+    <td>Unit Size</td>
+    <td><%= @reservation.storage_unit.dimensions %></td>
+  </tr>
+</table>
+<br/>
+<p>Thank you!</p>

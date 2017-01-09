@@ -1,50 +1,17 @@
 main#contact_page{
   margin-bottom: -30px;
-  section.contact_us{
-    background: url(image-path("static_pages/contact/top.jpg")) no-repeat;
-    position: relative;
-    height: 500px; width: 100%;
-    background-size: cover;
-
-    text-align: center;
-    color: white;
-
-    // for phone
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    h1{
-      position: absolute;
-      max-width: 596px;
-      width: 100%;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      padding: 15px 0px;
-      border: solid 4px #4a90e2;
-      border-top: none;
-      border-bottom-left-radius: 5px;
-      border-bottom-right-radius: 5px;
-      background: $cobalt_color;
-    }
-    div.phone{
-      font-weight: bold;
-      font-size: 40px;
-      background: $cobalt_color;
-      padding: 25px 40px;
-    }
-  }
   section.contact_form{
     display: flex;
     flex-wrap: wrap;
     border-top: 5px solid $vermillion_color;
     border-bottom: 5px solid $vermillion_color;
-    div.left_image{
+    section.left_image{
       width: 50%;
       background: url(image-path('static_pages/contact/left')) no-repeat;
       background-size: cover;
     }
-    form.right_form{
+
+    div[data-react-class=StaticPages_Contact_ContactForm]{
       padding: 20px; padding-top: 60px;
       width: 50%;
       background: $cobalt_color;
@@ -52,19 +19,23 @@ main#contact_page{
       fieldset{
         max-width: 400px;
         margin: 0 auto;
+        .error{
+          color: #fd9a99; // bright red
+        }
       }
       fieldset.common{
-        input.name, input.email, input.phone{
-          width: 100%;
-          display: block;
-          margin: 0 auto;
+        div.input_and_error{
           margin-bottom: 20px;
-          padding: 5px;
+          input{
+            width: 100%;
+            display: block;
+            margin: 0 auto;
+            padding: 5px;
+          }
         }
       }
       fieldset.is_current_customer_yes,
       fieldset.is_current_customer_no{
-        display: none;
         .question{
           label{ width: 100%; }
           select{ width: 100%; }
@@ -73,22 +44,33 @@ main#contact_page{
         label.message{
           margin-top: 20px;
           width: 100%;
-          padding-bottom: 10px;
-          textarea{ width: 100%; }
+          textarea{
+            width: 100%;
+            margin-top: 7px;
+          }
         }
       }
-      fieldset.send_and_required_field{
+      fieldset.send{
         padding-bottom: 20px;
         margin-top: 20px;
-        button{
-          padding: 5px 20px;
-          margin-right: 20px;
+        a.button{
           color: white;
           background: $vermillion_color;
           border: none;
+          width: 74px; // so that it doesn't shrink when .sending
+
+          &.disabled{
+            background: black;
+            opacity: 0.3;
+            cursor: default;
+          }
+          &.active{}
+          &.sending{
+            cursor: default;
+            font-size: 20px;
+          }
         }
-        button, span{ display: inline-block; }
-        span{ font-style: oblique; }
+        div.required{ font-style: oblique; }
       }
     }
   }
@@ -98,11 +80,12 @@ main#contact_page{
 // responsive
 main#contact_page{
   @media (max-width: $md){
-    section.contact_us div.phone{
-      padding-right: 10px; padding-left: 10px;
-    }
-    section.contact_form form.right_form{
-      width: 100%;
+    section.contact_form{
+      div[data-react-class=StaticPages_Contact_ContactForm]{ width: 100%; }
+      section.left_image{
+        width: 100%;
+        height: 200px;
+      }
     }
   }
 }
