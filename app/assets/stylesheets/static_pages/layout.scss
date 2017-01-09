@@ -1,4 +1,4 @@
-main#static_pages_layout{
+div.static_pages_layout{
   div.blue_page_heading{
     padding-left: 389px;
     background: $cobalt-color;
@@ -41,7 +41,7 @@ main#static_pages_layout{
     }
   }
 
-  div.find_storage_space_near_you{
+  aside.find_storage_space_near_you{
     position: relative; display: inline-block;
     top: -93px;
     width: 275px;
@@ -143,21 +143,18 @@ main#static_pages_layout{
         width: 100%;
       }
     }
-    article.description{
+    main.default_static_page_main{
       border-radius: 7px;
       border: solid 1px $pinkish-grey_color;
       padding: 15px 35px;
       margin-bottom: 20px;
-      @extend .default_markup;
     }
   }
-
 }
-
 
 // responsive
 
-main#static_pages_layout{
+div.static_pages_layout{
   @media (max-width: $xl){
     .container-fluid{
       padding: 0 10px;
@@ -169,7 +166,7 @@ main#static_pages_layout{
     }
   }
   @media (max-width: $md){
-    div.find_storage_space_near_you{
+    aside.find_storage_space_near_you{
       display: none;
     }
     div.blue_page_heading{

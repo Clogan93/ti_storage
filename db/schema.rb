@@ -71,6 +71,7 @@ ActiveRecord::Schema.define(version: 20170106063139) do
     t.text    "features"
     t.string  "link_to_google"
     t.string  "link_to_yelp"
+    t.string  "link_to_google_reviews"
     t.integer "site_id"
     t.jsonb   "data"
     t.index ["category_id"], name: "index_storages_on_category_id", using: :btree

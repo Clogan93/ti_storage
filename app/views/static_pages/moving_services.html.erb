@@ -1,8 +1,11 @@
-<main id="moving_services_page">
-  <%=
-    render partial: './static_pages/layout', locals: {
-      title: 'Moving Services',
-      description: "
+<div class="static_pages_layout">
+  <div class="blue_page_heading"><h1>Moving Services</h1></div>
+  <div class="container-fluid">
+    <%= render partial: 'static_pages/common/find_storage_space_near_you' %>
+    <div class="actual_page">
+      <%= render partial: 'static_pages/common/heading_with_background', locals: { title: 'Moving Services' } %>
+
+      <main class="default_static_page_main default_markup">
         <article>
           <p>Are you too busy to move your own items? Treasure Island Storage has the perfect solution for you. Our professional and courteous staff is able to set up moving assistance for you through our preferred vendors. Whether you need help moving a few boxes, or an entire building, call one of our Storage Managers to schedule your move and to see what specials we are currently offering, including a free move to storage.</p>
 
@@ -14,8 +17,8 @@
 
           <p>Whether you're a college student with limited space and budget or the head of a household moving an entire family to a new home, Treasure Island Storage will make your Self Storage experience simple and easy. Contact your local Treasure Island Storage facility to learn more about the free move truck and driver service.</p>
         </article>
-      ",
-      heading: 'Moving Services'
-    }
-  %>
-</main>
+      </main>
+
+    </div>
+  </div>
+</div>

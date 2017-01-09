@@ -1,14 +1,16 @@
-<main id="storage_solutions_page">
-  <%= 
-    render partial: './static_pages/layout', locals: { 
-      title: 'Boat Storage',
-      description: "
+<div class="static_pages_layout">
+  <div class="blue_page_heading"><h1>Boat Storage</h1></div>
+  <div class="container-fluid">
+    <%= render partial: 'static_pages/common/find_storage_space_near_you' %>
+    <div class="actual_page">
+      <%= render partial: 'static_pages/common/heading_with_background', locals: { title: 'Boat Storage', bg: 'boat' } %>
+
+      <main class="default_static_page_main default_markup">
         Boat Storage at Treasure Island Storage is your one-stop, cost-effective and secure option for all boat owners. Our climate controlled Boat Storage units can help extend the life of your boat by protecting the vessel from the elements while providing extra protection from rust. Boat storage is available at almost all of our conveniently located facilities in New Jersey and New York.
-      ",
-      heading: 'boat'
-    }
-  %>
-</main>
+      </main>
+    </div>
+  </div>
+</div>
 
 <%= content_for :title_tag, 'Boat Storage | Treasure Island Storage' %>
 <%= content_for :meta_description_tag, 'At Treasure Island Storage we provide safe and secure boat storage so you can have peace of mind.' %>

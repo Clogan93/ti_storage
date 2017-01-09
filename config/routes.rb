@@ -43,6 +43,7 @@ Rails.application.routes.draw do
   get 'faq', to: 'static_pages#faq'
   get 'moving-services', to: 'static_pages#moving_services'
   get 'contact', to: 'static_pages#contact'
+  get 'google+', to: 'static_pages#google_reviews'
 
   root to: 'static_pages#home'
 

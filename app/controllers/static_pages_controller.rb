@@ -18,4 +18,7 @@ class StaticPagesController < ApplicationController
 
   def why_store_with_us
   end
+
+  def google_reviews
+  end
 end
