@@ -1,12 +1,17 @@
 main#storage_solutions_page{
-  section.storage_types .tabs.row{
+  section.tabs{
+    display: flex;
+    ul.navigation{
+      width: 40%;
+    }
+    .tab-content{
+      width: 60%;
+    }
+
     border-radius: 7px;
     border: solid 1px $pinkish-grey_color;
-    margin-left: 0; margin-right: 0;
-    .col-xs-4{ padding-left: 0; }
     ul.navigation{
       border-right: solid 1px $pinkish-grey_color;
-      margin-bottom: 0;
       li.nav-item:first-of-type a{
         border-top-left-radius: 10px;
       }
@@ -29,7 +34,7 @@ main#storage_solutions_page{
       }     
     }
     .tab-content{
-      padding: 20px; padding-left: 0;
+      padding: 20px;
       .underlined{
         border-bottom: solid 1px #cccccc;
         display: inline-block;

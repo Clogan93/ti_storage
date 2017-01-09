@@ -1,8 +1,11 @@
-<main id="faq_page">
-  <%=
-    render partial: './static_pages/layout', locals: {
-      title: 'FAQ',
-      description: "
+<div class="static_pages_layout">
+  <div class="blue_page_heading"><h1>FAQ</h1></div>
+  <div class="container-fluid">
+    <%= render partial: 'static_pages/common/find_storage_space_near_you' %>
+    <div class="actual_page">
+      <%= render partial: 'static_pages/common/heading_with_background', locals: { title: 'FAQ', bg: 'faq' } %>
+
+      <main class="default_static_page_main default_markup">
         <ol>
           <li><b>Do you offer moving?</b> You can utilize our moving services depending on the unit size you rent and availability.</li>
 
@@ -36,11 +39,10 @@
 
           <li><b>Do you offer vehicle storage?</b> At this time, we are at capacity for the small vehicle (e.g. motorbikes) storage units.</li>
         </ol>
-      ",
-      heading: 'faq'
-    }
-  %>
-</main>
+      </main>
+    </div>
+  </div>
+</div>
 
 <%= content_for :title_tag, 'Frequently Asked Questions at Treasure Island Storage' %>
 <%= content_for :meta_description_tag, 'Treasure Island Storage has answers to the most frequently asked questions about self storage - from questions about unit sizes to payment options.' %>

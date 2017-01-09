@@ -1,8 +1,11 @@
-<main id="storage_solutions_page">
-  <%= 
-    render partial: './static_pages/layout', locals: { 
-      title: 'Household Storage',
-      description: "
+<div class="static_pages_layout">
+  <div class="blue_page_heading"><h1>Household Storage</h1></div>
+  <div class="container-fluid">
+    <%= render partial: 'static_pages/common/find_storage_space_near_you' %>
+    <div class="actual_page">
+      <%= render partial: 'static_pages/common/heading_with_background', locals: { title: 'Household Storage', bg: 'household' } %>
+
+      <main class="default_static_page_main default_markup">
         <p>When you rent a household storage unit at Treasure Island Storage, you can expect Self Storage solutions that are as valuable to you as the items you choose to store. Start by taking an assessment of all the household items you don't use on a regular (monthly and/or yearly) basis. Be merciless with yourself: holiday decorations are only needed once a year, should they really take up all the space in your hall closet every day of the year?</p>
 
         <h5>Home Office</h5>
@@ -19,11 +22,11 @@
          
         <h5>Toy Storage</h5>
         <p>Collecting toys from your childhood or as a hobby brings joy and pleasant memories. Toy storage is a wonderful way to preserve toys that you or your children have outgrown, and an excellent way to see that your children maximize their playtime with minimal clutter.</p>
-      ",
-      heading: 'household'
-    }
-  %>
-</main>
+      </main>
+
+    </div>
+  </div>
+</div>
 
 <%= content_for :title_tag, 'Household Storage | Treasure Island Storage' %>
 <%= content_for :meta_description_tag, 'Storing your household and personal belongings with Treasure Island Storage means you can expect the highest quality customer service.' %>
