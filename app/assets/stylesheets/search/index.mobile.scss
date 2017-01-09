@@ -1,5 +1,4 @@
 #search_index_page_mobile{
-
   li.nav-item{
     width: 50%;
     margin-left: 0;
@@ -15,9 +14,10 @@
   }
 
   section.storages{
-    .storage{
-      background-image: linear-gradient(to bottom, #f8f9fa 0%, #f1f1f1 100%);
+    a.storage{
+      display: block;
       padding: 10px;
+      background-image: linear-gradient(to bottom, #f8f9fa 0%, #f1f1f1 100%);
       .index, .distance, .address_and_price, .arrow{
         display: inline-block;
         vertical-align: middle;
@@ -62,6 +62,12 @@
 
   section.mobile_map{
     height: 300px;
+    .gm-style-iw{
+      .button.blue{
+        font-size: 15px;
+        padding-top: 10px;
+      }
+    }
   }
 
   @media (max-width: 390px){

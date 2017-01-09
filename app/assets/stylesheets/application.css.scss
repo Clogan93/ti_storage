@@ -32,11 +32,11 @@ footer, header, #breadcrumbs{
 
 a{
   cursor: pointer;
-  &:focus{
-    outline: none;
-    color: white;
-    text-decoration: none;
-  }
+}
+a.button:focus{
+  outline: none;
+  color: white;
+  text-decoration: none;
 }
 ol, ul{
   padding-left: 0;
