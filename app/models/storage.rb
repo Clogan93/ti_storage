@@ -2,13 +2,16 @@
 # TODO: Rubocop treats comment as constant?
 # Storages (we call them /locations occasionaly).
 
+# columns
+# link_to_google_reviews: seeded manually, because supposedly it can't generated from CID (?)
+
 # frozen_string_literal: true
 class Storage < ApplicationRecord
   validates_presence_of :title, :phone, :slug,
     :address, :area, :zip_code, :coordinates,
     :office_hours, :access_hours,
     :description_1, :description_2, :directions, :features,
-    :link_to_google, :link_to_yelp,
+    :link_to_google, :link_to_yelp, :link_to_google_reviews,
     :category
   validates_uniqueness_of :slug
 
