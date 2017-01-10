@@ -14,11 +14,7 @@ const Locations_Show_StorageUnitsTab_desktop = React.createClass({
 
   filterForSize(sizeTitle){
     const filteredStorageUnits = this.props.storageUnits.filter((unit) => {
-      if (sizeTitle == 'all units'){
-        return true
-      } else {
-        return unit.size_in_text === sizeTitle
-      }
+      return (sizeTitle == 'all units') ? true : unit.size_in_text === sizeTitle
     });
 
     this.setState({
@@ -51,8 +47,7 @@ const Locations_Show_StorageUnitsTab_desktop = React.createClass({
   },
 
   render() {
-    console.log(this.state)
-    return <div className="storage_units_tab">
+    return <div className="storage_units_tab desktop">
       <section className="select_size_and_sizing_guide">
         <div className="select_size">
           <h3 className="blue_heading">Select size</h3>

@@ -30,9 +30,10 @@ const Locations_Show_StorageUnitsTab = React.createClass({
   },
 
   render() {
-    if ($(window).width() > 576){
+    if ($(window).width() > 1000){
       return <Locations_Show_StorageUnitsTab_desktop sizes={sizes} storageUnits={this.props.storageUnits}/>
     } else {
+      return <Locations_Show_StorageUnitsTab_mobile sizes={sizes} storageUnits={this.props.storageUnits}/>
     }
   }
 });

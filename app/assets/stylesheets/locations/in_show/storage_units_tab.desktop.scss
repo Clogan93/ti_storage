@@ -1,4 +1,4 @@
-div.storage_units_tab{
+div.storage_units_tab.desktop{
   section.select_size_and_sizing_guide{
     // layout
     display: flex;
@@ -17,7 +17,6 @@ div.storage_units_tab{
       }
     }
     .sizing_guide{ width: 20%; }
-
 
     // prettiness
     background: #e2e6ec;

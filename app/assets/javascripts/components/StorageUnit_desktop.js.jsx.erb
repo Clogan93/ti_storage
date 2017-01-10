@@ -3,13 +3,6 @@ const StorageUnit_desktop = React.createClass({
     storageUnit: React.PropTypes.object.isRequired
   },
 
-  reserve() {
-    $.ajax({
-      url: `/storage_units/${this.props.unit.id}/reserve`,
-      type: "POST"
-    });
-  },
-
   renderFeatures() {
     const features = this.props.storageUnit.features.map((feature, key) =>
       <li key={key}>
@@ -49,7 +42,7 @@ const StorageUnit_desktop = React.createClass({
         <div className="red">{unit.rent_rate}/mo</div>
       </section>
       <section className="continue">
-        <a onClick={this.reserve} className="button blue">Continue</a>
+        <a onClick={() => reserveStorageUnit(unit.id)} className="button blue">Continue</a>
       </section>
     </div>
   }

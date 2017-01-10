@@ -1,0 +1,124 @@
+div.storage_units_tab.mobile{
+  section.select_size_and_sizing_guide{
+    // layout
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .lable{ width: 20%; min-width: 121px; }
+    .dropdown{ width: 40%; max-width: 380px; }
+
+    // prettiness
+    background-color: #e2e6ec;
+    padding: 15px;
+    border: solid 1px $pinkish-grey_color;
+    border-bottom: none;
+    .lable{
+      font-size: 25px;
+      letter-spacing: 0.4px;
+      font-weight: bold;
+    }
+    .dropdown{
+      margin: 0 20px;
+      text-transform: capitalize;
+      .dropdown-toggle{
+        background-color: #1f6aff;
+        cursor: pointer;
+
+        font-size: 14px;
+        font-weight: bold;
+        color: white;
+        text-align: center;
+        padding-top: 11px;
+
+        height: 44px;
+
+        // getting rid of default bootstrap's arrow:
+        &:after{ content: none; }
+        // adding our arrow:
+        background-image: url(image-path('locations/show/mobile-down-arrow.svg'));
+        background-repeat: no-repeat;
+        background-position: calc(100% - 10px) center;
+        // so that text doesn't go over an arrow
+        padding-right: 30px;
+      }
+      .dropdown-menu{
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+  section.storage_units{
+    background-color: #e2e6ec;
+    .storage_unit{
+      // layout
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      section.size_and_features{ width: 30%; }
+      section.monthly_price{ width: 30%; }
+      section.continue{ width: 30%; }
+
+      // prettiness
+      text-align: center;
+      background: white;
+      border: solid 1px $pinkish-grey_color;
+      padding: 10px 0;
+      section.size_and_features{
+        font-weight: bold;
+        .size{
+          font-size: 21px;
+          font-family: 'Roboto';
+          text-transform: capitalize;
+        }
+      }
+
+      section.monthly_price{
+        font-weight: bold;
+        .price{
+          font-size: 24px;
+          font-family: 'Roboto';
+          .previous{
+            text-decoration: line-through;
+            margin-right: 10px;
+          }
+          .current{ color: $vermillion_color; }
+        }
+      }
+    }
+  }
+}
+
+// responsive
+
+div.storage_units_tab.mobile{
+  section.select_size_and_sizing_guide{
+    @media (max-width: 620px){
+      flex-wrap: nowrap;
+      .lable{
+        margin-right: 20px;
+        font-size: 23px;
+      }
+      .dropdown{
+        width: 100% !important;
+        margin: 0;
+      }
+      .sizing_guide_preview{ display: none; }
+    }
+    @media (max-width: 370px){
+      .lable{ display: none; }
+    }
+  }
+
+  section.storage_units{
+    @media (max-width: 462px){
+      .storage_unit{
+        flex-wrap: wrap;
+        section.size_and_features{ width: 50%; }
+        section.monthly_price{ width: 50%; }
+        section.continue{ width: 100%; margin-top: 20px; }
+      }
+    }
+  }
+}

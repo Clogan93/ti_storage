@@ -13,7 +13,8 @@
     margin-top: 30px;
     // tabs
     @import 'in_show/reviews';
-    @import 'in_show/storage_units_tab';
+    @import 'in_show/storage_units_tab.desktop';
+    @import 'in_show/storage_units_tab.mobile';
 
     .sizing_guide_preview{ margin: 0 auto; }
     ul.tab_navigation{
