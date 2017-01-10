@@ -1,0 +1,49 @@
+const StorageUnit_desktop = React.createClass({
+  propTypes: {
+    storageUnit: React.PropTypes.object.isRequired
+  },
+
+  renderFeatures() {
+    const features = this.props.storageUnit.features.map((feature, key) =>
+      <li key={key}>
+        <%= image_tag '_common/tick_icon.svg', className: 'tick_icon' %>
+        {feature}
+      </li>
+    );
+
+    return <section className="features">
+      <ul>
+        {features}
+      </ul>
+    </section>
+  },
+
+  render() {
+    const unit = this.props.storageUnit;
+
+    return <div className="storage_unit">
+      <section className="size">
+        <div className="word_and_number">
+          {unit.size_in_text.toUpperCase()}<br/>
+          {unit.dimensions}
+        </div>
+        <a className="size_help" data-toggle="modal" data-target="#sizing_guide_modal">Size Help</a>
+      </section>
+      {this.renderFeatures()}
+      <section className="unit_monthly_price">
+        <div className="text">Regular Price</div>
+        <div className="price">
+          {unit.push_rate}
+          <div className="line_through"></div>
+        </div>
+      </section>
+      <section className="unit_promotion">
+        <div className="black">1st Month Free</div>
+        <div className="red">{unit.rent_rate}/mo</div>
+      </section>
+      <section className="continue">
+        <a onClick={() => reserveStorageUnit(unit.id)} className="button blue">Continue</a>
+      </section>
+    </div>
+  }
+});

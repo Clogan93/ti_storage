@@ -19,6 +19,17 @@
   &.blue{ background: linear-gradient(to bottom, #1f6aff 48%, $azul_color 52%); }
   &.red{ background: linear-gradient(to bottom, #f8332f 49%, #e50200 53%); }
 }
+a.button{
+  // fighting with bootstrap
+  &:not([href]):not([tabindex]){
+    color: white;
+  }
+  &:focus{
+    outline: none;
+    color: white;
+    text-decoration: none;
+  }
+}
 
 
 // .storage_details and .storage_preview are separate,
