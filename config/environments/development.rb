@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 Rails.application.configure do
-  # uncomment this if you want to test /errors_controller locally (otherwise you'll be shown a stack trace)
-  # doesn't work?
+  # uncomment this if you want to test
+  # /errors_controller locally
+  # (otherwise you'll be shown a stack trace)
+  # TODO doesn't work?
   # config.consider_all_requests_local = false
 
   # In the development environment your application's code is reloaded on

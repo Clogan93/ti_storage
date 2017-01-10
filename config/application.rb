@@ -20,6 +20,6 @@ module TiStorage
       password:       ENV['EMAIL_PASSWORD']
     }
 
-    config.exceptions_app = self.routes
+    config.exceptions_app = routes
   end
 end
