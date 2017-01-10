@@ -48,7 +48,8 @@ class StorageUnit < ApplicationRecord
     options = {
       methods: [
         :dimensions,
-        :size_in_text
+        :size_in_text,
+        :features
       ]
     }
     super(options)

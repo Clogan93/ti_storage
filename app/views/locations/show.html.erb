@@ -36,8 +36,7 @@
 
       <div class="tab-content">
         <article class="tab-pane active" id="storage_units">
-          <%= render partial: 'locations/in_show/storage_units_tab' %>
-          <%= render partial: 'locations/in_show/storage_units_tab.mobile' %>
+          <%= react_component('Locations_Show_StorageUnitsTab', { storageUnits: @storage_units }) %>
         </article>
         <article class="tab-pane" id="features">
           <ul>
