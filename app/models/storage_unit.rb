@@ -1,7 +1,8 @@
+# frozen_string_literal: true
 # StorageUnit
 
 # columns:
-# rent_rate: is the discounted rate, 
+# rent_rate: is the discounted rate,
 # push_rate: is the higher rate or offline rate
 
 # frozen_string_literal: true
@@ -30,7 +31,7 @@ class StorageUnit < ApplicationRecord
     @features
   end
 
-  # copied from #size_class in application_helper, 
+  # copied from #size_class in application_helper,
   # because we need it in react components
   # TODO may to use this method everywhere
   def size_in_text
