@@ -1,6 +1,6 @@
 const Search_Index_desktop_TopChoicesAroundYou = (props) => {
   const storage = props.storage;
-  const cheapestUnits = storage.storage_units.sort((unit_1, unit_2) => unit_1.rent_rate - unit_2.rent_rate);
+  const cheapestUnits = storage.storage_units.sort((unit_1, unit_2) => unit_1.push_rate - unit_2.push_rate);
 
   const unitEls = cheapestUnits.slice(0, 3).map((unit, index) =>
     <Search_Index_desktop_Unit key={index} unit={unit} storage={storage}/>

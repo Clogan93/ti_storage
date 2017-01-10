@@ -18,13 +18,20 @@ const FindStorageDropdown = React.createClass({
   },
 
   autocompleteLocation(text) {
-    const service = new google.maps.places.AutocompleteService
-    service.getPlacePredictions({
+    // TODO is there some API from googlemaps that
+    // lets us return only postal codes?
+    // https://developers.google.com/maps/documentation/javascript/places-autocomplete
+    // { types: ['(regions)'] } looks like it, but I'm unsure on how to use it.
+    const options = {
       input: text,
       componentRestrictions: {
         country: 'us' // return only those within US
-      }
-    },
+      },
+      // ...text.length === 5 && { types: ['(regions)'] }
+    };
+
+    const service = new google.maps.places.AutocompleteService;
+    service.getPlacePredictions(options,
     (result) => { 
       if (result === null) { // no locations found
         this.setState({
