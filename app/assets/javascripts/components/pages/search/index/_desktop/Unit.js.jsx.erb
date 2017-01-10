@@ -1,32 +1,56 @@
-const Search_Index_desktop_Unit = () =>
-  <div className="row unit">
-    <div className="col-md-3 col-xs-4 size_and_location">
-      <div className="size">
-        <div className="word">SMALL</div>
-        <div className="number">4 x 4</div>
-      </div>
-      <div className="location">
+const Search_Index_desktop_Unit = React.createClass({
+  propTypes: {
+    storage: React.PropTypes.object,
+    unit:    React.PropTypes.object.isRequired,
+  },
+
+  renderStorageDetails() {
+    const storage = this.props.storage;
+    if (storage){
+      return <div className="location">
         <span className="pin">
           <%= image_tag '_common/location_pin.svg' %>
         </span>
-        <span className="address">183 Lorraine Street</span>
+        <span className="address">{storage.address}</span>
       </div>
-    </div>
+    }
+  },
 
-    <div className="col-md-3 col-xs-4 unit_monthly_price">
-      <div className="text">Regular Price</div>
-      <div className="price">
-        $48
-        <div className="line_through"></div>
+  reserve() {
+    $.ajax({
+      url: `/storage_units/${this.props.unit.id}/reserve`,
+      type: "POST"
+    });
+  },
+
+  render() {
+    const unit = this.props.unit;
+
+    return <div className="row unit">
+      <div className="col-md-3 col-xs-4 size_and_location">
+        <div className="size">
+          <div className="word">{unit.size_in_text.toUpperCase()}</div>
+          <div className="number">{unit.dimensions}</div>
+        </div>
+        {this.renderStorageDetails()}
       </div>
-    </div>
 
-    <div className="col-md-3 col-xs-4 unit_promotion">
-      <div className="black">1st Month Free</div>
-      <div className="red">$20/mo</div>
-    </div>
+      <div className="col-md-3 col-xs-4 unit_monthly_price">
+        <div className="text">Regular Price</div>
+        <div className="price">
+          ${unit.push_rate}
+          <div className="line_through"></div>
+        </div>
+      </div>
 
-    <div className="col-md-3 continue">
-      <a href="/checkout" className="button blue">Continue</a>
-    </div>
-  </div>
+      <div className="col-md-3 col-xs-4 unit_promotion">
+        <div className="black">1st Month Free</div>
+        <div className="red">${unit.rent_rate}/mo</div>
+      </div>
+
+      <div className="col-md-3 continue">
+        <a onClick={this.reserve} className="button blue">Continue</a>
+      </div>
+    </div> 
+  }
+})

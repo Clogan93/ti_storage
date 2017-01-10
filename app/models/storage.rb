@@ -56,7 +56,8 @@ class Storage < ApplicationRecord
         :image_src,
         :url,
         :min_unit_price,
-        :link_to_google_maps
+        :link_to_google_maps,
+        :storage_units
       ]
     }.update(options)
     super(options)

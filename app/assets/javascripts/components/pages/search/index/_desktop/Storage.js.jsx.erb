@@ -3,6 +3,15 @@ const Search_Index_desktop_Storage = React.createClass({
     storage: React.PropTypes.object.isRequired,
   },
 
+  renderUnits() {
+    const storage = this.props.storage;
+    const cheapestUnits = storage.storage_units.sort((unit_1, unit_2) => unit_1.rent_rate - unit_2.rent_rate);
+    const unitEls = cheapestUnits.slice(0, 3).map((unit, index) =>
+      <Search_Index_desktop_Unit key={index} unit={unit}/>
+    );
+    return unitEls;
+  },
+
   render() {
     const storage = this.props.storage;
 
@@ -30,7 +39,7 @@ const Search_Index_desktop_Storage = React.createClass({
           </div>
 
           <a className="button red" href={storage.url}>
-            Show All Available Units
+            Show All Units
           </a>
         </div>
 
@@ -40,9 +49,7 @@ const Search_Index_desktop_Storage = React.createClass({
       </div>
 
       <div className="units">
-        <Search_Index_desktop_Unit/>
-        <Search_Index_desktop_Unit/>
-        <Search_Index_desktop_Unit/>
+        {this.renderUnits()}
       </div>
     </div>
   }
