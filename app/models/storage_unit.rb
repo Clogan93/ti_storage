@@ -1,4 +1,9 @@
 # StorageUnit
+
+# columns:
+# rent_rate: is the discounted rate, 
+# push_rate: is the higher rate or offline rate
+
 # frozen_string_literal: true
 class StorageUnit < ApplicationRecord
   belongs_to :storage, foreign_key: :site_id, primary_key: :site_id
@@ -23,5 +28,28 @@ class StorageUnit < ApplicationRecord
     @features << data.attribute1_value.titlecase
     @features << data.access_value
     @features
+  end
+
+  # copied from #size_class in application_helper, 
+  # because we need it in react components
+  # TODO may to use this method everywhere
+  def size_in_text
+    case square_feet.to_i
+    when 0        then :custom
+    when 0..50    then :small
+    when 51..150  then :medium
+    when 151..300 then :large
+    else               :'x-large'
+    end
+  end
+
+  def serializable_hash(options = {})
+    options = {
+      methods: [
+        :dimensions,
+        :size_in_text
+      ]
+    }
+    super(options)
   end
 end

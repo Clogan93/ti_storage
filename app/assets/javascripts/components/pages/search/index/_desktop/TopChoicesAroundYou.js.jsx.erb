@@ -1,11 +1,17 @@
-const Search_Index_desktop_TopChoicesAroundYou = () => 
-  <section className="top_choices_around_you">
+const Search_Index_desktop_TopChoicesAroundYou = (props) => {
+  const storage = props.storage;
+  const cheapestUnits = storage.storage_units.sort((unit_1, unit_2) => unit_1.rent_rate - unit_2.rent_rate);
+
+  const unitEls = cheapestUnits.slice(0, 3).map((unit, index) =>
+    <Search_Index_desktop_Unit key={index} unit={unit} storage={storage}/>
+  );
+
+  return <section className="top_choices_around_you">
     <div className="trapezoid">
       <div className="heading heading_font">Top Choices Around You</div>
     </div>
     <div className="units">
-      <Search_Index_desktop_Unit/>
-      <Search_Index_desktop_Unit/>
-      <Search_Index_desktop_Unit/>
+      {unitEls}
     </div>
   </section>
+}

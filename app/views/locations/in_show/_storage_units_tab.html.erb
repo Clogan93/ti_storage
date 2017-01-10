@@ -45,3 +45,14 @@
     <%= react_component('SizingGuidePreview') %>
   </div>
 </div>
+
+<div class="unit_options hidden-sm-down">
+  <div class="row table_head">
+    <div class="col-xs-2">Size</div>
+    <div class="col-xs-3">Features</div>
+    <div class="col-xs-2">Monthly price</div>
+    <div class="col-xs-2"></div>
+    <div class="col-xs-3"></div>
+  </div>
+  <%= render(partial: @storage_units) %>
+</div>

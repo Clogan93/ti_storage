@@ -28,7 +28,8 @@ const Search_Index_desktop_SearchResults = React.createClass({
     const map = new Map(mapEl);
     map.displayMap();
 
-    let markers = this.props.nearestStorages;
+    // ([...] to avoid modifying props)
+    let markers = [...this.props.nearestStorages];
 
     // what we were searching for
     const origin = currentQueryString();
@@ -52,7 +53,9 @@ const Search_Index_desktop_SearchResults = React.createClass({
     map.placeMarkersOnMap(markers, {
       onClick: (infoWindow, storage) => {
         infoWindow.setContent(storage.title);
-        this.setState({ scrollDownToStorageId: storage.id });
+        if (storage.type != 'me'){
+          this.setState({ scrollDownToStorageId: storage.id });
+        }
       }
     });
   },
@@ -64,7 +67,7 @@ const Search_Index_desktop_SearchResults = React.createClass({
           <section ref="map" className="map"></section>
         </div>
         <div className="col-xl-6 search_results">
-          <Search_Index_desktop_TopChoicesAroundYou/>
+          <Search_Index_desktop_TopChoicesAroundYou storage={this.props.nearestStorages[0]}/>
 
           <section className="reserve_online_today_ad">
             <%= image_tag '_common/ads/green_checkmark_in_circle.png' %>
