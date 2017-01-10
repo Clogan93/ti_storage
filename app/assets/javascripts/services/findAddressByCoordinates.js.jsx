@@ -3,7 +3,6 @@ const findAddressByCoordinates = (lat, lng, onSuccess) =>{
   geocoder.geocode({ location: { lat, lng } }, (results, status) => {
     if (status === 'OK') {
       if (results.length > 0) {
-        console.log(results)
         onSuccess(results[0].formatted_address);
       } else {
         console.log('No results found');
