@@ -1,4 +1,6 @@
 # frozen_string_literal: true
+# rubocop:disable all
+# TODO don't disable all, just can't find how to disable [or VS ||] thing
 # locations == storages
 class LocationsController < ApplicationController
   def index
