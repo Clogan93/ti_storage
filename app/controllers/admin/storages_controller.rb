@@ -32,7 +32,8 @@ module Admin
 
     def storage_params
       params.require(:storage).permit(
-        :place_id, :link_to_google, :link_to_yelp,
+        :place_id,
+        :link_to_google_maps, :link_to_google_reviews, :link_to_yelp,
         :features, :coordinates, :description_1, :description_2, :directions
       )
     end

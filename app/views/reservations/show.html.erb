@@ -74,7 +74,7 @@
             </div>
           </section>
 
-          <section class="general_client_info">
+          <section class="general_client_info" style="display: none;">
             <%= fields_for :account, current_account do |c| %>
             <%= c.text_field :first_name, placeholder: "First Name", class: "form-control" %>
             <%= c.text_field :last_name, placeholder: "Last Name", class: "form-control" %>
