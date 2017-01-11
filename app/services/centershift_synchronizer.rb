@@ -47,13 +47,13 @@ module CentershiftSynchronizer
 
     def call
       Centershift::Unit.where(site_id: @site_id).each do |unit|
-        StorageUnit.find_or_initialize_by(
-          unit_id: unit.attributes[:unit_id], site_id: unit.attributes[:site_id]
-        ).tap do |storage_unit|
-          set_attributes_from_centershift(storage_unit, unit)
-          storage_unit.data = unit.to_json
-          storage_unit.save
-        end
+        su = StorageUnit.find_or_initialize_by(
+          unit_id: unit.unit_id,
+          site_id: unit.site_id
+        )
+        su = set_attributes_from_centershift(su, unit)
+        su.data = unit.to_json
+        su.save
       end
     end
 
@@ -63,6 +63,7 @@ module CentershiftSynchronizer
           attribute, unit.send(attribute).send(converter)
         )
       end
+      storage_unit
     end
   end
 end

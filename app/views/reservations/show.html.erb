@@ -10,6 +10,7 @@
 
 <main id="checkout_new_page">
   <div class="container-fluid">
+    <% if @current_storage_unit %>
     <section class="step_navigation">
       <div class="row">
         <div class="col-md-6">
@@ -104,5 +105,14 @@
         <% end %>
       </section>
     </div>
+    <% else %>
+    <div class="row">
+      <div class="col-xs-12">
+        <p>
+          <center><h3>Please Select a Unit</h3></center>
+        </p>
+      </div>
+    </div>
+    <% end %>
   </div>
 </main>

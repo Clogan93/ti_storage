@@ -2,7 +2,8 @@
 # :nodoc:
 class ReservationsController < ApplicationController
   def show
-    @current_reservation ||= current_storage_unit.reservations.new
+    @current_reservation ||=
+      current_storage_unit && current_storage_unit.reservations.new
   end
 
   def create

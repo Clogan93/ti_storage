@@ -24,11 +24,11 @@ class StorageUnit < ApplicationRecord
   end
 
   def features
-    @features ||= []
-    @features << data.climate_value.titlecase if data.climate_value
-    @features << data.attribute1_value.titlecase
-    @features << data.access_value
-    @features
+    @features ||= [
+      data.climate_value && data.climate_value.titlecase,
+      data.attribute1_value && data.attribute1_value.titlecase,
+      data.access_value
+    ].compact.map(&:strip)
   end
 
   # copied from #size_class in application_helper,

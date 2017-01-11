@@ -5,10 +5,10 @@
 
   <section class="storage">
     <div class="row">
-      <div class="col-sm-6 image">
+      <div class="col-sm-12 image">
         <%= image_tag(storage_image_path(storage)) %>
       </div>
-      <div class="col-sm-6 description">
+      <div class="col-sm-12 description">
         <h5 class="section_heading">TI Storage - <%= storage.title %></h5>
         <div class="details">
           <%= storage.address %><br/>
@@ -25,7 +25,7 @@
     <h5 class="section_heading">Unit:</h5>
     <div class="size"><%= storage_unit.dimensions %></div>
     <div class="details">
-      <%= storage_unit.features.join(",") %>
+      <%= storage_unit.features.join(", ") %>
     </div>
     <%= link_to('Change Unit', seo_storage_path(storage), class: "change_something") %>
   </section>

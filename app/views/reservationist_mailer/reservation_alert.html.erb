@@ -1,11 +1,7 @@
-<p>Dear Treasure Island Storage <%= @reservation.storage.title %></p>
+Dear Treasure Island Storage <%= @reservation.storage.title %><br/><br/>
+<%= @reservation.account.name %> has submitted a reservation form from Treasure Island Storage <%= @reservation.storage.title %>.<br/><br/>
 
-<p>
-  <%= @reservation.account.name %> has submitted a reservation form from Treasure Island Storage <%= @reservation.storage.title %>.
-</p>
-<p>
-  Below is a summary of the reservation.
-</p>
+Below is a summary of the reservation.<br/><br/>
 
 <table>
   <tr>
@@ -48,6 +44,4 @@
     <td>Unit Size</td>
     <td><%= @reservation.storage_unit.dimensions %></td>
   </tr>
-</table>
-<br/>
-<p>Thank you!</p>
+</table><br/><br/>

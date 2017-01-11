@@ -6,8 +6,7 @@ class ReservationistMailer < ApplicationMailer
   def reservation_confirmation(reservation)
     @reservation = reservation
     mail(
-      to: "reservations@tistorage.com",
-      cc: email_with_name(reservation.account.email, reservation.account.name),
+      to: email_with_name(reservation.account.email, reservation.account.name),
       subject: "Treasure Island Storage Reservation"
     )
   end
@@ -15,7 +14,8 @@ class ReservationistMailer < ApplicationMailer
   def reservation_alert(reservation)
     @reservation = reservation
     mail(
-      to: email_list(reservation),
+      to: "reservations@tistorage.com",
+      cc: email_list(reservation),
       subject: "Website Reservation"
     )
   end
