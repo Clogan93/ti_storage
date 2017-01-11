@@ -41,7 +41,6 @@ Rails.application.routes.draw do
     get 'art-storage',  to: 'storage_solutions#art_storage'
   end
 
-  get 'myaccount',    to: 'static_pages#myaccount'
   get 'sizing-guide', to: 'static_pages#sizing_guide'
 
   # in header: why store with us?

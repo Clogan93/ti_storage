@@ -21,7 +21,7 @@ class CreateStorages < ActiveRecord::Migration[5.0]
       t.text :directions
       t.text :features
 
-      t.string :link_to_google
+      t.string :link_to_google_maps
       t.string :link_to_yelp
       t.string :link_to_google_reviews
     end

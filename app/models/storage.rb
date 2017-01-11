@@ -10,7 +10,7 @@ class Storage < ApplicationRecord
     :address, :area, :zip_code, :coordinates,
     :office_hours, :access_hours,
     :description_1, :description_2, :directions, :features,
-    :link_to_google, :link_to_yelp, :link_to_google_reviews,
+    :link_to_google_maps, :link_to_yelp, :link_to_google_reviews,
     :category
   validates_uniqueness_of :slug
 
@@ -32,12 +32,6 @@ class Storage < ApplicationRecord
     '/' + category.slug + '/' + slug
   end
 
-  def link_to_google_maps
-    "https://www.google.com/maps/place/" +
-      coordinates[0].to_s + "," +
-      coordinates[1].to_s
-  end
-
   def min_unit_price
     case title
     when 'Jamaica', 'Ozone Park', 'Paterson'
@@ -56,7 +50,6 @@ class Storage < ApplicationRecord
         :image_src,
         :url,
         :min_unit_price,
-        :link_to_google_maps,
         :storage_units
       ]
     }.update(options)

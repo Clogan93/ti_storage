@@ -110,7 +110,7 @@ ActiveRecord::Schema.define(version: 20170109060601) do
     t.text    "description_2"
     t.text    "directions"
     t.text    "features"
-    t.string  "link_to_google"
+    t.string  "link_to_google_maps"
     t.string  "link_to_yelp"
     t.string  "link_to_google_reviews"
     t.integer "site_id"
