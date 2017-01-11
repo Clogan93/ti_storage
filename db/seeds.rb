@@ -100,7 +100,7 @@ _storages = [
       'Drive-up Access'
     ],
 
-    link_to_google: 'https://www.google.com/maps/place/Treasure+Island+Storage/@40.673247,-74.0036087,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x78f739dba5cddb7f!8m2!3d40.673247!4d-74.00142',
+    link_to_google_maps: 'https://www.google.com/maps/place/Treasure+Island+Storage/@40.673247,-74.0036087,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x78f739dba5cddb7f!8m2!3d40.673247!4d-74.00142',
     link_to_yelp: 'https://www.yelp.com/biz/treasure-island-storage-brooklyn',
     link_to_google_reviews: 'https://www.google.com/maps/place/Treasure+Island+Storage/@40.673247,-74.0036087,17z/data=!4m7!3m6!1s0x0:0x78f739dba5cddb7f!8m2!3d40.673247!4d-74.00142!9m1!1b1'
   },
@@ -187,7 +187,7 @@ _storages = [
       'Electronic Gate Access'
     ],
 
-    link_to_google: 'https://www.google.com/maps?cid=9927460022584004851',
+    link_to_google_maps: 'https://www.google.com/maps?cid=9927460022584004851',
     link_to_yelp: 'http://www.yelp.com/biz/treasure-island-storage-ozone-park',
     link_to_google_reviews: 'https://www.google.com/maps/place/Treasure+Island+Storage/@40.67869,-73.8610776,17z/data=!4m7!3m6!1s0x0:0x89c56c4ae802d0f3!8m2!3d40.67869!4d-73.8588889!9m1!1b1'
   },
@@ -271,7 +271,7 @@ _storages = [
       'Electronic Gate Access'
     ],
 
-    link_to_google: 'https://www.google.com/maps?cid=16820705145551541205',
+    link_to_google_maps: 'https://www.google.com/maps?cid=16820705145551541205',
     link_to_yelp: 'http://www.yelp.com/biz/treasure-island-self-storage-jamaica',
     link_to_google_reviews: 'https://www.google.com/maps/place/Treasure+Island+Storage/@40.701152,-73.7772063,17z/data=!4m7!3m6!1s0x0:0xe96f2635c02f53d5!8m2!3d40.701152!4d-73.7750176!9m1!1b1'
   },
@@ -370,7 +370,7 @@ _storages = [
       'Senior and Military Discounts'
     ],
 
-    link_to_google: 'https://www.google.com/maps?cid=12458577705934049089',
+    link_to_google_maps: 'https://www.google.com/maps?cid=12458577705934049089',
     link_to_yelp: 'http://www.yelp.com/biz/treasure-island-self-storage-paterson',
     link_to_google_reviews: 'https://www.google.com/maps/place/Treasure+Island+Storage/@40.9115266,-74.1723381,17z/data=!4m7!3m6!1s0x0:0xace5c26a48cccf41!8m2!3d40.9115266!4d-74.1701494!9m1!1b1'
   },
@@ -440,7 +440,7 @@ _storages = [
       'Referral Discount Program'
     ],
 
-    link_to_google: 'https://www.google.com/maps/place/Treasure+Island+Storage/@40.567541,-74.2942407,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x4674c9c6733ca846!8m2!3d40.567541!4d-74.292052',
+    link_to_google_maps: 'https://www.google.com/maps/place/Treasure+Island+Storage/@40.567541,-74.2942407,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x4674c9c6733ca846!8m2!3d40.567541!4d-74.292052',
     link_to_yelp: 'https://www.yelp.com/biz/treasure-island-self-storage-woodbridge',
     link_to_google_reviews: 'https://www.google.com/maps/place/Treasure+Island+Storage/@40.567541,-74.2942407,17z/data=!4m7!3m6!1s0x0:0x4674c9c6733ca846!8m2!3d40.567541!4d-74.292052!9m1!1b1'
   }
