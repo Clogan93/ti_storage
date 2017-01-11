@@ -19,7 +19,5 @@ module TiStorage
       user_name:      ENV['EMAIL_USER_NAME'],
       password:       ENV['EMAIL_PASSWORD']
     }
-
-    config.exceptions_app = routes
   end
 end

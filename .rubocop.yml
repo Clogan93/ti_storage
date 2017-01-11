@@ -13,5 +13,3 @@ StringLiterals:
   Enabled: false
 AlignParameters:
   Enabled: false
-AssignmentInCondition:
-  Enabled: false

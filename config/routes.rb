@@ -52,9 +52,6 @@ Rails.application.routes.draw do
 
   root to: 'static_pages#home'
 
-  match "/404", :to => "errors#not_found", :via => :all
-  match "/500", :to => "errors#server_error", :via => :all
-
   get 'locations', to: 'locations#locations'
   # must be in the end, matches all
   get ":category_slug/:storage_slug", to: 'locations#show', as: :sluggable_location
