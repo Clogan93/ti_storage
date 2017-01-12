@@ -7,6 +7,7 @@ class ReservationsController < ApplicationController
   end
 
   def create
+    session[:r_id] = nil
     handle_request
   end
 

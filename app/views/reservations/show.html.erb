@@ -31,7 +31,7 @@
     <div class="sidebar_and_steps">
       <%= render partial: '/checkout/in_new/your_reservation' %>
 
-      <section class="step_1 step block">
+      <section id="reservation" class="step_1 step block">
         <%= form_for current_reservation, url: [:reservation] do |f| %>
           <h5 class="block_heading">Lock in Your Rate Now.</h5>
 
@@ -75,7 +75,7 @@
             </div>
           </section>
 
-          <section class="general_client_info" style="display: none;">
+          <section id="reservationForm" class="general_client_info" style="display: none;">
             <%= fields_for :account, current_account do |c| %>
             <%= c.text_field :first_name, placeholder: "First Name", class: "form-control" %>
             <%= c.text_field :last_name, placeholder: "Last Name", class: "form-control" %>
