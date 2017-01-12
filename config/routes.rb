@@ -53,6 +53,18 @@ Rails.application.routes.draw do
   root to: 'static_pages#home'
 
   get 'locations', to: 'locations#locations'
+
+  # redirects
+  get '/self-storage/ny/brooklyn/treasure-island-redhook', to: redirect('/brooklyn/red-hook', status: 301)
+  get '/self-storage/ny/queens/treasure-island-jamaica', to: redirect('/queens/jamaica', status: 301)
+  get '/self-storage/nj/paterson/treasure-island-paterson', to: redirect('/new-jersey/paterson', status: 301)
+  get '/self-storage/nj/woodbridge/treasure-island-woodbridge', to: redirect('/new-jersey/woodbridge', status: 301)
+  get '/our-locations', to: redirect('/locations', status: 301)
+  get '/contact-us', to: redirect('/contact', status: 301)
+  get '/self-storage/nj', to: redirect('/new-jersey', status: 301)
+  get '/ti-art-studios', to: redirect('/art-storage', status: 301)
+  get '/self-storage/ny/ozone-park/treasure-island-storage-ozone-park', to: redirect('/queens/ozone-park', status: 301)
+
   # must be in the end, matches all
   get ":category_slug/:storage_slug", to: 'locations#show', as: :sluggable_location
   get ":category_slug", to: 'locations#index'
