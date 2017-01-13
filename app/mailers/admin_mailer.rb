@@ -34,6 +34,10 @@ class AdminMailer < ApplicationMailer
 
   # used for staging and development
   def mail_to(default)
-    ENV['SEND_EMAILS_TO'] ? ENV['SEND_EMAILS_TO'] : default
+    if Rails.env.production?
+      default
+    else
+      ENV['SEND_EMAILS_TO'] ? ENV['SEND_EMAILS_TO'] : default
+    end
   end
 end
