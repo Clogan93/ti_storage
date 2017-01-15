@@ -1,13 +1,13 @@
 <section class="storage_view hidden-md-down">
   <div class="photos">
     <div class="main_photo">
-      <%= image_tag storage_image_path(storage) %>
+      <%= image_tag(storage.image_path) %>
     </div>
 
     <div class="additional_photos">
-      <%= image_tag(storage_image_path(storage).gsub(".jpg", "/1.jpg")) %>
-      <%= image_tag(storage_image_path(storage).gsub(".jpg", "/2.jpg")) %>
-      <%= image_tag(storage_image_path(storage).gsub(".jpg", "/3.jpg")) %>
+      <%= image_tag(storage.image_path.gsub(".jpg", "/1.jpg")) %>
+      <%= image_tag(storage.image_path.gsub(".jpg", "/2.jpg")) %>
+      <%= image_tag(storage.image_path.gsub(".jpg", "/3.jpg")) %>
     </div>
   </div>
 
@@ -16,29 +16,26 @@
     <div class="address">
       <h6>Location</h6>
       <p>
-        <%= storage.address %>
-        <%= storage.area %>
-        <%= storage.zip_code %>
+        <%= storage.address_1 %>
+        <%= storage.city_state_and_zip %>
       </p>
     </div>
 
     <div class="phone_number">
       <h6>Phone number</h6>
-      <p><%= storage[:phone] %></p>
+      <p><%= number_to_phone(storage.phone) %></p>
     </div>
-
-    <a href="<%= seo_storage_path(storage) %>" class="button blue find_units">FIND UNITS</a>
+    <%= link_to('FIND UNITS', storage.url, class: 'button blue find_units') %>
 
     <%= react_component('FetchableStorageRating', { placeId: storage.place_id, numberIsDisplayed: true }) %>
-
-    <a href="<%= seo_storage_path(storage) %>#reviews" class="read_reviews">Read Reviews</a>
+    <%= link_to('Read Reviews', [storage.area.path_prefix, storage, anchor: :reviews], class: 'read_reviews') %>
   </section>
 
   <section class="info second">
     <div class="office_hours">
       <h6>Office hours</h6>
       <p>
-        <% storage.office_hours.each do |hours| %>
+        <% storage.hours['office'].each do |hours| %>
           <%= hours %><br>
         <% end %>
       </p>
@@ -47,7 +44,7 @@
     <div class="access_hours">
       <h6>Access hours</h6>
       <p>
-        <% storage.access_hours.each do |hours| %>
+        <% storage.hours['access'].each do |hours| %>
           <%= hours %><br>
         <% end %>
       </p>

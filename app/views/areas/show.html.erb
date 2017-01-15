@@ -1,0 +1,25 @@
+<%= render partial: 'common/breadcrumbs', locals: {
+  links: [@area.title]
+} %>
+
+<main id="locations_page">
+  <div class="container-fluid">
+
+    <% @sites.each do |site| %>
+      <%= render(partial: 'common/storage_view', locals: { storage: site }) %>
+    <% end %>
+
+  </div>
+</main>
+
+<% case @area.slug %>
+<% when 'brooklyn' %>
+  <%= content_for :title_tag, 'Brooklyn Self Storage Company | TI Storage' %>
+  <%= content_for :meta_description_tag, 'Treasure Island Storage provides top quality storage facilities in Brooklyn. We offer a variety of sizes and features including climate controls.' %>
+<% when 'queens' %>
+  <%= content_for :title_tag, 'Queens Self Storage Company | TI Storage' %>
+  <%= content_for :meta_description_tag, 'TI Storage is home to the most conveniently located self storage spaces in Queens. We have locations in Jamaica and Ozone Park.' %>
+<% when 'new-jersey' %>
+  <%= content_for :title_tag, 'New Jersey Self Storage Company | TI Storage' %>
+  <%= content_for :meta_description_tag, 'TI Storage offers affordable self storage solutions in New Jersey including Woodbridge and Paterson. We offer climate controls, 24-hour surveillance, and more.' %>
+<% end %>

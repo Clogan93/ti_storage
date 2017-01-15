@@ -8,20 +8,17 @@
 <section class="info">
   <h5 class="title"><%= storage.title %></h5>
   <div class="address">
-    <%= storage.address %><br>
-    <%= storage.area %> <%= storage.zip_code %>
+    <%= storage.address_1 %><br/>
+    <%= storage.city_state_and_zip %>
   </div>
   <div class="phone_number"><%= storage.phone %></div>
 
   <div class="office_hours">
     <h6>Office hours</h6>
-
-    <% storage.office_hours.each do |hours| %>
+    <% storage.hours['office'].each do |hours| %>
       <%= hours.gsub('Mon-Fri', 'M-F') %><br>
     <% end %>
   </div>
 </section>
 
-<a class="button blue" href="<%= seo_storage_path(storage) %>">
-  View Units
-</a>
+<%= link_to("View Units", [storage.path_prefix, storage], class: 'button blue')

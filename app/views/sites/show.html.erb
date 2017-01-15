@@ -1,0 +1,87 @@
+<%= render partial: 'common/breadcrumbs', locals: {
+  links: [
+    link_to(@area.title, [@area.path_prefix]),
+    @site.title
+  ]
+} %>
+
+<main id="locations_show_page">
+  <div class="container-fluid">
+
+    <div class="row">
+      <div class="col-xs-12">
+        <h1 class="standard_page_heading">Reserve Your Space Today!</h1>
+      </div>
+    </div>
+
+    <%= render partial: 'common/search_field_and_ad', locals: { ad_src: '_common/ads/amazon_rectangular.png' } %>
+
+    <%= render partial: 'common/storage_view', locals: { storage: @site } %>
+
+    <section class="mobile_ad hidden-lg-up">
+      <%= image_tag '_common/ads/amazon_rectangular.png' %>
+    </section>
+
+    <section class="extensive_information">
+      <% tab_ids = [:storage_units, :features, :directions, :videos, :reviews] %>
+      <ul class="hidden-md-down tab_navigation nav nav-tabs">
+        <% tab_ids.each do |tab_id| %>
+          <li class="nav-item">
+            <a href="#<%= tab_id %>" class="<%= tab_id == :storage_units ? 'active' : '' %> nav-link" data-toggle="tab">
+              <%= tab_id.to_s.titleize %>
+            </a>
+          </li>
+        <% end %>
+      </ul>
+
+      <div class="tab-content">
+        <article class="tab-pane active" id="storage_units">
+          <%= render(partial: 'units') %>
+        </article>
+        <article class="tab-pane" id="features">
+          <ul>
+            <% @site.features.each do |feature| %>
+              <li><%= feature %></li>
+            <% end %>
+          </ul>
+        </article>
+        <article class="tab-pane" id="directions">
+          <%= @site.directions.html_safe %>
+        </article>
+        <article class="tab-pane" id="videos">
+          <ul>
+            <li>Coming Soon</li>
+          </ul>
+        </article>
+        <article class="tab-pane" id="reviews">
+          <%= react_component('StorageReviews', { placeId: @site.place_id }) %>
+
+          <section class="links_to_reviews">
+            <a target="_blank" href="<%= @site.link_to_google_reviews %>">See Google reviews</a>
+            <a target="_blank" href="<%= @site.link_to_yelp %>">See Yelp reviews</a>
+          </section>
+        </article>
+      </div>
+    </section>
+  </div><!-- /container-fluid -->
+
+  <article class="descriptions">
+    <div class="description_1">
+      <div class="text">
+        <%= @site.description_1.html_safe %>
+      </div>
+      <%= image_tag "locations/show/descriptions/1.jpg" %>
+    </div>
+    <div class="description_2">
+      <%= image_tag "locations/show/descriptions/#{@site.slug}/2.jpg" %>
+      <div class="text">
+        <%= @site.description_2.html_safe %>
+      </div>
+    </div>
+  </article>
+</main>
+
+<%= render 'common/sizing_guide_modal' %>
+
+<%= content_for :title_tag, "Self Storage Units #{@site.title} #{@site.area.title} | Treasure Island Storage" %>
+<%= content_for :meta_description_tag, 'Looking for self storage units in #{@site.title} #{@site.area.title}? Treasure Island Storage offers clean and affordable storage to fit any need. Reserve today!' %>

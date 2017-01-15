@@ -1,9 +1,16 @@
 # frozen_string_literal: true
 # :nodoc:
 class CheckoutsController < ApplicationController
+  def show
+    @cart ||= CartPresenter.new(current_cart, view_context)
+    @cart_form ||= CartFormPresenter.new(@cart, view_context)
+  end
+
   def update
-    request = Reservationist::Pay.new(request_attributes).call
-    if request
+    current_cart.update_attributes(
+      payment_params: payment_params
+    )
+    if current_cart.process_payment!
       redirect_to([:reservation, :lease])
     else
       render(:show)
@@ -11,13 +18,6 @@ class CheckoutsController < ApplicationController
   end
 
   private
-
-  def request_attributes
-    {
-      reservation: current_reservation,
-      payment_params: payment_params
-    }
-  end
 
   def payment_params
     params.require(:payment).permit(

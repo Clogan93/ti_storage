@@ -19,6 +19,11 @@ Rails.application.routes.draw do
       post 'reserve'
     end
   end
+  resources :sites, only: [] do
+    resources :units, only: [] do
+      resource :reserve, only: [:create]
+    end
+  end
 
   resource :reservation, only: [:show, :create, :update] do
     resource :checkout, only: [:show, :update]
@@ -28,7 +33,7 @@ Rails.application.routes.draw do
   post 'emails/send_sign_up_for_emails_email'
   post 'emails/send_contact_email'
 
-  get 'search', to: 'search#index'
+  get '/search', to: 'search#index'
 
   # storage solutions
   scope '/', module: 'static_pages' do
@@ -50,9 +55,8 @@ Rails.application.routes.draw do
   get 'contact', to: 'static_pages#contact'
   get 'google+', to: 'static_pages#google_reviews'
 
-  root to: 'static_pages#home'
 
-  get 'locations', to: 'locations#locations'
+  get 'locations', to: 'sites#index'
 
   # redirects
   get '/self-storage/ny/brooklyn/treasure-island-redhook', to: redirect('/brooklyn/red-hook', status: 301)
@@ -65,7 +69,15 @@ Rails.application.routes.draw do
   get '/ti-art-studios', to: redirect('/art-storage', status: 301)
   get '/self-storage/ny/ozone-park/treasure-island-storage-ozone-park', to: redirect('/queens/ozone-park', status: 301)
 
+  Area.all.each do |area|
+    get "/#{area.slug}/:id", to: 'sites#show', as: "#{area.path_prefix}_site", defaults: { area_id: area.slug }
+    get "/#{area.slug}", to: 'areas#show', as: "#{area.path_prefix}", defaults: { id: area.slug }
+  end
+  get "/:area_id/:id", to: 'sites#show', as: :area_site
+
   # must be in the end, matches all
   get ":category_slug/:storage_slug", to: 'locations#show', as: :sluggable_location
   get ":category_slug", to: 'locations#index'
+
+  root to: 'static_pages#home'
 end

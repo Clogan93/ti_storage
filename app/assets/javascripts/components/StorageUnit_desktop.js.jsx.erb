@@ -24,7 +24,7 @@ const StorageUnit_desktop = React.createClass({
     return <div className="storage_unit">
       <section className="size">
         <div className="word_and_number">
-          {unit.size_in_text.toUpperCase()}<br/>
+          {unit.size.toUpperCase()}<br/>
           {unit.dimensions}
         </div>
         <a className="size_help" data-toggle="modal" data-target="#sizing_guide_modal">Size Help</a>
@@ -42,7 +42,7 @@ const StorageUnit_desktop = React.createClass({
         <div className="red">${Math.round(unit.rent_rate)}/mo</div>
       </section>
       <section className="continue">
-        <a onClick={() => reserveStorageUnit(unit.id)} className="button blue">Continue</a>
+        <a onClick={() => reserveStorageUnit(unit)} className="button blue">Continue</a>
       </section>
     </div>
   }

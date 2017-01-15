@@ -1,6 +1,6 @@
-const reserveStorageUnit = (id) => {
+const reserveStorageUnit = (unit) => {
   $.ajax({
-    url: `/storage_units/${id}/reserve`,
+    url: unit.reserve_path,
     type: "POST"
   });
 }

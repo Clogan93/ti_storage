@@ -1,0 +1,60 @@
+<% unit = @cart.unit %>
+<% site = @cart.site %>
+<aside class="your_reservation block">
+  <h5 class="block_heading">Your Reservation</h5>
+
+  <section class="storage">
+    <div class="row">
+      <div class="col-sm-12 image">
+        <%= image_tag(site.image_path) %>
+      </div>
+      <div class="col-sm-12 description">
+        <h5 class="section_heading">TI Storage - <%= site.title %></h5>
+        <div class="details">
+          <%= site.address_1 %><br/>
+          <%= site.city_state_and_zip %><br/>
+          <%= site.phone %><br/>
+          <%= site.hours["office"].join("<br/>").html_safe %>
+        </div>
+        <%= link_to('Change Location', [:locations], class: 'change_something') %>
+      </div>
+    </div>
+  </section>
+
+  <section class="unit">
+    <h5 class="section_heading">Unit:</h5>
+    <div class="size"><%= unit.dimensions %></div>
+    <div class="details">
+      <%= unit.features.join(", ") %>
+    </div>
+    <%= link_to('Change Unit', site.url, class: "change_something") %>
+  </section>
+
+  <section class="monthly_rent">
+    <h5 class="section_heading">Monthly Rent</h5>
+
+    <table>
+      <tbody>
+        <tr>
+          <td>Online only special*</td>
+          <td></td>
+          <td><%= number_to_currency(unit.rent_rate) %></td>
+        </tr>
+        <tr>
+          <td>In-Store</td>
+          <td></td>
+          <td><%= number_to_currency(unit.push_rate) %></td>
+        </tr>
+        <tr>
+          <td>Protection Plan</td>
+          <td><a class="change_something">Change Plan</a></td>
+          <td>$12.99</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="footnote">
+      *Subject to change.
+    </div>
+  </section>
+</aside>

@@ -11,7 +11,7 @@ const Storage = React.createClass({
       <a className="storage" href={storage.url}>
         <div className="address">
           <img src={this.props.src}/>
-          <span>{storage.area} {storage.address}</span>
+          <span>{storage.city}, {storage.state} {storage.address_1}</span>
         </div>
         <div className="comment grey red">
           50% off!

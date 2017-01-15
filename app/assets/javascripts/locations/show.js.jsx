@@ -29,4 +29,10 @@ $(document).on('turbolinks:load', () => {
     // pushState instead of location.hash = to avoid page jump.
     history.pushState(null, null, '#' + hash);
   });
+
+  $('#size_options a').click(function (e) {
+    e.preventDefault();
+    $('#size_options a.active').removeClass('active');
+    $(this).tab('show');
+  })
 });

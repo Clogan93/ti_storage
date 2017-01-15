@@ -1,0 +1,187 @@
+nav {
+  z-index: 1000;
+
+  > ul {
+    list-style: none;
+    position: relative;
+    float: left;
+    margin: 0;
+    padding: 0;
+
+    > li {
+      position: relative;
+      float: left;
+      padding: 0;
+      margin: 0 5px;
+
+      > a {
+        display: block;
+        color: #333;
+        line-height: 32px;
+        padding: 30px 10px;
+      }
+
+      &:hover, &.active {
+        background: $cobalt_color;
+
+        > a {
+          color: #FFF;
+        }
+      }
+
+      ul {
+        display:none;
+        position:absolute;
+        left:0;
+        background:#fff;
+        padding:0;
+
+        li {
+          float: none;
+          width: 200px;
+          background: $cobalt_color;
+          padding: 20px;
+
+          a {
+            color: #FFF;
+            line-height:120%;
+            padding:10px 15px;
+          }
+
+          &:hover, &.active {
+            background: #FFF;
+
+            a {
+              color: #333;
+            }
+          }
+
+          ul {
+            left:100%;
+
+            li {
+              a {
+                color: #FFF;
+              }
+            }
+          }
+        }
+      }
+    }
+    li:hover > ul {
+      display:block;
+    }
+  }
+
+  .reserve-today--wrapper {
+    border: solid 1px #ee1715;
+    padding: 10px;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 18px;
+    align-items: center;
+    margin: 15px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .units-starting--wrapper > div {
+    padding: 15px;
+    color: black;
+    background-color: #ffe200;
+    text-transform: uppercase;
+    font-size: 17px;
+  }
+
+  .menu--locations {
+    .submenu {
+      background: $cobalt_color;
+      border-top: 1px solid $cobalt_color;
+    }
+    > .submenu {
+      top: 92px;
+
+      .submenu {
+        margin-top: -48px;
+      }
+
+      > li:nth-child(2) .site--card {
+        margin-top: -68px;
+      }
+      > li:nth-child(3) .site--card {
+        margin-top: -135px;
+      }
+    }
+  }
+
+  .site--card {
+    position: absolute;
+    top: 0;
+
+      > li {
+      width: 420px;
+      background: #FFF;
+      padding: 15px;
+
+      &:hover {
+        background: #FFF;
+      }
+
+      h1 {
+        margin: -15px;
+        margin-bottom: 15px;
+        padding: 18px 20px;
+        font-size: 28px;
+        text-transform: uppercase;
+        color: white;
+        background-color: #1f3d9b;
+        border-bottom: solid 3px #ee1715;
+      }
+
+      address {
+        font-size: 14px;
+        padding-bottom: 5px;
+        line-height: 16px;
+      }
+
+      a.view {
+        font-size: 14px;
+        color: #ff6a00;
+        font-weight: bold;
+      }
+
+      .reserve {
+        border: solid 1px #ee1715;
+        padding: 10px;
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 18px;
+      }
+    }
+  }
+
+  .submenu {
+    a, a:link, a:visited {
+      color: #FFF;
+    }
+
+    > li:hover {
+      > a, > a:link, > a:visited {
+        color: #333;
+      }
+    }
+  }
+
+  .view-in--link {
+    font-size: 14px;
+    color: #ff6a00 !important;
+    font-weight: bold;
+  }
+
+  .menu--solutions,
+  .menu--why {
+    li {
+      width: 300px;
+    }
+  }
+}

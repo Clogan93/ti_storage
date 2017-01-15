@@ -1,13 +1,11 @@
 <div id="featured_locations_carousel" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner" role="listbox">
-    <% @all_storages.each_with_index do |storage, index| %>
+    <% all_sites.each_with_index do |site, index| %>
       <div class="carousel-item <%= index == 1 ? 'active' : '' %>">
         <div class="carousel-caption">
-          <h3><%= storage.title %></h3>
+          <h3><%= site.title %></h3>
         </div>
-        <a href="<%= seo_storage_path(storage) %>">
-          <%= image_tag(storage_image_path(storage)) %>
-        </a>
+        <%= link_to(image_tag(site.image_path), [site.area.path_prefix, site])%>
       </div>
     <% end %>
   </div>

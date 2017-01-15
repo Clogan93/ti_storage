@@ -8,10 +8,103 @@
     <span>646-846-9449</span>
   </a>
 
-  <%= react_component('Header_DropdownMenus', {
-    storages: @all_storages,
-    categories: @all_categories
-  }) %>
+  <nav id="primary_nav_wrap">
+    <ul>
+      <li class="menu--locations">
+        <a href="/locations">Locations</a>
+        <ul class="submenu">
+          <% all_sites_by_area.each do |area_with_sites| %>
+          <% area = area_with_sites[:area] %>
+          <li>
+            <%= link_to(area.title, area.path) %>
+            <ul class="submenu">
+              <% area_with_sites[:sites].each do |site| %>
+              <li>
+                <a href="#"><%= site.title %></a>
+                <ul class="site--card">
+                  <li>
+                    <div class="site--card-inner">
+                      <h1><%= site.title %></h1>
+                      <div class="content">
+                        <div class="row">
+                          <div class="col-xs-6">
+                            <%= image_tag(site.image_path, class: 'img-fluid') %>
+                          </div>
+                          <div class="col-xs-6">
+                            <address>
+                              <span><%= site.address_1 %></span>
+                              <span><%= site.city_state_and_zip %></span>
+                              <span><%= number_to_phone(site.phone, area_code: true) %></span>
+                            </address>
+                            <%= link_to("View in Google Maps", site.link_to_google_maps, class: 'view-in--link') %>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="reserve-today--wrapper">
+                            <div class="col-xs-6 reserve-today">
+                              <div class="color--red">Reserve Your Space Today</div>
+                              <div class="color--blue">646.846.9449</div>
+                            </div>
+                            <div class="col-xs-6">
+                              <%= link_to("View units", site.url,  class: "button blue") %>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-xs-12 units-starting--wrapper">
+                            <div>Units starting at <%= number_to_currency(site.min_unit_price, precision: 0) %></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+              <% end %>
+            </ul>
+          </li>
+          <% end %>
+        </ul>
+      </li>
+      <li class="menu--solutions">
+        <a href="#">Storage Solutions</a>
+        <ul class="submenu">
+          <li>
+            <a href="/commercial-storage">Commercial Storage</a>
+          </li>
+          <li>
+            <a href="/household-storage">Household Storage</a>
+          </li>
+          <li>
+            <a href="/wine-storage">Wine Storage</a>
+          </li>
+          <li>
+            <a href="/boat-storage">Boat Storage</a>
+          </li>
+          <li>
+            <a href="/car-storage">Car Storage</a>
+          </li>
+          <li>
+            <a href="http://www.tiartstudios.com">Art Storage</a>
+          </li>
+        </ul>
+      </li>
+      <li class="menu--why">
+        <a href="#">Why Store With Us?</a>
+        <ul class="submenu">
+          <li>
+            <a href="/faq">FAQ</a>
+          </li>
+          <li>
+            <a href="/moving-services">Moving Services</a>
+          </li>
+          <li>
+            <a href="/contact">Contact</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
 
   <!-- https://docs.livechatinc.com/js-api/#open-the-chat-window -->
   <div class="live_chat" onclick="LC_API.open_chat_window();">

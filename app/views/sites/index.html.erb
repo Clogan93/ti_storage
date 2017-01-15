@@ -1,0 +1,13 @@
+<%= render partial: 'common/breadcrumbs', locals: {
+  links: ['Locations']
+} %>
+
+<main id="locations_page">
+  <div class="container-fluid">
+
+    <% @sites.each do |storage| %>
+      <%= render(partial: 'common/storage_view', locals: { storage: storage }) %>
+    <% end %>
+
+  </div>
+</main>

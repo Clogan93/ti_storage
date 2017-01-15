@@ -1,0 +1,42 @@
+<div class="storage_unit">
+  <section class="size">
+    <div class="word_and_number">
+      <%= size_class(unit.square_feet).upcase %>
+      <br>
+      <%= unit.dimensions %>
+    </div>
+    <a class="size_help" data-toggle="modal" data-target="#sizing_guide_modal">Size Help</a>
+  </section>
+  <section class="features">
+    <ul>
+      <% unit.features.each do |feature| %>
+        <li>
+          <%= image_tag '_common/tick_icon.svg', class: 'tick_icon' %>
+          <%= feature %>
+        </li>
+      <% end %>
+    </ul>
+  </section>
+  <section class="unit_monthly_price">
+    <div class="text">Regular Price</div>
+    <div class="price">
+      <%= number_to_currency(unit.push_rate, precision: 0) %>
+      <div class="line_through"></div>
+    </div>
+  </section>
+  <section class="unit_promotion">
+    <% if unit.promotion.present? %>
+    <div class="black"><%= unit.promotion.description %></div>
+    <% end %>
+    <div class="red">
+      <%= number_to_currency(unit.rent_rate, precision: 0) %>/mo
+    </div>
+  </section>
+  <section class="continue">
+    <% if unit.available? %>
+    <%= button_to("Continue", unit.reserve_path, class: "button blue") %>
+    <% else %>
+      <%= link_to("Call For Details", "#", class: "button blue") %>
+    <% end %>
+  </section>
+</div>

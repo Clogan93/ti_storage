@@ -15,10 +15,9 @@ module ApplicationHelper
   def size_class(square_feet)
     square_feet = square_feet.to_i
 
-    return :custom if square_feet.zero?
-
     case square_feet
-    when 0..50 then :small
+    when 0 then :custom
+    when 1..50 then :small
     when 51..150 then :medium
     when 151..300 then :large
     else

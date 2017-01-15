@@ -46,3 +46,6 @@ run:
 
 console:
 	docker-compose run app bundle exec rails console
+
+clear-cache:
+	docker-compose run app bundle exec rails tmp:cache:clear

@@ -1,11 +1,5 @@
 # frozen_string_literal: true
-# StorageUnit
-
-# columns:
-# rent_rate: is the discounted rate,
-# push_rate: is the higher rate or offline rate
-
-# frozen_string_literal: true
+# :nodoc:
 class StorageUnit < ApplicationRecord
   belongs_to :storage, foreign_key: :site_id, primary_key: :site_id
 
@@ -14,7 +8,7 @@ class StorageUnit < ApplicationRecord
   scope :available, -> { where('total_units_in_available_status > 0') }
 
   def data
-    @data ||= JSON.parse(self[:data], object_class: OpenStruct)
+    @data ||= JSON.parse(self[:data], object_class: DataStruct)
   end
 
   def dimensions

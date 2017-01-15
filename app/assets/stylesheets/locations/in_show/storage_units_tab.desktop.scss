@@ -74,6 +74,12 @@ div.storage_units_tab.desktop{
       padding: 5px 0;
     }
     .table_body{
+      display: none;
+
+      &.active {
+        display: block;
+      }
+      
       .storage_unit{
         padding: 12px 0;
         margin-bottom: 5px;

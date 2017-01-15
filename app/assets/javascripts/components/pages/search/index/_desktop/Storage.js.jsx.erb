@@ -5,8 +5,8 @@ const Search_Index_desktop_Storage = React.createClass({
 
   renderUnits() {
     const storage = this.props.storage;
-    const cheapestUnits = storage.storage_units.sort((unit_1, unit_2) => unit_1.push_rate - unit_2.push_rate);
-    const unitEls = cheapestUnits.slice(0, 3).map((unit, index) =>
+    const cheapestUnits = storage.cheapest_units;
+    const unitEls = cheapestUnits.map((unit, index) =>
       <Search_Index_desktop_Unit key={index} unit={unit}/>
     );
     return unitEls;
@@ -18,7 +18,7 @@ const Search_Index_desktop_Storage = React.createClass({
     return <div className="detailed_location_and_units">
       <div className="detailed_location">
         <div className="photo">
-          <img src={storage.image_src}/>
+          <img src={storage.image_path}/>
         </div>
         <div className="storage_details">
           <div className="miles_away">
@@ -33,8 +33,8 @@ const Search_Index_desktop_Storage = React.createClass({
           </h5>
 
           <div className="address">
-            {storage.address}<br/>
-            {storage.area + ' ' + storage.zip_code}<br/>
+            {storage.address_1}<br/>
+            {storage.city_state_and_zip}<br/>
             <b className="telephone">{storage.phone}</b>
           </div>
 

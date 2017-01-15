@@ -57,7 +57,7 @@ class Storage < ApplicationRecord
   end
 
   def data
-    @data ||= JSON.parse(self[:data], object_class: OpenStruct)
+    @data ||= JSON.parse(self[:data], object_class: DataStruct)
   rescue
     nil
   end

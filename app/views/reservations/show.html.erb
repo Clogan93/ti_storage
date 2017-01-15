@@ -10,7 +10,7 @@
 
 <main id="checkout_new_page">
   <div class="container-fluid">
-    <% if @current_storage_unit %>
+    <% if @cart.unit.present? %>
     <section class="step_navigation">
       <div class="row">
         <div class="col-md-6">
@@ -29,12 +29,11 @@
     </section>
 
     <div class="sidebar_and_steps">
-      <%= render partial: '/checkout/in_new/your_reservation' %>
+      <%= render partial: 'side' %>
 
       <section id="reservation" class="step_1 step block">
-        <%= form_for current_reservation, url: [:reservation] do |f| %>
+        <%= form_for(@cart_form, url: [:reservation]) do |f| %>
           <h5 class="block_heading">Lock in Your Rate Now.</h5>
-
           <section class="explanation">
             <div class="row">
               <div class="col-xl-10">
@@ -46,7 +45,7 @@
                   <h4 class="please_choose_one">Please Choose One</h4>
 
                   <label class="rent custom-control custom-radio">
-                    <input name="rent_or_reserve" type="radio" class="custom-control-input">
+                    <%= f.radio_button(:reservation_type, :rent, class: "custom-control-input") %>
                     <span class="custom-control-indicator"></span>
                     <div class="custom-control-description">
                       <h5>Express Check-In</h5>
@@ -59,7 +58,7 @@
                   </div>
 
                   <label class="reserve custom-control custom-radio">
-                    <input name="rent_or_reserve" type="radio" class="custom-control-input">
+                    <%= f.radio_button(:reservation_type, :reserve, class: "custom-control-input") %>
                     <span class="custom-control-indicator"></span>
                     <div class="custom-control-description">
                       <h5>Reserve Room</h5>
@@ -76,23 +75,58 @@
           </section>
 
           <section id="reservationForm" class="general_client_info" style="display: none;">
-            <%= fields_for :account, current_account do |c| %>
-            <%= c.text_field :first_name, placeholder: "First Name", class: "form-control" %>
-            <%= c.text_field :last_name, placeholder: "Last Name", class: "form-control" %>
-            <%= c.text_field :email, placeholder: "Email Address", class: "form-control" %>
-            <% end %>
-            <%= fields_for :phone, current_phone do |phone| %>
-            <%= phone.text_field :phone, placeholder: "Phone Number", class: "form-control" %>
-            <% end %>
-            <%= fields_for :address, current_address do |address| %>
-            <%= address.text_field :address_1, placeholder: "Address 1", class: "form-control" %>
-            <%= address.text_field :address_2, placeholder: "Address 2", class: "form-control" %>
-            <%= address.text_field :city, placeholder: "City", class: "form-control" %>
-            <%= address.text_field :state, placeholder: "State", class: "form-control" %>
-            <%= address.text_field :postal_code, placeholder: "Postal Code", class: "form-control" %>
-            <% end %>
-            <%= f.date_field :move_in_date, placeholder: "Move-In Date", class: "form-control" %>
-            <%= f.submit "Continue", class: 'button red' %>
+            <div class="row">
+              <div class="col-sm-6">
+                <%= fields_for :account, @cart_form.account do |account| %>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <%= account.text_field :first_name, placeholder: "First Name", class: "form-control" %>
+                  </div>
+                  <div class="col-sm-6">
+                    <%= account.text_field :last_name, placeholder: "Last Name", class: "form-control" %>
+                  </div>
+                </div>
+                <% end %>
+                <%= fields_for :account, @cart_form.account do |account| %>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <%= account.text_field :email, placeholder: "Email Address", class: "form-control" %>
+                  </div>
+                <% end %>
+                <%= fields_for :phone, @cart_form.phone do |phone| %>
+                  <div class="col-sm-6">
+                    <%= phone.text_field :number, placeholder: "Phone Number", class: "form-control" %>
+                  </div>
+                <% end %>
+                </div>
+                <%= fields_for :address, @cart_form.address do |address| %>
+                <div class="row">
+                  <div class="col-sm-12">
+                    <%= address.text_field :address_1, placeholder: "Address 1", class: "form-control" %>
+                    <%= address.text_field :address_2, placeholder: "Address 2", class: "form-control" %>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <%= address.text_field :city, placeholder: "City", class: "form-control" %>
+                  </div>
+                  <div class="col-sm-3">
+                    <%= address.text_field :state, placeholder: "State", class: "form-control" %>
+                  </div>
+                  <div class="col-sm-3">
+                    <%= address.text_field :postal_code, placeholder: "Postal Code", class: "form-control" %>
+                  </div>
+                </div>
+                <% end %>
+                <div class="form-group row">
+                  <label class="col-sm-4 col-form-label">Move-In Date</label>
+                  <div class="col-sm-8">
+                    <%= f.date_field :move_in_date, placeholder: "Move-In Date", class: "form-control" %>
+                  </div>
+                </div>
+                <%= f.submit "Continue", class: 'button red' %>
+              </div>
+            </div>
           </section>
 
           <section class="sign_up_for_moving_services">

@@ -30,6 +30,8 @@ gem 'sitemap_generator'
 
 gem 'appsignal'
 
+gem 'dalli'
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.5.0.beta4'
   gem 'capybara', '~> 2.5'

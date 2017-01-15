@@ -19,5 +19,7 @@ module TiStorage
       user_name:      ENV['EMAIL_USER_NAME'],
       password:       ENV['EMAIL_PASSWORD']
     }
+
+    config.sites = config_for(:sites)
   end
 end

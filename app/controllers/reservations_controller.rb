@@ -2,12 +2,11 @@
 # :nodoc:
 class ReservationsController < ApplicationController
   def show
-    @current_reservation ||=
-      current_storage_unit && current_storage_unit.reservations.new
+    @cart ||= CartPresenter.new(current_cart, view_context)
+    @cart_form ||= CartFormPresenter.new(current_cart, view_context)
   end
 
   def create
-    session[:r_id] = nil
     handle_request
   end
 
@@ -16,11 +15,14 @@ class ReservationsController < ApplicationController
   end
 
   def handle_request
-    request = Reservationist::Reserve.new(request_attributes).call
-    if request
-      @current_reservation = request.reservation
-      @current_account = request.account
-      update_session
+    current_cart.update_attributes(
+      move_in_date: cart_params.fetch(:move_in_date),
+      account_params: account_params,
+      address_params: address_params,
+      phone_params: phone_params
+    )
+
+    if current_cart.process_account!
       redirect_to([:reservation, :checkout])
     else
       render(:show)
@@ -41,12 +43,12 @@ class ReservationsController < ApplicationController
     }
   end
 
-  def reservation_params
-    params.require(:reservation).permit(:move_in_date)
+  def cart_params
+    params.require(:cart).permit(:reservation_type, :move_in_date)
   end
 
   def account_params
-    params.require(:account).permit(:first_name, :last_name, :phone, :email)
+    params.require(:account).permit(:first_name, :last_name, :email)
   end
 
   def address_params
@@ -56,6 +58,6 @@ class ReservationsController < ApplicationController
   end
 
   def phone_params
-    params.require(:phone).permit(:phone)
+    params.require(:phone).permit(:number)
   end
 end
