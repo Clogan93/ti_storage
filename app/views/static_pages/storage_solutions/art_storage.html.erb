@@ -5,8 +5,12 @@
     <div class="actual_page">
       <%= render partial: 'static_pages/common/heading_with_background', locals: { title: 'Art Storage', bg: 'art' } %>
 
-      <main class="default_static_page_main default_markup">
-        Click Here To Visit TI Art Studios: <a target='_blank' href='http://www.tiartstudios.com'>tiartstudios.com</a>
+      <main class="default_static_page_main">
+        <center>
+          <%= link_to(Rails.configuration.meta['art_storage_url'], class: 'button blue', target: '_blank') do %>
+            Click Here To Visit Arcis Fine Art & Collection
+          <% end %>
+        </center>
       </main>
     </div>
   </div>

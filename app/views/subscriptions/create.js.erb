@@ -1,0 +1,5 @@
+<% if @subscription.valid? %>
+$('#sign_up_for_emails_modal .modal-body').html('<div class="alert alert-success" role="alert">You have successfully signed up!</div>')
+<% else %>
+$('#sign_up_for_emails_modal .modal-content').replaceWith('<%= j(render(partial: "subscriptions/form")) %>');
+<% end %>

@@ -17,24 +17,12 @@ setup: bundle
 migrate:
 	docker-compose run app bundle exec rails db:migrate
 
-seed:
-	docker-compose run app bundle exec rails db:seed
-
-sync:
-	docker-compose run app bundle exec rails centershift:sites:sync
-	docker-compose run app bundle exec rails centershift:units:sync
-
 reset:
 	docker-compose run app bundle exec rake db:migrate:reset
-	make seed
-	make sync
 
 heroku_reset:
 	heroku pg:reset DATABASE_URL --app desolate-fortress-66664 --confirm desolate-fortress-66664
 	heroku run rake db:migrate --app desolate-fortress-66664
-	heroku run rake db:seed --app desolate-fortress-66664
-	heroku run bundle exec rails centershift:units:sync --app desolate-fortress-66664
-	heroku run bundle exec rails centershift:units:sync --app desolate-fortress-66664
 
 routes:
 	docker-compose run app bundle exec rake routes
@@ -49,3 +37,12 @@ console:
 
 clear-cache:
 	docker-compose run app bundle exec rails tmp:cache:clear
+
+worker:
+	docker-compose run app bundle exec sidekiq -c 5 -v -q default -q mailers
+
+sitemap:
+	docker-compose run app bundle exec rails sitemap:refresh
+
+log:
+	docker-compose run app bundle exec rails log:clear

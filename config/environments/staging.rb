@@ -49,6 +49,15 @@ Rails.application.configure do
 
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
+  if ENV["MEMCACHIER_SERVERS"]
+    config.cache_store =
+      :dalli_store,
+      (ENV["MEMCACHIER_SERVERS"] || "").split(","),
+      {
+        username: ENV["MEMCACHIER_USERNAME"],
+        password: ENV["MEMCACHIER_PASSWORD"]
+      }
+  end
 
   # Use a real queuing backend for Active Job (and separate queues per env)
   # config.active_job.queue_adapter     = :resque
@@ -59,6 +68,17 @@ Rails.application.configure do
   # Set this to true and configure the email server for immediate delivery
   # to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.perform_caching = false
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:        'auth.smtp.1and1.co.uk',
+    domain:         '1and1.com',
+    port:           587,
+    authentication: 'login',
+    user_name:      ENV['EMAIL_USER_NAME'],
+    password:       ENV['EMAIL_PASSWORD']
+  }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).

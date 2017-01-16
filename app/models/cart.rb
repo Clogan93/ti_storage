@@ -2,10 +2,10 @@
 # :nodoc:
 class Cart < ApplicationRecord
   store_accessor :data,
-    :site_id,
+    :site_id, :insurance_option_id,
     :reservation_type, :move_in_date, :coupon_code,
     :account_params, :address_params, :phone_params, :payment_params,
-    :unit_with_promo_data,
+    :unit_with_promo_data, :insurance_provider_data,
     :account_data, :payment_data
 
   def site
@@ -25,6 +25,11 @@ class Cart < ApplicationRecord
   def payment
     return nil if payment_data.blank?
     @payment ||= Payment.from_centershift(JSON.parse(payment_data))
+  end
+
+  def insurance_provider
+    return nil if insurance_provider_data.blank?
+    @insurance_provider ||= InsuranceProvider.from_centershift(insurance_provider_data)
   end
 
   def address_id

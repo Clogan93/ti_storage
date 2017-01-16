@@ -1,0 +1,23 @@
+<div class="modal-content">
+  <%= form_for(:insurance_provider, url: [:reservation, :insurance_provider], remote: true) do |f| %>
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <h5 class="modal-title" id="insuranceProvidersModalLabel">Choose Insurance Plan</h5>
+    </div>
+    <div class="modal-body">
+      <% if @success.eql?(false) %>
+      <div class="alert alert-danger" role="alert">
+        A problem occured, please try again.
+      </div>
+      <% end %>
+      <div class="form-group">
+        <%= f.select(:insurance_option_id, @cart.insurance_provider_options, { selected: @cart.insurance_option_id.to_i }, { class: 'form-control' }) %>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <%= f.submit('Save', class: 'button blue') %>
+    </div>
+  <% end %>
+</div>

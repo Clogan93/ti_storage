@@ -1,0 +1,11 @@
+production: &default
+  art_storage_url: http://www.arcisartstorage.com
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+
+staging:
+  <<: *default

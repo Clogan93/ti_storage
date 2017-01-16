@@ -1,0 +1,6 @@
+<% if @success %>
+  $('#insuranceProvidersModal').modal('hide');
+  $('#insuranceProviderRate').html("<%= j(number_to_currency(@insurance_provider.rate)) %>");
+<% else %>
+  $('#insuranceProvidersModal .modal-content').replaceWith("<%= j(render(partial: 'insurance_providers/form')) %>");
+<% end %>

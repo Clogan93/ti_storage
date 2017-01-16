@@ -1,0 +1,2 @@
+class InsuranceProviderPresenter < BasePresenter
+end

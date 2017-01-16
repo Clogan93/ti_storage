@@ -47,11 +47,13 @@
         </tr>
         <tr>
           <td>Protection Plan</td>
-          <td><a class="change_something">Change Plan</a></td>
-          <td>$12.99</td>
+          <td><a class="change_something" data-toggle="modal" data-target="#insuranceProvidersModal">Change Plan</a></td>
+          <td id="insuranceProviderRate"><%= number_to_currency(@cart.insurance_provider.rate) %></td>
         </tr>
       </tbody>
     </table>
+
+    <%= render(partial: 'insurance_providers/edit') %>
 
     <div class="footnote">
       *Subject to change.

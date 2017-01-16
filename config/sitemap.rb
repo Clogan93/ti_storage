@@ -2,7 +2,11 @@
 # use rake sitemap:refresh after you update it.
 # it will recreate the /public/sitemap.xml.gz file.
 # it's okay it's gzipped, most search englines read it just fine.
-SitemapGenerator::Sitemap.default_host = "http://tistorage.com"
+SitemapGenerator::Sitemap.default_host = "https://tistorage.com"
+SitemapGenerator::Sitemap.sitemaps_host = "http://s3.amazonaws.com/#{ENV['AWS_BUCKET_NAME']}/"
+SitemapGenerator::Sitemap.public_path = 'tmp/'
+SitemapGenerator::Sitemap.sitemaps_path = 'sitemaps/'
+SitemapGenerator::Sitemap.adapter = SitemapGenerator::WaveAdapter.new
 SitemapGenerator::Sitemap.create do
   add '/checkout', changefreq: 'monthly', priority: 0.3
   add '/search', changefreq: 'monthly', priority: 0.3

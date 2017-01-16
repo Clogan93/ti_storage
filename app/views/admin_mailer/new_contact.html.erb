@@ -1,0 +1,9 @@
+<table>
+  <% [:name, :email, :phone, :marketing_channel, :site, :message].each do |attribute| %>
+    <% next unless @contact.respond_to?(attribute) %>
+    <tr>
+      <td><%= attribute.to_s %></td>
+      <td><%= @contact.send(attribute) %></td>
+    </tr>
+  <% end %>
+</table>

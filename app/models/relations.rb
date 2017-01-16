@@ -15,6 +15,21 @@ class Relations
     results
   end
 
+  def all
+    results
+  end
+
+  def where(conditions)
+    scope = results.select do |result|
+      answers = []
+      conditions.each_pair do |attribute, value|
+        answers << result.send(attribute).eql?(value)
+      end
+      !answers.include?(false)
+    end
+    scope
+  end
+
   private
 
   attr_reader :block

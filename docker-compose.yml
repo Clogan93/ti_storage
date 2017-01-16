@@ -6,23 +6,47 @@
       image: marketmymarket/ti_storage
       command: bundle exec puma -p 3000
       environment:
+        AWS_ACCESS_KEY_ID: AKIAJYX64C74MOHUUCUA
+        AWS_SECRET_ACCESS_KEY: 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
+        AWS_BUCKET_NAME: tistorage-dev
         BUNDLE_JOBS: 8
         BUNDLE_PATH: /bundle
         POSTGRES_USER: postgres
         EMAIL_USER_NAME: mmm@tistorage.com
         EMAIL_PASSWORD: ChaseMMM2017!
+        REDIS_URL: redis://redis:6379
       depends_on:
         - db
+        - redis
       ports:
         - '3000:3000'
       volumes:
         - .:/app
       volumes_from:
         - bundle
+
+    worker:
+      build: .
+      command: bundle exec sidekiq -q default -q mailers
+      environment:
+        REDIS_URL: redis://redis:6379
+      depends_on:
+        - redis
+      volumes:
+        - .:/app
+      volumes_from:
+        - bundle
+
     db:
       image: postgres
       volumes:
         - db-data:/var/lib/postgresql/data
+
+    redis:
+      image: redis
+      ports:
+        - '6379:6379'
+
     bundle:
       image: busybox
       volumes:

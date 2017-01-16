@@ -14,11 +14,9 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :storage_units, only: [] do
-    member do
-      post 'reserve'
-    end
-  end
+  resources :subscriptions, only: [:create]
+  resource :contact, only: [:show, :create]
+
   resources :sites, only: [] do
     resources :units, only: [] do
       resource :reserve, only: [:create]
@@ -26,6 +24,7 @@ Rails.application.routes.draw do
   end
 
   resource :reservation, only: [:show, :create, :update] do
+    resource :insurance_provider, only: [:create]
     resource :checkout, only: [:show, :update]
     resource :lease, only: [:show]
   end
@@ -52,7 +51,6 @@ Rails.application.routes.draw do
   get 'why-store-with-us', to: 'static_pages#why_store_with_us'
   get 'faq', to: 'static_pages#faq'
   get 'moving-services', to: 'static_pages#moving_services'
-  get 'contact', to: 'static_pages#contact'
   get 'google+', to: 'static_pages#google_reviews'
 
 
@@ -63,11 +61,11 @@ Rails.application.routes.draw do
   get '/self-storage/ny/queens/treasure-island-jamaica', to: redirect('/queens/jamaica', status: 301)
   get '/self-storage/nj/paterson/treasure-island-paterson', to: redirect('/new-jersey/paterson', status: 301)
   get '/self-storage/nj/woodbridge/treasure-island-woodbridge', to: redirect('/new-jersey/woodbridge', status: 301)
+  get '/self-storage/ny/ozone-park/treasure-island-storage-ozone-park', to: redirect('/queens/ozone-park', status: 301)
   get '/our-locations', to: redirect('/locations', status: 301)
   get '/contact-us', to: redirect('/contact', status: 301)
   get '/self-storage/nj', to: redirect('/new-jersey', status: 301)
   get '/ti-art-studios', to: redirect('/art-storage', status: 301)
-  get '/self-storage/ny/ozone-park/treasure-island-storage-ozone-park', to: redirect('/queens/ozone-park', status: 301)
 
   Area.all.each do |area|
     get "/#{area.slug}/:id", to: 'sites#show', as: "#{area.path_prefix}_site", defaults: { area_id: area.slug }

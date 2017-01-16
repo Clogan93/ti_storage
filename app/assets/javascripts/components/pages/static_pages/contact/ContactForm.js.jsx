@@ -174,31 +174,33 @@ const StaticPages_Contact_ContactForm = React.createClass({
 
     const isCurrentCustomer = this.state.isCurrentCustomer;
     const options = isCurrentCustomer ?
-      { storage_used: this.refs.storage_used.value } :
-      { where_from_heard_about_us: this.refs.where_from_heard_about_us.value };
+      { site: this.refs.storage_used.value } :
+      { marketing_channel: this.refs.where_from_heard_about_us.value };
 
     $.ajax({
-      url: "/emails/send_contact_email",
+      url: "/contact",
       type: "POST",
+      dataType: "script",
       data: {
-        ...options,
-        name: this.refs.name.value,
-        email: this.refs.email.value,
-        phone: this.refs.phone.value,
-        is_current_customer: isCurrentCustomer,
-        message: this.refs.message.value,
+        contact: {
+          ...options,
+          name: this.refs.name.value,
+          email: this.refs.email.value,
+          phone: this.refs.phone.value,
+          is_customer: isCurrentCustomer,
+          message: this.refs.message.value,
+        }
       },
       success: () => {
         this.setState({
-          apiResponse: "Message recieved, we'll answer to you shortly",
+          apiResponse: "Message received, we'll answer to you shortly",
           sendButtonStatus: 'disabled'
         });
       },
       error: (error) => {
-        console.log(error);
         this.setState({
-          apiResponse: error.responseJSON,
-          sendButtonStatus: 'disabled'
+          apiResponse: error.responseText,
+          sendButtonStatus: 'enabled'
         });
       }
     });

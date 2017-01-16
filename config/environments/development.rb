@@ -25,7 +25,7 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
 
-  config.action_mailer.perform_deliveries = true
+  config.action_mailer.perform_deliveries = false
 
   config.action_mailer.perform_caching = false
 

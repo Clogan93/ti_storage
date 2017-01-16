@@ -1,0 +1,6 @@
+<% @subscription ||= Subscription.new %>
+<div class="modal" id="sign_up_for_emails_modal">
+  <div class="modal-dialog" role="document">
+    <%= render(partial: 'subscriptions/form') %>
+  </div>
+</div>

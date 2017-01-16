@@ -44,6 +44,10 @@ class Site < CentershiftModel
     @insurance_providers ||= InsuranceProvider.where(site_id: id)
   end
 
+  def default_insurance_provider
+    @default_insurance_provider ||= insurance_providers.detect(&:default?)
+  end
+
   RED_HOOK = Site.all.find { |site| site.slug.to_sym.eql?(:"red-hook") }
   JAMAICA = Site.all.find { |site| site.slug.to_sym.eql?(:jamaica) }
   OZONE_PARK = Site.all.find { |site| site.slug.to_sym.eql?(:"ozone-park") }

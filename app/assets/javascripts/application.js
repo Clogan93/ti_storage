@@ -1,5 +1,6 @@
 //= require turbolinks
 //= require jquery
+//= require jquery_ujs
 //= require jquery-ui/menu
 //= require jquery-ui/tabs
 //= require tether

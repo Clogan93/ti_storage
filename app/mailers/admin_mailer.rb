@@ -1,6 +1,25 @@
 # frozen_string_literal: true
 # emails that will be send to the site owners
 class AdminMailer < ApplicationMailer
+  layout 'admin_mailer'
+  default from: 'reservations@tistorage.com'
+
+  def new_subscription(subscription)
+    @subscription = subscription
+    mail(
+      to: mail_to(['reservations@tistorage', 'sales@tistorage.com']),
+      subject: 'User has signed up to receive discounts'
+    )
+  end
+
+  def new_contact(contact)
+    @contact = contact
+    mail(
+      to: mail_to(contact.to),
+      subject: contact.subject
+    )
+  end
+
   def sign_up_for_emails_email(name, email)
     content = "#{name}, #{email} has signed up to receive discounts."
 
@@ -37,7 +56,7 @@ class AdminMailer < ApplicationMailer
     if Rails.env.production?
       default
     else
-      ENV['SEND_EMAILS_TO'] ? ENV['SEND_EMAILS_TO'] : default
+      ENV['SEND_EMAILS_TO'].present? ? ENV['SEND_EMAILS_TO'].split(',') : default
     end
   end
 end
