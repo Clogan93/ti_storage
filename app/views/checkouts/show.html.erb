@@ -73,6 +73,24 @@
 
                 <%= f.submit "Continue", class: 'button red' %>
               </div>
+              <div class="col-sm-6">
+                <table>
+                  <tbody>
+                    <% @cart.assessments.each do |assessment| %>
+                    <tr>
+                      <th><%= assessment.description %></th>
+                      <td><%= number_to_currency(assessment.total) %></td>
+                    <tr>
+                    <% end %>
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <th>Total</th>
+                      <td><%= number_to_currency(@cart.total_due.amount) %></td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
             </div>
           </section>
         <% end %>

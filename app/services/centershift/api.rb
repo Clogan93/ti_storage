@@ -11,7 +11,13 @@ module Centershift
         get_site_unit_data_v2: [:units, :unit],
         get_unit_data_with_promos: [:units, :unit],
         get_insurance_providers: [:details, :org_ins_site_offerings],
-        create_new_account: []
+        create_new_account: [],
+        make_reservation: [],
+        get_assessments: [:details, :soa_get_assessments],
+        get_total_due: [:get_total_due_response, :get_total_due_result, :details],
+        add_insurance: [],
+        get_unit_data: [:details, :appl_rental_objects_detail],
+        make_payment: []
       }
     end
 
@@ -21,7 +27,10 @@ module Centershift
 
     def self.method_missing(method_name, *args, &block)
       if diggings.keys.include?(method_name)
-        client.call(action: method_name, request: args[0]).body.dig(*response_path(method_name))
+        puts ">>>>>>> Centershift::Api action: #{method_name}, request: #{args[0]}"
+        response = client.call(action: method_name, request: args[0]).body.dig(*response_path(method_name))
+        puts ">>>>>>> Centershift::Api response: #{response}"
+        response
       else
         super
       end

@@ -2,8 +2,9 @@
 # :nodoc:
 class ReservationsController < ApplicationController
   def show
-    @cart ||= CartPresenter.new(current_cart, view_context)
-    @cart_form ||= CartFormPresenter.new(current_cart, view_context)
+    redirect_to([:reservation, :lease]) if current_cart.complete?
+    @cart = CartPresenter.new(current_cart, view_context)
+    @cart_form = CartFormPresenter.new(current_cart, view_context)
   end
 
   def create
@@ -16,35 +17,39 @@ class ReservationsController < ApplicationController
 
   def handle_request
     current_cart.update_attributes(
-      move_in_date: cart_params.fetch(:move_in_date),
-      account_params: account_params,
-      address_params: address_params,
-      phone_params: phone_params
+      cart_params.merge({
+        account_params: account_params,
+        address_params: address_params,
+        phone_params: phone_params
+      })
     )
 
-    if current_cart.process_account!
-      redirect_to([:reservation, :checkout])
+    current_cart.process_account!
+    current_cart.process_reservation!
+    current_cart.process_insurance!
+    current_cart.process_assessments!
+    current_cart.process_total_due!
+    redirect_to([:reservation, :checkout])
+  rescue Savon::SOAPFault => error
+    reason = error.to_hash[:fault][:faultstring]
+    case
+    when reason.include?("unit is not available")
+      redirect_to([:reservation], alert: "That unit is no longer available.")
+    when reason.include?("expired, cancelled or rented")
+      current_cart.reset_reservation
+      current_cart.process_reservation!
+      current_cart.process_insurance!
+      current_cart.process_assessments!
+      current_cart.process_total_due!
     else
-      render(:show)
+      raise
     end
   end
 
   private
 
-  def request_attributes
-    {
-      storage_unit: current_storage_unit,
-      account: current_account,
-      account_params: account_params,
-      reservation: current_reservation,
-      reservation_params: reservation_params,
-      address_params: address_params,
-      phone_params: phone_params
-    }
-  end
-
   def cart_params
-    params.require(:cart).permit(:reservation_type, :move_in_date)
+    params.require(:cart).permit(:reservation_type, :move_in_date, :need_help_moving)
   end
 
   def account_params

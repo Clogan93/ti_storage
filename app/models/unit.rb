@@ -2,13 +2,24 @@
 # :nodoc:
 class Unit < CentershiftModel
   def self.where(attributes)
-    params = {
-      "SiteID" => attributes.fetch(:site_id),
-      "PromoDataType" => "HighestPriorityDiscountAndPromo"
-    }
-    api.get_site_unit_data_v2(params).map do |unit|
-      from_centershift(unit)
+    action = lambda do
+      params = {
+        "SiteID" => attributes.fetch(:site_id),
+        "PromoDataType" => "HighestPriorityDiscountAndPromo"
+      }
+      api.get_site_unit_data_v2(params).map do |unit|
+        from_centershift(unit)
+      end
     end
+    Relations.new(&action)
+  end
+
+  def self.find(id:, site_id:)
+    params = {
+      "SiteID" => site_id,
+      "UnitID" => id
+    }
+    from_centershift(api.get_unit_data(params))
   end
 
   def id

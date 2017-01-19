@@ -74,9 +74,12 @@
             </div>
           </section>
 
-          <section id="reservationForm" class="general_client_info" style="display: none;">
+          <section id="reservationForm" class="general_client_info" style="display: <%= @cart_form.reservation_type.present? ? 'block' : 'none' %>;">
             <div class="row">
               <div class="col-sm-6">
+                <% if alert %>
+                  <div class="alert alert-danger" role="alert"><%= flash[:alert] %></div>
+                <% end %>
                 <%= fields_for :account, @cart_form.account do |account| %>
                 <div class="row">
                   <div class="col-sm-6">
@@ -121,20 +124,20 @@
                 <div class="form-group row">
                   <label class="col-sm-4 col-form-label">Move-In Date</label>
                   <div class="col-sm-8">
-                    <%= f.date_field :move_in_date, placeholder: "Move-In Date", class: "form-control" %>
+                    <%= f.date_field :move_in_date, value: @cart.move_in_date, min: Date.today, placeholder: "Move-In Date", class: "form-control" %>
                   </div>
                 </div>
                 <%= f.submit "Continue", class: 'button red' %>
+
+                <section class="sign_up_for_moving_services">
+                  <label class="custom-control custom-checkbox">
+                    <%= f.check_box(:need_help_moving, class: "custom-control-input") %>
+                    <span class="custom-control-indicator"></span>
+                    <span class="custom-control-description">Need help moving?</span>
+                  </label>
+                </section>
               </div>
             </div>
-          </section>
-
-          <section class="sign_up_for_moving_services">
-            <label class="custom-control custom-checkbox">
-              <input type="checkbox" class="custom-control-input">
-              <span class="custom-control-indicator"></span>
-              <span class="custom-control-description">Need help moving?</span>
-            </label>
           </section>
         <% end %>
       </section>

@@ -14,11 +14,11 @@ production: &default
     min_unit_price: 29.00
     hours:
       office:
-        - Mon-Fri 8:00 am - 7:00 pm
+        - Mon - Fri 8:00 am - 7:00 pm
         - Sat 9:00 am - 5:00 pm
         - Sun 10:00 am - 4:00 pm
       access:
-        - Mon-Fri 8:00 am - 7:00 pm
+        - Mon - Fri 8:00 am - 7:00 pm
         - Sat 9:00 am - 5:00 pm
         - Sun 10:00 am - 4:00 pm
     description_1: |
@@ -80,13 +80,13 @@ production: &default
     min_unit_price: 29.00
     hours:
       office:
-        - Mon-Fri 9:00 am - 8:00 pm
-        - Sat 9:00 am - 5:00 pm
-        - Sun 10:00 am - 4:00 pm
+        - Mon – Fri 9:00 AM – 6:00 PM
+        - Sat 9:00 AM - 5:00 PM
+        - Sun 10:00 AM – 4:00 PM
       access:
-        - Mon-Fri 9:00 am - 8:00 pm
-        - Sat 9:00 am - 5:00 pm
-        - Sun 10:00 am - 4:00 pm
+        - Mon – Fri 6:00 AM – 11:00 PM
+        - Sat 6:00 AM – 11:00 PM
+        - Sun 6:00 AM – 11:00 PM
     description_1: |
       <p>Woodbridge is our kind of town. It's a vibrant community of families and small businesses, with something to offer just about everyone, from a close proximity to the beautiful New Jersey shoreline, a Farmer's Market, and local performing arts scene. Being the oldest township in New Jersey, you can feel the history in the air as you pass the buildings on the streets. At Treasure Island Storage in Woodbridge, New Jersey, we've provided a new state-of-the-art self-storage facility with amenities and services to meet all of your household storage, commercial storage, and/or wine storage needs.</p>
       <ul>
@@ -134,11 +134,11 @@ production: &default
     min_unit_price: 29.00
     hours:
       office:
-        - Mon-Fri 8:00 am - 7:00 pm
+        - Mon - Fri 8:00 am - 7:00 pm
         - Sat 9:00 am - 5:00 pm
         - Sun 10:00 am - 4:00 pm
       access:
-        - Mon-Fri 8:00 am - 7:00 pm
+        - Mon - Fri 8:00 am - 7:00 pm
         - Sat 9:00 am - 5:00 pm
         - Sun 10:00 am - 4:00 pm
     description_1: |
@@ -202,11 +202,11 @@ production: &default
     min_unit_price: 29.00
     hours:
       office:
-        - Mon-Fri 9:00 am - 8:00 pm
+        - Mon - Fri 9:00 am - 8:00 pm
         - Sat 9:00 am - 5:00 pm
         - Sun 10:00 am - 4:00 pm
       access:
-        - Mon-Fri 9:00 am - 8:00 pm
+        - Mon - Fri 9:00 am - 8:00 pm
         - Sat 9:00 am - 5:00 pm
         - Sun 10:00 am - 4:00 pm
     description_1: |

@@ -20,7 +20,7 @@
             <ul class="submenu">
               <% area_with_sites[:sites].each do |site| %>
               <li>
-                <a href="#"><%= site.title %></a>
+                <%= link_to(site.title, site.url) %>
                 <ul class="site--card">
                   <li>
                     <div class="site--card-inner">

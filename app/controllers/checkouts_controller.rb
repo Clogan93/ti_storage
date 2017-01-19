@@ -2,6 +2,7 @@
 # :nodoc:
 class CheckoutsController < ApplicationController
   def show
+    redirect_to([:reservation, :lease]) if current_cart.complete?
     @cart ||= CartPresenter.new(current_cart, view_context)
     @cart_form ||= CartFormPresenter.new(@cart, view_context)
   end

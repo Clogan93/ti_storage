@@ -71,11 +71,6 @@ Rails.application.routes.draw do
     get "/#{area.slug}/:id", to: 'sites#show', as: "#{area.path_prefix}_site", defaults: { area_id: area.slug }
     get "/#{area.slug}", to: 'areas#show', as: "#{area.path_prefix}", defaults: { id: area.slug }
   end
-  get "/:area_id/:id", to: 'sites#show', as: :area_site
-
-  # must be in the end, matches all
-  get ":category_slug/:storage_slug", to: 'locations#show', as: :sluggable_location
-  get ":category_slug", to: 'locations#index'
-
+  
   root to: 'static_pages#home'
 end

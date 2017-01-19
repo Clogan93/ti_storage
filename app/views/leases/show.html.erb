@@ -29,12 +29,12 @@
     </section>
 
     <div class="sidebar_and_steps">
-      <%= render partial: '/checkout/in_new/your_reservation' %>
+      <%= render partial: 'reservations/side' %>
 
       <section class="step_3 step block">
         <h3>Thank you for your order!</h3>
-        <p>Your order number is: <%= current_reservation.id %></p>
-        <p>You will receive an email confirmation shorty at <%= current_reservation.email %></p>
+        <p>Your order number is: <%= @cart.reservation.rental_id %></p>
+        <p>You will receive an email confirmation shorty at <%= @cart.account.email %></p>
         <p class="print_receipt">Print Receipt</p>
       </section>
     </div>

@@ -9,7 +9,7 @@ class CentershiftModel < SimpleDelegator
   end
 
   def self.from_centershift(attributes)
-    new(DataStruct.new(attributes))
+    new(DataStruct.new(attributes.deep_symbolize_keys!))
   end
 
   def persisted?
