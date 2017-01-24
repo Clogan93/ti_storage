@@ -122,7 +122,7 @@ class Cart < ApplicationRecord
       "QuoteID" => reservation && reservation.id,
       "QuoteType" => quote_type,
       "RentNow" => rent_now,
-      "Price" => unit_with_promo.rent_rate.to_f,
+      "Price" => unit_with_promo.street_rate.to_f,
       "Contacts" => [
         "RentalContact" => {
           "ContactId" => account.contact_id.to_i,

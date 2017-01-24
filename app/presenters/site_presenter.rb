@@ -26,7 +26,7 @@ class SitePresenter < BasePresenter
       groups[sizing] << unit
     end
     groups.keys.each do |sizing|
-      groups[sizing] = groups[sizing].sort_by { |unit| unit.rent_rate.to_i }
+      groups[sizing] = groups[sizing].sort_by { |unit| [unit.square_feet.to_i, unit.street_rate] }
     end
     @grouped_units = groups
   end
@@ -44,8 +44,8 @@ class SitePresenter < BasePresenter
     [nil, area.slug, slug].join("/")
   end
 
-  def as_json(_options = nil)
-    {
+  def as_json(options = {})
+    attrs = {
       id: id,
       title: title,
       url: url,
@@ -55,8 +55,9 @@ class SitePresenter < BasePresenter
       postal_code: postal_code,
       city_state_and_zip: city_state_and_zip,
       coordinates: coordinates,
-      cheapest_units: cheapest_units,
       image_path: h.image_path(image_path)
-    }.as_json
+    }
+    attrs[:cheapest_units] = cheapest_units if options.fetch(:includes, []).include?(:cheapest_units)
+    attrs.as_json
   end
 end

@@ -1,17 +1,36 @@
 {
   "name": "ti_storage",
   "scripts": {
+    "postdeploy": "bundle exec rake db:schema:load"
   },
   "env": {
+    "AWS_ACCESS_KEY_ID": {
+      "required": true
+    },
+    "AWS_BUCKET_NAME": "tistorage-staging",
+    "AWS_SECRET_ACCESS_KEY": {
+      "required": true
+    },
+    "EMAIL_USER_NAME": {
+      "required": true
+    },
+    "EMAIL_PASSWORD": {
+      "required": true
+    },
+    "GOOGLE_MAPS_API_KEY": {
+      "required": true
+    },
+    "HEROKU_APP_NAME": {
+      "required": true
+    },
+    "HEROKU_PARENT_APP_NAME": {
+      "required": true
+    },
     "LANG": {
       "required": true
     },
-    "RACK_ENV": {
-      "required": true
-    },
-    "RAILS_ENV": {
-      "required": true
-    },
+    "RACK_ENV": "staging",
+    "RAILS_ENV": "staging",
     "RAILS_LOG_TO_STDOUT": {
       "required": true
     },
@@ -19,6 +38,9 @@
       "required": true
     },
     "SECRET_KEY_BASE": {
+      "required": true
+    },
+    "SEND_EMAILS_TO": {
       "required": true
     }
   },
@@ -31,7 +53,8 @@
     }
   },
   "addons": [
-    "heroku-postgresql"
+    "heroku-postgresql",
+    "heroku-redis",
   ],
   "buildpacks": [
     {

@@ -29,7 +29,6 @@ module Centershift
       if diggings.keys.include?(method_name)
         puts ">>>>>>> Centershift::Api action: #{method_name}, request: #{args[0]}"
         response = client.call(action: method_name, request: args[0]).body.dig(*response_path(method_name))
-        puts ">>>>>>> Centershift::Api response: #{response}"
         response
       else
         super

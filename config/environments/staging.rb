@@ -11,7 +11,7 @@ Rails.application.configure do
 
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = true
-  config.action_controller.perform_caching = true
+  config.action_controller.perform_caching = false
 
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
@@ -49,20 +49,11 @@ Rails.application.configure do
 
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
-  if ENV["MEMCACHIER_SERVERS"]
-    config.cache_store =
-      :dalli_store,
-      (ENV["MEMCACHIER_SERVERS"] || "").split(","),
-      {
-        username: ENV["MEMCACHIER_USERNAME"],
-        password: ENV["MEMCACHIER_PASSWORD"]
-      }
-  end
+  config.cache_store = :null_store
 
   # Use a real queuing backend for Active Job (and separate queues per env)
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "ti_storage_#{Rails.env}"
-  config.action_mailer.perform_caching = false
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery
