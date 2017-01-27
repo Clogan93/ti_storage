@@ -47,16 +47,16 @@
         <%= render(@site.all_units) %>
       </div>
       <div class="table_body" id="small" role="tabpanel">
-        <%= render(@site.grouped_units[:small]) %>
+        <%= render(partial: 'units/unit', collection: @site.grouped_units[:small]) %>
       </div>
       <div class="table_body" id="medium" role="tabpanel">
-        <%= render(@site.grouped_units[:medium]) %>
+        <%= render(partial: 'units/unit', collection: @site.grouped_units[:medium]) %>
       </div>
       <div class="table_body" id="large" role="tabpanel">
-        <%= render(@site.grouped_units[:large]) %>
+        <%= render(partial: 'units/unit', collection: @site.grouped_units[:large]) %>
       </div>
       <div class="table_body" id="x-large" role="tabpanel">
-        <%= render(@site.grouped_units[:'x-large']) %>
+        <%= render(partial: 'units/unit', collection: @site.grouped_units[:'x-large']) %>
       </div>
     </div>
   </section>

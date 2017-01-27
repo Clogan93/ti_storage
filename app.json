@@ -40,9 +40,7 @@
     "SECRET_KEY_BASE": {
       "required": true
     },
-    "SEND_EMAILS_TO": {
-      "required": true
-    }
+    "SEND_EMAILS_TO": "chase@marketmymarket.com,omar@marketmymarket.com"
   },
   "formation": {
     "web": {

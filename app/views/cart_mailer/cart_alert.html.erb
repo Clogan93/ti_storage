@@ -1,0 +1,47 @@
+Dear Treasure Island Storage <%= @cart.site.title %><br/><br/>
+<%= @cart.account.name %> has submitted a reservation form from Treasure Island Storage <%= @cart.site.title %>.<br/><br/>
+
+Below is a summary of the reservation.<br/><br/>
+
+<table>
+  <tr>
+    <td>Name</td>
+    <td><%= @cart.account.name %></td>
+  </tr>
+  <tr>
+    <td>Address</td>
+    <td><%= @cart.account.address.address_1 %></td>
+  </tr>
+  <tr>
+    <td>City</td>
+    <td><%= @cart.account.address.city %></td>
+  </tr>
+  <tr>
+    <td>State</td>
+    <td><%= @cart.account.address.state %></td>
+  </tr>
+  <tr>
+    <td>Zip</td>
+    <td><%= @cart.account.address.postal_code %></td>
+  </tr>
+  <tr>
+    <td>Phone</td>
+    <td><%= @cart.account.phone.phone %></td>
+  </tr>
+  <tr>
+    <td>Email</td>
+    <td><%= @cart.account.email %></td>
+  </tr>
+  <tr>
+    <td>Move-In-Date</td>
+    <td><%= @cart.move_in_date %></td>
+  </tr>
+  <tr>
+    <td>Rental Rate</td>
+    <td><%= number_to_currency(@cart.unit.rent_rate) %></td>
+  </tr>
+  <tr>
+    <td>Unit Size</td>
+    <td><%= @cart.unit.dimensions %></td>
+  </tr>
+</table><br/><br/>

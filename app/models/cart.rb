@@ -208,6 +208,11 @@ class Cart < ApplicationRecord
     update_attribute(:payment_data, @payment.to_json)
   end
 
+  def send_notifications
+    CartMailer.cart_confirmation(self).deliver_later
+    CartMailer.cart_alert(self).deliver_later
+  end
+
   def complete?
     payment.try(:id).present?
   end

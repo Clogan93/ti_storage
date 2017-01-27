@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 # :nodoc:
 class CheckoutsController < ApplicationController
+  before_action :confirm_current_cart_exists
+
   def show
     redirect_to([:reservation, :lease]) if current_cart.complete?
     @cart ||= CartPresenter.new(current_cart, view_context)
@@ -12,6 +14,9 @@ class CheckoutsController < ApplicationController
       payment_params: payment_params
     )
     if current_cart.process_payment!
+      current_cart.send_notifications
+      flash[:c_id] = current_cart.id
+      session[:c_id] = nil
       redirect_to([:reservation, :lease])
     else
       render(:show)

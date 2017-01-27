@@ -5,6 +5,7 @@ production: &default
     702355: red-hook
     702353: paterson
     1000001604: ozone-park
+
   jamaica:
     id: 702357
     title: Jamaica

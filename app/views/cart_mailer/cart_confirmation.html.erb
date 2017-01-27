@@ -1,5 +1,5 @@
-Dear <%= @reservation.account.name %>:<br><br>
-Thank you for reserving a unit with Treasure Island Storage. We make storage easy. It’s quite simple, you treasure your items, we value your business.<br><br>
+Dear <%= @cart.account.name %>:<br><br>
+Thank you for reserving a unit with Treasure Island site. We make storage easy. It’s quite simple, you treasure your items, we value your business.<br><br>
 
 The next steps to complete your reservation includes:
 <ul>
@@ -15,12 +15,12 @@ The next steps to complete your reservation includes:
 We also stock a full line of packing supplies and boxes that can be purchased online or on-site.<br><br>
 Refer a friend to receive a $50 credit.<br><br>
 <%= content_for(:footer) do %>
-<strong>Treasure Island Storage - <%= @reservation.storage.title %></strong><br/>
-<%= @reservation.storage.address %><br/>
-<%= @reservation.storage.area %> <%= @reservation.storage.zip_code %><br/><br/>
-<%= @reservation.storage.phone %><br/>
-<%= @reservation.storage.email %><br/><br/>
-<%= @reservation.storage.office_hours.join("<br/>").html_safe %>
+<strong>Treasure Island Storage - <%= @cart.site.title %></strong><br/>
+<%= @cart.site.address_1 %><br/>
+<%= @cart.site.city_state_and_zip %><br/><br/>
+<%= @cart.site.phone %><br/>
+<%= @cart.site.email %><br/><br/>
+<%= @cart.site.hours[:office].join("<br/>").html_safe %>
 <% end %>
 <%= content_for(:prefooter) do %>
 <!--== 3 COLUMNS MODULE = INVOICE NO == INVOICE DATE == INVOICE TOTAL ==-->
@@ -58,7 +58,7 @@ Refer a friend to receive a $50 credit.<br><br>
                                       </tr>
                                       <tr>
                                         <!--Number-->
-                                        <td valign="top" class="RegularText4TD" align="left" style="color: #425065;font-family: sans-serif;font-size: 12px;font-weight: bold;text-align: left;line-height: 23px;"><%= @reservation.storage.title %></td>
+                                        <td valign="top" class="RegularText4TD" align="left" style="color: #425065;font-family: sans-serif;font-size: 12px;font-weight: bold;text-align: left;line-height: 23px;"><%= @cart.site.title %></td>
                                       </tr>
                                       <tr>
                                         <td colspan="3" height="25" style="font-size:0;line-height:0;">&nbsp;</td>
@@ -89,7 +89,7 @@ Refer a friend to receive a $50 credit.<br><br>
                                       </tr>
                                       <tr>
                                         <!--Date-->
-                                        <td valign="top" class="RegularText4TD" align="left" style="color: #425065;font-family: sans-serif;font-size: 12px;font-weight: bold;text-align: left;line-height: 23px;"><%= @reservation.storage.phone %></td>
+                                        <td valign="top" class="RegularText4TD" align="left" style="color: #425065;font-family: sans-serif;font-size: 12px;font-weight: bold;text-align: left;line-height: 23px;"><%= @cart.site.phone %></td>
                                       </tr>
                                       <tr>
                                         <td colspan="3" height="25" style="font-size:0;line-height:0;">&nbsp;</td>
@@ -120,7 +120,7 @@ Refer a friend to receive a $50 credit.<br><br>
                                       </tr>
                                       <tr>
                                         <!--Invoice Total-->
-                                        <td valign="top" class="RegularText4TD" align="left" style="color: #425065;font-family: sans-serif;font-size: 12px;font-weight: bold;text-align: left;line-height: 23px;"><%= @reservation.move_in_date %></td>
+                                        <td valign="top" class="RegularText4TD" align="left" style="color: #425065;font-family: sans-serif;font-size: 12px;font-weight: bold;text-align: left;line-height: 23px;"><%= @cart.move_in_date %></td>
                                       </tr>
                                       <tr>
                                         <td colspan="3" height="25" style="font-size:0;line-height:0;">&nbsp;</td>
@@ -181,7 +181,7 @@ Refer a friend to receive a $50 credit.<br><br>
                                       </tr>
                                       <tr>
                                         <!--Number-->
-                                        <td valign="top" class="RegularText4TD" align="left" style="color: #425065;font-family: sans-serif;font-size: 12px;font-weight: bold;text-align: left;line-height: 23px;"><%= @reservation.storage_unit.dimensions %></td>
+                                        <td valign="top" class="RegularText4TD" align="left" style="color: #425065;font-family: sans-serif;font-size: 12px;font-weight: bold;text-align: left;line-height: 23px;"><%= @cart.unit.dimensions %></td>
                                       </tr>
                                       <tr>
                                         <td colspan="3" height="25" style="font-size:0;line-height:0;">&nbsp;</td>
@@ -212,7 +212,7 @@ Refer a friend to receive a $50 credit.<br><br>
                                       </tr>
                                       <tr>
                                         <!--Date-->
-                                        <td valign="top" class="RegularText4TD" align="left" style="color: #425065;font-family: sans-serif;font-size: 12px;font-weight: bold;text-align: left;line-height: 23px;"><%= number_to_currency(@reservation.storage_unit.rent_rate) %></td>
+                                        <td valign="top" class="RegularText4TD" align="left" style="color: #425065;font-family: sans-serif;font-size: 12px;font-weight: bold;text-align: left;line-height: 23px;"><%= number_to_currency(@cart.unit.street_rate) %></td>
                                       </tr>
                                       <tr>
                                         <td colspan="3" height="25" style="font-size:0;line-height:0;">&nbsp;</td>

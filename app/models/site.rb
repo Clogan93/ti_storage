@@ -32,6 +32,10 @@ class Site < CentershiftModel
     slug
   end
 
+  def email
+    "#{slug.delete('-')}@tistorage.com"
+  end
+
   def units
     @units ||= Unit.where(site_id: id)
   end

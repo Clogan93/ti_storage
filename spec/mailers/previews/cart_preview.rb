@@ -1,24 +1,24 @@
 # frozen_string_literal: true
-# Preview all emails at http://localhost:3000/rails/mailers/reservationist
-class ReservationistPreview < ActionMailer::Preview
-  def reservation_confirmation
-    ReservationistMailer.reservation_confirmation(reservation)
+# Preview all emails at http://localhost:3000/rails/mailers/cart
+class CartPreview < ActionMailer::Preview
+  def cart_confirmation
+    CartMailer.cart_confirmation(cart)
   end
 
-  def reservation_alert
-    ReservationistMailer.reservation_alert(reservation)
+  def cart_alert
+    CartMailer.cart_alert(cart)
   end
 
   private
 
-  def reservation
-    @reservation ||= OpenStruct.new(
+  def cart
+    @cart ||= OpenStruct.new(
       email: "demo@example.com",
       name: "John Doe",
       move_in_date: 7.days.from_now.to_date,
       account: account,
-      storage: storage,
-      storage_unit: storage_unit
+      site: site,
+      unit: unit
     )
   end
 
@@ -31,12 +31,12 @@ class ReservationistPreview < ActionMailer::Preview
     )
   end
 
-  def storage
-    @storage ||= Storage.first
+  def site
+    @site ||= Site::SITES.first
   end
 
-  def storage_unit
-    @storage_unit ||= storage.storage_units.last
+  def unit
+    @unit ||= site.units.execute.last
   end
 
   def address

@@ -13,6 +13,7 @@ class ReservesController < ApplicationController
           insurance_option_id: insurance_provider.id,
           insurance_provider_data: insurance_provider,
         )
+        session[:e_at] = Time.current + 5.minutes
         session[:c_id] = current_cart.id
         redirect_to([:reservation])
       else

@@ -1,0 +1,1153 @@
+get_org_list:
+  get_org_list_response:
+    get_org_list_result:
+      details:
+        organization:
+          org_id: "5122"
+          org_name: "Treasure Island Storage"
+          address_line1: "1350 Broadway, Suite 1010"
+          city: "New York"
+          state: "NY"
+          postal_code: "10018"
+          country: "USA"
+          app_display_name: "Treasure Island Storage"
+          email: "jcoakley@klcny.com"
+          primary: true
+
+get_site_list:
+  get_site_list_response:
+    get_site_list_result:
+      details:
+        soa_get_site_list:
+          - site_id: '702357'
+            org_id: '5122'
+            affiliate_id: '1000000462'
+            site_name: Treasure Island - Jamaica
+            site_number: Jamaica
+            property_type: '1'
+            timezone_offset: '1'
+            timezone_disp_offset: '2'
+            current_time: 09:40 PM
+            :parent_site:
+            email_address: Jamaica@TIStorage.com
+            phone: '7187753800'
+            fax: '7182061829'
+            address_label: Seed Address
+            line1: 109-09 180th Street
+            city: Jamaica
+            state: NY
+            postal_code: '11433'
+            country: USA
+            site_stauts: '2'
+            online_status: '1'
+            display_name: Treasure Island - Jamaica
+          - site_id: '702352'
+            org_id: '5122'
+            affiliate_id: '1000000462'
+            site_name: Treasure Island - Woodbridge
+            site_number: Woodbridge
+            property_type: '1'
+            timezone_offset: '1'
+            timezone_disp_offset: '2'
+            current_time: 09:40 PM
+            :parent_site:
+            email_address: Woodbridge@TIStorage.com
+            phone: 732.734.0381
+            cflex03: http://www.tistorage.com/client/logo/1120/ti-storage-logo-final-redesign.png?1374790039
+            address_label: Seed Address
+            line1: 881 St. Georges Avenue
+            city: Woodbridge
+            state: NJ
+            postal_code: 07095
+            country: USA
+            site_stauts: '2'
+            online_status: '1'
+            display_name: Treasure Island - Woodbridge
+          - site_id: '702355'
+            org_id: '5122'
+            affiliate_id: '1000000462'
+            site_name: Treasure Island - Redhook
+            site_number: Red Hook
+            property_type: '1'
+            timezone_offset: '1'
+            timezone_disp_offset: '2'
+            current_time: 09:40 PM
+            :parent_site:
+            email_address: Redhook@TIStorage.com
+            phone: 347.763.7887
+            fax: '7185962101'
+            cflex03: http://www.tistorage.com/client/logo/1120/ti-storage-logo-final-redesign.png?1374790039
+            address_label: Seed Address
+            line1: 183 Lorraine Street
+            city: Brooklyn
+            state: NY
+            postal_code: '11231'
+            country: USA
+            site_stauts: '2'
+            online_status: '1'
+            display_name: Treasure Island - Redhook
+          - site_id: '702353'
+            org_id: '5122'
+            affiliate_id: '1000000462'
+            site_name: Treasure Island - Paterson
+            site_number: Paterson
+            property_type: '1'
+            timezone_offset: '1'
+            timezone_disp_offset: '2'
+            current_time: 09:40 PM
+            :parent_site:
+            email_address: Paterson@TIStorage.com
+            phone: '9733334421'
+            fax: '9737423596'
+            cflex03: http://www.tistorage.com/client/logo/1120/ti-storage-logo-final-redesign.png?1374790039
+            address_label: Seed Address
+            line1: 404 Grand Street
+            city: Paterson
+            state: NJ
+            postal_code: '07505'
+            country: USA
+            site_stauts: '2'
+            online_status: '1'
+            display_name: Treasure Island - Paterson
+          - site_id: '1000001604'
+            org_id: '5122'
+            affiliate_id: '1000000461'
+            site_name: Treasure Island-Ozone Park
+            site_number: Ozone Park
+            property_type: '1'
+            timezone_offset: '1'
+            timezone_disp_offset: '2'
+            current_time: 09:40 PM
+            :parent_site:
+            email_address: OzonePark@TIStorage.com
+            phone: '7185784041'
+            fax: '7187384724'
+            cflex03: http://www.tistorage.com/client/logo/1120/ti-storage-logo-final-redesign.png?1374790039
+            address_label: Address Label
+            line1: 78-02 Liberty Avenue
+            city: Ozone Park
+            state: NY
+            postal_code: '11417'
+            country: USA
+            site_stauts: '2'
+            online_status: '1'
+            display_name: Treasure Island - Ozone Park
+
+get_site_details:
+  get_site_details_response:
+    get_site_details_result:
+      details:
+        soa_site_attributes:
+          site_id: '702355'
+          site_name: Treasure Island - Redhook
+          site_number: Red Hook
+          gate_type_id: '1000000914'
+          dir_north: null
+          dir_south: null
+          dir_east: null
+          dir_west: null
+          site_hours: 'Monday through Friday 8:00 AM - 7:00 PM Saturday: 9:00 AM - 5:00 PM Sunday: 10:00 AM - 4:00 PM'
+          gate_hours: 'Monday through Friday 8:00AM to 7:00PM Saturday: 9:00AM to 5:00PM Sunday: 10:00AM to 4:00PM'
+          facility_built: DateTime.current.now
+          golive: null
+          parent_site:
+          email_address: Redhook@TIStorage.com
+          phone: 347.763.7887
+          fax: '7185962101'
+          cflex03: http://www.tistorage.com/client/logo/1120/ti-storage-logo-final-redesign.png?1374790039
+          address_label: Seed Address
+          line1: 183 Lorraine Street
+          city: Brooklyn
+          state: NY
+          postal_code: '11231'
+          country: USA
+          property_type: '1'
+          timezone_offset: '1'
+          app_status: '2'
+          app_status_val: Active
+          display_name: Treasure Island - Redhook
+
+get_site_unit_data:
+  get_site_unit_data_response:
+    get_site_unit_data_result:
+      details:
+        site_unit_data:
+          - unit_number: "C1542"
+            unit_id: "3810624"
+            version: "34"
+            promo_id: null,
+            soft_reservation: "Y"
+            hard_reservation: "Y"
+            res_amount: "10"
+            class_desc: "Storage Rentals"
+            obj_period_uom_val: "Months"
+            min_rent_rate: "119"
+            max_rent_rate: "154"
+            quantity: "37"
+            available: "4"
+            site_class_id: "1000013001"
+            depth: "10"
+            width: "8"
+            site_id: "702352"
+            features_val: "Climate-Control ,Interior"
+            current_rate: "119"
+            push_rate: "137"
+            attribute01: "100051"
+
+get_site_unit_data_v2:
+  get_site_unit_data_v2_response:
+    get_site_unit_data_v2_result:
+      units:
+        unit:
+          - site_id: '702355'
+            class_description: Parking/RV
+            site_class_id: '1000012996'
+            object_group: null
+            unit_id: '3818257'
+            rent_rate: '315'
+            push_rate: '389'
+            street_rate: '339'
+            rack_rate: '299'
+            future_rate: '334'
+            proforma_rate: '339'
+            minimum_rent_rate: '315'
+            maximum_rent_rate: '315'
+            status: Rented
+            width: '0'
+            depth: '0'
+            height: '0'
+            square_feet: '0'
+            volume: '0'
+            total_units_available: '0'
+            total_units: '1'
+            attribute1: '2'
+            attribute1_value: Parking
+            attribute2:
+            climate:
+            door: null
+            access: '3'
+            access_value: Exterior
+            features: null
+            reservation_deposit_amount: '10'
+            promo_collection: null
+          - site_id: '702355'
+            class_description: Storage Rentals
+            site_class_id: '1000012995'
+            object_group: null
+            unit_id: '3852688'
+            rent_rate: '59'
+            push_rate: '68'
+            street_rate: '59'
+            rack_rate: '39'
+            future_rate: null
+            proforma_rate: '59'
+            minimum_rent_rate: '54'
+            maximum_rent_rate: '65'
+            status: Available
+            width: '4'
+            depth: '4'
+            height: '4'
+            square_feet: '16'
+            volume: '64'
+            total_units_available: '6'
+            total_units: '16'
+            attribute1: '111375'
+            attribute1_value: LOCKER UPPER
+            attribute2:
+            climate: '149'
+            climate_value: 'Climate-Control '
+            door: null
+            access: '2'
+            access_value: Interior
+            features: null
+            reservation_deposit_amount: '10'
+            promo_collection:
+              appl_best_pcd:
+                limit_type_val: AccountLevelDollarAmount
+                delinquency_limit: '1'
+                pcd_id: '1000006138'
+                org_id: '5122'
+                pcd_name: First Month FREE
+                pcd_desc: First Month FREE
+                pcd_rev_cat: '1'
+                pcd_rev_cat_val: RentalItem
+                pcd_class: '1'
+                pcd_class_val: Promotion
+                all_sites: N
+                starts: !ruby/object:DateTime 2015-06-10 00:00:00.000000000 Z
+                expires: !ruby/object:DateTime 2017-12-31 00:00:00.000000000 Z
+                pcd_amt_max: '100'
+                pcd_amt_min: '100'
+                pcd_amt_default: '100'
+                pcd_periods: '1'
+                amt_type: '2'
+                amt_type_val: DiscountPercentage
+                barcode:
+                transferable: N
+                payment_required: Y
+                los_req: '1'
+                los_prepaid:
+                los_penalty:
+                los_penalty_type:
+                credit_level: '1'
+                credit_level_val: Level1
+                pcd_priority: "-1"
+                limit_action: '1'
+                limit_action_val: DoNotLimit
+                limit_type: '1'
+          - site_id: '702355'
+            class_description: Storage Rentals
+            site_class_id: '1000012995'
+            object_group: null
+            unit_id: '3852692'
+            rent_rate: '69'
+            push_rate: '79'
+            street_rate: '69'
+            rack_rate: '59'
+            future_rate: null
+            proforma_rate: '65'
+            minimum_rent_rate: '56'
+            maximum_rent_rate: '75'
+            status: Available
+            width: '4'
+            depth: '4'
+            height: '4'
+            square_feet: '16'
+            volume: '64'
+            total_units_available: '6'
+            total_units: '16'
+            attribute1: '111376'
+            attribute1_value: LOCKER LOWER
+            attribute2:
+            climate: '149'
+            climate_value: 'Climate-Control '
+            door: null
+            access: '2'
+            access_value: Interior
+            features: null
+            reservation_deposit_amount: '10'
+            promo_collection:
+              appl_best_pcd:
+                limit_type_val: AccountLevelDollarAmount
+                delinquency_limit: '1'
+                pcd_id: '1000006138'
+                org_id: '5122'
+                pcd_name: First Month FREE
+                pcd_desc: First Month FREE
+                pcd_rev_cat: '1'
+                pcd_rev_cat_val: RentalItem
+                pcd_class: '1'
+                pcd_class_val: Promotion
+                all_sites: N
+                starts: !ruby/object:DateTime 2015-06-10 00:00:00.000000000 Z
+                expires: !ruby/object:DateTime 2017-12-31 00:00:00.000000000 Z
+                pcd_amt_max: '100'
+                pcd_amt_min: '100'
+                pcd_amt_default: '100'
+                pcd_periods: '1'
+                amt_type: '2'
+                amt_type_val: DiscountPercentage
+                barcode:
+                transferable: N
+                payment_required: Y
+                los_req: '1'
+                los_prepaid:
+                los_penalty:
+                los_penalty_type:
+                credit_level: '1'
+                credit_level_val: Level1
+                pcd_priority: "-1"
+                limit_action: '1'
+                limit_action_val: DoNotLimit
+                limit_type: '1'
+          - site_id: '702355'
+            class_description: Storage Rentals
+            site_class_id: '1000012995'
+            object_group: null
+            unit_id: '3852684'
+            rent_rate: '65'
+            push_rate: '75'
+            street_rate: '65'
+            rack_rate: '49'
+            future_rate: null
+            proforma_rate: '65'
+            minimum_rent_rate: '59'
+            maximum_rent_rate: '75'
+            status: Available
+            width: '4'
+            depth: '4'
+            height: '4'
+            square_feet: '16'
+            volume: '64'
+            total_units_available: '2'
+            total_units: '16'
+            attribute1: '111377'
+            attribute1_value: LOCKER MIDDLE
+            attribute2:
+            climate: '149'
+            climate_value: 'Climate-Control '
+            door: null
+            access: '2'
+            access_value: Interior
+            features: null
+            reservation_deposit_amount: '10'
+            promo_collection:
+              appl_best_pcd:
+                limit_type_val: AccountLevelDollarAmount
+                delinquency_limit: '1'
+                pcd_id: '1000006223'
+                org_id: '5122'
+                pcd_name: Only one Left, RENT NOW!
+                pcd_desc: Only one Left, RENT NOW!
+                pcd_rev_cat: '1'
+                pcd_rev_cat_val: RentalItem
+                pcd_class: '1'
+                pcd_class_val: Promotion
+                all_sites: N
+                starts: !ruby/object:DateTime 2016-01-25 00:00:00.000000000 Z
+                expires: !ruby/object:DateTime 2017-12-31 00:00:00.000000000 Z
+                pcd_amt_max: '0'
+                pcd_amt_min: '0'
+                pcd_amt_default: '0'
+                pcd_periods: '1'
+                amt_type: '1'
+                amt_type_val: DiscountAmount
+                barcode:
+                transferable: N
+                payment_required: N
+                los_req:
+                los_prepaid:
+                los_penalty:
+                los_penalty_type:
+                credit_level: '1'
+                credit_level_val: Level1
+                pcd_priority: "-1"
+                limit_action: '1'
+                limit_action_val: DoNotLimit
+                limit_type: '1'
+          - site_id: '702355'
+            class_description: Storage Rentals
+            site_class_id: '1000012995'
+            object_group: null
+            unit_id: '3819719'
+            rent_rate: '113'
+            push_rate: '137'
+            street_rate: '119'
+            rack_rate: '99'
+            future_rate: null
+            proforma_rate: '119'
+            minimum_rent_rate: '108'
+            maximum_rent_rate: '113'
+            status: Rented
+            width: '5'
+            depth: '4'
+            height: '0'
+            square_feet: '20'
+            volume: '0'
+            total_units_available: '0'
+            total_units: '5'
+            attribute1: '114461'
+            attribute1_value: UPPER FLOOR
+            attribute2:
+            climate: '149'
+            climate_value: 'Climate-Control '
+            door: null
+            access: '2'
+            access_value: Interior
+            features: null
+            reservation_deposit_amount: '10'
+            promo_collection: null
+          - site_id: '702355'
+            class_description: Storage Rentals
+            site_class_id: '1000012995'
+            object_group: null
+            unit_id: '4205409'
+            rent_rate: '119'
+            push_rate: '137'
+            street_rate: '119'
+            rack_rate: '119'
+            future_rate: null
+            proforma_rate: '149'
+            minimum_rent_rate: '109'
+            maximum_rent_rate: '159'
+            status: Available
+            width: '5'
+            depth: '5'
+            height: '0'
+            square_feet: '25'
+            volume: '0'
+            total_units_available: '13'
+            total_units: '92'
+            attribute1: '114457'
+            attribute1_value: FIRST FLOOR
+            attribute2:
+            climate: '149'
+            climate_value: 'Climate-Control '
+            door: null
+            access: '2'
+            access_value: Interior
+            features: null
+            reservation_deposit_amount: '10'
+            promo_collection:
+              appl_best_pcd:
+                limit_type_val: AccountLevelDollarAmount
+                delinquency_limit: '1'
+                pcd_id: '1000006138'
+                org_id: '5122'
+                pcd_name: First Month FREE
+                pcd_desc: First Month FREE
+                pcd_rev_cat: '1'
+                pcd_rev_cat_val: RentalItem
+                pcd_class: '1'
+                pcd_class_val: Promotion
+                all_sites: N
+                starts: !ruby/object:DateTime 2015-06-10 00:00:00.000000000 Z
+                expires: !ruby/object:DateTime 2017-12-31 00:00:00.000000000 Z
+                pcd_amt_max: '100'
+                pcd_amt_min: '100'
+                pcd_amt_default: '100'
+                pcd_periods: '1'
+                amt_type: '2'
+                amt_type_val: DiscountPercentage
+                barcode:
+                transferable: N
+                payment_required: Y
+                los_req: '1'
+                los_prepaid:
+                los_penalty:
+                los_penalty_type:
+                credit_level: '1'
+                credit_level_val: Level1
+                pcd_priority: "-1"
+                limit_action: '1'
+                limit_action_val: DoNotLimit
+                limit_type: '1'
+          - site_id: '702355'
+            class_description: Storage Rentals
+            site_class_id: '1000012995'
+            object_group: null
+            unit_id: '3812100'
+            rent_rate: '125'
+            push_rate: '144'
+            street_rate: '125'
+            rack_rate: '109'
+            future_rate: null
+            proforma_rate: '115'
+            minimum_rent_rate: '100'
+            maximum_rent_rate: '146'
+            status: Available
+            width: '5'
+            depth: '5'
+            height: '0'
+            square_feet: '25'
+            volume: '0'
+            total_units_available: '17'
+            total_units: '140'
+            attribute1: '114461'
+            attribute1_value: UPPER FLOOR
+            attribute2:
+            climate: '149'
+            climate_value: 'Climate-Control '
+            door: null
+            access: '2'
+            access_value: Interior
+            features: null
+            reservation_deposit_amount: '10'
+            promo_collection:
+              appl_best_pcd:
+                limit_type_val: AccountLevelDollarAmount
+                delinquency_limit: '1'
+                pcd_id: '1000005705'
+                org_id: '5122'
+                pcd_name: 50% Off Three Months
+                pcd_desc: 50% Off Three Months
+                pcd_rev_cat: '1'
+                pcd_rev_cat_val: RentalItem
+                pcd_class: '1'
+                pcd_class_val: Promotion
+                all_sites: N
+                starts: !ruby/object:DateTime 2014-03-06 00:00:00.000000000 Z
+                expires: !ruby/object:DateTime 2017-12-31 00:00:00.000000000 Z
+                pcd_amt_max: '50'
+                pcd_amt_min: '50'
+                pcd_amt_default: '50'
+                pcd_periods: '3'
+                amt_type: '2'
+                amt_type_val: DiscountPercentage
+                barcode:
+                transferable: N
+                payment_required: N
+                los_req: '1'
+                los_prepaid:
+                los_penalty:
+                los_penalty_type:
+                credit_level: '1'
+                credit_level_val: Level1
+                pcd_priority: "-1"
+                limit_action: '1'
+                limit_action_val: DoNotLimit
+                limit_type: '1'
+          - site_id: '702355'
+            class_description: Storage Rentals
+            site_class_id: '1000012995'
+            object_group: null
+            unit_id: '4111843'
+            rent_rate: '29'
+            push_rate: '49'
+            street_rate: '29'
+            rack_rate: '49'
+            future_rate: null
+            proforma_rate: '29'
+            minimum_rent_rate: '29'
+            maximum_rent_rate: '66'
+            status: Available
+            width: '5'
+            depth: '5'
+            height: '4'
+            square_feet: '25'
+            volume: '100'
+            total_units_available: '87'
+            total_units: '399'
+            attribute1: '111375'
+            attribute1_value: LOCKER UPPER
+            attribute2:
+            climate: '149'
+            climate_value: 'Climate-Control '
+            door: null
+            access: '2'
+            access_value: Interior
+            features: null
+            reservation_deposit_amount: '10'
+            promo_collection:
+              appl_best_pcd:
+                limit_type_val: AccountLevelDollarAmount
+                delinquency_limit: '1'
+                pcd_id: '1000006139'
+                org_id: '5122'
+                pcd_name: 50% Off One Month
+                pcd_desc: 50% Off One Month
+                pcd_rev_cat: '1'
+                pcd_rev_cat_val: RentalItem
+                pcd_class: '1'
+                pcd_class_val: Promotion
+                all_sites: N
+                starts: !ruby/object:DateTime 2015-06-09 00:00:00.000000000 Z
+                expires: !ruby/object:DateTime 2017-12-31 00:00:00.000000000 Z
+                pcd_amt_max: '50'
+                pcd_amt_min: '50'
+                pcd_amt_default: '50'
+                pcd_periods: '1'
+                amt_type: '2'
+                amt_type_val: DiscountPercentage
+                barcode:
+                transferable: N
+                payment_required: N
+                los_req: '1'
+                los_prepaid:
+                los_penalty:
+                los_penalty_type:
+                credit_level: '1'
+                credit_level_val: Level1
+                pcd_priority: "-1"
+                limit_action: '1'
+                limit_action_val: DoNotLimit
+                limit_type: '1'
+          - site_id: '702355'
+            class_description: Storage Rentals
+            site_class_id: '1000012995'
+            object_group: null
+            unit_id: '1001214085'
+            rent_rate: '109'
+            push_rate: '125'
+            street_rate: '109'
+            rack_rate: '99'
+            future_rate: null
+            proforma_rate: '109'
+            minimum_rent_rate: '95'
+            maximum_rent_rate: '109'
+            status: Available
+            width: '5'
+            depth: '5'
+            height: '6'
+            square_feet: '25'
+            volume: '150'
+            total_units_available: '5'
+            total_units: '93'
+            attribute1: '1002853'
+            attribute1_value: MEZZANINE
+            attribute2:
+            climate: '149'
+            climate_value: 'Climate-Control '
+            door: null
+            access: '2'
+            access_value: Interior
+            features: null
+            reservation_deposit_amount: '10'
+            promo_collection:
+              appl_best_pcd:
+                limit_type_val: AccountLevelDollarAmount
+                delinquency_limit: '1'
+                pcd_id: '1000005646'
+                org_id: '5122'
+                pcd_name: 50% Off One Month
+                pcd_desc: 50% Off One Month
+                pcd_rev_cat: '1'
+                pcd_rev_cat_val: RentalItem
+                pcd_class: '1'
+                pcd_class_val: Promotion
+                all_sites: N
+                starts: !ruby/object:DateTime 2014-01-15 00:00:00.000000000 Z
+                expires: !ruby/object:DateTime 2017-12-31 00:00:00.000000000 Z
+                pcd_amt_max: '50'
+                pcd_amt_min: '50'
+                pcd_amt_default: '50'
+                pcd_periods: '1'
+                amt_type: '2'
+                amt_type_val: DiscountPercentage
+                barcode:
+                transferable: N
+                payment_required: N
+                los_req: '1'
+                los_prepaid:
+                los_penalty:
+                los_penalty_type:
+                credit_level: '1'
+                credit_level_val: Level1
+                pcd_priority: "-1"
+                limit_action: '1'
+                limit_action_val: DoNotLimit
+                limit_type: '1'
+          - site_id: '702355'
+            class_description: Storage Rentals
+            site_class_id: '1000012995'
+            object_group: null
+            unit_id: '3812144'
+            rent_rate: '155'
+            push_rate: '178'
+            street_rate: '155'
+            rack_rate: '129'
+            future_rate: null
+            proforma_rate: '155'
+            minimum_rent_rate: '126'
+            maximum_rent_rate: '169'
+            status: Available
+            width: '5'
+            depth: '7'
+            height: '0'
+            square_feet: '35'
+            volume: '0'
+            total_units_available: '10'
+            total_units: '59'
+            attribute1: '114461'
+            attribute1_value: UPPER FLOOR
+            attribute2:
+            climate: '149'
+            climate_value: 'Climate-Control '
+            door: null
+            access: '2'
+            access_value: Interior
+            features: null
+            reservation_deposit_amount: '10'
+            promo_collection:
+              appl_best_pcd:
+                limit_type_val: AccountLevelDollarAmount
+                delinquency_limit: '1'
+                pcd_id: '1000006138'
+                org_id: '5122'
+                pcd_name: First Month FREE
+                pcd_desc: First Month FREE
+                pcd_rev_cat: '1'
+                pcd_rev_cat_val: RentalItem
+                pcd_class: '1'
+                pcd_class_val: Promotion
+                all_sites: N
+                starts: !ruby/object:DateTime 2015-06-10 00:00:00.000000000 Z
+                expires: !ruby/object:DateTime 2017-12-31 00:00:00.000000000 Z
+                pcd_amt_max: '100'
+                pcd_amt_min: '100'
+                pcd_amt_default: '100'
+                pcd_periods: '1'
+                amt_type: '2'
+                amt_type_val: DiscountPercentage
+                barcode:
+                transferable: N
+                payment_required: Y
+                los_req: '1'
+                los_prepaid:
+                los_penalty:
+                los_penalty_type:
+                credit_level: '1'
+                credit_level_val: Level1
+                pcd_priority: "-1"
+                limit_action: '1'
+                limit_action_val: DoNotLimit
+                limit_type: '1'
+
+get_unit_data_with_promos:
+  get_unit_data_with_promos_response:
+    get_unit_data_with_promos_result:
+      units:
+        unit:
+          unit_id: '3852688'
+          unit_number: '02527'
+          version: '57'
+          unit_count: '16'
+          total_available: '6'
+          status: Available
+          width: '4'
+          depth: '4'
+          height: '4'
+          volume: '64'
+          square_feet: '16'
+          notes: Conversion Unit
+          attribute01_value_id: '111375'
+          attribute01_value: LOCKER UPPER
+          attribute02_value_id:
+          climate_value_id: '149'
+          climate_value: 'Climate-Control '
+          door_value_id:
+          access_value_id: '2'
+          access_value: Interior
+          features_value_id:
+          walk_thru_order:
+          link_id:
+          mux:
+          serial_number1:
+          serial_number2:
+          alarm_channel:
+          gate_key_pad_zone:
+          org_class_id: '1000004437'
+          site_class_id: '1000012995'
+          class_description: Storage Rentals
+          class_active: true
+          fom_indicator: true
+          is_portable: false
+          object_period_uom: Month
+          object_group: Unknown
+          icon: Home
+          fee_object_id: '1000032447'
+          tax_group_id:
+          delinquency_model_id: '1000002633'
+          reservation_group_id: '1000000584'
+          deposit_group_id:
+          lease_group_id: '1000000593'
+          soft_reservable: true
+          hard_reservable: true
+          reservation_amount: '10'
+          rent_rate: '59'
+          push_rate: '68'
+          street_rate: '59'
+          rack_rate: '39'
+          future_rate:
+          proforma_rate: '59'
+          minimum_rate: '59'
+          maximum_rate: '59'
+          deepest_discount:
+            pcd:
+              pcd:
+                limit_type_val: AccountLevelDollarAmount
+                delinquency_limit: '1'
+                pcd_id: '1000006138'
+                org_id: '5122'
+                pcd_name: First Month FREE
+                pcd_desc: First Month FREE
+                pcd_rev_cat: '1'
+                pcd_rev_cat_val: RentalItem
+                pcd_class: '1'
+                pcd_class_val: Promotion
+                all_sites: N
+                starts: !ruby/object:DateTime 2015-06-10 00:00:00.000000000 Z
+                expires: !ruby/object:DateTime 2017-12-31 00:00:00.000000000 Z
+                pcd_amt_max: '100'
+                pcd_amt_min: '100'
+                pcd_amt_default: '100'
+                pcd_periods: '1'
+                amt_type: '2'
+                amt_type_val: DiscountPercentage
+                barcode:
+                transferable: N
+                payment_required: Y
+                los_req: '1'
+                los_prepaid:
+                los_penalty:
+                los_penalty_type:
+                credit_level: '1'
+                credit_level_val: Level1
+                pcd_priority: '1'
+                limit_action: '1'
+                limit_action_val: DoNotLimit
+                limit_type: '1'
+              type: '1'
+              discount: '59'
+              is_deepest: true
+              compat_pc_ds:
+          created_date: !ruby/object:DateTime 2013-09-18 05:02:42.000000000 Z
+          updated_date: !ruby/object:DateTime 2016-10-28 13:05:26.000000000 Z
+          created_by: '98561'
+          updated_by: '0'
+
+get_insurance_providers:
+  get_insurance_providers_response:
+    get_insurance_providers_result:
+      details:
+        org_ins_site_offerings:
+          - org_id: '5122'
+            ins_provider_id: '1000000302'
+            provider_name: Deans & Homer-NY
+            group_name: NY Coverage
+            site_id: '702357'
+            site_ins_id: '1000004042'
+            ins_option_id: '1000001715'
+            coverage_amount: '1000'
+            coverage_perc: '100'
+            rate: '10'
+            cancel_after: '9999'
+            desc1: "     1,000 coverage (100%)@ 10.00/period"
+            desc2: "     1,000 coverage"
+            default_option: Y
+            provider_active: Y
+            group_active: Y
+            option_active: Y
+            site_active: Y
+            disp_active: Y
+          - org_id: '5122'
+            ins_provider_id: '1000000302'
+            provider_name: Deans & Homer-NY
+            group_name: NY Coverage
+            site_id: '702357'
+            site_ins_id: '1000004042'
+            ins_option_id: '1000001717'
+            coverage_amount: '5000'
+            coverage_perc: '100'
+            rate: '26'
+            cancel_after: '9999'
+            desc1: "     5,000 coverage (100%)@ 26.00/period"
+            desc2: "     5,000 coverage"
+            default_option: N
+            provider_active: Y
+            group_active: Y
+            option_active: Y
+            site_active: Y
+            disp_active: Y
+          - org_id: '5122'
+            ins_provider_id: '1000000302'
+            provider_name: Deans & Homer-NY
+            group_name: NY Coverage
+            site_id: '702357'
+            site_ins_id: '1000004042'
+            ins_option_id: '1000001716'
+            coverage_amount: '3000'
+            coverage_perc: '100'
+            rate: '16'
+            cancel_after: '9999'
+            desc1: "     3,000 coverage (100%)@ 16.00/period"
+            desc2: "     3,000 coverage"
+            default_option: N
+            provider_active: Y
+            group_active: Y
+            option_active: Y
+            site_active: Y
+            disp_active: Y
+
+create_new_account:
+  create_new_account_response:
+    create_new_account_result:
+      account_id: '1003368378'
+      contact_id: '1011897340'
+      addresses:
+        acct_contact_addresses:
+          org_id: '0'
+          acct_id: '0'
+          acct_type: '0'
+          acct_class: '0'
+          contact_id: '1011897340'
+          contact_type: '0'
+          addr_id: '1011281427'
+          addr_type: '1'
+          addr1: 123 4th St.
+          addr2: Apt. 1
+          addr3: null
+          city: Brooklyn
+          state: NY
+          postal_code: '11221'
+          country: US
+          active: true
+          created_by: '1000018701'
+          updated_by: '1000018701'
+      phones:
+        acct_contact_phones:
+          acct_id: '0'
+          contact_id: '1011897340'
+          phone_id: '1006954260'
+          phone_type: '1'
+          phone: '7185141296'
+          active: true
+          created_by: '1000018701'
+          updated_by: '1000018701'
+
+make_reservation:
+  make_reservation_response:
+    make_reservation_result:
+      quote_id: '1004568572'
+      rental_id: '1006009632'
+
+get_assessments:
+  get_assessments_response:
+    get_assessments_result:
+      details:
+        soa_get_assessments:
+          - assess_id: '1306761039'
+            acct_id: '1003368378'
+            site_id: '702355'
+            rental_id: '1006009632'
+            assess_date: '2017-01-17T00:00:00.000+00:00'
+            ref_type: '1'
+            version: '1'
+            ro_version: '3'
+            class_ref: '100'
+            tax_group_id:
+            qty: '1'
+            extended: '13.64'
+            tax_due: '0'
+            ref_type_val: Rental Item
+            assess_start: '2017-01-17T00:00:00.000+00:00'
+            assess_end: '2017-01-31T00:00:00.000+00:00'
+            descrip: 'Unit 02544A Rent: (Jan 17, 2017 thru Jan 31, 2017)'
+            item_price: '29'
+            fulfill: '0'
+            parent_assess_id: '0'
+          - assess_id: '1306761057'
+            acct_id: '1003368378'
+            site_id: '702355'
+            rental_id: '1006009632'
+            assess_date: '2017-01-17T00:00:00.000+00:00'
+            ref_type: '3'
+            version: '1'
+            ro_version: '3'
+            class_ref: '100'
+            tax_group_id:
+            qty: '1'
+            extended: '4.72'
+            tax_due: '0'
+            ref_type_val: Insurance
+            assess_start: '2017-01-17T00:00:00.000+00:00'
+            assess_end: '2017-01-31T00:00:00.000+00:00'
+            descrip: "  Insurance 1,000 coverage: (Jan 17, 2017 thru Jan 31, 2017)"
+            item_price: '10'
+            fulfill: '0'
+            parent_assess_id: '1306761039'
+          - assess_id: '1306761040'
+            acct_id: '1003368378'
+            site_id: '702355'
+            rental_id: '1006009632'
+            assess_date: '2017-01-17T00:00:00.000+00:00'
+            ref_type: '8'
+            version: '1'
+            ro_version: '3'
+            class_ref: '101'
+            tax_group_id:
+            qty: '1'
+            extended: '25'
+            tax_due: '0'
+            ref_type_val: Org Fee Item
+            assess_start: '2017-01-17T00:00:00.000+00:00'
+            assess_end: '2017-01-17T00:00:00.000+00:00'
+            descrip: "  Fee: Admin Fee $25"
+            item_price: '25'
+            fulfill: '0'
+            parent_assess_id: '0'
+          - assess_id: '1306761041'
+            acct_id: '1003368378'
+            site_id: '702355'
+            rental_id: '1006009632'
+            assess_date: '2017-01-17T00:00:00.000+00:00'
+            ref_type: '80'
+            version: '1'
+            ro_version: '3'
+            class_ref: '100'
+            tax_group_id:
+            qty: '1'
+            extended: "-6.82"
+            tax_due: '0'
+            ref_type_val: Rent Discount/Credit
+            assess_start: '2017-01-17T00:00:00.000+00:00'
+            assess_end: '2017-01-31T00:00:00.000+00:00'
+            descrip: "  Discount/Credit - 50% Off One Month"
+            item_price: "-6.82"
+            fulfill: '0'
+            parent_assess_id: '1306761039'
+
+get_total_due:
+  get_total_due_response:
+    get_total_due_result:
+      details: '36.54'
+
+add_insurance:
+  add_insurance_response:
+    add_insurance_result:
+      succeeded: true
+
+get_unit_data:
+  get_unit_data_response:
+    get_unit_data_result:
+    details:
+      appl_rental_objects_detail:
+        site_id: '702355'
+        unit_id: '3818257'
+        org_class_id: '1000004486'
+        site_class_id: '1000012996'
+        class_desc: Parking/RV
+        class_ref: '102'
+        icon: Car
+        class_type: '1'
+        active: true
+        status: '3'
+        status_val: Rented
+        unit_number: P9004
+        attribute01: '2'
+        attribute01_val: Parking
+        attribute02: null
+        access_type: '3'
+        access_type_val: Exterior
+        climate: null
+        door: null
+        features: null
+        vol_exempt: false
+        portable: false
+        rent_rate: '315'
+        obj_period: '1'
+        obj_period_uom: '4'
+        obj_period_uom_val: Month
+        obj_inv_freq: '1'
+        fom_ind: Y
+        gp_multiplier: '1'
+        width: '0'
+        depth: '0'
+        height: '0'
+        volume: '0'
+        serial01: null
+        serial02: null
+        notes: Conversion Unit
+        walk_thru_order: null
+        link_id: null
+        tax_group_id: null
+        lease_group_id: null
+        del_model_id: null
+        res_group_id: null
+        dep_group_id: null
+        mux: null
+        alarm: null
+        version: '5'
+        fee_object_id:
+        gate_keypad:
+        created_by: '98561'
+        updated_by: '98561'
+        res_amount: '10'
+        square_feet: '0'
+        push_rate: '389'
+
+make_payment:
+  make_payment_response:
+    make_payment_result:
+      tran_id: '1038049018'
+      cash_credit_applied: false

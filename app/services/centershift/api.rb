@@ -14,7 +14,7 @@ module Centershift
         create_new_account: [],
         make_reservation: [],
         get_assessments: [:details, :soa_get_assessments],
-        get_total_due: [:get_total_due_response, :get_total_due_result, :details],
+        get_total_due: [:details],
         add_insurance: [],
         get_unit_data: [:details, :appl_rental_objects_detail],
         make_payment: []
@@ -36,8 +36,8 @@ module Centershift
     end
 
     def self.client
-      # @@client ||= Rails.env.production? ? Client.instance : FakeClient.instance
-      @@client ||= Client.instance
+      Rails.env.production? ? Client.instance : FakeClient.instance
+      # Client.instance
     end
 
     def respond_to_missing?(*_)

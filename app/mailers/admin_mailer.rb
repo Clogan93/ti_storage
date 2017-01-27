@@ -51,7 +51,6 @@ class AdminMailer < ApplicationMailer
 
   private
 
-  # used for staging and development
   def mail_to(default)
     if Rails.env.production?
       default
