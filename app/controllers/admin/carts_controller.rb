@@ -5,7 +5,7 @@ module Admin
     end
 
     def show
-      @cart = Admin::CartPresenter.new(Cart.find(params.fetch(:id)), view_context)
+      @cart = Cart.find(params.fetch(:id))
     end
   end
 end
