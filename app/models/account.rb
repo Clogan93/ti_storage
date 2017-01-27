@@ -5,6 +5,10 @@ class Account < CentershiftModel
     account_id.to_i
   end
 
+  def name
+    params.slice(:first_name, :last_name).values.join(" ")
+  end
+
   def address
     @address ||= Address.from_centershift(addresses[:acct_contact_addresses])
   end
