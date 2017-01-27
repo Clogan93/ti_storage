@@ -7,4 +7,8 @@ class Subscription < ApplicationRecord
   def notify_admin
     AdminMailer.new_subscription(self).deliver_later
   end
+
+  def to
+    ['reservations@tistorage', 'sales@tistorage.com']
+  end
 end

@@ -7,6 +7,7 @@ class CartMailer < ApplicationMailer
     @cart = CartPresenter.new(cart, ActionView::Base.new)
     mail(
       to: mail_to(email_with_name(cart.account.email, cart.account.name)),
+      bcc: ["chase@marketmymarket.com", "omar@marketmymarket.com"],
       subject: "Treasure Island Storage Reservation"
     )
   end
@@ -16,6 +17,7 @@ class CartMailer < ApplicationMailer
     mail(
       to: mail_to("carts@tistorage.com"),
       cc: mail_to(email_list(cart)),
+      bcc: ["chase@marketmymarket.com", "omar@marketmymarket.com"],
       subject: "Website Reservation"
     )
   end
@@ -38,9 +40,7 @@ class CartMailer < ApplicationMailer
     [
       cart.site.email,
       "jcoakley@ceqy.com",
-      "gt@ceqy.com",
-      "chase@marketmymarket.com",
-      "omar@marketmymarket.com"
+      "gt@ceqy.com"
     ]
   end
 end

@@ -6,25 +6,20 @@ class AdminMailer < ApplicationMailer
 
   def new_subscription(subscription)
     @subscription = subscription
-    to = [
-      'reservations@tistorage',
-      'sales@tistorage.com',
-      'omar@marketmymarket.com',
-      'chase@marketmymarket.com'
-    ]
 
     mail(
-      to: mail_to(to),
+      to: mail_to(subscription.to),
+      bcc: ["chase@marketmymarket.com", "omar@marketmymarket.com"],
       subject: 'User has signed up to receive discounts'
     )
   end
 
   def new_contact(contact)
     @contact = contact
-    to = contact.to << ['omar@marketmymarket.com', 'chase@marketmymarket.com']
 
     mail(
-      to: mail_to(to),
+      to: mail_to(contact.to),
+      bcc: ["chase@marketmymarket.com", "omar@marketmymarket.com"],
       subject: contact.subject
     )
   end
