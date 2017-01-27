@@ -9,6 +9,6 @@ class Subscription < ApplicationRecord
   end
 
   def to
-    ['reservations@tistorage', 'sales@tistorage.com']
+    ['reservations@tistorage.com', 'sales@tistorage.com']
   end
 end

@@ -13,7 +13,7 @@ class Contact < ApplicationRecord
     if is_customer?
       ['gt@ceqy.com']
     else
-      ['reservations@tistroage.com', 'sales@tistroage.com']
+      ['reservations@tistorage.com', 'sales@tistorage.com']
     end
   end
 

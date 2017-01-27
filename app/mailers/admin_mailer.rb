@@ -28,7 +28,7 @@ class AdminMailer < ApplicationMailer
     content = "#{name}, #{email} has signed up to receive discounts."
 
     mail(
-      to: mail_to(['reservations@tistorage', 'sales@tistorage.com']),
+      to: mail_to(['reservations@tistorage.com', 'sales@tistorage.com']),
       subject: 'User has signed up to receive discounts'
     ) do |format|
       format.text do
@@ -40,7 +40,7 @@ class AdminMailer < ApplicationMailer
   def new_customer_contacts_us_email(data)
     @data = data
     mail(
-      to: mail_to(['reservations@tistroage.com', 'sales@tistroage.com']),
+      to: mail_to(['reservations@tistorage.com', 'sales@tistorage.com']),
       subject: 'New customer wants to contact you'
     )
   end
