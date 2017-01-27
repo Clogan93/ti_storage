@@ -3,7 +3,7 @@
     <tr>
       <th>ID</th>
       <th>Created</th>
-      <th></th>
+      <th>Transaction</th>
     </tr>
   </thead>
   <tbody>
@@ -11,7 +11,7 @@
     <tr>
       <td><%= link_to(cart.id, [:admin, cart]) %></td>
       <td><%= cart.created_at %></td>
-      <td></td>
+      <td><%= cart.payment_data.transaction_id rescue "n/a" %></td>
     </tr>
     <% end %>
   </tbody>
