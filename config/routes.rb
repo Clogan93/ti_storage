@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :carts
     resources :queues
+    resources :subscriptions
   end
 
   resources :subscriptions, only: [:create]
