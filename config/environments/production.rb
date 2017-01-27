@@ -66,12 +66,13 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address:        'auth.smtp.1and1.co.uk',
-    domain:         '1and1.com',
-    port:           587,
-    authentication: 'login',
-    user_name:      ENV['EMAIL_USER_NAME'],
-    password:       ENV['EMAIL_PASSWORD']
+    user_name: ENV['SENDGRID_USERNAME'],
+    password: ENV['SENDGRID_PASSWORD'],
+    domain: 'tistorage.com',
+    address: 'smtp.sendgrid.net',
+    port: 587,
+    authentication: :plain,
+    enable_starttls_auto: true
   }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to

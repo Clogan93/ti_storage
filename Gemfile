@@ -36,6 +36,8 @@ gem 'dalli'
 
 gem 'sidekiq'
 
+gem 'sendgrid-ruby'
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.5.0.beta4'
   gem 'capybara', '~> 2.5'
