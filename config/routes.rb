@@ -1,17 +1,7 @@
 # frozen_string_literal: true
 Rails.application.routes.draw do
   namespace :admin do
-    resources :storages do
-      collection do
-        post 'sync'
-      end
-
-      resources :storage_units do
-        collection do
-          post 'sync'
-        end
-      end
-    end
+    resources :carts
   end
 
   resources :subscriptions, only: [:create]

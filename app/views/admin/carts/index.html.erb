@@ -1,0 +1,18 @@
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Created</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @carts.each do |cart| %>
+    <tr>
+      <td><%= link_to(cart.id, [:admin, cart]) %></td>
+      <td><%= cart.created_at %></td>
+      <td></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,22 @@
+<dd>
+  <% if value.is_a?(Hash) %>
+  <dl>
+    <% value.each_pair do |subkey, subvalue| %>
+    <dt><%= subkey %></dt>
+    <%= render(partial: 'dd', locals: { value: subvalue }) %>
+    <% end %>
+  </dl>
+  <% else %>
+  <% new_value = JSON.parse(value) rescue value %>
+  <% if new_value.is_a?(Hash) %>
+  <dl>
+    <% new_value.each_pair do |subkey, subvalue| %>
+    <dt><%= subkey %></dt>
+    <%= render(partial: 'dd', locals: { value: subvalue }) %>
+    <% end %>
+  </dl>
+  <% else %>
+  <%= new_value %>
+  <% end %>
+  <% end %>
+</dd>

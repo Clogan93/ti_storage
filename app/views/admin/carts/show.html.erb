@@ -1,0 +1,6 @@
+<dl>
+  <% @cart.attributes.each_pair do |key, value| %>
+  <dt><%= key %></dt>
+  <%= render(partial: 'dd', locals: { value: value }) %>
+  <% end %>
+</dl>
