@@ -1,10 +1,3 @@
-<section class="photo_and_links">
-  <%= image_tag storage_image_path(storage) %>
-
-  <a href="<%= storage.link_to_google_reviews %>" class="read_reviews" target="_blank">Read Reviews</a>
-  <a href="<%= storage.link_to_google_maps %>" target="_blank">Get Directions</a>
-</section>
-
 <section class="info">
   <h5 class="title"><%= storage.title %></h5>
   <div class="address">
@@ -12,13 +5,16 @@
     <%= storage.city_state_and_zip %>
   </div>
   <div class="phone_number"><%= storage.phone %></div>
+  <%= image_tag '_common/ads/amazon_rectangular.png', class: 'img-mobile' %>
+</section>
 
-  <div class="office_hours">
-    <h6>Office hours</h6>
-    <% storage.hours['office'].each do |hours| %>
-      <%= hours.gsub('Mon-Fri', 'M-F') %><br>
-    <% end %>
-  </div>
+<section class="photo_and_links">
+  <%= image_tag storage_image_path(storage) %>
+</section>
+
+
+<section class="mobile_ad hidden-lg-up">
+
 </section>
 
 <%= link_to("View Units", storage.url, class: 'button blue') %>

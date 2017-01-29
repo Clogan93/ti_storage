@@ -1,4 +1,4 @@
-<div class="storage_unit">
+<div class="storage_unit storage_unit_site">
   <section class="size">
     <div class="word_and_number">
       <%= size_class(unit.square_feet).upcase %>
@@ -35,6 +35,42 @@
   <section class="continue">
     <% if unit.available? %>
     <%= button_to("Continue", unit.reserve_path, class: "button blue") %>
+    <% else %>
+      <%= link_to("Call For Details", "#", class: "button blue") %>
+    <% end %>
+  </section>
+</div>
+<div class="storage_unit storage_unit_mobile">
+  <section class="size mobile-unit">
+    <div class="word_and_number">
+      <strong>
+        <%= size_class(unit.square_feet).upcase %>
+        <%= unit.dimensions %>
+      </strong>
+      <ul>
+        <% unit.features.each do |feature| %>
+          <li>
+            <%= feature %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </section>
+  <section class="unit_monthly_price unit_promotion mobile-unit">
+    <div class="price">
+      <%= number_to_currency(unit.push_rate, precision: 0) %>
+      <div class="line_through"></div>
+    </div>
+    <div class="red">
+      <%= number_to_currency(unit.street_rate, precision: 0) %>
+    </div>
+    <% if unit.promotion.present? %>
+        <div class="black"><%= unit.promotion.description %></div>
+    <% end %>
+  </section>
+  <section class="continue mobile-unit">
+    <% if unit.available? %>
+      <%= button_to("Continue", unit.reserve_path, class: "button blue") %>
     <% else %>
       <%= link_to("Call For Details", "#", class: "button blue") %>
     <% end %>

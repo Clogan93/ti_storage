@@ -59,6 +59,7 @@ div.storage_units_tab.desktop{
       section.size{ width: 15%; }
       section.features{ width: 25%; }
       section.unit_monthly_price{ width: 20%; }
+      section.unit_monthly_price.online_special{ color: red; }
       section.unit_promotion{ width: 20%; }
       section.continue{ width: 20%; }
     }

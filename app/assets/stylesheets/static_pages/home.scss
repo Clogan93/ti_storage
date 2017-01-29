@@ -84,6 +84,7 @@
           }
         }
         .carousel-control{
+          z-index: 99999999;
           height: 48px;
           background: rgb(86, 85, 85);
           opacity: 1;

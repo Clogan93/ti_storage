@@ -18,19 +18,22 @@
 
     <%= render partial: 'common/storage_view', locals: { storage: @site } %>
 
-    <section class="mobile_ad hidden-lg-up">
-      <%= image_tag '_common/ads/amazon_rectangular.png' %>
-    </section>
-
     <section class="extensive_information">
-      <% tab_ids = [:storage_units, :features, :directions, :videos, :reviews] %>
-      <ul class="hidden-md-down tab_navigation nav nav-tabs">
+      <% tab_ids = [:storage_units, :features, :directions, :videos, :hours, :map, :reviews] %>
+      <ul class="tab_navigation nav nav-tabs">
         <% tab_ids.each do |tab_id| %>
-          <li class="nav-item">
+          <li class="nav-item <%='site-tab' if [:storage_units, :features, :directions, :videos].include?(tab_id) %><%='mobile-tab' if [:hours, :map].include?(tab_id)%>">
             <a href="#<%= tab_id %>" class="<%= tab_id == :storage_units ? 'active' : '' %> nav-link" data-toggle="tab">
               <%= tab_id.to_s.titleize %>
             </a>
           </li>
+          <% if tab_id == :storage_units %>
+            <li class="nav-item mobile-tab">
+              <a href="#<%= tab_id %>" class="nav-link" data-toggle="tab">
+                <%= "Units" %>
+              </a>
+            </li>
+          <% end %>
         <% end %>
       </ul>
 
@@ -38,20 +41,63 @@
         <article class="tab-pane active" id="storage_units">
           <%= render(partial: 'units') %>
         </article>
-        <article class="tab-pane" id="features">
+        <article class="tab-pane site-tab" id="features">
           <ul>
             <% @site.features.each do |feature| %>
               <li><%= feature %></li>
             <% end %>
           </ul>
         </article>
-        <article class="tab-pane" id="directions">
+        <article class="tab-pane site-tab" id="directions">
           <%= @site.directions.html_safe %>
         </article>
-        <article class="tab-pane" id="videos">
+        <article class="tab-pane site-tab" id="videos">
           <ul>
             <li>Coming Soon</li>
           </ul>
+        </article>
+        <article class="tab-pane mobile-tab" id="hours">
+          <section class="info first">
+            <h5 class="title"><%= @site.title %></h5>
+            <div class="address">
+              <h6>Location</h6>
+              <p>
+                <%= @site.address_1 %>
+                <%= @site.city_state_and_zip %>
+              </p>
+            </div>
+
+            <div class="phone_number">
+              <h6>Phone number</h6>
+              <p><%= number_to_phone(@site.phone) %></p>
+            </div>
+
+            <%= react_component('FetchableStorageRating', { placeId: @site.place_id, numberIsDisplayed: true }) %>
+            <%= link_to('Read Reviews', [@site.area.path_prefix, @site, anchor: :reviews], class: 'read_reviews') %>
+          </section>
+
+          <section class="info second">
+            <div class="office_hours">
+              <h6>Office hours</h6>
+              <p>
+                <% @site.hours['office'].each do |hours| %>
+                    <%= hours %><br>
+                <% end %>
+              </p>
+            </div>
+
+            <div class="access_hours">
+              <h6>Access hours</h6>
+              <p>
+                <% @site.hours['access'].each do |hours| %>
+                    <%= hours %><br>
+                <% end %>
+              </p>
+            </div>
+          </section>
+        </article>
+        <article class="tab-pane mobile-tab" id="map">
+          <%= react_component('StorageMap', { storage: @site }) %>
         </article>
         <article class="tab-pane" id="reviews">
           <%= react_component('StorageReviews', { placeId: @site.place_id }) %>

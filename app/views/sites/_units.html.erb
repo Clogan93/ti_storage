@@ -1,5 +1,32 @@
 <div class="storage_units_tab desktop">
   <section class="select_size_and_sizing_guide">
+    <div class="select-size label blue_heading small-text small-text-black">
+      Select Size
+    </div>
+    <div class="select-size drop-block">
+      <div class="dropdown size-options-drop">
+        <button class="dropbtn">ALL UNITS</button>
+        <div class="dropdown-content">
+          <div id="size_options" class="size_options" role="tablist">
+            <a class="size_option" data-toggle="tab" href="#all" role="tab">
+              <div class="size">all units</div>
+            </a>
+            <a class="size_option" data-toggle="tab" href="#small" role="tab">
+              <div class="size">small</div>
+            </a>
+            <a class="size_option" data-toggle="tab" href="#medium" role="tab">
+              <div class="size">medium</div>
+            </a>
+            <a class="size_option" data-toggle="tab" href="#large" role="tab">
+              <div class="size">large</div>
+            </a>
+            <a class="size_option" data-toggle="tab" href="#x-large" role="tab">
+              <div class="size">x-large</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="select_size">
       <h3 class="blue_heading">Select size</h3>
       <p>Treasure Island Storage units are in accordance to industry standard sizes. The dimensions are displayed  with width, depth, and if noted, height.</p>
@@ -27,7 +54,7 @@
       </div>
     </div>
     <div class="sizing_guide_preview" data-toggle="modal" data-target="#sizing_guide_modal">
-      <h3 class="blue_heading">Sizing guide</h3>
+      <h3 class="blue_heading small-text">Sizing guide</h3>
       <div class="images">
         <%= image_tag('common/sizing_guide_preview/sizing_guide_ruler.svg', class: 'ruler', alt: 'Sizing guide ruler') %>
         <%= image_tag('common/sizing_guide_preview/sizing_guide_preview.jpg', class: 'video_preview', alt: 'Sizing guide preview') %>
@@ -39,7 +66,7 @@
       <section class="size">Size</section>
       <section class="features">Features</section>
       <section class="unit_monthly_price">Monthly price</section>
-      <section class="unit_monthly_price">Online Special</section>
+      <section class="unit_monthly_price online_special">Online Special</section>
     </div>
     <div id="size_options--tabs" class="tab-content">
       <% groups_order = [:small, :medium, :large, :'x-large'] %>
