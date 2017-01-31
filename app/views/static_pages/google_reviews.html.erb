@@ -7,9 +7,9 @@
 
       <main class="default_static_page_main">
         <ul>
-          <% @all_storages.each do |storage| %>
+          <% all_sites.each do |site| %>
             <li>
-              <a href="<%= storage.link_to_google_reviews %>"><%= storage.title %></a>
+              <a href="<%= site.link_to_google_reviews %>"><%= site.title %></a>
             </li>
           <% end %>
         </ul>

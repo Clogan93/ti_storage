@@ -2,6 +2,7 @@
 # :nodoc:
 class CheckoutsController < ApplicationController
   before_action :confirm_current_cart_exists
+  before_action :redirect_unless_unit
 
   def show
     redirect_to([:reservation, :lease]) if current_cart.complete?
@@ -30,5 +31,9 @@ class CheckoutsController < ApplicationController
       :card_holder_name, :card_number,
       :expire_month, :expire_year, :cvv2, :postal_code
     )
+  end
+
+  def redirect_unless_unit
+    redirect_to [:reservation] unless current_unit.present?
   end
 end

@@ -26,9 +26,21 @@ class ReservationsController < ApplicationController
 
     current_cart.process_account!
     current_cart.process_reservation!
+    self.send(transaction_type)
+  end
+
+  def reserve
+    current_cart.send_notifications
+    flash[:c_id] = current_cart.id
+    session[:c_id] = nil
+    redirect_to([:reservation, :lease])
+  end
+
+  def rent
     current_cart.process_insurance!
     current_cart.process_assessments!
     current_cart.process_total_due!
+
     redirect_to([:reservation, :checkout])
   rescue Savon::SOAPFault => error
     reason = error.to_hash[:fault][:faultstring]
@@ -47,6 +59,10 @@ class ReservationsController < ApplicationController
   end
 
   private
+
+  def transaction_type
+    params.dig(:cart, :reservation_type).to_sym
+  end
 
   def cart_params
     params.require(:cart).permit(:reservation_type, :move_in_date, :need_help_moving)
