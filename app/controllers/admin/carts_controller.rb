@@ -1,7 +1,7 @@
 module Admin
   class CartsController < AdminController
     def index
-      @carts = Cart.all
+      @carts = Cart.order(id: :desc).all
     end
 
     def show
